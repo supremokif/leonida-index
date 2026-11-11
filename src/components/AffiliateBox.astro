@@ -1,0 +1,105 @@
+---
+interface Props {
+  id: string;
+  title: string;
+  category: string;
+  targetConsole: string;
+  badge?: string;
+  price: string;
+  originalPrice?: string;
+  affiliateUrl: string;
+  rating?: string;
+  reviewsCount?: string;
+  features: string[];
+  storageCapacityGb?: number;
+}
+
+const {
+  title,
+  category,
+  targetConsole,
+  badge,
+  price,
+  originalPrice,
+  affiliateUrl,
+  rating = '4.9/5',
+  reviewsCount,
+  features,
+  storageCapacityGb,
+} = Astro.props;
+---
+
+<div class="flex flex-col justify-between p-6 rounded-2xl bg-surface-100/90 border border-surface-300 hover:border-miami-cyan/60 hover:shadow-neon-cyan transition-all duration-300 relative group backdrop-blur-md">
+  <div>
+    <!-- Top Meta Row -->
+    <div class="flex items-center justify-between gap-2 mb-3">
+      <span class="text-xs font-bold text-miami-cyan tracking-wider uppercase font-mono">
+        {category}
+      </span>
+      {badge && (
+        <span class="px-2.5 py-0.5 rounded-full bg-gradient-to-r from-miami-pink/20 to-miami-orange/20 border border-miami-pink/40 text-[11px] font-semibold text-miami-pink">
+          {badge}
+        </span>
+      )}
+    </div>
+
+    <!-- Title -->
+    <h3 class="text-lg font-bold text-white group-hover:text-miami-cyan transition-colors mb-2 leading-snug">
+      {title}
+    </h3>
+
+    <!-- Compatibility & Rating -->
+    <div class="flex flex-wrap items-center gap-2 mb-4 text-xs text-gray-300">
+      <span class="px-2 py-0.5 rounded bg-surface-200 text-gray-200 font-medium border border-surface-300">
+        {targetConsole}
+      </span>
+      {storageCapacityGb && storageCapacityGb > 0 && (
+        <span class="px-2 py-0.5 rounded bg-surface-200 text-miami-pink font-semibold border border-surface-300">
+          +{storageCapacityGb} GB Spazio
+        </span>
+      )}
+      <span class="flex items-center gap-1 text-amber-400 font-semibold ml-auto">
+        <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 20 20">
+          <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+        </svg>
+        {rating} {reviewsCount && <span class="text-gray-400 font-normal">({reviewsCount})</span>}
+      </span>
+    </div>
+
+    <!-- Feature Checklist -->
+    <ul class="space-y-2 mb-6 text-xs text-gray-300">
+      {features.map((feature) => (
+        <li class="flex items-start gap-2">
+          <svg class="w-4 h-4 text-miami-cyan shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" />
+          </svg>
+          <span class="leading-relaxed">{feature}</span>
+        </li>
+      ))}
+    </ul>
+  </div>
+
+  <!-- Bottom Pricing & CTA -->
+  <div class="pt-4 border-t border-surface-200/80 flex items-center justify-between gap-4">
+    <div>
+      <span class="text-2xl font-black text-white font-mono tracking-tight">{price}</span>
+      {originalPrice && (
+        <span class="ml-2 text-xs text-gray-400 line-through font-mono">{originalPrice}</span>
+      )}
+    </div>
+
+    <!-- Mandatory Security Link: rel="sponsored noopener noreferrer" -->
+    <a
+      href={affiliateUrl}
+      target="_blank"
+      rel="sponsored noopener noreferrer"
+      class="inline-flex items-center gap-1.5 px-4 py-2.5 rounded-xl bg-gradient-to-r from-miami-pink to-miami-orange hover:from-miami-pink/90 hover:to-miami-orange/90 text-white text-xs font-bold shadow-md hover:shadow-neon-pink transition-all duration-200"
+    >
+      <span>Verifica Offerta</span>
+      <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+      </svg>
+    </a>
+  </div>
+</div>
+

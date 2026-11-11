@@ -1,0 +1,999 @@
+{
+  "releaseInfo": {
+    "gameTitle": "Grand Theft Auto VI",
+    "developer": "Rockstar Games",
+    "publisher": "Take-Two Interactive",
+    "releaseDate": "2026-11-19T00:00:00",
+    "releaseDateHuman": "19 Novembre 2026",
+    "preloadDate": "2026-11-10T18:00:00",
+    "preloadDateHuman": "10 Novembre 2026",
+    "platforms": ["PlayStation 5", "PlayStation 5 Pro", "Xbox Series X", "Xbox Series S"],
+    "downloadSizePS5": "228.45 GB",
+    "downloadSizeXbox": "231.10 GB",
+    "engine": "Rockstar Advanced Game Engine (RAGE 9)",
+    "setting": "Stato di Leonida (Vice City, Leonida Keys, Grassrivers, Port Gellhorn, Ambrosia, Mount Kalaga)",
+    "targetFramerates": {
+      "ps5": "Modalità Prestazioni (4K Dinamico 60 FPS) / Modalità Fedeltà (4K Nativo 30 FPS con RT)",
+      "ps5Pro": "Modalità Migliorata PSSR (4K 60 FPS con Ray Tracing e Global Illumination Attivi)",
+      "xboxSeriesX": "Modalità Prestazioni (4K Dinamico 60 FPS) / Modalità Fedeltà (4K Nativo 30 FPS con RT)",
+      "xboxSeriesS": "Risoluzione Dinamica 1080p-1440p mirata a 30-40 FPS stabili"
+    },
+    "unlockSchedule": [
+      {
+        "city": "Auckland / Wellington",
+        "region": "Nuova Zelanda",
+        "timezone": "NZDT (UTC+13)",
+        "unlockTime": "19 Nov 2026 - 00:00 (Mezzanotte)",
+        "notes": "Primo territorio al mondo a sbloccare l'accesso al gioco"
+      },
+      {
+        "city": "Sydney / Melbourne",
+        "region": "Australia Orientale",
+        "timezone": "AEDT (UTC+11)",
+        "unlockTime": "19 Nov 2026 - 00:00 (Mezzanotte)",
+        "notes": "Sblocco mezzanotte rolling australiano"
+      },
+      {
+        "city": "Tokyo / Seoul",
+        "region": "Giappone e Corea del Sud",
+        "timezone": "JST (UTC+9)",
+        "unlockTime": "19 Nov 2026 - 00:00 (Mezzanotte)",
+        "notes": "Sblocco mezzanotte orario asiatico"
+      },
+      {
+        "city": "Roma / Berlino / Parigi / Madrid",
+        "region": "Europa Centrale",
+        "timezone": "CET (UTC+1)",
+        "unlockTime": "19 Nov 2026 - 00:00 (Mezzanotte)",
+        "notes": "Orario ufficiale di riferimento per l'Italia e l'Europa continentale"
+      },
+      {
+        "city": "Londra / Dublino / Lisbona",
+        "region": "Regno Unito e Irlanda",
+        "timezone": "GMT (UTC+0)",
+        "unlockTime": "19 Nov 2026 - 00:00 (Mezzanotte)",
+        "notes": "Sblocco mezzanotte fuso orario di Greenwich"
+      },
+      {
+        "city": "New York / Miami / Atlanta",
+        "region": "Costa Orientale USA",
+        "timezone": "EST (UTC-5)",
+        "unlockTime": "19 Nov 2026 - 00:00 (Mezzanotte)",
+        "notes": "Fuso orario locale in cui è ambientato lo Stato di Leonida"
+      },
+      {
+        "city": "Chicago / Dallas",
+        "region": "USA Centrale",
+        "timezone": "CST (UTC-6)",
+        "unlockTime": "18 Nov 2026 - 23:00",
+        "notes": "Sblocco sincronizzato con la mezzanotte EST di New York"
+      },
+      {
+        "city": "Denver / Phoenix",
+        "region": "USA Montagne",
+        "timezone": "MST (UTC-7)",
+        "unlockTime": "18 Nov 2026 - 22:00",
+        "notes": "Sblocco sincronizzato con la mezzanotte EST"
+      },
+      {
+        "city": "Los Angeles / San Francisco / Seattle",
+        "region": "Costa Pacifica USA",
+        "timezone": "PST (UTC-8)",
+        "unlockTime": "18 Nov 2026 - 21:00",
+        "notes": "Accesso consentito la sera prima del 18 Novembre in sincrono con la Costa Est"
+      }
+    ],
+    "faq": [
+      {
+        "question": "Quando esce ufficialmente Grand Theft Auto VI?",
+        "answer": "La data di uscita globale ufficiale è fissata per giovedì 19 Novembre 2026. L'orario di sblocco per l'Italia e l'Europa centrale è la mezzanotte esatta (00:00 CET) tra il 18 e il 19 Novembre in modalità rolling launch."
+      },
+      {
+        "question": "Come funziona il Pre-load di GTA 6 su PS5 e Xbox?",
+        "answer": "Il pre-load digitale è ufficialmente attivo dal 10 Novembre 2026. Tutti i giocatori con pre-order digitale attivo su PlayStation Store o Microsoft Xbox Store possono scaricare l'intero pacchetto di installazione (228.5 GB su PS5, 231 GB su Xbox) per iniziare a giocare all'istante allo scoccare della mezzanotte del 19 Novembre."
+      },
+      {
+        "question": "Quali sono le piattaforme di gioco supportate al lancio?",
+        "answer": "GTA 6 debutta in esclusiva per console current-gen su Sony PlayStation 5, PlayStation 5 Pro e Microsoft Xbox Series X|S. La versione per PC Windows non sarà disponibile al lancio ed è pianificata da Rockstar Games per il 2027."
+      },
+      {
+        "question": "Quanto spazio libero richiede GTA 6 su SSD?",
+        "answer": "La dimensione del download è di 228.45 GB su PlayStation 5 e 231.10 GB su Xbox Series X. Si consiglia di disporre di almeno 260 GB liberi su unità SSD PCIe Gen4 interna o tramite SSD M.2 con dissipatore per consentire la corretta decompressione della patch Day One."
+      },
+      {
+        "question": "Chi sono i protagonisti e come è strutturata la storia?",
+        "answer": "I protagonisti sono Lucia Caminos e Jason Duval, una coppia di fuorilegge legati da una partnership criminale e affettiva ispirata a Bonnie e Clyde. Il giocatore può alternarsi tra entrambi i personaggi esplorando le dinamiche narrative e tattiche nelle rapine nello Stato di Leonida."
+      },
+      {
+        "question": "Qual è la colonna sonora ufficiale del Launch Trailer?",
+        "answer": "Il brano cardine del Launch Trailer pubblicato il 15 Ottobre 2026 è 'Flower in a Hurricane', composto dal duo electro-funk Justice con i featuring vocali di Tame Impala, SZA e King Gizzard & The Lizard Wizard."
+      }
+    ]
+  },
+  "trailers": [
+    {
+      "id": "trailer-1",
+      "slug": "trailer-1",
+      "number": 1,
+      "title": "Grand Theft Auto VI Trailer 1 - Il Ritorno a Vice City",
+      "publishDate": "2023-12-04",
+      "publishDateHuman": "4 Dicembre 2023",
+      "duration": "1:31",
+      "durationSeconds": 91,
+      "youtubeId": "QdBZY2fkU-0",
+      "soundtrack": {
+        "title": "Love Is a Long Road",
+        "artist": "Tom Petty",
+        "notes": "Tratto dall'album Full Moon Fever (1989), omaggio alle radici musicali della Florida"
+      },
+      "summary": "Il primo reveal trailer globale che ha stabilito il record mondiale di visualizzazioni. Introduce la protagonista femminile Lucia nel penitenziario di Leonida, le sfavillanti strade di Ocean Drive a Vice Beach, e l'integrazione pervasiva dei social media in formato verticale nella vita dei cittadini.",
+      "frameAnalysis": [
+        {
+          "timestamp": "0:04",
+          "label": "Penitenziario di Leonida State",
+          "description": "Primo piano su Lucia Caminos in uniforme arancione da detenuta che dialoga con la sua funzionaria di vigilanza Stefanie."
+        },
+        {
+          "timestamp": "0:18",
+          "label": "Skyline di Vice City al Tramonto",
+          "description": "Panoramica aerea mozzafiato su Ocean Beach, yacht di lusso, idrovolanti e motoscafi da corsa che solcano le acque turchesi."
+        },
+        {
+          "timestamp": "0:42",
+          "label": "Social Media Viral Feeds",
+          "description": "Interfaccia stile TikTok/Instagram Reels con clip catturate dagli abitanti di Leonida: alligatori nelle piscine, twerking su auto in corsa e feste clandestine sul tetto."
+        },
+        {
+          "timestamp": "1:15",
+          "label": "Patto Criminale Lucia e Jason",
+          "description": "Incontro intimo in un motel con maschere passamontagna: 'L'unica maniera per superare tutto questo è rimanere uniti. Fiducia? Fiducia.'"
+        }
+      ],
+      "vehiclesSpotted": [
+        "Grotti Cheetah Classic",
+        "Albany Buccaneer Custom",
+        "Bravado Gauntlet Hellfire",
+        "Pegassi Torero XO",
+        "Western Seabreeze Seaplane",
+        "Airboat Grassrivers Swamp"
+      ],
+      "weaponsSpotted": [
+        "Pistola semiautomatica 9mm",
+        "Fucile a pompa compatto 12 gauge"
+      ],
+      "transcript": "Stefanie: 'Lucia, sai perché sei qui?'. Lucia: 'Sfortuna, credo'. Stefanie: 'Sfortuna, eh?'. [Musica: Tom Petty - Love Is a Long Road]. Narratore / Social voiceovers: 'Solo a Leonida... guarda questo tizio con un coccodrillo nel market!'. Lucia: 'L'unico modo per venirne fuori è restare uniti. Facendo squadra'. Jason: 'Fiducia?'. Lucia: 'Fiducia'."
+    },
+    {
+      "id": "trailer-2",
+      "slug": "trailer-2",
+      "number": 2,
+      "title": "Grand Theft Auto VI Trailer 2 - La Contea di Port Gellhorn",
+      "publishDate": "2025-05-06",
+      "publishDateHuman": "6 Maggio 2025",
+      "duration": "2:47",
+      "durationSeconds": 167,
+      "youtubeId": "VQRLujxTm3c",
+      "soundtrack": {
+        "title": "Hot Summer Nights",
+        "artist": "Miami Nights 1984",
+        "notes": "Brano synthwave al neon che esalta i riflessi della pioggia notturna sul motore RAGE 9"
+      },
+      "summary": "Focalizzato sul secondo protagonista giocabile, Jason Duval, e sulle realtà industriali e rurali ai margini di Vice City. Mostra le dinamiche di coppia durante le rapine ai banchi dei pegni di Port Gellhorn e la simulazione meteo con alluvioni e temporali tropicali in tempo reale.",
+      "frameAnalysis": [
+        {
+          "timestamp": "0:25",
+          "label": "Officina Clandestina di Jason",
+          "description": "Jason smonta il carburatore di una muscle car d'epoca Declasse Tulip discutendo di debiti non saldati con uno strozzino locale."
+        },
+        {
+          "timestamp": "1:10",
+          "label": "Rapina a Port Gellhorn Liquor Store",
+          "description": "Sequenza di gameplay simulato: Jason copre la porta d'ingresso con un fucile mentre Lucia preleva il contante dalla cassa blindata."
+        },
+        {
+          "timestamp": "1:55",
+          "label": "Uragano Tropicale di Categoria 3",
+          "description": "Dimostrazione fisica del motore RAGE 9: palme sradicate, cartelloni pubblicitari divelti e accumulo dinamico di acqua sulle carreggiate stradali."
+        },
+        {
+          "timestamp": "2:30",
+          "label": "Inseguimento con la Polizia di Stato",
+          "description": "Cruiser della Leonida Highway Patrol inseguono la coppia su un viadotto interstatale sotto un diluvio di fulmini volumetrici."
+        }
+      ],
+      "vehiclesSpotted": [
+        "Declasse Tulip 1972",
+        "Karin Rebel 4x4 Offroad",
+        "Vapid Dominator GT",
+        "Enus Paragon R",
+        "Leonida Highway Patrol Police Cruiser Vapid Stanier"
+      ],
+      "weaponsSpotted": [
+        "Carabina d'assalto M4 Carbine",
+        "Revolver pesante .44 Magnum",
+        "Fumogeno tattico di distrazione"
+      ],
+      "transcript": "Jason: 'Vice City ti mastica e ti sputa se non hai soldi veri in tasca'. Lucia: 'Non siamo destinati a finire in una cella Jason. Abbiamo un piano, dobbiamo solo portarlo a termine senza esitazioni'. Jason: 'Quando entriamo lì dentro, nessuno spara a meno che non sia io a dirlo'. Lucia: 'Allora muoviti prima che arrivi la volante'."
+    },
+    {
+      "id": "extended-look",
+      "slug": "extended-look",
+      "number": 3,
+      "title": "Grand Theft Auto VI: An Extended Look - Gameplay Deep Dive",
+      "publishDate": "2026-08-27",
+      "publishDateHuman": "27 Agosto 2026",
+      "duration": "26:48",
+      "durationSeconds": 1608,
+      "youtubeId": "OFFICIAL_ROCKSTAR_NEWSWIRE",
+      "soundtrack": {
+        "title": "RAGE 9 Adaptive Orchestral & Electronic Score",
+        "artist": "Rockstar Internal Sound Architecture",
+        "notes": "Colonna sonora adattiva dinamica a stem multipli che reagisce al livello di ricercato"
+      },
+      "summary": "Una presentazione esaustiva di quasi 27 minuti di puro gameplay registrato su PlayStation 5 Pro. Mostra il sistema di mira fisica senza lock automatico, la reattività neuronale dei passanti (IA folla autonoma), l'accesso continuo a oltre 1.200 interni senza schermate di caricamento e la simulazione biologica della fauna selvatica.",
+      "frameAnalysis": [
+        {
+          "timestamp": "03:15",
+          "label": "Transizione Fluida Interno-Esterno",
+          "description": "Lucia cammina dal sole accecante di Ocean Drive all'interno refrigerato di un hotel di lusso: zero caricamenti, riflessi ray tracing speculari istantanei."
+        },
+        {
+          "timestamp": "08:45",
+          "label": "Fisica Balistica e Distruzione Ambientale",
+          "description": "Scontro a fuoco in un magazzino: pareti di cartongesso perforabili dai calibri pesanti, schegge di vetro con fisica volumetrica indipendente."
+        },
+        {
+          "timestamp": "14:20",
+          "label": "Ecosistema Palustre delle Grassrivers",
+          "description": "Jason naviga a bordo di un hovercraft tra alligatori che cacciano aironi in tempo reale e vegetazione acquatica reagente al moto ondoso."
+        },
+        {
+          "timestamp": "21:05",
+          "label": "Meccaniche di Furtività e Scasso Elettronico",
+          "description": "Utilizzo di jammer wireless per disattivare telecamere di sorveglianza e scanner portatili per clonare frequenze radio della polizia."
+        }
+      ],
+      "vehiclesSpotted": [
+        "Pegassi Infernus Classic",
+        "Overflod Entity MT",
+        "Dinka Marquis 60ft Luxury Yacht",
+        "Nagasaki Blazer Quad",
+        "Buckingham SuperVolito Carbon Helicopter"
+      ],
+      "weaponsSpotted": [
+        "Fucile di precisione pesante calibro .50",
+        "Mitraglietta compatta MPX",
+        "Pistola taser ad arco voltaico",
+        "C4 radiocomandato con detonatore smartphone"
+      ],
+      "transcript": "Rockstar Narrator: 'Benvenuti a Leonida. In questa panoramica approfondita vi mostriamo la tecnologia alla base di RAGE 9. Ogni individuo che popola Vice City ha una routine giornaliera indipendente, un conto bancario simulato e una reattività comportamentale basata su modelli neurali. Gli edifici commerciali non sono semplici facciate: oltre milleduecento strutture offrono interni completamente navigabili e interagibili con il mondo di gioco'."
+    },
+    {
+      "id": "launch-trailer",
+      "slug": "launch-trailer",
+      "number": 4,
+      "title": "Grand Theft Auto VI: Launch Trailer Ufficiale",
+      "publishDate": "2026-10-15",
+      "publishDateHuman": "15 Ottobre 2026",
+      "duration": "2:15",
+      "durationSeconds": 135,
+      "youtubeId": "launch-gta6-official",
+      "soundtrack": {
+        "title": "Flower in a Hurricane",
+        "artist": "Justice feat. Tame Impala, SZA & King Gizzard & The Lizard Wizard",
+        "notes": "Inno ufficiale del lancio mondiale di GTA 6, registrato in esclusiva per Rockstar Games"
+      },
+      "summary": "Il trailer cinematico finale ad altissima intensità. Mostra l'escalation della guerra tra cartelli a Vice City, la rapina coordinata al vault del Grand Leonida Casino, inseguimenti marini al cardiopalma e il culmine drammatico della relazione tra Lucia e Jason.",
+      "frameAnalysis": [
+        {
+          "timestamp": "0:12",
+          "label": "Inno 'Flower in a Hurricane'",
+          "description": "L'iconico basso distorto dei Justice esplode mentre la camera sfreccia sopra le luci al neon della skyline notturna di Downtown Vice."
+        },
+        {
+          "timestamp": "0:45",
+          "label": "Breccia nel Vault del Casino",
+          "description": "Lucia fa detonare una carica a termite sulla porta corazzata del casinò mentre Jason neutralizza i sistemi di allarme con un bypass a impulsi."
+        },
+        {
+          "timestamp": "1:20",
+          "label": "Inseguimento Marittimo alle Gator Keys",
+          "description": "Motoscafo offshore Shitzu Tropic inseguito da elicotteri della Guardia Costiera con mitragliatrici montate sui portelloni laterali."
+        },
+        {
+          "timestamp": "1:58",
+          "label": "Data Ufficiale Finale: 19 Novembre 2026",
+          "description": "Lucia e Jason si guardano negli specchietti retrovisori di una muscle car mentre sfrecciano verso l'orizzonte: 'È adesso o mai più'."
+        }
+      ],
+      "vehiclesSpotted": [
+        "Grotti Turismo Omaggio",
+        "Bravado Buffalo EVX",
+        "Shitzu Tropic Offshore Racing Boat",
+        "Buckingham Maverick Coast Guard Helicopter",
+        "Vapid Sandking XL Heavy Duty"
+      ],
+      "weaponsSpotted": [
+        "Fucile d'assalto militare tattico",
+        "Lanciagranate compatto 40mm",
+        "Coltello da combattimento Bowie"
+      ],
+      "transcript": "Lucia: 'Tutti in questa città pensano di essere intoccabili. Fino al momento in cui non gli porti via tutto ciò che possiedono'. Jason: 'Abbiamo tagliato i ponti con chiunque. Non si torna indietro da questo colpo'. [Esplosione del ritornello: Flower in a Hurricane]. Lucia: 'Chi ha mai detto che volevo tornare indietro? 19 Novembre. È tempo di prendersi Leonida'."
+    },
+    {
+      "id": "launch-gallery",
+      "slug": "launch-gallery",
+      "number": 5,
+      "title": "Explore the Grand Theft Auto VI Launch Gallery",
+      "publishDate": "2026-11-03",
+      "publishDateHuman": "3 Novembre 2026",
+      "duration": "3:45",
+      "durationSeconds": 225,
+      "youtubeId": "launch-gallery-2026",
+      "soundtrack": {
+        "title": "Vice Waves Mixtape",
+        "artist": "Wave 103 Official DJs",
+        "notes": "Mix esclusivo di tracce synthpop, electroclash e new wave per le notti di Vice Beach"
+      },
+      "summary": "Una vetrina interattiva del tessuto sociale di Leonida: dai raduni di lowrider e muscle car customizzate nei parcheggi sotterranei di Little Haiti, agli attici multimilionari di Starfish Island con piscine a sfioro sul mare.",
+      "frameAnalysis": [
+        {
+          "timestamp": "0:30",
+          "label": "Raduno Automobilistico Notturno a Little Haiti",
+          "description": "Dimostrazione del sistema di personalizzazione delle sospensioni idrauliche, neon sottoscocca e vernici cangianti iridescenti."
+        },
+        {
+          "timestamp": "1:40",
+          "label": "Vita Marina e Relitti Sommersi",
+          "description": "Attività subacquee: immersioni con autorespiratore su una barriera corallina e un aereo cargo precipitato durante gli anni '80."
+        },
+        {
+          "timestamp": "2:55",
+          "label": "Skybar Esclusivi di Downtown Vice",
+          "description": "Ambienti notturni vibranti con musica dal vivo, DJ internazionali e reazioni sociali basate sulla reputazione criminale del giocatore."
+        }
+      ],
+      "vehiclesSpotted": [
+        "Albany Hermes Custom Lowrider",
+        "Dewbauchee Champion",
+        "Progen Emerus",
+        "Dinka Verus Quad"
+      ],
+      "weaponsSpotted": [
+        "Pistola tascabile cromata .25",
+        "Mazza da baseball in alluminio Vice City"
+      ],
+      "transcript": "Commentario culturale ufficiale: 'Leonida non è solo un territorio da rapinare: è un organismo vivente. Ogni quartiere pulsa al ritmo della sua colonna sonora, delle sue sottoculture e dei suoi conflitti territoriali. Esplorate le gallerie ufficiali prima del lancio del 19 Novembre'."
+    },
+    {
+      "id": "the-festival",
+      "slug": "the-festival",
+      "number": 6,
+      "title": "Grand Theft Auto VI: The Festival a Vice Beach",
+      "publishDate": "2026-11-05",
+      "publishDateHuman": "5 Novembre 2026",
+      "duration": "4:18",
+      "durationSeconds": 258,
+      "youtubeId": "the-festival-showcase",
+      "soundtrack": {
+        "title": "One More Time (Leonida Festival Live Rework)",
+        "artist": "Justice & Busy P",
+        "notes": "Tributo dal vivo suonato sul palco principale digitale di Vice Beach"
+      },
+      "summary": "Presentazione della più imponente esperienza musicale in-game mai concepita. Tre palchi simultanei allestiti sulla sabbia di Ocean Drive con spettacoli pirotecnici sincronizzati, DJ set mondiali e centinaia di NPC con coreografie dinamiche.",
+      "frameAnalysis": [
+        {
+          "timestamp": "0:45",
+          "label": "Palco Principale Sunken Beats",
+          "description": "Show visivo con ologrammi laser volumetrico e sound system 3D calibrato per cuffie con tracciamento della testa."
+        },
+        {
+          "timestamp": "2:10",
+          "label": "Interazione con il Pubblico e Rissa Spontanea",
+          "description": "Jason si fa largo tra la folla: micro-collisioni fisiche realistiche che innescano un diverbio tra buttafuori e bagnanti alterati."
+        },
+        {
+          "timestamp": "3:30",
+          "label": "Fuga in Aquascooter sulla Costa",
+          "description": "Fuga notturna al termine di un blitz di polizia sulle rive illuminate dalle torce dei motoscafi."
+        }
+      ],
+      "vehiclesSpotted": [
+        "Speedophile Seashark Jet Ski",
+        "Nagasaki Outlaw Dune Buggy",
+        "Lampadati Corsita"
+      ],
+      "weaponsSpotted": [
+        "Pistola segnalatrice da soccorso a razzo",
+        "Spray urticante al peperoncino"
+      ],
+      "transcript": "Presentatore Radio Vice Beach: 'State ascoltando la diretta esclusiva dal Festival di Vice Beach! Migliaia di persone da tutto il paese si sono radunate sotto queste palme per celebrare l'evento del secolo. Ricordate: ciò che accade a Vice Beach, finisce sul feed di tutti entro trenta secondi!'."
+    },
+    {
+      "id": "preload-ps5-showcase",
+      "slug": "preload-ps5-showcase",
+      "number": 7,
+      "title": "Pre-Load Now & PS5 Features Showcase",
+      "publishDate": "2026-11-09",
+      "publishDateHuman": "9-10 Novembre 2026",
+      "duration": "3:55",
+      "durationSeconds": 235,
+      "youtubeId": "preload-ps5-showcase-video",
+      "soundtrack": {
+        "title": "Pulse of Vice (DualSense Audio Suite)",
+        "artist": "Rockstar Sound Lab & Sony Tempest Audio",
+        "notes": "Traccia acustica binaurale progettata per testare cuffie e feedback aptico"
+      },
+      "summary": "Il video tecnico definitivo che certifica l'apertura del Pre-load mondiale il 10 Novembre 2026. Illustra le caratteristiche esclusive su PlayStation 5 e PS5 Pro: grilletti adattivi che simulano il punto di pressione delle armi e l'aderenza delle ruote sull'asfalto bagnato, e caricamenti quasi istantanei tramite SSD NVMe ad altissima velocità.",
+      "frameAnalysis": [
+        {
+          "timestamp": "0:20",
+          "label": "Apertura Pre-load Globale (228.5 GB)",
+          "description": "Interfaccia utente PlayStation con la barra di download completata e conto alla rovescia attivo fino alla mezzanotte del 19 Novembre."
+        },
+        {
+          "timestamp": "1:15",
+          "label": "DualSense Haptic Feedback in Azione",
+          "description": "Rappresentazione a raggi X del controller con impulsi aptici differenziati per pioggia tropicale, sabbia sotto i piedi e scoppio di pneumatici."
+        },
+        {
+          "timestamp": "2:30",
+          "label": "Modalità PSSR 4K 60FPS su PS5 Pro",
+          "description": "Confronto visivo tra rendering standard e super-risoluzione neurale: riflessi nitidi negli specchietti e assenza di ghosting sulle alte velocità."
+        },
+        {
+          "timestamp": "3:25",
+          "label": "Tempest 3D Audio Acoustics",
+          "description": "Isolamento acustico di sirene di polizia in avvicinamento da vicoli laterali con riverbero calcolato sui muri in mattoni."
+        }
+      ],
+      "vehiclesSpotted": [
+        "Pfister Comet S2 Cabriolet",
+        "Karin Calico GTF",
+        "Vapid Police Interceptor Next-Gen"
+      ],
+      "weaponsSpotted": [
+        "Pistola tattica con silenziatore modulare",
+        "Fucile a canne mozze doppio grilletto"
+      ],
+      "transcript": "Sony & Rockstar Technical Showcase: 'Il Pre-load di Grand Theft Auto VI è ufficialmente disponibile ora in tutto il mondo. Con 228.5 gigabyte di contenuti ad altissima risoluzione, il gioco sfrutta l'architettura I/O di PlayStation 5 per eliminare qualsiasi barriera di caricamento. I grilletti adattivi del DualSense oppongono resistenza dinamica al bloccaggio delle ruote in frenata, mentre la tecnologia PSSR su PS5 Pro sblocca una fedeltà visiva a sessanta fotogrammi al secondo senza compromessi. Preparate il vostro storage per il 19 Novembre'."
+    }
+  ],
+  "locations": [
+    {
+      "id": "vice-city",
+      "slug": "vice-city",
+      "name": "Vice City Metropolis & Ocean Beach",
+      "category": "Metropoli & Costiera",
+      "coordinates": { "lat": 25.7617, "lng": -80.1918 },
+      "description": "La capitale scintillante ed edonistica dello Stato di Leonida. Dai boulevard alberati di Ocean Drive ricchi di boutique e hotel Art Déco, fino ai grattacieli di cristallo di Downtown e ai vicoli colorati di Little Haiti e Little Cuba.",
+      "atmosphere": "Luci al neon, musica latina dai balconi, rombo costante di supercar e motoscafi da competizione, contrasto stridente tra lusso sfrenato e criminalità di strada.",
+      "subLocations": [
+        {
+          "name": "Ocean Drive & Vice Beach",
+          "type": "Lungomare & Spiaggia",
+          "description": "Chilometri di sabbia bianca con palestre all'aperto, cabine per bagnini retrò e i più esclusivi cocktail bar all'aperto di Leonida."
+        },
+        {
+          "name": "Downtown Vice & Financial Center",
+          "type": "Distretto Finanziario",
+          "description": "Cuore economico di Leonida con sedi bancarie multinazionali, lussuosi attici penthouse e la borsa merci cittadina."
+        },
+        {
+          "name": "Starfish Island",
+          "type": "Isola Residenziale di Lusso",
+          "description": "Comunità recintata con ville neoclassiche, ormeggi privati per yacht giganti e pattuglie di sicurezza armata privata 24/7."
+        },
+        {
+          "name": "Little Haiti & Bodega Alley",
+          "type": "Quartiere Culturale",
+          "description": "Zone residenziali dense caratterizzate da murales vivaci, negozi di pegni, botteghe botaniche e bande locali."
+        },
+        {
+          "name": "Port VC Container Terminal",
+          "type": "Porto Commerciale",
+          "description": "Uno dei maggiori snodi marittimi dell'Atlantico, perfetto per infiltrazioni notturne e contrabbando di veicoli."
+        }
+      ],
+      "factions": [
+        {
+          "name": "Vice City Cartel Network",
+          "description": "Sindacato transnazionale che gestisce il traffico di sostanze e il riciclaggio nei club notturni.",
+          "threatLevel": "Estrema"
+        },
+        {
+          "name": "Haitian Street Crew",
+          "description": "Banda territoriale radicata nella difesa dei quartieri popolari e nelle rapine a mano armata.",
+          "threatLevel": "Alta"
+        },
+        {
+          "name": "Vice City Metro Police Department (VCMPD)",
+          "description": "Forze dell'ordine cittadine con unità speciali swat e supporto aereo immediato.",
+          "threatLevel": "Alta"
+        }
+      ],
+      "vehiclesPresent": [
+        "Grotti Cheetah Classic",
+        "Pegassi Torero XO",
+        "Dewbauchee Champion",
+        "Bravado Gauntlet Hellfire",
+        "Albany Buccaneer Custom",
+        "Shitzu Tropic Speedboat"
+      ],
+      "wildlife": [
+        "Gabbiani reali",
+        "Pellicani bruni",
+        "Squali toro costieri",
+        "Delfini tursiopi"
+      ],
+      "collectibles": [
+        { "id": "vc-statue-01", "name": "Statua Fenicottero d'Oro Ocean Drive", "type": "Scultura Segreta", "reward": "Sblocco Tinta Neon Dorata" },
+        { "id": "vc-usb-01", "name": "Pen-Drive Contrabbandata Little Haiti", "type": "Archivio Audio", "reward": "Brano Segreto Wave 103" },
+        { "id": "vc-vault-01", "name": "Cassetta di Sicurezza Bank of Vice", "type": "Rapina Collezionabile", "reward": "$50,000 Contanti" },
+        { "id": "vc-graffiti-01", "name": "Murale Vice City Kings Starfish", "type": "Arte Urbana", "reward": "Livello Rispetto +5%" }
+      ]
+    },
+    {
+      "id": "leonida-keys",
+      "slug": "leonida-keys",
+      "name": "The Leonida Keys & Gator Archipelago",
+      "category": "Arcipelago & Barriera Corallina",
+      "coordinates": { "lat": 24.5551, "lng": -81.7800 },
+      "description": "Una spettacolare catena di isole coralline tropicali collegate dalla maestosa Overseas Highway: un'autostrada a viadotti che corre a pelo d'acqua sopra il Golfo di Leonida, costeggiata da resort esclusivi e isolotti incontaminati.",
+      "atmosphere": "Brezza marina salmastra, palme piegate dal vento, barchette di pescatori all'alba, acqua cristallina e piste di atterraggio private celate tra le mangrovie.",
+      "subLocations": [
+        {
+          "name": "Overseas Highway Viaducts",
+          "type": "Autostrada Oceanica",
+          "description": "Lungo corridoio autostradale sospeso sul mare, teatro di inseguimenti ad altissima velocità e posti di blocco della polizia federale."
+        },
+        {
+          "name": "Key West Marina & Hemingway Quarters",
+          "type": "Porticciolo Turistico",
+          "description": "Moli in legno antico con bar storici, ristoranti di pesce caraibico e charter per battute di pesca marlin."
+        },
+        {
+          "name": "Smuggler's Reef & Sunken Wrecks",
+          "type": "Sito Subacqueo",
+          "description": "Area marina protetta che cela relitti di galeoni coloniali e casse di contrabbando abbandonate sui fondali sabbiosi."
+        },
+        {
+          "name": "Private Airstrip Cay",
+          "type": "Pista di Atterraggio Clandestina",
+          "description": "Striscia di terra battuta ideale per il decollo e l'atterraggio di piccoli bimotori da trasporto non tracciati dai radar."
+        }
+      ],
+      "factions": [
+        {
+          "name": "Leonida Coast Guard & Maritime Patrol",
+          "description": "Guardia costiera equipaggiata con motovedette d'altura veloci e radar costieri a lunga gittata.",
+          "threatLevel": "Alta"
+        },
+        {
+          "name": "Keys Contraband Runners",
+          "description": "Piloti esperti e marinai che trasferiscono carichi illegali tra le isole e la terraferma.",
+          "threatLevel": "Media"
+        }
+      ],
+      "vehiclesPresent": [
+        "Shitzu Tropic Offshore Racer",
+        "Western Seabreeze Amphibian Plane",
+        "Dinka Marquis Luxury Sailboat",
+        "Pfister Comet S2 Cabriolet",
+        "Speedophile Seashark"
+      ],
+      "wildlife": [
+        "Tartarughe marine liuto",
+        "Squali martello",
+        "Mante giganti",
+        "Lamantini della Florida",
+        "Airone bianco maggiore"
+      ],
+      "collectibles": [
+        { "id": "keys-chest-01", "name": "Cassa Pirata Smuggler's Reef", "type": "Tesoro Sommerso", "reward": "Mappa Relitti Subacquei" },
+        { "id": "keys-beacon-01", "name": "Faro di Gator Point", "type": "Punto Panoramico", "reward": "Visuale Mappa Radar Espansa" },
+        { "id": "keys-shell-01", "name": "Conchiglia Gigante di Conch Key", "type": "Fossile Raro", "reward": "Costume Balneare Esclusivo" }
+      ]
+    },
+    {
+      "id": "grassrivers",
+      "slug": "grassrivers",
+      "name": "The Grassrivers & Mangrove Corridors",
+      "category": "Paludi & Riserva Ecologica",
+      "coordinates": { "lat": 25.8500, "lng": -80.6500 },
+      "description": "Un'immensa distesa paludosa subtropicale che ricrea l'ecosistema delle Everglades. Un labirinto di corsi d'acqua bassi, canneti impenetrabili e sentieri per hovercraft dominati da predatori alfa.",
+      "atmosphere": "Umidità opprimente, nebbia fitta notturna, suoni sinistri di cicale e ruggiti di alligatori, zanzare e capanni di cacciatori illuminati da lanterne fioche.",
+      "subLocations": [
+        {
+          "name": "Alligator Alley & Airboat Docks",
+          "type": "Canali Fluviali",
+          "description": "Stazione di noleggio e rimessaggio per hovercraft ed idroscivolanti, gli unici mezzi capaci di navigare le secche fangose."
+        },
+        {
+          "name": "Cypress Hollow Hermitage",
+          "type": "Villaggio Palustre",
+          "description": "Capanni su palafitte abitati da comunità isolate di cacciatori e fuorilegge ostili a qualsiasi intrusione esterna."
+        },
+        {
+          "name": "Hidden Air Drop Clearing",
+          "type": "Zona di Recupero Merci",
+          "description": "Radura fangosa dove velivoli leggeri paracadutano pacchi di contrabbando durante le notti senza luna."
+        }
+      ],
+      "factions": [
+        {
+          "name": "Swamp Boys / Local Militia",
+          "description": "Cacciatori locali armati di fucili da caccia calibro 12 e trappole esplosive per difendere il territorio.",
+          "threatLevel": "Alta"
+        },
+        {
+          "name": "Leonida Wildlife & Game Wardens",
+          "description": "Guardaparco statali dotati di jeep 4x4 e fucili con dardi narcotizzanti per il controllo della fauna protetta.",
+          "threatLevel": "Bassa"
+        }
+      ],
+      "vehiclesPresent": [
+        "Airboat Grassrivers V8",
+        "Karin Rebel Mudrunner 4x4",
+        "Vapid Sandking 4x4 Lifted",
+        "Nagasaki Blazer Quad",
+        "Bravado Duneloader"
+      ],
+      "wildlife": [
+        "Alligatore americano gigante (fino a 5 metri)",
+        "Pantera della Florida (felino predatore notturno)",
+        "Cinghiali selvatici di palude",
+        "Serpenti pitone birmano invasivi",
+        "Fenicotteri rosa caraibici"
+      ],
+      "collectibles": [
+        { "id": "swamp-egg-01", "name": "Uovo di Alligatore Albino Legend", "type": "Fauna Rara", "reward": "Stivali Pelle di Coccodrillo" },
+        { "id": "swamp-moonshine-01", "name": "Bottiglia di Moonshine Riserva 1920", "type": "Consumabile Raro", "reward": "Resistenza ai Danni +10%" },
+        { "id": "swamp-trap-01", "name": "Bussola del Trapper Smarrita", "type": "Oggetto di Sopravvivenza", "reward": "Rilevamento Animali su Minimappa" }
+      ]
+    },
+    {
+      "id": "port-gellhorn",
+      "slug": "port-gellhorn",
+      "name": "Port Gellhorn & Industrial Shipyards",
+      "category": "Distretto Industriale & Portuale",
+      "coordinates": { "lat": 26.1224, "lng": -80.1373 },
+      "description": "Una città satellite affacciata sulla costa occidentale, dominata da raffinerie petrolifere arrugginite, cantieri navali dismessi, motel lungo la statale e un circuito per gare clandestine di accelerazione drag race.",
+      "atmosphere": "Fumo industriale, ruggine, asfalto crepato, rumore di motori V8 elaborati e luci al sodio dei parcheggi desolati.",
+      "subLocations": [
+        {
+          "name": "Gellhorn Speedway & Drag Strip",
+          "type": "Circuito Motoristico",
+          "description": "Tracciato su asfalto dove ogni notte si tengono gare clandestine con scommesse milionarie tra equipaggi rivali."
+        },
+        {
+          "name": "Petrochemical Refining Zone",
+          "type": "Impianto Industriale",
+          "description": "Enorme labirinto di cisterne, tubature e ciminiere con guardie private armate e carichi chimici preziosi."
+        },
+        {
+          "name": "Abandoned Shipwreck Graveyard",
+          "type": "Cantiere Navale Dismesso",
+          "description": "Carcasse metalliche di mercantili arenati sulle rive fangose, usate come nascondigli per armi e merci clandestine."
+        },
+        {
+          "name": "Neon Strip Motels",
+          "type": "Zona Ricettiva Low-Cost",
+          "description": "Filotto di motel economici dove i ricercati trovano rifugio temporaneo lontano dalle telecamere di Vice City."
+        }
+      ],
+      "factions": [
+        {
+          "name": "Port Gellhorn Dockers Brotherhood",
+          "description": "Sindacato portuale corrotto che controlla i carichi in entrata e uscita dal terminal.",
+          "threatLevel": "Media"
+        },
+        {
+          "name": "Rust Belt Bikers (The Lost MC Leonida)",
+          "description": "Bikers dediti alla ricettazione di parti d'auto, contrabbando di armi e intimidazione violenta.",
+          "threatLevel": "Alta"
+        }
+      ],
+      "vehiclesPresent": [
+        "Declasse Tulip Muscle Car",
+        "Vapid Dominator GT",
+        "Karin Rebel 4x4",
+        "Western Bagger Motorcycle",
+        "Maibatsu Mule Heavy Transporter"
+      ],
+      "wildlife": [
+        "Cani randagi",
+        "Topi di porto",
+        "Avvoltoi collorosso",
+        "Pellicani"
+      ],
+      "collectibles": [
+        { "id": "gellhorn-wrench-01", "name": "Chiave Inglese d'Oro Port Gellhorn", "type": "Strumento Meccanico", "reward": "Sconto Riparazioni Auto 50%" },
+        { "id": "gellhorn-manifest-01", "name": "Manifesto di Carico Clandestino", "type": "Documento Doganale", "reward": "Consegna Veicoli Speciali al Garage" },
+        { "id": "gellhorn-badge-01", "name": "Stemma Lost MC Leonida", "type": "Trofeo Fazione", "reward": "Giacca di Pelle Rider Esclusiva" }
+      ]
+    },
+    {
+      "id": "ambrosia",
+      "slug": "ambrosia",
+      "name": "Ambrosia & Agricultural Heartland",
+      "category": "Agricolo & Rurale",
+      "coordinates": { "lat": 26.4500, "lng": -80.8500 },
+      "description": "Il cuore agricolo rurale dello Stato di Leonida. Grandi piantagioni di canna da zucchero, silos imponenti, mercati ortofrutticoli lungo le highway polverose e laboratori clandestini di lavorazione chimica.",
+      "atmosphere": "Campi sconfinati al tramonto, trattori lenti sulle statali, polvere alzata dal vento caldo, silos cigolanti e silenzio rurale spezzato da elicotteri della DEA.",
+      "subLocations": [
+        {
+          "name": "Ambrosia Sugar Cane Processing Mill",
+          "type": "Stabilimento Industriale Agricolo",
+          "description": "Complesso di caldaie e nastri trasportatori con magazzini immensi usati per lo stoccaggio di prodotti lavorati."
+        },
+        {
+          "name": "Dust Bowl Airstrip",
+          "type": "Pista di Volo Rurale",
+          "description": "Pista in erba usata da aerei da diserbo agricolo Duster riconvertiti per il trasporto rapido di sostanze."
+        },
+        {
+          "name": "County Livestock Auction",
+          "type": "Mercato Bestiame",
+          "description": "Recinti per bovini e cavalli dove si riuniscono allevatori e mediatori commerciali di tutta la contea."
+        }
+      ],
+      "factions": [
+        {
+          "name": "Ambrosia Sugar Magnates Security",
+          "description": "Guardie corporative armate a difesa delle piantagioni e degli impianti di raffinazione.",
+          "threatLevel": "Media"
+        },
+        {
+          "name": "Leonida Rural Task Force",
+          "description": "Pattuglie mobili della polizia di contea specializzate in perquisizioni di furgoni agricoli.",
+          "threatLevel": "Media"
+        }
+      ],
+      "vehiclesPresent": [
+        "Vapid Sadler Farm Truck",
+        "Stanley Tractor Deluxe",
+        "Western Company Duster Cropduster",
+        "Bravado Bison Utility",
+        "Canis Mesa Off-Road"
+      ],
+      "wildlife": [
+        "Bovini bradi",
+        "Volpi grigie",
+        "Falchi pescatori",
+        "Lepri della boscaglia"
+      ],
+      "collectibles": [
+        { "id": "ambrosia-brand-01", "name": "Marchio a Fuoco d'Argento", "type": "Cimelio di Campagna", "reward": "Sblocco Tatuaggio Cowboy" },
+        { "id": "ambrosia-cane-01", "name": "Campione Canna da Zucchero OGM", "type": "Campione Botanico", "reward": "Formula Rigenerazione Salute" },
+        { "id": "ambrosia-license-01", "name": "Targa d'Epoca Leonida Farm 1974", "type": "Targa da Collezione", "reward": "Personalizzazione Veicoli Classici" }
+      ]
+    },
+    {
+      "id": "mount-kalaga",
+      "slug": "mount-kalaga",
+      "name": "Mount Kalaga National Park & Forest Reserve",
+      "category": "Montagna, Foreste & Collinare",
+      "coordinates": { "lat": 26.8500, "lng": -81.4500 },
+      "description": "La contea settentrionale e montuosa di Leonida. Foreste di pini secolari, cave di pietra calcarea, fiumi a corso rapido e la massiccia vetta di Mount Kalaga, che ospita una gigantesca antenna parabolica di telecomunicazione e rifugi di sopravvivenza.",
+      "atmosphere": "Aria montana fresca, odore di resina e legna bruciata, sentieri sterrati per il motocross, silenzio interrotto solo da falchi pellegrini e temporali sui crinali.",
+      "subLocations": [
+        {
+          "name": "Mount Kalaga Radio Astronomy Array",
+          "type": "Stazione Scientifica & Telecomunicazioni",
+          "description": "Complesso di parabole radio federali circondato da recinzioni elettrificate e telecamere termiche ad alta sicurezza."
+        },
+        {
+          "name": "Redhill Limestone Quarry",
+          "type": "Cava Mineraria a Cielo Aperto",
+          "description": "Profondo cratere scavato nella roccia calcarea con ruspe giganti, nastri trasportatori e depositi di dinamite industriale."
+        },
+        {
+          "name": "Pine Ridge Logging Camp",
+          "type": "Accampamento Taglialegna",
+          "description": "Segheria a pieno regime lungo il fiume con cataste di tronchi galleggianti e motoseghe per combattimenti ravvicinati."
+        },
+        {
+          "name": "Whiskey Creek Rapid Descent",
+          "type": "Fiume Torrentizio",
+          "description": "Fiume impetuoso con rapide e cascate navigabili a bordo di kayak estremi o moto d'acqua agili."
+        }
+      ],
+      "factions": [
+        {
+          "name": "Kalaga Survivalist Movement",
+          "description": "Gruppo paramilitare che accumula munizioni e provviste in bunker sotterranei in attesa del collasso dello Stato.",
+          "threatLevel": "Estrema"
+        },
+        {
+          "name": "Kelly County Sheriff's Department",
+          "description": "Sceriffi rurali dotati di fuoristrada rinforzati con bullbar e fucili di precisione a lunga gittata.",
+          "threatLevel": "Media"
+        }
+      ],
+      "vehiclesPresent": [
+        "Canis Seminole Frontier 4x4",
+        "Maibatsu Sanchez Dirt Bike",
+        "Vapid Riata Off-Roader",
+        "Western Company Duster Biplane",
+        "HVY Dump Truck Industriale"
+      ],
+      "wildlife": [
+        "Orso nero americano",
+        "Cervi dalla coda bianca",
+        "Puma di montagna",
+        "Aquila calva testabianca",
+        "Coyote della boscaglia"
+      ],
+      "collectibles": [
+        { "id": "kalaga-dish-01", "name": "Modulo Ricevitore Segreto Parabola", "type": "Componente Tecnologico", "reward": "Sblocco Scanner Radar Militare" },
+        { "id": "kalaga-fossil-01", "name": "Dente di Megalodonte delle Cave", "type": "Fossile Preistorico", "reward": "Trofeo per Appartamento Attico" },
+        { "id": "kalaga-bunker-01", "name": "Chiave di Accesso Bunker Kalaga", "type": "Chiave Magnetica", "reward": "Accesso all'Arsenale Survivalist" }
+      ]
+    }
+  ],
+  "protagonists": [
+    {
+      "id": "lucia",
+      "name": "Lucia Caminos",
+      "alias": "La Mente Strategica",
+      "role": "Co-Protagonista Giocabile (Prima donna protagonista in un GTA 3D/HD)",
+      "background": "Nata e cresciuta nei quartieri popolari di Vice City, Lucia è un'ex detenuta del penitenziario statale di Leonida con una visione tattica lucida della criminalità organizzata. Esperta in pianificazione logistica, scasso di casseforti e negoziazione sotto stress estremo.",
+      "specialAbilities": [
+        "Eagle Eye Heist: Rallenta il tempo per individuare allarmi elettronici, telecamere nascoste e percorsi di fuga ottimali",
+        "Master Lockpicker: Scasso manuale e decifrazione codici cassaforte in tempi dimezzati rispetto alla media",
+        "De-Escalation Speech: Capacità di intimidire testimoni civili impedendo loro di allertare le forze dell'ordine durante le rapine veloci"
+      ],
+      "signatureWeapons": [
+        "Pistola compatta calibro 9mm satinata",
+        "Fucile a pompa ultracompatto 12-gauge con impugnatura a pistola",
+        "Dispositivo jammer per interferenze radio frequenze di polizia"
+      ],
+      "signatureVehicles": [
+        "Grotti Cheetah Classic colore Rosa Neon Vice",
+        "Pfister Comet S2 Cabriolet",
+        "Shitzu Tropic Speedboat"
+      ],
+      "status": "Attiva e ricercata dalle autorità federali dello Stato di Leonida"
+    },
+    {
+      "id": "jason",
+      "name": "Jason Duval",
+      "alias": "Il Braccio Operativo & Tiratore Scelto",
+      "role": "Co-Protagonista Giocabile",
+      "background": "Veterano con trascorsi militari e meccanico specializzato cresciuto tra i porti industriali di Port Gellhorn. Esperto in armi da fuoco ad alto calibro, guida evasiva su asfalto e sterrato, e combattimento corpo a corpo ad alto impatto.",
+      "specialAbilities": [
+        "Adrenaline Drift: Aumenta il controllo di trazione del veicolo permettendo curve a 90 gradi ad altissima velocità senza perdita di aderenza",
+        "Heavy Recoil Control: Precisione millimetrica nel fuoco a raffica prolungato con fucili d'assalto e carabine militari",
+        "Improvised Mechanic: Capacità di riparare al volo pneumatici forati e surriscaldamento motore sul ciglio della strada"
+      ],
+      "signatureWeapons": [
+        "Carabina tattica militare M4 con ottica olografica",
+        "Revolver pesante calibro .44 Magnum a canna lunga",
+        "Granate fumogene a rilascio istantaneo"
+      ],
+      "signatureVehicles": [
+        "Declasse Tulip Muscle Car 1972 potenziata con compressore volumetrico",
+        "Karin Rebel 4x4 Mudrunner",
+        "Maibatsu Sanchez Dirt Bike da cross"
+      ],
+      "status": "Attivo, partner e complice inseparabile di Lucia Caminos"
+    }
+  ],
+  "hardwareDeals": [
+    {
+      "id": "nvme-ps5-wd-2tb",
+      "title": "WD_BLACK SN850X 2TB NVMe M.2 SSD con Dissipatore Integrato",
+      "category": "SSD PS5",
+      "targetConsole": "Sony PlayStation 5 & PS5 Pro",
+      "badge": "Miglior Scelta Pre-load (228 GB)",
+      "price": "€149.99",
+      "originalPrice": "€189.99",
+      "affiliateUrl": "https://www.amazon.it/dp/B0B7CMZ3QH?tag=gta6portal-21",
+      "rating": "4.9/5",
+      "reviewsCount": "24.800+",
+      "storageCapacityGb": 2000,
+      "features": [
+        "Velocità di lettura sequenziale fino a 7.300 MB/s certificata per PS5",
+        "Dissipatore termico in alluminio a profilo ribassato pronto all'uso",
+        "Capacità di 2TB: spazio sufficiente per GTA 6 (228.5 GB) e oltre 15 altri titoli tripla A",
+        "Garanzia limitata del produttore Western Digital valida 5 anni"
+      ]
+    },
+    {
+      "id": "nvme-ps5-samsung-1tb",
+      "title": "Samsung 990 PRO 1TB NVMe M.2 SSD con Dissipatore Termico",
+      "category": "SSD PS5",
+      "targetConsole": "Sony PlayStation 5 & PS5 Slim",
+      "badge": "Massime Prestazioni Lettura",
+      "price": "€109.90",
+      "originalPrice": "€134.90",
+      "affiliateUrl": "https://www.amazon.it/dp/B0BHJDY57J?tag=gta6portal-21",
+      "rating": "4.8/5",
+      "reviewsCount": "18.300+",
+      "storageCapacityGb": 1000,
+      "features": [
+        "Velocità estrema di lettura fino a 7.450 MB/s e scrittura a 6.900 MB/s",
+        "Controllo termico intelligente Samsung Dynamic Thermal Guard",
+        "Slot compatibile al 100% con vano interno PS5 e PS5 Slim",
+        "Efficienza energetica ottimizzata del 50% rispetto al modello 980 PRO"
+      ]
+    },
+    {
+      "id": "xbox-seagate-card-2tb",
+      "title": "Seagate Storage Expansion Card 2TB Ufficiale per Xbox Series X|S",
+      "category": "Storage Xbox",
+      "targetConsole": "Microsoft Xbox Series X & Series S",
+      "badge": "Espansione Plug & Play Ufficiale",
+      "price": "€229.00",
+      "originalPrice": "€279.00",
+      "affiliateUrl": "https://www.amazon.it/dp/B09BJUXMD2?tag=gta6portal-21",
+      "rating": "4.8/5",
+      "reviewsCount": "12.900+",
+      "storageCapacityGb": 2000,
+      "features": [
+        "Inserimento immediato nello slot posteriore proprietario della console Xbox",
+        "Replica fedele dell'architettura Xbox Velocity Architecture a 2.4 GB/s",
+        "Consente di scaricare e avviare direttamente il Pre-load di GTA 6 da 231 GB",
+        "Nessun cacciavite o smontaggio richiesto: pronto in 5 secondi"
+      ]
+    },
+    {
+      "id": "psn-card-80-euro",
+      "title": "PlayStation Network Gift Card Ricarica Portafoglio €80",
+      "category": "Ricarica Store",
+      "targetConsole": "Sony PlayStation Network (Italia)",
+      "badge": "Pre-Order Digitale & Pre-load Immediato",
+      "price": "€76.99",
+      "originalPrice": "€80.00",
+      "affiliateUrl": "https://www.amazon.it/dp/B0044B9Z0K?tag=gta6portal-21",
+      "rating": "4.9/5",
+      "reviewsCount": "54.000+",
+      "storageCapacityGb": 0,
+      "features": [
+        "Codice digitale consegnato via email in pochi istanti post-acquisto",
+        "Copertura completa per il pre-order di GTA 6 Standard Edition (€79.99)",
+        "Sblocca all'istante l'avvio del download del Pre-load da 228.5 GB su PS5",
+        "Nessuna commissione sul credito e riscatto immediato da console o app"
+      ]
+    },
+    {
+      "id": "xbox-card-80-euro",
+      "title": "Xbox Gift Card Ricarica Digitale Ufficiale Microsoft €80",
+      "category": "Ricarica Store",
+      "targetConsole": "Microsoft Xbox Series X|S Store",
+      "badge": "Pre-Order Digitale Microsoft Store",
+      "price": "€77.50",
+      "originalPrice": "€80.00",
+      "affiliateUrl": "https://www.amazon.it/dp/B07T4RNM5H?tag=gta6portal-21",
+      "rating": "4.9/5",
+      "reviewsCount": "39.200+",
+      "storageCapacityGb": 0,
+      "features": [
+        "Codice digitale alfanumerico pronto per il riscatto sul tuo account Microsoft",
+        "Acquista GTA 6 con saldo prepagato e avvia subito il download di 231 GB",
+        "Compatibile universalmente su console Xbox Series X e Series S",
+        "Credito senza scadenza spendibile anche su pass ed edizioni deluxe"
+      ]
+    },
+    {
+      "id": "pulse-elite-headset",
+      "title": "Sony PULSE Elite Cuffie Wireless con Driver Magnetici Planari",
+      "category": "Cuffie",
+      "targetConsole": "PlayStation 5 & PS5 Pro",
+      "badge": "Tempest 3D Audio Immersione Totale",
+      "price": "€149.99",
+      "originalPrice": "€149.99",
+      "affiliateUrl": "https://www.amazon.it/dp/B0CMQGVDH9?tag=gta6portal-21",
+      "rating": "4.7/5",
+      "reviewsCount": "4.600+",
+      "storageCapacityGb": 0,
+      "features": [
+        "Driver magnetici planari da studio per bassi profondi e suoni nitidi",
+        "Compatibilità nativa perfetta con il motore acustico Tempest 3D di GTA 6",
+        "Microfono retrattile con cancellazione del rumore potenziata da intelligenza artificiale",
+        "Fino a 30 ore di autonomia con ricarica rapida e supporto di ricarica a muro incluso"
+      ]
+    }
+  ]
+}

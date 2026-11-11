@@ -1,0 +1,131 @@
+---
+// Google Consent Mode v2 & GDPR Privacy Banner
+---
+
+<!-- Consent Banner Modal / Floating Bar -->
+<div
+  id="gdpr-consent-banner"
+  class="fixed bottom-4 left-4 right-4 sm:left-auto sm:right-6 sm:max-w-md z-50 p-5 rounded-2xl bg-surface-100/95 border border-surface-300 shadow-2xl backdrop-blur-xl transition-all duration-300 opacity-0 translate-y-4 pointer-events-none"
+  role="dialog"
+  aria-labelledby="consent-title"
+  aria-describedby="consent-desc"
+>
+  <div class="flex items-start gap-3 mb-3">
+    <div class="w-8 h-8 rounded-lg bg-miami-cyan/20 border border-miami-cyan/40 text-miami-cyan flex items-center justify-center shrink-0 mt-0.5">
+      <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/>
+      </svg>
+    </div>
+    <div>
+      <h3 id="consent-title" class="text-sm font-bold text-white">
+        Informativa Privacy &amp; Consenso Cookie (GDPR)
+      </h3>
+      <p id="consent-desc" class="text-xs text-gray-300 mt-1 leading-relaxed">
+        Utilizziamo cookie tecnici per salvare i progressi del tracker 100% e cookie analitici/pubblicitari di terze parti (Google AdSense) per sostenere i costi dell'infrastruttura.
+      </p>
+    </div>
+  </div>
+
+  <div class="flex items-center justify-between text-[11px] text-gray-400 mb-3 px-1">
+    <span>Google Consent Mode v2 Conforme</span>
+    <a href="/legal" class="text-miami-cyan hover:underline">Informativa Estesa</a>
+  </div>
+
+  <div class="flex flex-col sm:flex-row gap-2">
+    <button
+      id="btn-consent-accept-all"
+      type="button"
+      class="flex-1 px-3 py-2 rounded-xl bg-gradient-to-r from-miami-pink to-miami-orange text-white text-xs font-bold shadow-neon-pink hover:opacity-95 transition-opacity text-center cursor-pointer"
+    >
+      Accetta Tutti
+    </button>
+    <button
+      id="btn-consent-reject-all"
+      type="button"
+      class="flex-1 px-3 py-2 rounded-xl bg-surface-200 hover:bg-surface-300 text-gray-200 text-xs font-semibold border border-surface-300 transition-colors text-center cursor-pointer"
+    >
+      Solo Necessari
+    </button>
+  </div>
+</div>
+
+<script>
+  // Declare global gtag function for TypeScript
+  declare global {
+    interface Window {
+      dataLayer: unknown[];
+      gtag: (...args: unknown[]) => void;
+    }
+  }
+
+  function initConsentMode() {
+    const banner = document.getElementById('gdpr-consent-banner');
+    const acceptBtn = document.getElementById('btn-consent-accept-all');
+    const rejectBtn = document.getElementById('btn-consent-reject-all');
+
+    if (!banner) return;
+
+    const storageKey = 'gta6_consent_preferences';
+    const saved = localStorage.getItem(storageKey);
+
+    if (saved === 'granted') {
+      if (typeof window.gtag === 'function') {
+        window.gtag('consent', 'update', {
+          ad_storage: 'granted',
+          analytics_storage: 'granted',
+          ad_user_data: 'granted',
+          ad_personalization: 'granted',
+        });
+      }
+    } else if (saved === 'denied') {
+      if (typeof window.gtag === 'function') {
+        window.gtag('consent', 'update', {
+          ad_storage: 'denied',
+          analytics_storage: 'denied',
+          ad_user_data: 'denied',
+          ad_personalization: 'denied',
+        });
+      }
+    } else {
+      // First visit: show banner
+      banner.classList.remove('opacity-0', 'translate-y-4', 'pointer-events-none');
+    }
+
+    if (acceptBtn) {
+      acceptBtn.addEventListener('click', () => {
+        localStorage.setItem(storageKey, 'granted');
+        if (typeof window.gtag === 'function') {
+          window.gtag('consent', 'update', {
+            ad_storage: 'granted',
+            analytics_storage: 'granted',
+            ad_user_data: 'granted',
+            ad_personalization: 'granted',
+          });
+        }
+        banner.classList.add('opacity-0', 'translate-y-4', 'pointer-events-none');
+      });
+    }
+
+    if (rejectBtn) {
+      rejectBtn.addEventListener('click', () => {
+        localStorage.setItem(storageKey, 'denied');
+        if (typeof window.gtag === 'function') {
+          window.gtag('consent', 'update', {
+            ad_storage: 'denied',
+            analytics_storage: 'denied',
+            ad_user_data: 'denied',
+            ad_personalization: 'denied',
+          });
+        }
+        banner.classList.add('opacity-0', 'translate-y-4', 'pointer-events-none');
+      });
+    }
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initConsentMode);
+  } else {
+    initConsentMode();
+  }
+</script>
+

@@ -1,0 +1,147 @@
+---
+interface Props {
+  videoId: string;
+  title: string;
+  duration?: string;
+  posterQuality?: 'maxres' | 'hq';
+  soundtrack?: string;
+}
+
+const {
+  videoId,
+  title,
+  duration,
+  posterQuality = 'maxres',
+  soundtrack,
+} = Astro.props;
+
+const isPlaceholderId = !videoId || videoId === 'OFFICIAL_ROCKSTAR_NEWSWIRE' || videoId.startsWith('launch-') || videoId.startsWith('preload-') || videoId.startsWith('the-festival');
+const posterUrl = isPlaceholderId
+  ? ''
+  : `https://i.ytimg.com/vi/${videoId}/${posterQuality === 'maxres' ? 'maxresdefault' : 'hqdefault'}.jpg`;
+---
+
+<div
+  class="relative w-full aspect-video rounded-2xl overflow-hidden bg-surface-200 border border-surface-300 shadow-xl group cursor-pointer select-none lite-yt-player"
+  data-videoid={videoId}
+  data-title={title}
+  data-is-placeholder={isPlaceholderId ? 'true' : 'false'}
+  role="button"
+  tabindex="0"
+  aria-label={`Riproduci video ufficiale: ${title}`}
+>
+  {isPlaceholderId ? (
+    <div class="w-full h-full bg-gradient-to-br from-surface-100 via-surface-200 to-background flex flex-col items-center justify-center p-6 relative overflow-hidden">
+      <div class="absolute inset-0 opacity-10 bg-[radial-gradient(#ff2a85_1px,transparent_1px)] [background-size:20px_20px] pointer-events-none"></div>
+      <div class="absolute -right-12 -bottom-12 w-64 h-64 bg-miami-pink/20 rounded-full blur-3xl pointer-events-none"></div>
+      <div class="absolute -left-12 -top-12 w-64 h-64 bg-miami-cyan/20 rounded-full blur-3xl pointer-events-none"></div>
+
+      <div class="relative z-10 flex flex-col items-center text-center max-w-md">
+        <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-miami-pink to-miami-cyan p-0.5 shadow-neon-pink mb-4 group-hover:scale-110 transition-transform">
+          <div class="w-full h-full bg-background rounded-[10px] flex items-center justify-center font-black text-xl text-transparent bg-clip-text bg-gradient-to-r from-miami-pink to-miami-cyan">
+            VI
+          </div>
+        </div>
+        <span class="text-xs font-bold text-miami-cyan uppercase tracking-widest mb-1">Rockstar Games Official Showcase</span>
+        <h4 class="text-lg sm:text-xl font-black text-white line-clamp-2 mb-2 leading-tight drop-shadow-md">
+          {title}
+        </h4>
+        {soundtrack && (
+          <p class="text-xs text-gray-300 mb-4 line-clamp-1">{soundtrack}</p>
+        )}
+        <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-miami-pink/20 border border-miami-pink/50 text-xs font-bold text-white shadow-neon-pink">
+          <svg class="w-4 h-4 fill-current text-miami-pink" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+          <span>Guarda sul Portale Rockstar Newswire</span>
+        </div>
+      </div>
+    </div>
+  ) : (
+    <img
+      src={posterUrl}
+      alt={`Copertina ufficiale per ${title}`}
+      loading="lazy"
+      decoding="async"
+      class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+    />
+  )}
+
+  <!-- Ambient Dark Gradient Overlay -->
+  <div class="absolute inset-0 bg-gradient-to-t from-background/95 via-background/30 to-transparent group-hover:via-background/15 transition-all duration-300 pointer-events-none"></div>
+
+  <!-- Duration Badge -->
+  {duration && (
+    <div class="absolute bottom-3 right-3 px-2.5 py-1 rounded-md bg-black/80 border border-white/10 text-xs font-mono font-semibold text-gray-200 backdrop-blur-sm shadow-md pointer-events-none">
+      {duration}
+    </div>
+  )}
+
+  <!-- Play Button (Neon Vice Style) -->
+  {!isPlaceholderId && (
+    <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
+      <div class="w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-surface-100/90 border-2 border-miami-pink flex items-center justify-center shadow-neon-pink group-hover:scale-110 group-hover:bg-miami-pink transition-all duration-300">
+        <svg class="w-7 h-7 sm:w-8 sm:h-8 text-white ml-1 transition-transform group-hover:scale-110" fill="currentColor" viewBox="0 0 24 24">
+          <path d="M8 5v14l11-7z" />
+        </svg>
+      </div>
+    </div>
+  )}
+
+  <!-- Video Title Bar at top -->
+  <div class="absolute top-0 inset-x-0 p-4 bg-gradient-to-b from-black/80 via-black/40 to-transparent pointer-events-none">
+    <h3 class="text-sm sm:text-base font-bold text-white line-clamp-1 drop-shadow-md">
+      {title}
+    </h3>
+    <span class="text-[11px] text-gray-300 flex items-center gap-1.5 mt-0.5">
+      <span class="w-1.5 h-1.5 rounded-full bg-red-500 inline-block"></span>
+      Embed Riservato • youtube-nocookie.com
+    </span>
+  </div>
+</div>
+
+<script>
+  function setupLitePlayers() {
+    const players = document.querySelectorAll<HTMLElement>('.lite-yt-player');
+
+    players.forEach((player) => {
+      if (player.dataset.initialized) return;
+      player.dataset.initialized = 'true';
+
+      const activate = () => {
+        const videoId = player.getAttribute('data-videoid');
+        const isPlaceholder = player.getAttribute('data-is-placeholder') === 'true';
+        const title = player.getAttribute('data-title') || 'Video ufficiale GTA VI';
+
+        if (!videoId) return;
+
+        if (isPlaceholder || videoId === 'OFFICIAL_ROCKSTAR_NEWSWIRE') {
+          window.open('https://www.rockstargames.com/VI', '_blank', 'noopener,noreferrer');
+          return;
+        }
+
+        // Dynamically inject safe iframe in youtube-nocookie.com mode
+        const iframe = document.createElement('iframe');
+        iframe.setAttribute('src', `https://www.youtube-nocookie.com/embed/${videoId}?autoplay=1&rel=0&modestbranding=1`);
+        iframe.setAttribute('title', title);
+        iframe.setAttribute('allow', 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture');
+        iframe.setAttribute('allowfullscreen', 'true');
+        iframe.className = 'w-full h-full absolute inset-0 border-0 rounded-2xl';
+
+        player.replaceChildren(iframe);
+      };
+
+      player.addEventListener('click', activate);
+      player.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          activate();
+        }
+      });
+    });
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', setupLitePlayers);
+  } else {
+    setupLitePlayers();
+  }
+</script>

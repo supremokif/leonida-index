@@ -1,0 +1,196 @@
+---
+import db from '../data/gta6_db.json';
+
+const targetDateStr = db.releaseInfo.releaseDate; // "2026-11-19T00:00:00" without 'Z'
+---
+
+<div
+  id="launch-hero-container"
+  class="relative w-full max-w-5xl mx-auto my-8 p-6 sm:p-10 rounded-3xl bg-surface-100/90 border border-miami-pink/40 shadow-neon-pink backdrop-blur-xl overflow-hidden"
+  data-target={targetDateStr}
+>
+  <!-- Background Glow Orbs -->
+  <div class="absolute -right-20 -bottom-20 w-72 h-72 bg-miami-pink/15 rounded-full blur-3xl pointer-events-none"></div>
+  <div class="absolute -left-20 -top-20 w-72 h-72 bg-miami-cyan/15 rounded-full blur-3xl pointer-events-none"></div>
+
+  <!-- STATE A: PRE-LAUNCH COUNTDOWN STATE -->
+  <div id="hero-countdown-state" class="relative z-10 flex flex-col items-center text-center">
+    <!-- Active Pre-load notification pill -->
+    <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-surface-200 border border-miami-pink/50 text-xs sm:text-sm font-bold text-miami-pink uppercase tracking-wider mb-4 shadow-sm">
+      <span class="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse"></span>
+      <span>PRE-LOAD ATTIVO • USCITA UFFICIALE 19 NOVEMBRE 2026</span>
+    </div>
+
+    <h2 class="text-3xl sm:text-5xl md:text-6xl font-black text-white tracking-tight uppercase mb-3">
+      CONTO ALLA ROVESCIA <span class="bg-gradient-to-r from-miami-pink via-miami-orange to-miami-cyan bg-clip-text text-transparent">GTA 6</span>
+    </h2>
+
+    <p class="text-gray-300 text-sm sm:text-base max-w-2xl mb-8 leading-relaxed">
+      Sblocco rolling alla mezzanotte esatta del tuo fuso orario locale. I server di pre-load su PlayStation 5 e Xbox Series X|S sono operativi per il download di <strong>228.5 GB</strong>.
+    </p>
+
+    <!-- Digits Grid -->
+    <div class="grid grid-cols-4 gap-3 sm:gap-6 w-full max-w-3xl mb-8" role="timer" aria-live="polite">
+      <!-- Days -->
+      <div class="flex flex-col items-center justify-center p-4 sm:p-6 rounded-2xl bg-surface-50/90 border border-surface-300 hover:border-miami-pink/60 transition-colors shadow-lg">
+        <span class="text-3xl sm:text-6xl md:text-7xl font-black text-white font-mono tracking-tight" id="hero-cd-days">--</span>
+        <span class="text-[11px] sm:text-xs font-bold text-gray-400 uppercase tracking-widest mt-2">Giorni</span>
+      </div>
+
+      <!-- Hours -->
+      <div class="flex flex-col items-center justify-center p-4 sm:p-6 rounded-2xl bg-surface-50/90 border border-surface-300 hover:border-miami-pink/60 transition-colors shadow-lg">
+        <span class="text-3xl sm:text-6xl md:text-7xl font-black text-white font-mono tracking-tight" id="hero-cd-hours">--</span>
+        <span class="text-[11px] sm:text-xs font-bold text-gray-400 uppercase tracking-widest mt-2">Ore</span>
+      </div>
+
+      <!-- Minutes -->
+      <div class="flex flex-col items-center justify-center p-4 sm:p-6 rounded-2xl bg-surface-50/90 border border-surface-300 hover:border-miami-cyan/60 transition-colors shadow-lg">
+        <span class="text-3xl sm:text-6xl md:text-7xl font-black text-white font-mono tracking-tight" id="hero-cd-minutes">--</span>
+        <span class="text-[11px] sm:text-xs font-bold text-gray-400 uppercase tracking-widest mt-2">Minuti</span>
+      </div>
+
+      <!-- Seconds -->
+      <div class="flex flex-col items-center justify-center p-4 sm:p-6 rounded-2xl bg-surface-50/90 border border-surface-300 hover:border-miami-cyan/60 transition-colors shadow-lg">
+        <span class="text-3xl sm:text-6xl md:text-7xl font-black text-miami-pink font-mono tracking-tight" id="hero-cd-seconds">--</span>
+        <span class="text-[11px] sm:text-xs font-bold text-gray-400 uppercase tracking-widest mt-2">Secondi</span>
+      </div>
+    </div>
+
+    <!-- Quick Status Footer -->
+    <div class="flex flex-wrap items-center justify-center gap-4 text-xs text-gray-300">
+      <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-md bg-surface-200 border border-surface-300">
+        <span class="text-miami-cyan font-bold">CET Italia:</span> 00:00 Mezzanotte (19 Nov)
+      </span>
+      <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-md bg-surface-200 border border-surface-300">
+        <span class="text-miami-pink font-bold">EST Miami:</span> 00:00 Mezzanotte (19 Nov)
+      </span>
+      <a href="/storage-calculator" class="text-miami-cyan hover:underline font-bold">
+        Verifica Spazio SSD Console →
+      </a>
+    </div>
+  </div>
+
+  <!-- STATE B: POST-LAUNCH 100% COMPLETION DASHBOARD (Auto-switched from Nov 19 onwards) -->
+  <div id="hero-launched-state" class="hidden relative z-10 flex flex-col items-center text-center">
+    <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-emerald-950/80 border border-emerald-500/50 text-xs sm:text-sm font-bold text-emerald-400 uppercase tracking-wider mb-4 shadow-neon-pink">
+      <span class="w-3 h-3 rounded-full bg-emerald-400 animate-ping"></span>
+      <span>DISPONIBILE ORA MONDIALMENTE • GTA VI È USCITO</span>
+    </div>
+
+    <h2 class="text-3xl sm:text-5xl font-black text-white tracking-tight uppercase mb-3">
+      BENVENUTO A <span class="bg-gradient-to-r from-miami-pink to-miami-cyan bg-clip-text text-transparent">LEONIDA</span>
+    </h2>
+
+    <p class="text-gray-300 text-sm sm:text-base max-w-xl mb-6">
+      Il gioco è ufficialmente accessibile. Monitora il tuo avanzamento al 100% verso il trofeo di platino e la conquista di Vice City.
+    </p>
+
+    <!-- Completion Dashboard Progress Bar -->
+    <div class="w-full max-w-xl p-5 rounded-2xl bg-surface-50 border border-surface-300 shadow-xl mb-6 text-left">
+      <div class="flex items-center justify-between text-xs font-bold uppercase tracking-wider mb-2">
+        <span class="text-white">Progresso Completamento Globale 100%</span>
+        <span id="hero-progress-percent" class="text-miami-pink text-sm">0%</span>
+      </div>
+      <div class="w-full h-3 rounded-full bg-surface-200 overflow-hidden border border-surface-300">
+        <div id="hero-progress-bar" class="h-full bg-gradient-to-r from-miami-pink via-miami-orange to-miami-cyan w-0 transition-all duration-500"></div>
+      </div>
+      <div class="flex items-center justify-between mt-3 text-xs text-gray-400">
+        <span id="hero-progress-count">0 di 19 Collezionabili &amp; Attività Spuntate</span>
+        <a href="/tracker" class="text-miami-cyan font-bold hover:underline">Apri Tracker Completo →</a>
+      </div>
+    </div>
+
+    <div class="flex flex-wrap items-center justify-center gap-4">
+      <a
+        href="/tracker"
+        class="px-6 py-3 rounded-xl bg-gradient-to-r from-miami-pink to-miami-orange text-white font-extrabold text-sm shadow-neon-pink hover:scale-105 transition-transform"
+      >
+        Gestisci Checklist 100% Leonida
+      </a>
+      <a
+        href="/leonida/vice-city"
+        class="px-6 py-3 rounded-xl bg-surface-200 hover:bg-surface-300 text-white font-bold text-sm border border-surface-300 transition-colors"
+      >
+        Esplora Mappa e Punti di Interesse
+      </a>
+    </div>
+  </div>
+</div>
+
+<script>
+  function initHeroState() {
+    const container = document.getElementById('launch-hero-container');
+    if (!container) return;
+
+    const targetDateAttr = container.getAttribute('data-target') || '2026-11-19T00:00:00';
+    // Local date parsing without 'Z' ensures local midnight rolling calculation
+    const targetTimestamp = new Date(targetDateAttr).getTime();
+
+    const countdownState = document.getElementById('hero-countdown-state');
+    const launchedState = document.getElementById('hero-launched-state');
+
+    const daysEl = document.getElementById('hero-cd-days');
+    const hoursEl = document.getElementById('hero-cd-hours');
+    const minutesEl = document.getElementById('hero-cd-minutes');
+    const secondsEl = document.getElementById('hero-cd-seconds');
+
+    const progressBar = document.getElementById('hero-progress-bar');
+    const progressPercent = document.getElementById('hero-progress-percent');
+    const progressCount = document.getElementById('hero-progress-count');
+
+    function checkSwitchAndTick() {
+      const now = Date.now();
+      const diff = targetTimestamp - now;
+
+      if (diff <= 0) {
+        // Switch to State B: Post-launch dashboard
+        if (countdownState) countdownState.classList.add('hidden');
+        if (launchedState) launchedState.classList.remove('hidden');
+
+        // Read user progress from localStorage
+        try {
+          const raw = localStorage.getItem('leonida_100_tracker');
+          if (raw) {
+            const parsed = JSON.parse(raw);
+            if (parsed && typeof parsed === 'object') {
+              const keys = Object.keys(parsed).filter(
+                (k) => k !== '__proto__' && k !== 'constructor' && k !== 'prototype'
+              );
+              const totalItems = 19; // Known items across 6 regions
+              const completedCount = keys.filter((k) => parsed[k] === true).length;
+              const pct = Math.min(100, Math.round((completedCount / totalItems) * 100));
+
+              if (progressPercent) progressPercent.textContent = `${pct}%`;
+              if (progressBar) progressBar.style.width = `${pct}%`;
+              if (progressCount) progressCount.textContent = `${completedCount} di ${totalItems} Collezionabili & Attività Spuntate`;
+            }
+          }
+        } catch {
+          // Keep default safe 0%
+        }
+        return;
+      }
+
+      // Pre-launch state: update tick
+      const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+      if (daysEl) daysEl.textContent = String(days).padStart(2, '0');
+      if (hoursEl) hoursEl.textContent = String(hours).padStart(2, '0');
+      if (minutesEl) minutesEl.textContent = String(minutes).padStart(2, '0');
+      if (secondsEl) secondsEl.textContent = String(seconds).padStart(2, '0');
+    }
+
+    checkSwitchAndTick();
+    setInterval(checkSwitchAndTick, 1000);
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initHeroState);
+  } else {
+    initHeroState();
+  }
+</script>
+

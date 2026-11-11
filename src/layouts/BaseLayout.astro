@@ -1,0 +1,404 @@
+---
+import '../styles/global.css';
+import ConsentBanner from '../components/ConsentBanner.astro';
+import db from '../data/gta6_db.json';
+
+interface Props {
+  title: string;
+  description: string;
+  canonicalPath?: string;
+  ogImage?: string;
+  breadcrumbs?: Array<{ name: string; url: string }>;
+}
+
+const {
+  title,
+  description,
+  canonicalPath = '',
+  ogImage = '/og-card.svg',
+  breadcrumbs = [],
+} = Astro.props;
+
+const siteUrl = 'https://leonidaindex.com';
+const canonicalUrl = `${siteUrl}${canonicalPath}`;
+const formattedOgImage = ogImage.startsWith('http') ? ogImage : `${siteUrl}${ogImage}`;
+
+// Sanitize helper for XSS prevention in JSON-LD
+function safeJsonLd(obj: unknown): string {
+  return JSON.stringify(obj)
+    .replace(/</g, '\\u003c')
+    .replace(/>/g, '\\u003e')
+    .replace(/&/g, '\\u0026');
+}
+
+// Build BreadcrumbList items
+const breadcrumbItems = [
+  {
+    '@type': 'ListItem',
+    position: 1,
+    name: 'Home',
+    item: siteUrl,
+  },
+  ...breadcrumbs.map((b, idx) => ({
+    '@type': 'ListItem',
+    position: idx + 2,
+    name: b.name,
+    item: b.url.startsWith('http') ? b.url : `${siteUrl}${b.url}`,
+  })),
+];
+
+// Schema.org @graph definition
+const schemaGraph = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'WebSite',
+      '@id': `${siteUrl}/#website`,
+      url: siteUrl,
+      name: 'Leonida Index - GTA VI Launch Hub & Database',
+      description: 'Portale e web-app indipendente su Grand Theft Auto VI: orari di sblocco, conto alla rovescia, archivio trailer, tracker 100% e mappa di Leonida.',
+      inLanguage: 'it-IT',
+    },
+    {
+      '@type': 'VideoGame',
+      '@id': `${siteUrl}/#game`,
+      name: db.releaseInfo.gameTitle,
+      alternateName: ['GTA 6', 'GTA VI', 'Grand Theft Auto 6'],
+      description: 'Grand Theft Auto VI è il nuovo videogioco open world di Rockstar Games ambientato nello Stato di Leonida, in uscita il 19 Novembre 2026.',
+      datePublished: db.releaseInfo.releaseDate,
+      gamePlatform: db.releaseInfo.platforms,
+      publisher: {
+        '@type': 'Organization',
+        name: db.releaseInfo.developer,
+        url: 'https://www.rockstargames.com',
+      },
+      genre: ['Action-adventure', 'Open World', 'Crime Simulation'],
+      inLanguage: 'it-IT',
+      image: `${siteUrl}/og-card.svg`,
+      operatingSystem: 'PlayStation 5 OS, Xbox OS',
+    },
+    {
+      '@type': 'WebApplication',
+      '@id': `${siteUrl}/#webapp`,
+      name: 'Leonida Index - GTA VI 100% Completion Tracker & Storage Calculator',
+      url: siteUrl,
+      applicationCategory: 'UtilityApplication',
+      operatingSystem: 'All Modern Browsers',
+      browserRequirements: 'Requires JavaScript. Requires HTML5.',
+    },
+    {
+      '@type': 'ItemList',
+      '@id': `${siteUrl}/#trailers`,
+      name: 'Archivio Trailer Ufficiali Grand Theft Auto VI',
+      itemListElement: db.trailers.map((t, index) => ({
+        '@type': 'ListItem',
+        position: index + 1,
+        item: {
+          '@type': 'VideoObject',
+          name: t.title,
+          description: t.summary,
+          uploadDate: `${t.publishDate}T12:00:00Z`,
+          duration: `PT${Math.floor(t.durationSeconds / 60)}M${t.durationSeconds % 60}S`,
+          thumbnailUrl: t.youtubeId.startsWith('launch-') || t.youtubeId === 'OFFICIAL_ROCKSTAR_NEWSWIRE'
+            ? `${siteUrl}/og-card.svg`
+            : `https://i.ytimg.com/vi/${t.youtubeId}/maxresdefault.jpg`,
+          embedUrl: t.youtubeId.startsWith('launch-') || t.youtubeId === 'OFFICIAL_ROCKSTAR_NEWSWIRE'
+            ? 'https://www.rockstargames.com/VI'
+            : `https://www.youtube-nocookie.com/embed/${t.youtubeId}`,
+        },
+      })),
+    },
+    {
+      '@type': 'FAQPage',
+      '@id': `${siteUrl}/#faq`,
+      mainEntity: db.releaseInfo.faq.map((f) => ({
+        '@type': 'Question',
+        name: f.question,
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: f.answer,
+        },
+      })),
+    },
+    {
+      '@type': 'BreadcrumbList',
+      '@id': `${canonicalUrl}/#breadcrumb`,
+      itemListElement: breadcrumbItems,
+    },
+  ],
+};
+
+const currentPath = Astro.url.pathname;
+const navItems = [
+  { href: '/', label: 'Home' },
+  { href: '/tracker', label: '100% Tracker' },
+  { href: '/storage-calculator', label: 'Calcolatore SSD' },
+  { href: '/trailers/trailer-1', label: 'Archivio Trailer' },
+  { href: '/leonida/vice-city', label: 'Mappa Leonida' },
+  { href: '/legal', label: 'Info & Disclaimer' },
+];
+---
+
+<!doctype html>
+<html lang="it" class="dark scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#0a0a0f" />
+    <meta name="color-scheme" content="dark" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="canonical" href={canonicalUrl} />
+
+    <!-- Technical SEO -->
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+    <meta name="author" content="Leonida Index Intelligence Team" />
+
+    <!-- Open Graph / Social -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={formattedOgImage} />
+    <meta property="og:site_name" content="Leonida Index" />
+    <meta property="og:locale" content="it_IT" />
+
+    <!-- Twitter Cards -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content={canonicalUrl} />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={formattedOgImage} />
+
+    <!-- LLM Direct Endpoints discovery links -->
+    <link rel="help" type="text/plain" href="/llms.txt" title="Canonical LLM Fact Sheet" />
+    <link rel="alternate" type="text/plain" href="/llms-full.txt" title="Full Exhaustive LLM Knowledge Base" />
+    <link rel="alternate" type="application/json" href="/api/gta6-facts.json" title="Verified Facts JSON API" />
+
+    <!-- Resource Preconnects -->
+    <link rel="preconnect" href="https://i.ytimg.com" crossorigin />
+    <link rel="preconnect" href="https://www.youtube-nocookie.com" />
+
+    <!-- Google Consent Mode v2 Default Script (EU GDPR Compliant) -->
+    <script is:inline>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('consent', 'default', {
+        'ad_storage': 'denied',
+        'analytics_storage': 'denied',
+        'ad_user_data': 'denied',
+        'ad_personalization': 'denied'
+      });
+    </script>
+
+    <!-- Schema.org JSON-LD Sanitized Graph -->
+    <script type="application/ld+json" set:html={safeJsonLd(schemaGraph)} />
+  </head>
+  <body class="bg-background text-gray-100 min-h-screen flex flex-col selection:bg-miami-pink selection:text-white font-sans antialiased">
+    <!-- Main Header -->
+    <header class="sticky top-0 z-40 w-full bg-background/85 backdrop-blur-xl border-b border-surface-200/80">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between gap-4">
+        <!-- Logo -->
+        <a href="/" class="flex items-center gap-3 group">
+          <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-miami-pink via-miami-orange to-miami-cyan p-0.5 shadow-neon-pink group-hover:scale-105 transition-transform">
+            <div class="w-full h-full bg-background rounded-[10px] flex items-center justify-center font-black text-lg tracking-tighter text-transparent bg-clip-text bg-gradient-to-r from-miami-pink to-miami-cyan">
+              VI
+            </div>
+          </div>
+          <div>
+            <span class="text-xl font-black tracking-tight text-white group-hover:text-miami-pink transition-colors">
+              LEONIDA <span class="text-miami-cyan">INDEX</span>
+            </span>
+            <span class="block text-[10px] uppercase tracking-widest text-gray-400 font-semibold">
+              Unofficial GTA VI Hub
+            </span>
+          </div>
+        </a>
+
+        <!-- Desktop Navigation -->
+        <nav class="hidden lg:flex items-center gap-1.5" aria-label="Navigazione principale">
+          {navItems.map((item) => {
+            const isActive = currentPath === item.href || (item.href !== '/' && currentPath.startsWith(item.href));
+            return (
+              <a
+                href={item.href}
+                class={`px-3.5 py-2 rounded-xl text-xs font-bold transition-all ${
+                  isActive
+                    ? 'bg-surface-200 text-miami-pink border border-miami-pink/50 shadow-sm'
+                    : 'text-gray-300 hover:text-white hover:bg-surface-100'
+                }`}
+              >
+                {item.label}
+              </a>
+            );
+          })}
+        </nav>
+
+        <!-- Right Quick Action / Pre-load status -->
+        <div class="hidden sm:flex items-center gap-3">
+          <div class="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-surface-100 border border-surface-300 text-xs">
+            <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+            <span class="text-gray-300 font-medium">Pre-load: <strong class="text-white">Attivo</strong></span>
+          </div>
+          <a
+            href="/storage-calculator"
+            class="px-3.5 py-1.5 rounded-lg bg-gradient-to-r from-miami-pink to-miami-orange text-white text-xs font-bold shadow-neon-pink hover:opacity-95 transition-all"
+          >
+            Check SSD
+          </a>
+        </div>
+
+        <!-- Mobile Menu Toggle -->
+        <button
+          id="mobile-nav-toggle"
+          type="button"
+          class="lg:hidden p-2.5 rounded-xl bg-surface-100 text-gray-300 hover:text-white border border-surface-200 focus:outline-none"
+          aria-label="Apri menu"
+          aria-expanded="false"
+        >
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+          </svg>
+        </button>
+      </div>
+
+      <!-- Mobile Dropdown -->
+      <div id="mobile-nav-menu" class="hidden lg:hidden px-4 pt-2 pb-6 bg-surface-50 border-b border-surface-200">
+        <div class="flex flex-col gap-2">
+          {navItems.map((item) => (
+            <a
+              href={item.href}
+              class="px-4 py-2.5 rounded-xl text-sm font-semibold text-gray-300 hover:text-white hover:bg-surface-200"
+            >
+              {item.label}
+            </a>
+          ))}
+          <div class="pt-3 border-t border-surface-200 flex flex-col gap-2">
+            <a
+              href="/storage-calculator"
+              class="w-full text-center px-4 py-2.5 rounded-xl bg-gradient-to-r from-miami-pink to-miami-orange text-white text-xs font-bold"
+            >
+              Calcola Spazio SSD Console (228.5 GB)
+            </a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="flex-1 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-10">
+      <slot />
+    </main>
+
+    <!-- Site Footer with Anti-DMCA Shield -->
+    <footer class="mt-auto border-t border-surface-200/80 bg-surface-50/95 text-gray-300">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-10">
+          <!-- Col 1: Brand & Security -->
+          <div class="md:col-span-2">
+            <div class="flex items-center gap-3 mb-4">
+              <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-miami-pink to-miami-cyan p-0.5 shadow-neon-pink">
+                <div class="w-full h-full bg-background rounded-md flex items-center justify-center font-black text-sm text-transparent bg-clip-text bg-gradient-to-r from-miami-pink to-miami-cyan">
+                  VI
+                </div>
+              </div>
+              <span class="text-lg font-black text-white tracking-tight">
+                LEONIDA <span class="text-miami-cyan">INDEX</span>
+              </span>
+            </div>
+            <p class="text-xs sm:text-sm text-gray-400 max-w-md leading-relaxed mb-4">
+              Database indipendente e portale informativo per <strong>Grand Theft Auto VI</strong>. Notizie ufficiali verificate, checklist 100% per lo Stato di Leonida, orari di sblocco mondiali e test di compatibilità hardware.
+            </p>
+
+            <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-surface-100 border border-emerald-500/40 text-[11px] text-emerald-400">
+              <svg class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+              <span>Zero-Runtime Attack Surface • Strict CSP • HSTS Preload • GDPR Ready</span>
+            </div>
+          </div>
+
+          <!-- Col 2: Navigation -->
+          <div>
+            <h4 class="text-xs font-bold uppercase tracking-widest text-white mb-4">Navigazione Portale</h4>
+            <ul class="space-y-2 text-xs sm:text-sm">
+              <li><a href="/" class="hover:text-miami-pink transition-colors">Home &amp; Countdown</a></li>
+              <li><a href="/tracker" class="hover:text-miami-pink transition-colors">Leonida 100% Tracker</a></li>
+              <li><a href="/storage-calculator" class="hover:text-miami-pink transition-colors">Calcolatore SSD Console</a></li>
+              <li><a href="/trailers/trailer-1" class="hover:text-miami-pink transition-colors">Archivio Trailer Ufficiali</a></li>
+              <li><a href="/leonida/vice-city" class="hover:text-miami-pink transition-colors">Mappa Regioni di Leonida</a></li>
+              <li><a href="/legal" class="hover:text-miami-pink transition-colors">Note Legali &amp; Disclaimer</a></li>
+            </ul>
+          </div>
+
+          <!-- Col 3: GEO & AI Search -->
+          <div>
+            <h4 class="text-xs font-bold uppercase tracking-widest text-white mb-4">Ingegneria GEO &amp; AI</h4>
+            <ul class="space-y-2 text-xs sm:text-sm">
+              <li>
+                <a href="/llms.txt" target="_blank" class="flex items-center gap-1.5 text-miami-cyan hover:underline">
+                  <span>/llms.txt</span>
+                  <span class="text-[10px] px-1 rounded bg-surface-200 text-gray-300 font-mono">LLM Brief</span>
+                </a>
+              </li>
+              <li>
+                <a href="/llms-full.txt" target="_blank" class="flex items-center gap-1.5 text-miami-cyan hover:underline">
+                  <span>/llms-full.txt</span>
+                  <span class="text-[10px] px-1 rounded bg-surface-200 text-gray-300 font-mono">Full Knowledge</span>
+                </a>
+              </li>
+              <li>
+                <a href="/api/gta6-facts.json" target="_blank" class="flex items-center gap-1.5 text-miami-pink hover:underline">
+                  <span>/api/gta6-facts.json</span>
+                  <span class="text-[10px] px-1 rounded bg-surface-200 text-gray-300 font-mono">API JSON</span>
+                </a>
+              </li>
+              <li><a href="/robots.txt" target="_blank" class="hover:text-gray-200 transition-colors">Robots.txt (AI Crawlers)</a></li>
+              <li><a href="/.well-known/security.txt" target="_blank" class="hover:text-gray-200 transition-colors">Security.txt</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Take-Two Legal Shield Disclaimer -->
+        <div class="pt-8 border-t border-surface-200/60 text-[11px] text-gray-400 space-y-2 leading-relaxed">
+          <p>
+            <strong>AVVISO LEGALE IMPORTANTE (TAKE-TWO / ROCKSTAR GAMES DISCLAIMER):</strong> Leonida Index (leonidaindex.com) è un portale amatoriale, giornalistico e di utilità per i giocatori, assolutamente non ufficiale e indipendente. Non è approvato, sponsorizzato né collegato in alcun modo a Rockstar Games, Rockstar North, Take-Two Interactive Software, Inc., Sony Interactive Entertainment o Microsoft Corporation.
+          </p>
+          <p>
+            Grand Theft Auto, GTA VI, GTA 6, Vice City, Leonida e tutti i rispettivi loghi, marchi, personaggi e design distintivi sono marchi registrati o marchi commerciali di Rockstar Games, Inc. e Take-Two Interactive Software, Inc. Tutti gli altri marchi appartengono ai legittimi proprietari.
+          </p>
+          <div class="flex flex-col sm:flex-row items-center justify-between pt-2 text-gray-400">
+            <span>© 2026 Leonida Index. Tutti i diritti riservati sui contenuti originali redazionali e sul codice del tracker.</span>
+            <div class="flex items-center gap-4 mt-2 sm:mt-0">
+              <a href="/legal" class="hover:underline">Privacy &amp; Cookie Policy</a>
+              <span>•</span>
+              <a href="/legal#affiliate" class="hover:underline">Affiliate Disclosure</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- GDPR Consent Banner -->
+    <ConsentBanner />
+
+    <!-- Mobile Navigation Script -->
+    <script>
+      const toggleBtn = document.getElementById('mobile-nav-toggle');
+      const menu = document.getElementById('mobile-nav-menu');
+
+      if (toggleBtn && menu) {
+        toggleBtn.addEventListener('click', () => {
+          const isHidden = menu.classList.contains('hidden');
+          if (isHidden) {
+            menu.classList.remove('hidden');
+            toggleBtn.setAttribute('aria-expanded', 'true');
+          } else {
+            menu.classList.add('hidden');
+            toggleBtn.setAttribute('aria-expanded', 'false');
+          }
+        });
+      }
+    </script>
+  </body>
+</html>
+

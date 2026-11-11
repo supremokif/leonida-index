@@ -1,0 +1,56 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="404 - Pagina Non Trovata | Leonida Index"
+  description="La pagina che cerchi non esiste o è stata spostata dalla polizia dello Stato di Leonida."
+  canonicalPath="/404"
+>
+  <div class="max-w-2xl mx-auto my-16 text-center p-8 sm:p-12 rounded-3xl bg-surface-50 border border-surface-300 shadow-2xl relative overflow-hidden">
+    <div class="absolute -right-16 -bottom-16 w-48 h-48 bg-miami-pink/15 rounded-full blur-3xl pointer-events-none"></div>
+    <div class="absolute -left-16 -top-16 w-48 h-48 bg-miami-cyan/15 rounded-full blur-3xl pointer-events-none"></div>
+
+    <!-- Wanted Stars -->
+    <div class="flex items-center justify-center gap-2 mb-4 text-amber-400 text-2xl animate-pulse">
+      <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+    </div>
+
+    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-red-950/80 border border-red-500 text-xs font-mono font-bold text-red-400 uppercase mb-4">
+      <span>WANTED LEVEL 5 STELLE • CODICE 404</span>
+    </div>
+
+    <h1 class="text-6xl sm:text-8xl font-black text-white font-mono tracking-tighter mb-4">
+      4<span class="text-miami-pink">0</span>4
+    </h1>
+
+    <h2 class="text-xl sm:text-2xl font-bold text-white mb-3">
+      Sei finito in una zona non tracciata di Leonida!
+    </h2>
+
+    <p class="text-xs sm:text-sm text-gray-300 max-w-md mx-auto mb-8 leading-relaxed">
+      La pagina o la coordinata GPS che stavi cercando è stata rimossa, sequestrata dalla Highway Patrol o non esiste ancora nella mappa.
+    </p>
+
+    <div class="flex flex-wrap items-center justify-center gap-3">
+      <a
+        href="/"
+        class="px-6 py-3 rounded-xl bg-gradient-to-r from-miami-pink to-miami-orange text-white text-xs font-bold shadow-neon-pink hover:scale-105 transition-transform"
+      >
+        Torna alla Base (Home)
+      </a>
+      <a
+        href="/tracker"
+        class="px-6 py-3 rounded-xl bg-surface-200 hover:bg-surface-300 text-white text-xs font-bold border border-surface-300 transition-colors"
+      >
+        Apri 100% Tracker
+      </a>
+      <a
+        href="/trailers/trailer-1"
+        class="px-6 py-3 rounded-xl bg-surface-200 hover:bg-surface-300 text-white text-xs font-bold border border-surface-300 transition-colors"
+      >
+        Archivio Trailer
+      </a>
+    </div>
+  </div>
+</BaseLayout>

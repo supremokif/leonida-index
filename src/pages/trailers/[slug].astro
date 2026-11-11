@@ -1,0 +1,224 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import LiteYouTube from '../../components/LiteYouTube.astro';
+import AdSlot from '../../components/AdSlot.astro';
+import AffiliateBox from '../../components/AffiliateBox.astro';
+import db from '../../data/gta6_db.json';
+import type { Trailer } from '../../types/gta6';
+
+export async function getStaticPaths() {
+  return db.trailers.map((trailer) => ({
+    params: { slug: trailer.slug },
+    props: { trailer },
+  }));
+}
+
+interface Props {
+  trailer: Trailer;
+}
+
+const { trailer } = Astro.props;
+
+// Find previous and next trailer for smooth navigation
+const currentIndex = db.trailers.findIndex((t) => t.slug === trailer.slug);
+const prevTrailer = currentIndex > 0 ? db.trailers[currentIndex - 1] : null;
+const nextTrailer = currentIndex < db.trailers.length - 1 ? db.trailers[currentIndex + 1] : null;
+
+// Featured deal for trailer pages
+const featuredDeal = db.hardwareDeals[0];
+---
+
+<BaseLayout
+  title={`${trailer.title} - Analisi Frame & Trascrizione Ufficiale | Leonida Index`}
+  description={`Guarda ${trailer.title} di GTA VI in alta definizione. Analisi fotogramma per fotogramma, colonna sonora (${trailer.soundtrack.title}), veicoli avvistati e trascrizione dialoghi.`}
+  canonicalPath={`/trailers/${trailer.slug}`}
+  breadcrumbs={[
+    { name: 'Archivio Trailer', url: '/trailers/trailer-1' },
+    { name: `Video #${trailer.number}`, url: `/trailers/${trailer.slug}` },
+  ]}
+>
+  <div class="max-w-5xl mx-auto my-6">
+    <!-- Top Meta Row -->
+    <div class="flex flex-wrap items-center justify-between gap-4 mb-4">
+      <div class="flex items-center gap-2">
+        <span class="px-3 py-1 rounded-full bg-surface-200 border border-miami-pink/40 text-xs font-bold text-miami-pink font-mono">
+          Video #{trailer.number} di 7
+        </span>
+        <span class="text-xs text-gray-400">
+          Pubblicato il <strong class="text-white">{trailer.publishDateHuman}</strong>
+        </span>
+      </div>
+      <div class="flex items-center gap-2 text-xs font-mono text-gray-400">
+        <span>Durata: <strong class="text-white">{trailer.duration}</strong></span>
+        <span>•</span>
+        <span>RAGE 9 Engine</span>
+      </div>
+    </div>
+
+    <!-- Main Title H1 -->
+    <h1 class="text-2xl sm:text-4xl font-black text-white tracking-tight uppercase mb-4 leading-tight">
+      {trailer.title}
+    </h1>
+
+    <p class="text-sm sm:text-base text-gray-300 mb-6 leading-relaxed">
+      {trailer.summary}
+    </p>
+
+    <!-- Lite YouTube Embed Facade (Safe Privacy-First) -->
+    <div class="mb-8">
+      <LiteYouTube
+        videoId={trailer.youtubeId}
+        title={trailer.title}
+        duration={trailer.duration}
+        soundtrack={trailer.soundtrack.title}
+      />
+    </div>
+
+    <!-- Soundtrack Box -->
+    <div class="p-5 rounded-2xl bg-surface-50 border border-surface-200 mb-8 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+      <div>
+        <span class="text-[11px] font-bold uppercase tracking-wider text-miami-cyan font-mono block mb-1">
+          Colonna Sonora Ufficiale
+        </span>
+        <h3 class="text-base font-bold text-white">
+          🎵 "{trailer.soundtrack.title}" — <span class="text-miami-pink">{trailer.soundtrack.artist}</span>
+        </h3>
+        <p class="text-xs text-gray-400 mt-1">{trailer.soundtrack.notes}</p>
+      </div>
+      <a
+        href="https://www.youtube.com/results?search_query=GTA+VI+soundtrack"
+        target="_blank"
+        rel="noopener noreferrer nofollow"
+        class="shrink-0 px-4 py-2 rounded-xl bg-surface-200 hover:bg-surface-300 text-white text-xs font-bold border border-surface-300 transition-colors"
+      >
+        Cerca Brano su YouTube ↗
+      </a>
+    </div>
+
+    <AdSlot id={`trailer-${trailer.slug}-slot`} format="responsive" />
+
+    <!-- Frame-by-Frame Breakdown Table (High Technical Value for SEO & AI) -->
+    <section class="my-10 p-6 sm:p-8 rounded-3xl bg-surface-50 border border-surface-300 shadow-xl" aria-label="Analisi Fotogrammi">
+      <div class="mb-6">
+        <span class="text-xs font-bold text-miami-cyan uppercase font-mono">Deep Dive Tecnico</span>
+        <h2 class="text-xl sm:text-2xl font-bold text-white mt-1">
+          Analisi Dettagliata Fotogramma per Fotogramma
+        </h2>
+        <p class="text-xs text-gray-300 mt-1">Dettagli di gameplay, tecnologia visiva RAGE 9 e indizi narrativi nascosti.</p>
+      </div>
+
+      <div class="overflow-x-auto rounded-xl border border-surface-200 mb-6">
+        <table class="w-full text-left text-xs sm:text-sm text-gray-300">
+          <thead class="bg-surface-200 text-xs uppercase font-bold text-white tracking-wider font-mono">
+            <tr>
+              <th scope="col" class="py-3 px-4 w-24">Timestamp</th>
+              <th scope="col" class="py-3 px-4 w-56">Scena Chiave</th>
+              <th scope="col" class="py-3 px-4">Analisi Tecnica &amp; Lore</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-surface-200 bg-surface-100/60 font-medium">
+            {trailer.frameAnalysis.map((frame) => (
+              <tr class="hover:bg-surface-200/50">
+                <td class="py-3 px-4 font-mono font-bold text-miami-pink">{frame.timestamp}</td>
+                <td class="py-3 px-4 font-bold text-white">{frame.label}</td>
+                <td class="py-3 px-4 text-xs text-gray-300 leading-relaxed">{frame.description}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Weapons and Vehicles Spotted Badges -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 my-8">
+      <div class="p-6 rounded-2xl bg-surface-50 border border-surface-200">
+        <h3 class="text-sm font-bold uppercase tracking-wider text-miami-cyan mb-3 flex items-center gap-2">
+          <span>🚗 Veicoli Identificati ({trailer.vehiclesSpotted.length})</span>
+        </h3>
+        <div class="flex flex-wrap gap-2">
+          {trailer.vehiclesSpotted.map((veh) => (
+            <span class="px-3 py-1 rounded-lg bg-surface-100 border border-surface-300 text-xs text-gray-200 font-medium">
+              {veh}
+            </span>
+          ))}
+        </div>
+      </div>
+
+      <div class="p-6 rounded-2xl bg-surface-50 border border-surface-200">
+        <h3 class="text-sm font-bold uppercase tracking-wider text-miami-pink mb-3 flex items-center gap-2">
+          <span>🎯 Armi ed Equipaggiamento ({trailer.weaponsSpotted.length})</span>
+        </h3>
+        <div class="flex flex-wrap gap-2">
+          {trailer.weaponsSpotted.map((wep) => (
+            <span class="px-3 py-1 rounded-lg bg-surface-100 border border-surface-300 text-xs text-gray-200 font-medium">
+              {wep}
+            </span>
+          ))}
+        </div>
+      </div>
+    </div>
+
+    <!-- Verbatim Transcript Section (Essential for Textual Indexing) -->
+    <section class="my-10 p-6 sm:p-8 rounded-3xl bg-surface-50 border border-surface-300 shadow-xl" aria-label="Trascrizione Dialoghi">
+      <div class="mb-4">
+        <span class="text-xs font-bold text-miami-cyan uppercase font-mono">Archivio Testuale Indicizzabile</span>
+        <h2 class="text-xl sm:text-2xl font-bold text-white mt-1">
+          Trascrizione Integrale Dialoghi e Narrazione
+        </h2>
+      </div>
+      <blockquote class="p-5 rounded-2xl bg-surface-100/80 border-l-4 border-miami-pink text-xs sm:text-sm text-gray-200 leading-relaxed italic">
+        "{trailer.transcript}"
+      </blockquote>
+    </section>
+
+    <!-- Related Hardware Upgrade Recommendation -->
+    <div class="my-10">
+      <h3 class="text-xs font-bold uppercase tracking-wider text-miami-cyan font-mono mb-3">
+        Consiglio Hardware per il Lancio
+      </h3>
+      <AffiliateBox
+        id={featuredDeal.id}
+        title={featuredDeal.title}
+        category={featuredDeal.category}
+        targetConsole={featuredDeal.targetConsole}
+        badge={featuredDeal.badge}
+        price={featuredDeal.price}
+        originalPrice={featuredDeal.originalPrice}
+        affiliateUrl={featuredDeal.affiliateUrl}
+        rating={featuredDeal.rating}
+        reviewsCount={featuredDeal.reviewsCount}
+        features={featuredDeal.features}
+        storageCapacityGb={featuredDeal.storageCapacityGb}
+      />
+    </div>
+
+    <!-- Navigation to Prev / Next Trailer -->
+    <div class="pt-8 border-t border-surface-300 flex items-center justify-between gap-4">
+      {prevTrailer ? (
+        <a
+          href={`/trailers/${prevTrailer.slug}`}
+          class="flex items-center gap-2 text-xs font-bold text-gray-300 hover:text-miami-pink transition-colors p-3 rounded-xl bg-surface-100 border border-surface-200"
+        >
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+          <span class="line-clamp-1">Prec: {prevTrailer.title}</span>
+        </a>
+      ) : (
+        <div class="text-xs text-gray-400">Primo video della serie</div>
+      )}
+
+      {nextTrailer ? (
+        <a
+          href={`/trailers/${nextTrailer.slug}`}
+          class="flex items-center gap-2 text-xs font-bold text-gray-300 hover:text-miami-cyan transition-colors p-3 rounded-xl bg-surface-100 border border-surface-200"
+        >
+          <span class="line-clamp-1">Succ: {nextTrailer.title}</span>
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+        </a>
+      ) : (
+        <a href="/tracker" class="text-xs text-miami-pink font-bold hover:underline">
+          Tutti i 7 video visualizzati • Apri Tracker →
+        </a>
+      )}
+    </div>
+  </div>
+</BaseLayout>
