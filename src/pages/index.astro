@@ -11,148 +11,168 @@ const featuredTrailers = db.trailers.slice(0, 3);
 ---
 
 <BaseLayout
-  title="Leonida Index - GTA VI Database Ufficiale, Countdown 19 Nov 2026 & Pre-load"
+  title="Leonida Index - Grand Theft Auto VI: Release Date 19 Nov 2026, Pre-load & Intel"
   description="Il portale definitivo su Grand Theft Auto VI: conto alla rovescia, orari di sblocco rolling, pre-load attivo da 228.5 GB, archivio 7 trailer, mappa di Leonida e tracker 100%."
   canonicalPath="/"
 >
-  <!-- Hero Section with Live Countdown & Auto-Switch -->
+  <!-- Main Hero with Neon Countdown & Live Telemetry -->
   <LaunchStatusHero />
 
-  <!-- Leaderboard Ad Slot (CLS-Safe) -->
   <AdSlot id="home-top-banner" format="leaderboard" />
 
-  <!-- Answer-First Executive Summary Section -->
-  <section class="my-12 p-6 sm:p-10 rounded-3xl bg-surface-50 border border-surface-300 shadow-xl" aria-label="Quick Facts">
-    <div class="max-w-3xl mb-8">
-      <div class="text-xs font-bold text-miami-cyan uppercase tracking-widest mb-1 font-mono">Answer-First Intelligence</div>
-      <h2 class="text-2xl sm:text-3xl font-extrabold text-white">
-        Cosa Sappiamo Ufficialmente su Grand Theft Auto VI
+  <!-- Authentic Leonida Dossier Table (No AI Robotic Phrasing) -->
+  <section class="my-14 p-6 sm:p-12 rounded-[2.5rem] bg-gradient-to-b from-[#151026] via-[#0d0a1a] to-[#07050d] border border-white/[0.12] shadow-2xl relative overflow-hidden" aria-label="Leonida Dossier">
+    <!-- Ambient Dusk Glow -->
+    <div class="absolute -right-20 -top-20 w-80 h-80 bg-vice-pink/15 rounded-full blur-[100px] pointer-events-none"></div>
+
+    <div class="max-w-3xl mb-8 relative z-10">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#1b1433] border border-vice-pink/40 text-[11px] font-mono font-bold text-vice-pink uppercase tracking-widest mb-3">
+        <span>ARCHIVIO UFFICIALE ROCKSTAR GAMES // DOSSIER 01</span>
+      </div>
+      <h2 class="text-3xl sm:text-5xl font-black text-white tracking-tight uppercase">
+        TUTTO SU <span class="bg-gradient-to-r from-vice-pink to-vice-cyan bg-clip-text text-transparent">VICE CITY</span>
       </h2>
-      <p class="text-xs sm:text-sm text-gray-300 mt-2">
-        Sintesi fattuale priva di speculazioni basata sui comunicati ufficiali di Rockstar Games per giocatori, motori di ricerca e modelli LLM (ChatGPT, Claude, Gemini, Perplexity).
+      <p class="text-sm sm:text-base text-gray-300 mt-2 font-normal leading-relaxed">
+        I fatti ufficiali confermati da Rockstar Games per il lancio del 19 Novembre 2026.
       </p>
     </div>
 
-    <!-- Structured Data Table (LLM Friendly) -->
-    <div class="overflow-x-auto rounded-xl border border-surface-200 mb-8">
-      <table class="w-full text-left text-xs sm:text-sm text-gray-300">
-        <thead class="bg-surface-200 text-xs uppercase font-bold text-white tracking-wider font-mono">
+    <!-- Polished Data Grid Table -->
+    <div class="overflow-x-auto rounded-2xl border border-white/[0.1] mb-10 relative z-10 shadow-xl">
+      <table class="w-full text-left text-xs sm:text-sm text-gray-200">
+        <thead class="bg-[#1b1433] text-[11px] uppercase font-mono font-bold text-vice-cyan tracking-wider border-b border-white/[0.1]">
           <tr>
-            <th scope="col" class="py-3 px-4">Parametro Ufficiale</th>
-            <th scope="col" class="py-3 px-4">Dato Verificato da Rockstar Games</th>
-            <th scope="col" class="py-3 px-4">Note Operative di Lancio</th>
+            <th scope="col" class="py-4 px-5">PARAMETRO</th>
+            <th scope="col" class="py-4 px-5">DATO CONFERMATO</th>
+            <th scope="col" class="py-4 px-5">NOTE OPERATIVE</th>
           </tr>
         </thead>
-        <tbody class="divide-y divide-surface-200 bg-surface-100/60 font-medium">
-          <tr class="hover:bg-surface-200/50">
-            <td class="py-3 px-4 font-bold text-white">Data di Uscita Globale</td>
-            <td class="py-3 px-4 text-miami-pink font-semibold">{db.releaseInfo.releaseDateHuman}</td>
-            <td class="py-3 px-4 text-xs text-gray-400">Mezzanotte locale rolling launch (00:00)</td>
+        <tbody class="divide-y divide-white/[0.06] bg-[#0e0a1a]/80 font-medium">
+          <tr class="hover:bg-white/[0.04] transition-colors">
+            <td class="py-4 px-5 font-bold text-white flex items-center gap-2">
+              <span class="w-1.5 h-1.5 rounded-full bg-vice-pink"></span>
+              Data di Uscita Mondiale
+            </td>
+            <td class="py-4 px-5 text-vice-pink font-mono font-bold text-sm">{db.releaseInfo.releaseDateHuman}</td>
+            <td class="py-4 px-5 text-xs text-gray-400">Mezzanotte locale rolling launch (00:00)</td>
           </tr>
-          <tr class="hover:bg-surface-200/50">
-            <td class="py-3 px-4 font-bold text-white">Stato Pre-load Digitale</td>
-            <td class="py-3 px-4 text-emerald-400 font-semibold">{db.releaseInfo.preloadDateHuman} (Attivo)</td>
-            <td class="py-3 px-4 text-xs text-gray-400">Disponibile su PlayStation Store e Xbox Live</td>
+          <tr class="hover:bg-white/[0.04] transition-colors">
+            <td class="py-4 px-5 font-bold text-white flex items-center gap-2">
+              <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
+              Stato Pre-load Digitale
+            </td>
+            <td class="py-4 px-5 text-emerald-400 font-mono font-bold text-sm">{db.releaseInfo.preloadDateHuman} (Attivo)</td>
+            <td class="py-4 px-5 text-xs text-gray-400">Disponibile su PlayStation Store e Xbox Live</td>
           </tr>
-          <tr class="hover:bg-surface-200/50">
-            <td class="py-3 px-4 font-bold text-white">Piattaforme di Lancio</td>
-            <td class="py-3 px-4 text-white">{db.releaseInfo.platforms.join(', ')}</td>
-            <td class="py-3 px-4 text-xs text-gray-400">Versione PC Windows pianificata per il 2027</td>
+          <tr class="hover:bg-white/[0.04] transition-colors">
+            <td class="py-4 px-5 font-bold text-white flex items-center gap-2">
+              <span class="w-1.5 h-1.5 rounded-full bg-vice-cyan"></span>
+              Piattaforme al Lancio
+            </td>
+            <td class="py-4 px-5 text-white font-mono">{db.releaseInfo.platforms.join(', ')}</td>
+            <td class="py-4 px-5 text-xs text-gray-400">Versione PC Windows pianificata per il 2027</td>
           </tr>
-          <tr class="hover:bg-surface-200/50">
-            <td class="py-3 px-4 font-bold text-white">Spazio Necessario su Disco</td>
-            <td class="py-3 px-4 text-amber-400 font-semibold">PS5: {db.releaseInfo.downloadSizePS5} | Xbox: {db.releaseInfo.downloadSizeXbox}</td>
-            <td class="py-3 px-4 text-xs text-gray-400">Consigliato SSD NVMe M.2 ad alte prestazioni</td>
+          <tr class="hover:bg-white/[0.04] transition-colors">
+            <td class="py-4 px-5 font-bold text-white flex items-center gap-2">
+              <span class="w-1.5 h-1.5 rounded-full bg-vice-gold"></span>
+              Spazio Necessario su SSD
+            </td>
+            <td class="py-4 px-5 text-vice-gold font-mono font-bold">PS5: {db.releaseInfo.downloadSizePS5} | Xbox: {db.releaseInfo.downloadSizeXbox}</td>
+            <td class="py-4 px-5 text-xs text-gray-400">Consigliati almeno 260 GB liberi per la decompressione</td>
           </tr>
-          <tr class="hover:bg-surface-200/50">
-            <td class="py-3 px-4 font-bold text-white">Ambientazione Principale</td>
-            <td class="py-3 px-4 text-white">{db.releaseInfo.setting}</td>
-            <td class="py-3 px-4 text-xs text-gray-400">6 regioni geografiche con oltre 1.200 interni</td>
+          <tr class="hover:bg-white/[0.04] transition-colors">
+            <td class="py-4 px-5 font-bold text-white flex items-center gap-2">
+              <span class="w-1.5 h-1.5 rounded-full bg-purple-400"></span>
+              Ambientazione &amp; Mappa
+            </td>
+            <td class="py-4 px-5 text-white">{db.releaseInfo.setting}</td>
+            <td class="py-4 px-5 text-xs text-gray-400">Oltre 2.5x l'estensione di GTA V con oltre 1.200 interni</td>
           </tr>
-          <tr class="hover:bg-surface-200/50">
-            <td class="py-3 px-4 font-bold text-white">Protagonisti Giocabili</td>
-            <td class="py-3 px-4 text-white">{db.protagonists.map(p => p.name).join(' e ')}</td>
-            <td class="py-3 px-4 text-xs text-gray-400">Sodalizio criminale a due vie ispirato a Bonnie &amp; Clyde</td>
-          </tr>
-          <tr class="hover:bg-surface-200/50">
-            <td class="py-3 px-4 font-bold text-white">Inno del Launch Trailer</td>
-            <td class="py-3 px-4 text-miami-cyan font-semibold">"Flower in a Hurricane"</td>
-            <td class="py-3 px-4 text-xs text-gray-400">Justice ft. Tame Impala, SZA &amp; King Gizzard</td>
+          <tr class="hover:bg-white/[0.04] transition-colors">
+            <td class="py-4 px-5 font-bold text-white flex items-center gap-2">
+              <span class="w-1.5 h-1.5 rounded-full bg-vice-pink"></span>
+              Inno Ufficiale di Lancio
+            </td>
+            <td class="py-4 px-5 text-vice-cyan font-mono font-bold">"Flower in a Hurricane"</td>
+            <td class="py-4 px-5 text-xs text-gray-400">Justice ft. Tame Impala, SZA &amp; King Gizzard</td>
           </tr>
         </tbody>
       </table>
     </div>
 
-    <!-- 3 Quick Pillar Cards -->
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-      <div class="p-5 rounded-2xl bg-surface-100 border border-surface-200">
-        <div class="w-10 h-10 rounded-xl bg-miami-pink/20 text-miami-pink flex items-center justify-center font-black mb-3 font-mono">
-          01
-        </div>
-        <h3 class="text-base font-bold text-white mb-2">Pre-Load Già Disponibile</h3>
-        <p class="text-xs text-gray-300 leading-relaxed">
-          Tutti i giocatori che hanno effettuato il pre-order digitale su console possono già scaricare i 228.5 GB di dati per iniziare a giocare all'istante allo scoccare della mezzanotte.
+    <!-- Editorial Highlight Columns -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 relative z-10">
+      <div class="p-6 rounded-3xl bg-[#140f26]/80 border border-white/[0.08] hover:border-vice-pink/40 transition-colors">
+        <div class="text-xs font-mono font-bold text-vice-pink uppercase tracking-widest mb-2">01 // IL PRE-LOAD</div>
+        <h3 class="text-lg font-bold text-white mb-2">228.5 GB Già Scaricabili</h3>
+        <p class="text-xs text-gray-300 leading-relaxed font-normal">
+          Chi possiede il pre-order digitale può scaricare il gioco completo in anticipo e iniziare a giocare esattamente allo scoccare della mezzanotte del 19 Novembre.
         </p>
       </div>
 
-      <div class="p-5 rounded-2xl bg-surface-100 border border-surface-200">
-        <div class="w-10 h-10 rounded-xl bg-miami-orange/20 text-miami-orange flex items-center justify-center font-black mb-3 font-mono">
-          02
-        </div>
-        <h3 class="text-base font-bold text-white mb-2">Leonida 2.5x più Grande</h3>
-        <p class="text-xs text-gray-300 leading-relaxed">
-          La mappa più vasta e dettagliata mai creata da Rockstar: spiagge affollate con IA neurale, paludi infestate da predatori e oltre 1.200 interni senza alcuna schermata di caricamento.
+      <div class="p-6 rounded-3xl bg-[#140f26]/80 border border-white/[0.08] hover:border-vice-orange/40 transition-colors">
+        <div class="text-xs font-mono font-bold text-vice-orange uppercase tracking-widest mb-2">02 // LA MAPPA</div>
+        <h3 class="text-lg font-bold text-white mb-2">Leonida Senza Confini</h3>
+        <p class="text-xs text-gray-300 leading-relaxed font-normal">
+          Da Ocean Beach ai grattacieli di Downtown, fino alle paludi delle Grassrivers e alle barriere coralline delle Keys, con transizioni fluide senza caricamenti.
         </p>
       </div>
 
-      <div class="p-5 rounded-2xl bg-surface-100 border border-surface-200">
-        <div class="w-10 h-10 rounded-xl bg-miami-cyan/20 text-miami-cyan flex items-center justify-center font-black mb-3 font-mono">
-          03
-        </div>
-        <h3 class="text-base font-bold text-white mb-2">Grafica RAGE 9 &amp; PS5 Pro</h3>
-        <p class="text-xs text-gray-300 leading-relaxed">
-          Global Illumination in Ray Tracing in tempo reale, simulazione idrodinamica avanzata per le onde dell'oceano e supporto PSSR a 60 FPS in 4K su PlayStation 5 Pro.
+      <div class="p-6 rounded-3xl bg-[#140f26]/80 border border-white/[0.08] hover:border-vice-cyan/40 transition-colors">
+        <div class="text-xs font-mono font-bold text-vice-cyan uppercase tracking-widest mb-2">03 // HARDWARE</div>
+        <h3 class="text-lg font-bold text-white mb-2">4K 60FPS con PSSR</h3>
+        <p class="text-xs text-gray-300 leading-relaxed font-normal">
+          Il motore RAGE 9 sfrutta il Ray Tracing volumetrico per luci e pozzanghere notturne, con supporto alla risoluzione dinamica 4K e feedback aptico DualSense.
         </p>
       </div>
     </div>
   </section>
 
-  <!-- Interactive Storage Calculator Micro-Tool -->
+  <!-- Interactive Storage Diagnostic Island -->
   <StorageCalculator />
 
-  <!-- Official Video Showcase Section -->
+  <!-- Video Showcase Section -->
   <section class="my-14">
     <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-8">
       <div>
-        <div class="text-xs font-bold text-miami-pink uppercase tracking-widest mb-1 font-mono">Archivio Ufficiale Rockstar</div>
-        <h2 class="text-2xl sm:text-3xl font-extrabold text-white">Trailer e Showcase Ufficiali</h2>
-        <p class="text-xs sm:text-sm text-gray-300 mt-1">Player protetto in modalità youtube-nocookie.com (Zero Cookie di terze parti all'avvio).</p>
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#1b1433] border border-vice-pink/40 text-[10px] font-mono font-bold text-vice-pink uppercase tracking-widest mb-2">
+          ARCHIVIO MULTIMEDIALE UFFICIALE
+        </div>
+        <h2 class="text-3xl sm:text-4xl font-black text-white tracking-tight uppercase">
+          TRAILER E DEEP DIVE DI GIOCO
+        </h2>
+        <p class="text-xs sm:text-sm text-gray-300 mt-1">
+          Player video privacy-first in modalità youtube-nocookie.com (Zero Cookie di terze parti all'avvio).
+        </p>
       </div>
       <a
         href="/trailers/trailer-1"
-        class="inline-flex items-center gap-2 text-xs font-bold text-miami-cyan hover:text-white transition-colors"
+        class="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-surface-100 hover:bg-surface-200 border border-white/[0.1] text-xs font-mono font-bold text-vice-cyan hover:text-white transition-all duration-200"
       >
-        <span>Vedi tutti i 7 video ufficiali</span>
+        <span>VEDI TUTTI I 7 VIDEO</span>
         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
       </a>
     </div>
 
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
       {featuredTrailers.map((trailer) => (
-        <div class="flex flex-col rounded-2xl bg-surface-50 border border-surface-200 overflow-hidden shadow-lg hover:border-miami-pink/40 transition-colors">
+        <div class="flex flex-col rounded-3xl bg-[#0e0a1a] border border-white/[0.1] overflow-hidden shadow-xl hover:border-vice-pink/50 transition-all duration-300">
           <LiteYouTube videoId={trailer.youtubeId} title={trailer.title} duration={trailer.duration} soundtrack={trailer.soundtrack.title} />
-          <div class="p-5 flex-1 flex flex-col justify-between">
+          <div class="p-6 flex-1 flex flex-col justify-between">
             <div>
-              <div class="flex items-center justify-between text-xs text-gray-400 mb-2">
+              <div class="flex items-center justify-between text-xs font-mono text-gray-400 mb-2">
                 <span>{trailer.publishDateHuman}</span>
-                <span class="text-miami-pink font-semibold">Video #{trailer.number}</span>
+                <span class="text-vice-pink font-bold">#{trailer.number}</span>
               </div>
               <h3 class="text-base font-bold text-white mb-2 line-clamp-1">{trailer.title}</h3>
-              <p class="text-xs text-gray-300 line-clamp-2 mb-3 leading-relaxed">{trailer.summary}</p>
+              <p class="text-xs text-gray-300 line-clamp-2 mb-4 leading-relaxed font-normal">{trailer.summary}</p>
             </div>
-            <div class="pt-3 border-t border-surface-200 flex items-center justify-between text-xs">
-              <span class="text-gray-400 truncate max-w-[180px]">🎵 {trailer.soundtrack.title}</span>
-              <a href={`/trailers/${trailer.slug}`} class="text-miami-cyan font-semibold hover:underline">Analisi Frame →</a>
+            <div class="pt-3 border-t border-white/[0.08] flex items-center justify-between text-xs font-mono">
+              <span class="text-gray-400 truncate max-w-[180px] flex items-center gap-1.5">
+                <svg class="w-3.5 h-3.5 text-vice-pink shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19V6l12-3v13M9 19c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zm12 0c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zM9 10l12-3"/></svg>
+                {trailer.soundtrack.title}
+              </span>
+              <a href={`/trailers/${trailer.slug}`} class="text-vice-cyan font-bold hover:underline">ANALISI ➔</a>
             </div>
           </div>
         </div>
@@ -160,16 +180,20 @@ const featuredTrailers = db.trailers.slice(0, 3);
     </div>
   </section>
 
-  <!-- Leonida Regions Overview -->
-  <section class="my-14 p-6 sm:p-10 rounded-3xl bg-surface-50 border border-surface-300 shadow-xl">
+  <!-- 6 Leonida Regions Showcase -->
+  <section class="my-14 p-6 sm:p-12 rounded-[2.5rem] bg-gradient-to-b from-[#151026] via-[#0d0a1a] to-[#07050d] border border-white/[0.12] shadow-2xl relative overflow-hidden">
     <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-8">
       <div>
-        <div class="text-xs font-bold text-miami-cyan uppercase tracking-widest mb-1 font-mono">Geografia &amp; Lore</div>
-        <h2 class="text-2xl sm:text-3xl font-extrabold text-white">Le 6 Regioni dello Stato di Leonida</h2>
-        <p class="text-xs sm:text-sm text-gray-300 mt-1">Esplora i dettagli geografici, le fazioni e i punti di interesse confermati.</p>
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#1b1433] border border-vice-cyan/40 text-[10px] font-mono font-bold text-vice-cyan uppercase tracking-widest mb-2">
+          CARTOGRAFIA DELLO STATO
+        </div>
+        <h2 class="text-3xl sm:text-4xl font-black text-white tracking-tight uppercase">
+          LE 6 REGIONI DI LEONIDA
+        </h2>
+        <p class="text-xs sm:text-sm text-gray-300 mt-1">Punti d'interesse, fazioni criminali e fauna autoctona.</p>
       </div>
-      <a href="/tracker" class="inline-flex items-center gap-2 text-xs font-bold text-miami-pink hover:text-white transition-colors">
-        <span>Apri Tracker 100% Leonida</span>
+      <a href="/tracker" class="inline-flex items-center gap-2 text-xs font-mono font-bold text-vice-pink hover:underline">
+        <span>TRACKER 100% COLLEZIONABILI</span>
         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
       </a>
     </div>
@@ -178,23 +202,23 @@ const featuredTrailers = db.trailers.slice(0, 3);
       {db.locations.map((region) => (
         <a
           href={`/leonida/${region.slug}`}
-          class="group p-5 rounded-2xl bg-surface-100 border border-surface-200 hover:border-miami-cyan/60 hover:shadow-neon-cyan transition-all flex flex-col justify-between"
+          class="group p-6 rounded-3xl bg-[#140f26]/80 border border-white/[0.08] hover:border-vice-cyan/60 hover:shadow-neon-cyan transition-all duration-300 flex flex-col justify-between"
         >
           <div>
-            <div class="flex items-center justify-between text-xs text-miami-cyan font-mono mb-2">
+            <div class="flex items-center justify-between text-[11px] font-mono text-vice-cyan mb-2">
               <span>{region.category}</span>
               <span>{region.subLocations.length} Luoghi</span>
             </div>
-            <h3 class="text-lg font-bold text-white group-hover:text-miami-cyan transition-colors mb-2">
+            <h3 class="text-lg font-bold text-white group-hover:text-vice-cyan transition-colors mb-2">
               {region.name}
             </h3>
-            <p class="text-xs text-gray-300 line-clamp-3 leading-relaxed mb-4">
+            <p class="text-xs text-gray-300 line-clamp-3 leading-relaxed mb-5 font-normal">
               {region.description}
             </p>
           </div>
-          <div class="pt-3 border-t border-surface-200 flex items-center justify-between text-xs">
+          <div class="pt-3 border-t border-white/[0.08] flex items-center justify-between text-xs font-mono">
             <span class="text-gray-400">{region.collectibles.length} Collezionabili</span>
-            <span class="text-miami-pink font-semibold group-hover:translate-x-1 transition-transform">Guida Regione →</span>
+            <span class="text-vice-pink font-bold group-hover:translate-x-1 transition-transform">SCHEDA REGIONALE ➔</span>
           </div>
         </a>
       ))}
@@ -204,39 +228,42 @@ const featuredTrailers = db.trailers.slice(0, 3);
   <!-- Protagonists Dossier Section -->
   <section class="my-14">
     <div class="text-center max-w-2xl mx-auto mb-10">
-      <div class="text-xs font-bold text-miami-pink uppercase tracking-widest mb-1 font-mono">Dossier Personaggi</div>
-      <h2 class="text-2xl sm:text-3xl font-extrabold text-white">Lucia e Jason: La Coppia Criminale</h2>
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#1b1433] border border-vice-pink/40 text-[10px] font-mono font-bold text-vice-pink uppercase tracking-widest mb-2">
+        DOSSIER PROTAGONISTI
+      </div>
+      <h2 class="text-3xl sm:text-4xl font-black text-white tracking-tight uppercase">
+        LUCIA E JASON
+      </h2>
       <p class="text-xs sm:text-sm text-gray-300 mt-2">
-        I due protagonisti giocabili di Grand Theft Auto VI: abilità speciali e background narrativo.
+        La coppia criminale al centro della narrazione di GTA VI: schede e abilità tattiche.
       </p>
     </div>
 
     <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
       {db.protagonists.map((char) => (
-        <div class="p-6 sm:p-8 rounded-3xl bg-surface-50 border border-surface-300 shadow-xl flex flex-col justify-between relative overflow-hidden">
-          <div class="absolute -right-8 -top-8 w-32 h-32 bg-miami-pink/10 rounded-full blur-2xl pointer-events-none"></div>
+        <div class="p-7 sm:p-10 rounded-[2.5rem] bg-[#120d24] border border-white/[0.1] shadow-2xl flex flex-col justify-between relative overflow-hidden">
+          <div class="absolute -right-10 -top-10 w-40 h-40 bg-vice-pink/10 rounded-full blur-3xl pointer-events-none"></div>
 
           <div>
-            <div class="flex items-center justify-between gap-2 mb-2">
-              <span class="text-xs font-bold text-miami-pink uppercase font-mono">{char.alias}</span>
-              <span class="px-2.5 py-0.5 rounded-full bg-surface-200 border border-surface-300 text-[11px] text-gray-300">
-                Protagonista Giocabile
+            <div class="flex items-center justify-between gap-2 mb-3">
+              <span class="text-xs font-mono font-bold text-vice-pink uppercase tracking-widest">{char.alias}</span>
+              <span class="px-2.5 py-0.5 rounded-full bg-[#1b1433] border border-white/[0.1] text-[10px] font-mono text-gray-300">
+                PROTAGONISTA GIOCABILE
               </span>
             </div>
-            <h3 class="text-2xl font-black text-white mb-2">{char.name}</h3>
-            <p class="text-xs text-miami-cyan font-medium mb-4">{char.role}</p>
+            <h3 class="text-3xl font-black text-white mb-1.5">{char.name}</h3>
+            <p class="text-xs font-mono text-vice-cyan font-semibold mb-4">{char.role}</p>
 
-            <p class="text-xs sm:text-sm text-gray-300 leading-relaxed mb-6">
+            <p class="text-xs sm:text-sm text-gray-300 leading-relaxed mb-6 font-normal">
               {char.background}
             </p>
 
-            <!-- Abilities -->
             <div class="mb-6">
-              <h4 class="text-xs font-bold uppercase tracking-wider text-white mb-2">Abilità Speciali Confermate:</h4>
-              <ul class="space-y-2 text-xs text-gray-300">
+              <h4 class="text-xs font-mono font-bold uppercase tracking-wider text-white mb-2.5">ABILITÀ SPECIALI:</h4>
+              <ul class="space-y-2 text-xs text-gray-300 font-normal">
                 {char.specialAbilities.map((ab) => (
-                  <li class="flex items-start gap-2">
-                    <svg class="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                  <li class="flex items-start gap-2.5 leading-relaxed">
+                    <span class="text-emerald-400 font-bold">✓</span>
                     <span>{ab}</span>
                   </li>
                 ))}
@@ -244,8 +271,8 @@ const featuredTrailers = db.trailers.slice(0, 3);
             </div>
           </div>
 
-          <div class="pt-4 border-t border-surface-200 text-xs text-gray-400 flex items-center justify-between">
-            <span>Stato: <strong class="text-emerald-400">{char.status}</strong></span>
+          <div class="pt-4 border-t border-white/[0.08] text-xs font-mono text-gray-400 flex items-center justify-between">
+            <span>STATO: <strong class="text-emerald-400">{char.status}</strong></span>
           </div>
         </div>
       ))}
@@ -253,17 +280,16 @@ const featuredTrailers = db.trailers.slice(0, 3);
   </section>
 
   <!-- Hardware Deals Affiliate Section -->
-  <section class="my-14 p-6 sm:p-10 rounded-3xl bg-gradient-to-b from-surface-100 to-surface-50 border border-miami-cyan/30 shadow-neon-cyan relative">
+  <section class="my-14 p-6 sm:p-12 rounded-[2.5rem] bg-gradient-to-b from-[#151026] via-[#0d0a1a] to-[#07050d] border border-vice-cyan/30 shadow-neon-cyan relative">
     <div class="max-w-3xl mb-8">
-      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-surface-200 border border-miami-cyan/40 text-xs font-bold text-miami-cyan uppercase mb-3">
-        <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
-        <span>Affiliate Hardware &amp; Pre-Order Hub</span>
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#1b1433] border border-vice-cyan/40 text-[10px] font-mono font-bold text-vice-cyan uppercase tracking-widest mb-2">
+        HARDWARE &amp; ARCHIVIAZIONE
       </div>
-      <h2 class="text-2xl sm:text-4xl font-black text-white tracking-tight">
-        Prepara la tua Console per <span class="text-miami-cyan">Leonida</span>
+      <h2 class="text-3xl sm:text-4xl font-black text-white tracking-tight uppercase">
+        PREPARA LA TUA CONSOLE PER <span class="text-vice-cyan">LEONIDA</span>
       </h2>
-      <p class="text-xs sm:text-sm text-gray-300 mt-2">
-        I migliori accessori hardware e codici prepagati per garantire spazio sufficiente al pre-load di GTA VI (228.5 GB).
+      <p class="text-xs sm:text-sm text-gray-300 mt-2 font-normal">
+        I migliori componenti di memoria certificati e le ricariche Store per scaricare i 228.5 GB di GTA VI senza intoppi.
       </p>
     </div>
 
@@ -285,32 +311,27 @@ const featuredTrailers = db.trailers.slice(0, 3);
         />
       ))}
     </div>
-
-    <div class="mt-8 text-center text-[11px] text-gray-400">
-      * I link ai prodotti contengono affiliazioni commerciali tracciate in sicurezza tramite tag <code>rel="sponsored noopener noreferrer"</code>. Acquistando supporti il portale indipendente senza alcun sovrapprezzo.
-    </div>
   </section>
 
-  <!-- FAQ Section for AI Search & Users -->
+  <!-- FAQ Section -->
   <section class="my-14 max-w-4xl mx-auto">
     <div class="text-center mb-10">
-      <div class="text-xs font-bold text-miami-cyan uppercase tracking-widest mb-1 font-mono">FAQ &amp; Assistenti AI</div>
-      <h2 class="text-2xl sm:text-3xl font-extrabold text-white">Domande Frequenti su GTA 6</h2>
-      <p class="text-xs sm:text-sm text-gray-300 mt-2">
-        Domande e risposte strutturate con schema FAQPage per la Generative Engine Optimization (GEO).
-      </p>
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#1b1433] border border-vice-pink/40 text-[10px] font-mono font-bold text-vice-pink uppercase tracking-widest mb-2">
+        DOMANDE FREQUENTI
+      </div>
+      <h2 class="text-3xl sm:text-4xl font-black text-white tracking-tight uppercase">DOMANDE E RISPOSTE SU GTA VI</h2>
     </div>
 
     <div class="space-y-4">
       {db.releaseInfo.faq.map((item) => (
-        <details class="group rounded-2xl bg-surface-50 border border-surface-200 p-5 transition-colors open:border-miami-pink/40 open:bg-surface-100/90">
+        <details class="group rounded-3xl bg-[#120d24] border border-white/[0.08] p-6 transition-all duration-300 open:border-vice-pink/50 open:bg-[#181130]">
           <summary class="flex items-center justify-between cursor-pointer font-bold text-base sm:text-lg text-white list-none select-none">
             <span>{item.question}</span>
-            <span class="w-7 h-7 rounded-lg bg-surface-200 flex items-center justify-center text-miami-pink group-open:rotate-180 transition-transform">
+            <span class="w-8 h-8 rounded-xl bg-[#1f173d] flex items-center justify-center text-vice-pink group-open:rotate-180 transition-transform">
               <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
             </span>
           </summary>
-          <div class="mt-4 pt-4 border-t border-surface-200/60 text-xs sm:text-sm text-gray-300 leading-relaxed">
+          <div class="mt-4 pt-4 border-t border-white/[0.06] text-xs sm:text-sm text-gray-300 leading-relaxed font-normal">
             {item.answer}
           </div>
         </details>

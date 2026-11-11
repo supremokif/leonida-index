@@ -22,7 +22,7 @@ const posterUrl = isPlaceholderId
 ---
 
 <div
-  class="relative w-full aspect-video rounded-2xl overflow-hidden bg-surface-200 border border-surface-300 shadow-xl group cursor-pointer select-none lite-yt-player"
+  class="relative w-full aspect-video rounded-3xl overflow-hidden bg-[#0d0a1a] border border-white/[0.12] shadow-2xl group cursor-pointer select-none lite-yt-player transition-all duration-300 hover:border-vice-pink/60 hover:shadow-neon-pink"
   data-videoid={videoId}
   data-title={title}
   data-is-placeholder={isPlaceholderId ? 'true' : 'false'}
@@ -31,27 +31,43 @@ const posterUrl = isPlaceholderId
   aria-label={`Riproduci video ufficiale: ${title}`}
 >
   {isPlaceholderId ? (
-    <div class="w-full h-full bg-gradient-to-br from-surface-100 via-surface-200 to-background flex flex-col items-center justify-center p-6 relative overflow-hidden">
-      <div class="absolute inset-0 opacity-10 bg-[radial-gradient(#ff2a85_1px,transparent_1px)] [background-size:20px_20px] pointer-events-none"></div>
-      <div class="absolute -right-12 -bottom-12 w-64 h-64 bg-miami-pink/20 rounded-full blur-3xl pointer-events-none"></div>
-      <div class="absolute -left-12 -top-12 w-64 h-64 bg-miami-cyan/20 rounded-full blur-3xl pointer-events-none"></div>
+    <div class="w-full h-full bg-gradient-to-b from-[#1b1035] via-[#2a134b] to-[#07050d] flex flex-col items-center justify-center p-6 relative overflow-hidden">
+      <div class="absolute inset-x-0 bottom-0 h-44 opacity-25 [perspective:300px] pointer-events-none">
+        <div class="w-full h-full [transform:rotateX(65deg)] bg-[linear-gradient(to_right,#ff007a_1px,transparent_1px),linear-gradient(to_bottom,#ff007a_1px,transparent_1px)] [background-size:24px_24px]"></div>
+      </div>
 
-      <div class="relative z-10 flex flex-col items-center text-center max-w-md">
-        <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-miami-pink to-miami-cyan p-0.5 shadow-neon-pink mb-4 group-hover:scale-110 transition-transform">
-          <div class="w-full h-full bg-background rounded-[10px] flex items-center justify-center font-black text-xl text-transparent bg-clip-text bg-gradient-to-r from-miami-pink to-miami-cyan">
+      <div class="absolute w-48 h-48 sm:w-60 sm:h-60 rounded-full bg-gradient-to-t from-vice-pink via-vice-orange to-vice-gold blur-sm opacity-80 pointer-events-none"></div>
+
+      <div class="absolute -bottom-4 -left-6 w-52 h-52 text-[#07050d] opacity-90 pointer-events-none">
+        <svg viewBox="0 0 200 200" fill="currentColor" class="w-full h-full">
+          <path d="M100 190 Q98 120 102 70 Q75 60 40 75 Q70 50 100 65 Q110 30 140 20 Q120 45 105 68 Q140 60 170 80 Q130 80 106 72 Q103 125 100 190 Z" />
+        </svg>
+      </div>
+
+      <div class="relative z-10 flex flex-col items-center text-center max-w-lg">
+        <div class="w-12 h-12 rounded-2xl bg-gradient-to-br from-vice-pink to-vice-cyan p-[1.5px] shadow-neon-pink mb-3 group-hover:scale-110 transition-transform">
+          <div class="w-full h-full bg-[#0d0a1a] rounded-[14px] flex items-center justify-center font-black text-xl text-transparent bg-clip-text bg-gradient-to-r from-vice-pink to-vice-cyan">
             VI
           </div>
         </div>
-        <span class="text-xs font-bold text-miami-cyan uppercase tracking-widest mb-1">Rockstar Games Official Showcase</span>
-        <h4 class="text-lg sm:text-xl font-black text-white line-clamp-2 mb-2 leading-tight drop-shadow-md">
+
+        <span class="text-[10px] font-mono font-bold tracking-widest text-vice-cyan uppercase mb-1">
+          ROCKSTAR GAMES // EXCLUSIVE SHOWCASE
+        </span>
+
+        <h4 class="text-base sm:text-2xl font-black text-white line-clamp-2 mb-2 leading-tight drop-shadow-md tracking-tight uppercase">
           {title}
         </h4>
+
         {soundtrack && (
-          <p class="text-xs text-gray-300 mb-4 line-clamp-1">{soundtrack}</p>
+          <span class="text-xs font-mono text-gray-300 mb-4 line-clamp-1 bg-black/40 px-3 py-1 rounded-full border border-white/10">
+            AUDIO: {soundtrack}
+          </span>
         )}
-        <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-miami-pink/20 border border-miami-pink/50 text-xs font-bold text-white shadow-neon-pink">
-          <svg class="w-4 h-4 fill-current text-miami-pink" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
-          <span>Guarda sul Portale Rockstar Newswire</span>
+
+        <div class="inline-flex items-center gap-2 px-5 py-2 rounded-xl bg-gradient-to-r from-vice-pink to-vice-orange text-xs font-mono font-bold tracking-wider text-white shadow-neon-pink group-hover:scale-105 transition-transform">
+          <svg class="w-4 h-4 fill-current text-white" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+          <span>GUARDA SU ROCKSTAR NEWSWIRE</span>
         </div>
       </div>
     </div>
@@ -65,35 +81,46 @@ const posterUrl = isPlaceholderId
     />
   )}
 
-  <!-- Ambient Dark Gradient Overlay -->
-  <div class="absolute inset-0 bg-gradient-to-t from-background/95 via-background/30 to-transparent group-hover:via-background/15 transition-all duration-300 pointer-events-none"></div>
+  <!-- Dark Atmospheric Gradient Overlay -->
+  <div class="absolute inset-0 bg-gradient-to-t from-[#07050d] via-transparent to-[#07050d]/70 group-hover:via-transparent transition-all duration-300 pointer-events-none"></div>
 
-  <!-- Duration Badge -->
+  <!-- Duration Badge with Neon Pill -->
   {duration && (
-    <div class="absolute bottom-3 right-3 px-2.5 py-1 rounded-md bg-black/80 border border-white/10 text-xs font-mono font-semibold text-gray-200 backdrop-blur-sm shadow-md pointer-events-none">
-      {duration}
+    <div class="absolute bottom-4 right-4 px-3 py-1 rounded-lg bg-[#07050d]/85 border border-white/[0.12] text-xs font-mono font-bold text-gray-200 backdrop-blur-md shadow-lg pointer-events-none flex items-center gap-2">
+      <span class="w-1.5 h-1.5 rounded-full bg-vice-cyan animate-pulse"></span>
+      <span>{duration}</span>
     </div>
   )}
 
-  <!-- Play Button (Neon Vice Style) -->
+  <!-- Play Button with Glowing Ripple Ring -->
   {!isPlaceholderId && (
     <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
-      <div class="w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-surface-100/90 border-2 border-miami-pink flex items-center justify-center shadow-neon-pink group-hover:scale-110 group-hover:bg-miami-pink transition-all duration-300">
-        <svg class="w-7 h-7 sm:w-8 sm:h-8 text-white ml-1 transition-transform group-hover:scale-110" fill="currentColor" viewBox="0 0 24 24">
-          <path d="M8 5v14l11-7z" />
-        </svg>
+      <div class="relative flex items-center justify-center">
+        <!-- Ripple Outer Ring -->
+        <div class="absolute w-24 h-24 sm:w-28 sm:h-28 rounded-full border border-vice-pink/50 animate-ping opacity-40"></div>
+        <!-- Inner Play Button -->
+        <div class="w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-[#151026]/90 border-2 border-vice-pink flex items-center justify-center shadow-neon-pink group-hover:scale-110 group-hover:bg-vice-pink transition-all duration-300 backdrop-blur-md">
+          <svg class="w-7 h-7 sm:w-8 sm:h-8 text-white ml-1 transition-transform group-hover:scale-110" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M8 5v14l11-7z" />
+          </svg>
+        </div>
       </div>
     </div>
   )}
 
-  <!-- Video Title Bar at top -->
-  <div class="absolute top-0 inset-x-0 p-4 bg-gradient-to-b from-black/80 via-black/40 to-transparent pointer-events-none">
-    <h3 class="text-sm sm:text-base font-bold text-white line-clamp-1 drop-shadow-md">
-      {title}
-    </h3>
-    <span class="text-[11px] text-gray-300 flex items-center gap-1.5 mt-0.5">
-      <span class="w-1.5 h-1.5 rounded-full bg-red-500 inline-block"></span>
-      Embed Riservato • youtube-nocookie.com
+  <!-- Top Video Metadata Bar -->
+  <div class="absolute top-0 inset-x-0 p-4 sm:p-5 bg-gradient-to-b from-[#07050d]/90 via-[#07050d]/50 to-transparent pointer-events-none flex items-center justify-between gap-3">
+    <div class="flex items-center gap-2.5">
+      <span class="flex h-2.5 w-2.5 relative">
+        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span>
+        <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-red-500"></span>
+      </span>
+      <h3 class="text-xs sm:text-sm font-mono font-bold text-white tracking-wide line-clamp-1 drop-shadow-md">
+        {title}
+      </h3>
+    </div>
+    <span class="text-[10px] font-mono text-gray-400 px-2 py-0.5 rounded bg-black/50 border border-white/10 hidden sm:inline-block">
+      RAGE 9 • 4K
     </span>
   </div>
 </div>
@@ -118,13 +145,12 @@ const posterUrl = isPlaceholderId
           return;
         }
 
-        // Dynamically inject safe iframe in youtube-nocookie.com mode
         const iframe = document.createElement('iframe');
         iframe.setAttribute('src', `https://www.youtube-nocookie.com/embed/${videoId}?autoplay=1&rel=0&modestbranding=1`);
         iframe.setAttribute('title', title);
         iframe.setAttribute('allow', 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture');
         iframe.setAttribute('allowfullscreen', 'true');
-        iframe.className = 'w-full h-full absolute inset-0 border-0 rounded-2xl';
+        iframe.className = 'w-full h-full absolute inset-0 border-0 rounded-3xl';
 
         player.replaceChildren(iframe);
       };

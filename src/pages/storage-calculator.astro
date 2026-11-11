@@ -12,20 +12,20 @@ const ssdDeals = db.hardwareDeals.filter(
 
 <BaseLayout
   title="Calcolatore Spazio SSD GTA 6: Il tuo disco è pronto per il Pre-load? | Leonida Index"
-  description="Verifica se la memoria della tua PS5 o Xbox Series X|S è sufficiente per i 228.5 GB del pre-load di GTA VI. Guida all'espansione SSD M.2 con dissipatore e offerte verificate."
+  description="Diagnostica hardware per PlayStation 5 e Xbox Series X|S: verifica se hai abbastanza giga liberi per i 228.5 GB del pre-load di GTA VI con guida tecnica SSD M.2 con dissipatore."
   canonicalPath="/storage-calculator"
-  breadcrumbs={[{ name: 'Calcolatore Spazio SSD Console', url: '/storage-calculator' }]}
+  breadcrumbs={[{ name: 'Diagnostica Spazio SSD Console', url: '/storage-calculator' }]}
 >
-  <div class="max-w-4xl mx-auto text-center my-6">
-    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-surface-200 border border-miami-cyan/40 text-xs font-bold text-miami-cyan uppercase mb-3">
-      <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
-      <span>Pre-load Ufficiale Attivo dal 10 Novembre (228.5 GB)</span>
+  <div class="max-w-4xl mx-auto text-center my-8">
+    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#1b1433] border border-vice-cyan/40 text-[11px] font-mono font-bold text-vice-cyan uppercase tracking-widest mb-3">
+      <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+      <span>PRE-LOAD ATTIVO DAL 10 NOVEMBRE // PACCHETTO DATI: 228.5 GB</span>
     </div>
-    <h1 class="text-3xl sm:text-5xl font-black text-white tracking-tight uppercase mb-3">
-      VERIFICA ARCHIVIAZIONE <span class="bg-gradient-to-r from-miami-pink via-miami-orange to-miami-cyan bg-clip-text text-transparent">CONSOLE SSD</span>
+    <h1 class="text-4xl sm:text-6xl font-black text-white tracking-tight uppercase mb-4 leading-none">
+      DIAGNOSTICA ARCHIVIAZIONE <span class="bg-gradient-to-r from-vice-pink via-vice-orange to-vice-cyan bg-clip-text text-transparent">SSD CONSOLE</span>
     </h1>
-    <p class="text-xs sm:text-base text-gray-300 max-w-2xl mx-auto leading-relaxed">
-      Il pacchetto di installazione di Grand Theft Auto VI è il più pesante mai distribuito su console. Calcola se hai abbastanza giga liberi o se devi installare un disco aggiuntivo.
+    <p class="text-xs sm:text-base text-gray-300 max-w-2xl mx-auto leading-relaxed font-normal">
+      Grand Theft Auto VI è il titolo più imponente mai distribuito su console. Calcola l'impatto sul tuo drive interno ed evita blocchi dell'installazione al momento del lancio.
     </p>
   </div>
 
@@ -35,44 +35,57 @@ const ssdDeals = db.hardwareDeals.filter(
   <StorageCalculator />
 
   <!-- Technical Installation Guide Section -->
-  <section class="max-w-4xl mx-auto my-12 p-6 sm:p-10 rounded-3xl bg-surface-50 border border-surface-300 shadow-xl">
-    <div class="mb-8">
-      <span class="text-xs font-bold text-miami-cyan uppercase font-mono">Guida Tecnica Ufficiale</span>
-      <h2 class="text-2xl font-bold text-white mt-1">
-        Come Installare un SSD M.2 su PlayStation 5 per GTA VI
+  <section class="max-w-5xl mx-auto my-14 p-6 sm:p-12 rounded-[2.5rem] bg-gradient-to-b from-[#151026] via-[#0d0a1a] to-[#07050d] border border-white/[0.1] shadow-2xl relative overflow-hidden">
+    <div class="absolute -right-20 -top-20 w-80 h-80 bg-vice-pink/15 rounded-full blur-[100px] pointer-events-none"></div>
+
+    <div class="mb-8 relative z-10">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#1b1433] border border-vice-cyan/40 text-[10px] font-mono font-bold text-vice-cyan uppercase tracking-widest mb-2">
+        SPECIFICHE TECNICHE HARDWARE
+      </div>
+      <h2 class="text-2xl sm:text-4xl font-black text-white uppercase tracking-tight">
+        GUIDA ALL'INSTALLAZIONE SSD M.2 PER GTA VI
       </h2>
-      <p class="text-xs sm:text-sm text-gray-300 mt-2">
-        Specifiche richieste da Sony Interactive Entertainment per garantire tempi di caricamento istantanei a Leonida.
+      <p class="text-xs sm:text-sm text-gray-300 mt-1 font-normal">
+        Requisiti certificati da Sony Interactive Entertainment per assicurare streaming degli asset a 0 millisecondi di latenza a Leonida.
       </p>
     </div>
 
-    <div class="space-y-4 text-xs sm:text-sm text-gray-300 leading-relaxed">
-      <div class="p-4 rounded-xl bg-surface-100 border border-surface-200 flex items-start gap-4">
-        <span class="w-8 h-8 rounded-lg bg-miami-pink text-white flex items-center justify-center font-black font-mono shrink-0">1</span>
+    <div class="space-y-4 relative z-10 text-xs sm:text-sm text-gray-300 leading-relaxed font-normal">
+      <!-- Step 1 -->
+      <div class="p-6 rounded-3xl bg-[#140f26]/80 border border-white/[0.08] hover:border-vice-pink/50 transition-colors flex flex-col sm:flex-row items-start gap-4">
+        <div class="px-3 py-1.5 rounded-xl bg-vice-pink text-white font-mono font-black text-xs shrink-0 tracking-wider">
+          STEP 01
+        </div>
         <div>
-          <h3 class="font-bold text-white mb-1">Requisiti di Velocità e Dissipatore</h3>
-          <p>
-            L'SSD M.2 deve essere di tipo PCIe Gen4 x4 con velocità di lettura sequenziale raccomandata di almeno 5.500 MB/s (modelli come WD_BLACK SN850X raggiungono 7.300 MB/s). È obbligatorio un dissipatore di calore in alluminio preinstallato con spessore non superiore a 11,25 mm.
+          <h3 class="font-bold text-white text-base mb-1.5">Velocità PCIe Gen4 e Dissipatore Termico Obbligatorio</h3>
+          <p class="text-gray-300 leading-relaxed">
+            L'SSD M.2 deve supportare lo standard PCIe 4.0 x4 con velocità di lettura sequenziale pari o superiore a 5.500 MB/s (unità come WD_BLACK SN850X raggiungono 7.300 MB/s). È fondamentale disporre di un heatsink in alluminio con altezza totale non superiore a 11,25 mm per dissipare il carico termico del motore RAGE 9.
           </p>
         </div>
       </div>
 
-      <div class="p-4 rounded-xl bg-surface-100 border border-surface-200 flex items-start gap-4">
-        <span class="w-8 h-8 rounded-lg bg-miami-cyan text-background flex items-center justify-center font-black font-mono shrink-0">2</span>
+      <!-- Step 2 -->
+      <div class="p-6 rounded-3xl bg-[#140f26]/80 border border-white/[0.08] hover:border-vice-cyan/50 transition-colors flex flex-col sm:flex-row items-start gap-4">
+        <div class="px-3 py-1.5 rounded-xl bg-vice-cyan text-[#07050d] font-mono font-black text-xs shrink-0 tracking-wider">
+          STEP 02
+        </div>
         <div>
-          <h3 class="font-bold text-white mb-1">Procedura di Inserimento (3 Minuti)</h3>
-          <p>
-            Spegni la console, stacca tutti i cavi e rimuovi la cover laterale con il logo PlayStation rivolto verso il basso. Svita la copertura metallica dello slot di espansione con un cacciavite a croce, inserisci l'SSD con un'inclinazione di circa 30 gradi fino al click, bloccalo con la vite in dotazione e richiudi.
+          <h3 class="font-bold text-white text-base mb-1.5">Alloggiamento nello Slot Espansione PS5 (3 Minuti)</h3>
+          <p class="text-gray-300 leading-relaxed">
+            Spegni la console e stacca i cavi di alimentazione. Rimuovi la paratia inferiore con il logo rivolto verso il basso, svita lo sportellino in metallo con un cacciavite Phillips, inserisci il disco M.2 con un'angolatura di 30° fino all'aggancio, fissa la vite sul distanziatore a 80mm e richiudi la scocca.
           </p>
         </div>
       </div>
 
-      <div class="p-4 rounded-xl bg-surface-100 border border-surface-200 flex items-start gap-4">
-        <span class="w-8 h-8 rounded-lg bg-miami-orange text-white flex items-center justify-center font-black font-mono shrink-0">3</span>
+      <!-- Step 3 -->
+      <div class="p-6 rounded-3xl bg-[#140f26]/80 border border-white/[0.08] hover:border-vice-orange/50 transition-colors flex flex-col sm:flex-row items-start gap-4">
+        <div class="px-3 py-1.5 rounded-xl bg-vice-orange text-white font-mono font-black text-xs shrink-0 tracking-wider">
+          STEP 03
+        </div>
         <div>
-          <h3 class="font-bold text-white mb-1">Espansione su Xbox Series X|S</h3>
-          <p>
-            Su console Xbox non occorre aprire la scocca: basta inserire la Seagate Storage Expansion Card direttamente nello slot dedicato 'Storage Expansion' situato sul retro della console. La formattazione è automatica in 5 secondi.
+          <h3 class="font-bold text-white text-base mb-1.5">Plug &amp; Play su Xbox Series X|S</h3>
+          <p class="text-gray-300 leading-relaxed">
+            Per i giocatori Xbox non è necessario smontare nulla: basta inserire la scheda di espansione Seagate Storage Expansion Card nello slot dedicato posizionato sul retro della console. La sincronizzazione con l'architettura Xbox Velocity è istantanea.
           </p>
         </div>
       </div>
@@ -80,10 +93,17 @@ const ssdDeals = db.hardwareDeals.filter(
   </section>
 
   <!-- Hardware Deals Grid -->
-  <section class="max-w-5xl mx-auto my-12">
-    <div class="text-center mb-8">
-      <h2 class="text-2xl font-bold text-white">Upgrade Consigliati per il Lancio del 19 Novembre</h2>
-      <p class="text-xs text-gray-400 mt-1">Dispositivi compatibili al 100% testati per i requisiti I/O di GTA VI.</p>
+  <section class="max-w-5xl mx-auto my-14">
+    <div class="max-w-3xl mb-8">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#1b1433] border border-vice-cyan/40 text-[10px] font-mono font-bold text-vice-cyan uppercase tracking-widest mb-2">
+        HARDWARE TESTATO E CERTIFICATO
+      </div>
+      <h2 class="text-3xl sm:text-4xl font-black text-white tracking-tight uppercase">
+        UPGRADE CONSIGLIATI PER IL PRE-LOAD
+      </h2>
+      <p class="text-xs sm:text-sm text-gray-300 mt-1 font-normal">
+        Dispositivi I/O conformi al 100% per supportare la densità di texture e streaming di Vice City.
+      </p>
     </div>
 
     <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -106,4 +126,3 @@ const ssdDeals = db.hardwareDeals.filter(
     </div>
   </section>
 </BaseLayout>
-

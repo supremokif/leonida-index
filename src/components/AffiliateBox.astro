@@ -29,58 +29,57 @@ const {
 } = Astro.props;
 ---
 
-<div class="flex flex-col justify-between p-6 rounded-2xl bg-surface-100/90 border border-surface-300 hover:border-miami-cyan/60 hover:shadow-neon-cyan transition-all duration-300 relative group backdrop-blur-md">
+<div class="flex flex-col justify-between p-6 sm:p-7 rounded-3xl bg-gradient-to-b from-[#151026] via-[#100b21] to-[#0a0714] border border-white/[0.1] hover:border-vice-cyan/50 hover:shadow-neon-cyan transition-all duration-300 relative group backdrop-blur-xl">
   <div>
-    <!-- Top Meta Row -->
-    <div class="flex items-center justify-between gap-2 mb-3">
-      <span class="text-xs font-bold text-miami-cyan tracking-wider uppercase font-mono">
+    <!-- Top Hardware Category & Badge Row -->
+    <div class="flex items-center justify-between gap-2 mb-3.5">
+      <span class="text-[11px] font-mono font-bold text-vice-cyan tracking-widest uppercase">
         {category}
       </span>
       {badge && (
-        <span class="px-2.5 py-0.5 rounded-full bg-gradient-to-r from-miami-pink/20 to-miami-orange/20 border border-miami-pink/40 text-[11px] font-semibold text-miami-pink">
+        <span class="px-3 py-1 rounded-full bg-vice-pink/15 border border-vice-pink/40 text-[10px] font-mono font-bold text-vice-pink uppercase tracking-wider shadow-[0_0_10px_rgba(255,0,122,0.3)]">
           {badge}
         </span>
       )}
     </div>
 
-    <!-- Title -->
-    <h3 class="text-lg font-bold text-white group-hover:text-miami-cyan transition-colors mb-2 leading-snug">
+    <!-- Product Title -->
+    <h3 class="text-base sm:text-lg font-bold text-white group-hover:text-vice-cyan transition-colors mb-2.5 leading-snug">
       {title}
     </h3>
 
-    <!-- Compatibility & Rating -->
-    <div class="flex flex-wrap items-center gap-2 mb-4 text-xs text-gray-300">
-      <span class="px-2 py-0.5 rounded bg-surface-200 text-gray-200 font-medium border border-surface-300">
+    <!-- Compatibility & Rating Tags -->
+    <div class="flex flex-wrap items-center gap-2 mb-5 text-xs font-mono">
+      <span class="px-2.5 py-1 rounded-lg bg-[#1b1433] text-gray-200 border border-white/[0.08]">
         {targetConsole}
       </span>
       {storageCapacityGb && storageCapacityGb > 0 && (
-        <span class="px-2 py-0.5 rounded bg-surface-200 text-miami-pink font-semibold border border-surface-300">
-          +{storageCapacityGb} GB Spazio
+        <span class="px-2.5 py-1 rounded-lg bg-vice-pink/10 text-vice-pink font-bold border border-vice-pink/20">
+          +{storageCapacityGb} GB
         </span>
       )}
-      <span class="flex items-center gap-1 text-amber-400 font-semibold ml-auto">
+      <span class="flex items-center gap-1.5 text-amber-400 font-bold ml-auto bg-black/40 px-2 py-0.5 rounded border border-white/5">
         <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 20 20">
           <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
         </svg>
-        {rating} {reviewsCount && <span class="text-gray-400 font-normal">({reviewsCount})</span>}
+        <span>{rating}</span>
+        {reviewsCount && <span class="text-gray-400 font-normal text-[10px]">({reviewsCount})</span>}
       </span>
     </div>
 
     <!-- Feature Checklist -->
-    <ul class="space-y-2 mb-6 text-xs text-gray-300">
+    <ul class="space-y-2.5 mb-6 text-xs text-gray-300">
       {features.map((feature) => (
-        <li class="flex items-start gap-2">
-          <svg class="w-4 h-4 text-miami-cyan shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" />
-          </svg>
-          <span class="leading-relaxed">{feature}</span>
+        <li class="flex items-start gap-2.5 leading-relaxed">
+          <span class="text-vice-cyan shrink-0 font-bold mt-0.5">✓</span>
+          <span>{feature}</span>
         </li>
       ))}
     </ul>
   </div>
 
-  <!-- Bottom Pricing & CTA -->
-  <div class="pt-4 border-t border-surface-200/80 flex items-center justify-between gap-4">
+  <!-- Pricing & Action Row -->
+  <div class="pt-4 border-t border-white/[0.08] flex items-center justify-between gap-4">
     <div>
       <span class="text-2xl font-black text-white font-mono tracking-tight">{price}</span>
       {originalPrice && (
@@ -88,18 +87,17 @@ const {
       )}
     </div>
 
-    <!-- Mandatory Security Link: rel="sponsored noopener noreferrer" -->
+    <!-- Security Compliant Affiliate Link -->
     <a
       href={affiliateUrl}
       target="_blank"
       rel="sponsored noopener noreferrer"
-      class="inline-flex items-center gap-1.5 px-4 py-2.5 rounded-xl bg-gradient-to-r from-miami-pink to-miami-orange hover:from-miami-pink/90 hover:to-miami-orange/90 text-white text-xs font-bold shadow-md hover:shadow-neon-pink transition-all duration-200"
+      class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-gradient-to-r from-vice-pink to-vice-orange hover:from-vice-pink/90 hover:to-vice-orange/90 text-white text-xs font-mono font-bold tracking-wider uppercase shadow-neon-pink hover:scale-105 transition-all duration-200"
     >
-      <span>Verifica Offerta</span>
+      <span>VERIFICA OFFERTA</span>
       <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3" />
       </svg>
     </a>
   </div>
 </div>
-

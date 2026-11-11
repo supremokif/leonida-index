@@ -3,55 +3,62 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 ---
 
 <BaseLayout
-  title="404 - Pagina Non Trovata | Leonida Index"
-  description="La pagina che cerchi non esiste o è stata spostata dalla polizia dello Stato di Leonida."
+  title="404 - Segnale Perso a Leonida | Leonida Index"
+  description="Coordinata non rintracciata dalla Highway Patrol dello Stato di Leonida."
   canonicalPath="/404"
 >
-  <div class="max-w-2xl mx-auto my-16 text-center p-8 sm:p-12 rounded-3xl bg-surface-50 border border-surface-300 shadow-2xl relative overflow-hidden">
-    <div class="absolute -right-16 -bottom-16 w-48 h-48 bg-miami-pink/15 rounded-full blur-3xl pointer-events-none"></div>
-    <div class="absolute -left-16 -top-16 w-48 h-48 bg-miami-cyan/15 rounded-full blur-3xl pointer-events-none"></div>
+  <div class="max-w-2xl mx-auto my-16 text-center p-8 sm:p-14 rounded-[2.5rem] bg-gradient-to-b from-[#18102e] via-[#0d091a] to-[#07050d] border border-white/[0.12] shadow-2xl relative overflow-hidden">
+    <!-- Ambient Police Siren Glows -->
+    <div class="absolute -right-20 -bottom-20 w-64 h-64 bg-vice-pink/20 rounded-full blur-[100px] pointer-events-none"></div>
+    <div class="absolute -left-20 -top-20 w-64 h-64 bg-vice-cyan/20 rounded-full blur-[100px] pointer-events-none"></div>
 
-    <!-- Wanted Stars -->
-    <div class="flex items-center justify-center gap-2 mb-4 text-amber-400 text-2xl animate-pulse">
-      <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+    <!-- 5 Glowing Wanted Stars -->
+    <div class="flex items-center justify-center gap-2 mb-5 text-vice-gold text-2xl sm:text-3xl animate-pulse">
+      <span class="drop-shadow-[0_0_10px_rgba(255,183,3,0.8)]">★</span>
+      <span class="drop-shadow-[0_0_10px_rgba(255,183,3,0.8)]">★</span>
+      <span class="drop-shadow-[0_0_10px_rgba(255,183,3,0.8)]">★</span>
+      <span class="drop-shadow-[0_0_10px_rgba(255,183,3,0.8)]">★</span>
+      <span class="drop-shadow-[0_0_10px_rgba(255,183,3,0.8)]">★</span>
     </div>
 
-    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-red-950/80 border border-red-500 text-xs font-mono font-bold text-red-400 uppercase mb-4">
-      <span>WANTED LEVEL 5 STELLE • CODICE 404</span>
+    <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-red-950/60 border border-red-500/50 text-[11px] font-mono font-bold text-red-400 uppercase tracking-widest mb-4">
+      <span class="w-2 h-2 rounded-full bg-red-500 animate-ping"></span>
+      <span>VCPD RADIO ALERT // WANTED LEVEL: MAXIMUM</span>
     </div>
 
-    <h1 class="text-6xl sm:text-8xl font-black text-white font-mono tracking-tighter mb-4">
-      4<span class="text-miami-pink">0</span>4
+    <!-- Monumental 404 Header -->
+    <h1 class="text-7xl sm:text-9xl font-black text-white font-mono tracking-tighter mb-4 leading-none">
+      4<span class="text-vice-pink drop-shadow-[0_0_25px_rgba(255,0,122,0.8)]">0</span>4
     </h1>
 
-    <h2 class="text-xl sm:text-2xl font-bold text-white mb-3">
-      Sei finito in una zona non tracciata di Leonida!
+    <h2 class="text-xl sm:text-2xl font-black text-white uppercase tracking-tight mb-3">
+      Coordinate GPS Fuori dalla Mappa di Leonida
     </h2>
 
-    <p class="text-xs sm:text-sm text-gray-300 max-w-md mx-auto mb-8 leading-relaxed">
-      La pagina o la coordinata GPS che stavi cercando è stata rimossa, sequestrata dalla Highway Patrol o non esiste ancora nella mappa.
+    <p class="text-xs sm:text-sm text-gray-300 max-w-md mx-auto mb-8 leading-relaxed font-normal">
+      Il settore o la risorsa richiesta è stata sequestrata dalla Highway Patrol, rimossa dai registri doganali o non esiste ancora nello stato.
     </p>
 
+    <!-- Navigation Hub -->
     <div class="flex flex-wrap items-center justify-center gap-3">
       <a
         href="/"
-        class="px-6 py-3 rounded-xl bg-gradient-to-r from-miami-pink to-miami-orange text-white text-xs font-bold shadow-neon-pink hover:scale-105 transition-transform"
+        class="px-6 py-3 rounded-xl bg-gradient-to-r from-vice-pink to-vice-orange text-white text-xs font-mono font-bold shadow-neon-pink hover:scale-105 transition-all"
       >
-        Torna alla Base (Home)
+        RIENTRA ALLA BASE (HOME)
       </a>
       <a
         href="/tracker"
-        class="px-6 py-3 rounded-xl bg-surface-200 hover:bg-surface-300 text-white text-xs font-bold border border-surface-300 transition-colors"
+        class="px-6 py-3 rounded-xl bg-[#140f26] hover:bg-[#1f173d] text-white text-xs font-mono font-bold border border-white/[0.1] hover:border-vice-cyan/50 transition-all"
       >
-        Apri 100% Tracker
+        TRACKER 100%
       </a>
       <a
         href="/trailers/trailer-1"
-        class="px-6 py-3 rounded-xl bg-surface-200 hover:bg-surface-300 text-white text-xs font-bold border border-surface-300 transition-colors"
+        class="px-6 py-3 rounded-xl bg-[#140f26] hover:bg-[#1f173d] text-white text-xs font-mono font-bold border border-white/[0.1] hover:border-vice-pink/50 transition-all"
       >
-        Archivio Trailer
+        ARCHIVIO VIDEO
       </a>
     </div>
   </div>
 </BaseLayout>
-

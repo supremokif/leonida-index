@@ -23,73 +23,101 @@ const otherRegions = db.locations.filter((r) => r.slug !== region.slug);
 
 <BaseLayout
   title={`${region.name} - Mappa, Luoghi & Collezionabili GTA VI | Leonida Index`}
-  description={`Guida ufficiale alla regione ${region.name} in Grand Theft Auto VI. Luoghi confermati, fazioni criminali, veicoli nativi, fauna e ${region.collectibles.length} collezionabili per il trofeo 100%.`}
+  description={`Dossier operativo e cartografia di ${region.name} in Grand Theft Auto VI. Punti di interesse, sindacati criminali, veicoli nativi, fauna e ${region.collectibles.length} collezionabili per il trofeo 100%.`}
   canonicalPath={`/leonida/${region.slug}`}
   breadcrumbs={[
-    { name: 'Mappa Leonida', url: '/leonida/vice-city' },
+    { name: 'Cartografia Leonida', url: '/leonida/vice-city' },
     { name: region.name, url: `/leonida/${region.slug}` },
   ]}
 >
-  <div class="max-w-5xl mx-auto my-6">
-    <!-- Top Metadata Header -->
-    <div class="flex flex-wrap items-center justify-between gap-4 mb-4">
-      <div class="flex items-center gap-2">
-        <span class="px-3 py-1 rounded-full bg-surface-200 border border-miami-cyan/40 text-xs font-bold text-miami-cyan font-mono">
+  <div class="max-w-5xl mx-auto my-8">
+    <!-- Top Telemetry Bar -->
+    <div class="flex flex-wrap items-center justify-between gap-4 mb-6 pb-4 border-b border-white/[0.08]">
+      <div class="flex items-center gap-3">
+        <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#1b1433] border border-vice-cyan/40 text-[11px] font-mono font-bold text-vice-cyan uppercase tracking-wider">
+          <span class="w-1.5 h-1.5 rounded-full bg-vice-cyan animate-pulse"></span>
           {region.category}
         </span>
         <span class="text-xs font-mono text-gray-400">
-          Coordinate: <strong class="text-white">{region.coordinates.lat.toFixed(4)}° N, {Math.abs(region.coordinates.lng).toFixed(4)}° W</strong>
+          GPS: <strong class="text-white">{region.coordinates.lat.toFixed(4)}° N, {Math.abs(region.coordinates.lng).toFixed(4)}° W</strong>
         </span>
       </div>
-      <a href="/tracker" class="text-xs font-bold text-miami-pink hover:underline">
-        Spunta nel Tracker 100% ({region.collectibles.length} Oggetti) →
+      <a
+        href="/tracker"
+        class="inline-flex items-center gap-2 text-xs font-mono font-bold text-vice-pink hover:text-white transition-colors"
+      >
+        <span>TRACKER REGIONALE ({region.collectibles.length} TARGET)</span>
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
       </a>
     </div>
 
-    <h1 class="text-3xl sm:text-5xl font-black text-white tracking-tight uppercase mb-4 leading-tight">
-      {region.name}
-    </h1>
+    <!-- Hero Title Block -->
+    <div class="relative mb-10 p-8 sm:p-12 rounded-[2.5rem] bg-gradient-to-b from-[#18102e] via-[#0e0a1c] to-[#07050d] border border-white/[0.12] shadow-2xl overflow-hidden">
+      <div class="absolute -right-20 -top-20 w-80 h-80 bg-vice-pink/15 rounded-full blur-[100px] pointer-events-none"></div>
+      <div class="absolute -left-20 -bottom-20 w-80 h-80 bg-vice-cyan/15 rounded-full blur-[100px] pointer-events-none"></div>
 
-    <p class="text-sm sm:text-base text-gray-300 mb-6 leading-relaxed">
-      {region.description}
-    </p>
+      <div class="relative z-10 max-w-3xl">
+        <div class="text-[11px] font-mono font-bold text-vice-orange uppercase tracking-widest mb-3">
+          LEONIDA CARTOGRAPHY // SECTOR: {region.slug.toUpperCase()}
+        </div>
+        <h1 class="text-4xl sm:text-6xl font-black text-white tracking-tight uppercase mb-4 leading-none">
+          {region.name}
+        </h1>
+        <p class="text-sm sm:text-base text-gray-300 leading-relaxed font-normal">
+          {region.description}
+        </p>
 
-    <!-- Atmosphere / Environmental Ambience -->
-    <div class="p-5 rounded-2xl bg-surface-50 border border-surface-200 mb-8">
-      <span class="text-[11px] font-bold uppercase tracking-wider text-miami-pink font-mono block mb-1">
-        Atmosfera &amp; Ambientazione Sonora
-      </span>
-      <p class="text-xs sm:text-sm text-gray-200 leading-relaxed italic">
-        "{region.atmosphere}"
-      </p>
+        <!-- Radio Atmosphere Audio Log Wiretap -->
+        <div class="mt-6 p-4 rounded-2xl bg-[#090614]/80 border border-white/[0.08] flex items-start gap-3.5">
+          <div class="w-8 h-8 rounded-xl bg-vice-pink/20 border border-vice-pink/40 flex items-center justify-center text-vice-pink shrink-0 mt-0.5">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z"/></svg>
+          </div>
+          <div>
+            <span class="text-[10px] font-mono font-bold uppercase tracking-widest text-vice-pink block mb-0.5">
+              INTERCETTAZIONE AMBIENTALE // RADIO &amp; SOUNDSCAPE
+            </span>
+            <p class="text-xs text-gray-300 italic leading-relaxed">
+              "{region.atmosphere}"
+            </p>
+          </div>
+        </div>
+      </div>
     </div>
 
     <AdSlot id={`leonida-${region.slug}-slot`} format="leaderboard" />
 
-    <!-- Sub-Locations Table -->
-    <section class="my-10 p-6 sm:p-8 rounded-3xl bg-surface-50 border border-surface-300 shadow-xl" aria-label="Luoghi di Interesse">
-      <div class="mb-6">
-        <span class="text-xs font-bold text-miami-cyan uppercase font-mono">Punti di Interesse Confermati</span>
-        <h2 class="text-xl sm:text-2xl font-bold text-white mt-1">
-          Luoghi Esplorabili a {region.name} ({region.subLocations.length})
-        </h2>
+    <!-- Sub-Locations Interactive Table -->
+    <section class="my-12 p-6 sm:p-10 rounded-[2.5rem] bg-gradient-to-b from-[#151026] via-[#0d0a1a] to-[#07050d] border border-white/[0.1] shadow-2xl relative" aria-label="Luoghi di Interesse">
+      <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-6">
+        <div>
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#1b1433] border border-vice-cyan/40 text-[10px] font-mono font-bold text-vice-cyan uppercase tracking-widest mb-2">
+            PUNTI DI INTERESSE CONFERMATI
+          </div>
+          <h2 class="text-2xl sm:text-3xl font-black text-white uppercase tracking-tight">
+            ZONE ESPLORABILI A {region.name} ({region.subLocations.length})
+          </h2>
+        </div>
+        <span class="text-xs font-mono text-gray-400">Tutti gli interni esplorabili senza loading screen</span>
       </div>
 
-      <div class="overflow-x-auto rounded-xl border border-surface-200">
-        <table class="w-full text-left text-xs sm:text-sm text-gray-300">
-          <thead class="bg-surface-200 text-xs uppercase font-bold text-white tracking-wider font-mono">
+      <div class="overflow-x-auto rounded-2xl border border-white/[0.1] shadow-xl">
+        <table class="w-full text-left text-xs sm:text-sm text-gray-200">
+          <thead class="bg-[#1b1433] text-[11px] uppercase font-mono font-bold text-vice-cyan tracking-wider border-b border-white/[0.1]">
             <tr>
-              <th scope="col" class="py-3 px-4 w-60">Nome Luogo</th>
-              <th scope="col" class="py-3 px-4 w-44">Tipologia</th>
-              <th scope="col" class="py-3 px-4">Descrizione e Attività Connesse</th>
+              <th scope="col" class="py-3.5 px-4 sm:px-6 w-56">NOME LUOGO</th>
+              <th scope="col" class="py-3.5 px-4 w-36">TIPOLOGIA</th>
+              <th scope="col" class="py-3.5 px-4 sm:px-6">ATTIVITÀ &amp; SPECIFICHE</th>
             </tr>
           </thead>
-          <tbody class="divide-y divide-surface-200 bg-surface-100/60 font-medium">
+          <tbody class="divide-y divide-white/[0.06] bg-[#0e0a1a]/80 font-medium">
             {region.subLocations.map((sub) => (
-              <tr class="hover:bg-surface-200/50">
-                <td class="py-3 px-4 font-bold text-white">{sub.name}</td>
-                <td class="py-3 px-4 text-xs font-mono text-miami-cyan">{sub.type}</td>
-                <td class="py-3 px-4 text-xs text-gray-300 leading-relaxed">{sub.description}</td>
+              <tr class="hover:bg-white/[0.04] transition-colors">
+                <td class="py-3.5 px-4 sm:px-6 font-bold text-white flex items-center gap-2">
+                  <span class="w-1.5 h-1.5 rounded-full bg-vice-cyan"></span>
+                  {sub.name}
+                </td>
+                <td class="py-3.5 px-4 text-xs font-mono text-vice-pink">{sub.type}</td>
+                <td class="py-3.5 px-4 sm:px-6 text-xs text-gray-300 leading-relaxed font-normal">{sub.description}</td>
               </tr>
             ))}
           </tbody>
@@ -98,29 +126,32 @@ const otherRegions = db.locations.filter((r) => r.slug !== region.slug);
     </section>
 
     <!-- Factions & Law Enforcement Presence -->
-    <section class="my-10">
+    <section class="my-12">
       <div class="mb-6">
-        <span class="text-xs font-bold text-miami-pink uppercase font-mono">Controllo Territoriale</span>
-        <h2 class="text-xl sm:text-2xl font-bold text-white mt-1">Fazioni e Forze dell'Ordine</h2>
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#1b1433] border border-vice-pink/40 text-[10px] font-mono font-bold text-vice-pink uppercase tracking-widest mb-2">
+          CONTROLLO CRIMINALE &amp; FORZE DELL'ORDINE
+        </div>
+        <h2 class="text-2xl sm:text-3xl font-black text-white uppercase tracking-tight">FAZIONI E LIVELLI DI MINACCIA</h2>
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
         {region.factions.map((faction) => {
-          let badgeColor = 'text-emerald-400 border-emerald-500 bg-emerald-950/60';
-          if (faction.threatLevel === 'Media') badgeColor = 'text-amber-400 border-amber-500 bg-amber-950/60';
-          if (faction.threatLevel === 'Alta') badgeColor = 'text-orange-400 border-orange-500 bg-orange-950/60';
-          if (faction.threatLevel === 'Estrema') badgeColor = 'text-red-400 border-red-500 bg-red-950/60';
+          let badgeBorder = 'border-emerald-500/50 bg-emerald-950/40 text-emerald-400';
+          if (faction.threatLevel === 'Media') badgeBorder = 'border-amber-500/50 bg-amber-950/40 text-amber-400';
+          if (faction.threatLevel === 'Alta') badgeBorder = 'border-orange-500/50 bg-orange-950/40 text-orange-400';
+          if (faction.threatLevel === 'Estrema') badgeBorder = 'border-red-500/50 bg-red-950/40 text-red-400';
 
           return (
-            <div class="p-5 rounded-2xl bg-surface-50 border border-surface-200 flex flex-col justify-between">
+            <div class="p-6 rounded-3xl bg-[#120d24] border border-white/[0.1] hover:border-vice-pink/40 transition-colors flex flex-col justify-between">
               <div>
-                <div class="flex items-center justify-between gap-2 mb-2">
-                  <span class={`text-[10px] font-mono font-bold px-2 py-0.5 rounded-full border ${badgeColor}`}>
-                    Pericolo: {faction.threatLevel}
+                <div class="flex items-center justify-between gap-2 mb-3">
+                  <span class={`text-[10px] font-mono font-bold px-2.5 py-0.5 rounded-full border ${badgeBorder}`}>
+                    MINACCIA: {faction.threatLevel.toUpperCase()}
                   </span>
+                  <span class="text-[10px] font-mono text-gray-500">INTEL CONFIDENTIAL</span>
                 </div>
                 <h3 class="text-base font-bold text-white mb-2">{faction.name}</h3>
-                <p class="text-xs text-gray-300 leading-relaxed mb-4">{faction.description}</p>
+                <p class="text-xs text-gray-300 leading-relaxed font-normal mb-4">{faction.description}</p>
               </div>
             </div>
           );
@@ -129,62 +160,86 @@ const otherRegions = db.locations.filter((r) => r.slug !== region.slug);
     </section>
 
     <!-- Collectibles Checklist for this Region -->
-    <section class="my-10 p-6 sm:p-8 rounded-3xl bg-surface-50 border border-surface-300 shadow-xl">
-      <div class="flex items-center justify-between mb-6">
+    <section class="my-12 p-6 sm:p-10 rounded-[2.5rem] bg-gradient-to-b from-[#151026] via-[#0d0a1a] to-[#07050d] border border-white/[0.1] shadow-2xl">
+      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6">
         <div>
-          <span class="text-xs font-bold text-miami-cyan uppercase font-mono">Checklist 100% Regionale</span>
-          <h2 class="text-xl sm:text-2xl font-bold text-white mt-1">
-            Collezionabili e Trofei a {region.name}
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#1b1433] border border-vice-cyan/40 text-[10px] font-mono font-bold text-vice-cyan uppercase tracking-widest mb-2">
+            TARGET PER IL TROFEO PLATINO
+          </div>
+          <h2 class="text-2xl sm:text-3xl font-black text-white uppercase tracking-tight">
+            COLLEZIONABILI A {region.name} ({region.collectibles.length})
           </h2>
         </div>
         <a
           href="/tracker"
-          class="px-4 py-2 rounded-xl bg-gradient-to-r from-miami-pink to-miami-orange text-white text-xs font-bold shadow-neon-pink"
+          class="inline-flex items-center justify-center px-5 py-2.5 rounded-xl bg-gradient-to-r from-vice-pink to-vice-orange text-white text-xs font-mono font-bold shadow-neon-pink hover:scale-105 transition-transform"
         >
-          Apri Checklist Completa
+          APRI TRACKER GLOBALE 100%
         </a>
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
         {region.collectibles.map((col) => (
-          <div class="p-4 rounded-xl bg-surface-100 border border-surface-200 flex items-start gap-3">
-            <span class="w-6 h-6 rounded-md bg-surface-200 border border-surface-300 flex items-center justify-center text-miami-pink font-bold text-xs shrink-0 mt-0.5">
+          <div class="p-4 rounded-2xl bg-[#0e0a1a] border border-white/[0.08] hover:border-vice-pink/40 transition-colors flex items-start gap-3.5">
+            <span class="w-7 h-7 rounded-lg bg-[#1b1433] border border-vice-pink/40 flex items-center justify-center text-vice-pink font-bold text-xs shrink-0 mt-0.5">
               ★
             </span>
-            <div>
-              <div class="flex items-center gap-2">
+            <div class="flex-1">
+              <div class="flex items-center justify-between gap-2">
                 <h3 class="text-sm font-bold text-white">{col.name}</h3>
-                <span class="text-[10px] px-2 py-0.5 rounded bg-surface-200 text-miami-cyan font-mono">{col.type}</span>
+                <span class="text-[10px] px-2 py-0.5 rounded-md bg-[#181130] text-vice-cyan font-mono border border-white/[0.08]">
+                  {col.type}
+                </span>
               </div>
-              <p class="text-xs text-emerald-400 mt-1">Ricompensa: <span class="text-gray-300">{col.reward}</span></p>
+              <p class="text-xs text-emerald-400 mt-1 font-mono">
+                Ricompensa: <span class="text-gray-300 font-sans">{col.reward}</span>
+              </p>
             </div>
           </div>
         ))}
       </div>
     </section>
 
-    <!-- Vehicles and Wildlife Lists -->
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 my-10">
-      <div class="p-6 rounded-2xl bg-surface-50 border border-surface-200">
-        <h3 class="text-sm font-bold uppercase tracking-wider text-white mb-3">
-          🚗 Veicoli Tipici della Regione ({region.vehiclesPresent.length})
-        </h3>
+    <!-- Vehicles and Wildlife Lists (Zero Emoji AI Cliché, Sleek High-End Layout) -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 my-12">
+      <!-- Vehicles -->
+      <div class="p-6 sm:p-8 rounded-3xl bg-[#120d24] border border-white/[0.1]">
+        <div class="flex items-center gap-3 mb-4">
+          <div class="w-8 h-8 rounded-xl bg-vice-cyan/20 border border-vice-cyan/40 flex items-center justify-center text-vice-cyan shrink-0">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+          </div>
+          <div>
+            <h3 class="text-sm font-bold uppercase tracking-wider text-white">
+              VEICOLI CARATTERISTICI ({region.vehiclesPresent.length})
+            </h3>
+            <span class="text-[10px] font-mono text-gray-400">Modelli con spawn rate elevato nel settore</span>
+          </div>
+        </div>
         <div class="flex flex-wrap gap-2">
           {region.vehiclesPresent.map((veh) => (
-            <span class="px-3 py-1 rounded-lg bg-surface-100 border border-surface-300 text-xs text-gray-200 font-medium">
+            <span class="px-3 py-1.5 rounded-xl bg-[#0e0a1a] border border-white/[0.08] text-xs text-gray-200 font-mono hover:border-vice-cyan/40 transition-colors">
               {veh}
             </span>
           ))}
         </div>
       </div>
 
-      <div class="p-6 rounded-2xl bg-surface-50 border border-surface-200">
-        <h3 class="text-sm font-bold uppercase tracking-wider text-white mb-3">
-          🐊 Fauna Selvatica Autoctona ({region.wildlife.length})
-        </h3>
+      <!-- Wildlife -->
+      <div class="p-6 sm:p-8 rounded-3xl bg-[#120d24] border border-white/[0.1]">
+        <div class="flex items-center gap-3 mb-4">
+          <div class="w-8 h-8 rounded-xl bg-vice-orange/20 border border-vice-orange/40 flex items-center justify-center text-vice-orange shrink-0">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064"/></svg>
+          </div>
+          <div>
+            <h3 class="text-sm font-bold uppercase tracking-wider text-white">
+              FAUNA SELVATICA AUTOCTONA ({region.wildlife.length})
+            </h3>
+            <span class="text-[10px] font-mono text-gray-400">Ecosistema e predatori documentati</span>
+          </div>
+        </div>
         <div class="flex flex-wrap gap-2">
           {region.wildlife.map((beast) => (
-            <span class="px-3 py-1 rounded-lg bg-surface-100 border border-surface-300 text-xs text-gray-200 font-medium">
+            <span class="px-3 py-1.5 rounded-xl bg-[#0e0a1a] border border-white/[0.08] text-xs text-gray-200 font-mono hover:border-vice-orange/40 transition-colors">
               {beast}
             </span>
           ))}
@@ -192,23 +247,25 @@ const otherRegions = db.locations.filter((r) => r.slug !== region.slug);
       </div>
     </div>
 
-    <!-- Other Regions Internal Links -->
-    <div class="pt-8 border-t border-surface-300">
-      <h3 class="text-xs font-bold uppercase tracking-wider text-gray-400 mb-4 font-mono">
-        Altre Regioni dello Stato di Leonida
-      </h3>
+    <!-- Other Regions Navigation Radar -->
+    <div class="pt-8 border-t border-white/[0.08]">
+      <div class="flex items-center justify-between mb-4">
+        <h3 class="text-xs font-mono font-bold uppercase tracking-widest text-gray-400">
+          SETTORI ADIACENTI DELLO STATO DI LEONIDA
+        </h3>
+        <span class="text-[11px] font-mono text-vice-cyan">SELEZIONA DESTINAZIONE</span>
+      </div>
       <div class="grid grid-cols-2 sm:grid-cols-5 gap-3">
         {otherRegions.map((other) => (
           <a
             href={`/leonida/${other.slug}`}
-            class="p-3 rounded-xl bg-surface-100 hover:bg-surface-200 border border-surface-200 text-center transition-colors"
+            class="p-4 rounded-2xl bg-[#0e0a1a] hover:bg-[#181130] border border-white/[0.08] hover:border-vice-cyan/50 text-center transition-all duration-200 group"
           >
-            <span class="text-xs font-bold text-white block line-clamp-1">{other.name.split('&')[0].trim()}</span>
-            <span class="text-[10px] text-gray-400">{other.category}</span>
+            <span class="text-xs font-bold text-white block truncate group-hover:text-vice-cyan transition-colors">{other.name.split('&')[0].trim()}</span>
+            <span class="text-[10px] font-mono text-gray-400 mt-0.5 block">{other.category}</span>
           </a>
         ))}
       </div>
     </div>
   </div>
 </BaseLayout>
-

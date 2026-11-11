@@ -6,67 +6,114 @@ const targetDateStr = db.releaseInfo.releaseDate; // "2026-11-19T00:00:00" witho
 
 <div
   id="launch-hero-container"
-  class="relative w-full max-w-5xl mx-auto my-8 p-6 sm:p-10 rounded-3xl bg-surface-100/90 border border-miami-pink/40 shadow-neon-pink backdrop-blur-xl overflow-hidden"
+  class="relative w-full max-w-6xl mx-auto my-6 sm:my-10 p-6 sm:p-12 rounded-[2.5rem] bg-gradient-to-b from-[#151026]/90 via-[#0d0a1a]/95 to-[#07050d] border border-white/[0.12] shadow-2xl backdrop-blur-2xl overflow-hidden"
   data-target={targetDateStr}
 >
-  <!-- Background Glow Orbs -->
-  <div class="absolute -right-20 -bottom-20 w-72 h-72 bg-miami-pink/15 rounded-full blur-3xl pointer-events-none"></div>
-  <div class="absolute -left-20 -top-20 w-72 h-72 bg-miami-cyan/15 rounded-full blur-3xl pointer-events-none"></div>
+  <!-- Ambient Vice City Sunset Glow Meshes -->
+  <div class="absolute -right-24 -top-24 w-96 h-96 bg-vice-pink/20 rounded-full blur-[100px] pointer-events-none"></div>
+  <div class="absolute -left-24 -bottom-24 w-96 h-96 bg-vice-cyan/20 rounded-full blur-[100px] pointer-events-none"></div>
+  <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-64 bg-vice-orange/10 rounded-full blur-[120px] pointer-events-none"></div>
+
+  <!-- Palm Tree Vector Silhouettes Watermark -->
+  <div class="absolute right-0 bottom-0 w-80 h-80 opacity-[0.06] pointer-events-none select-none">
+    <svg viewBox="0 0 200 200" fill="currentColor" class="w-full h-full text-white">
+      <path d="M100 190 Q98 120 102 70 Q75 60 40 75 Q70 50 100 65 Q110 30 140 20 Q120 45 105 68 Q140 60 170 80 Q130 80 106 72 Q103 125 100 190 Z" />
+    </svg>
+  </div>
 
   <!-- STATE A: PRE-LAUNCH COUNTDOWN STATE -->
   <div id="hero-countdown-state" class="relative z-10 flex flex-col items-center text-center">
-    <!-- Active Pre-load notification pill -->
-    <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-surface-200 border border-miami-pink/50 text-xs sm:text-sm font-bold text-miami-pink uppercase tracking-wider mb-4 shadow-sm">
-      <span class="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse"></span>
-      <span>PRE-LOAD ATTIVO • USCITA UFFICIALE 19 NOVEMBRE 2026</span>
+    
+    <!-- Top HUD Telemetry Pill -->
+    <div class="inline-flex items-center gap-3 px-4 py-1.5 rounded-full bg-[#1b1433]/80 border border-vice-pink/40 shadow-neon-pink mb-6">
+      <span class="flex h-2 w-2 relative">
+        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+        <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-400"></span>
+      </span>
+      <span class="text-[11px] sm:text-xs font-mono font-bold tracking-widest text-white uppercase">
+        PRE-LOAD DISPONIBILE // 228.5 GB PS5 &amp; XBOX
+      </span>
+      <span class="text-gray-400 font-mono text-[10px] hidden sm:inline">•</span>
+      <span class="text-vice-cyan font-mono text-[10px] font-bold tracking-wider hidden sm:inline">
+        ROLLING MIDNIGHT 19 NOV 2026
+      </span>
     </div>
 
-    <h2 class="text-3xl sm:text-5xl md:text-6xl font-black text-white tracking-tight uppercase mb-3">
-      CONTO ALLA ROVESCIA <span class="bg-gradient-to-r from-miami-pink via-miami-orange to-miami-cyan bg-clip-text text-transparent">GTA 6</span>
-    </h2>
+    <!-- Monumental Hero Typography -->
+    <h1 class="text-4xl sm:text-7xl md:text-8xl font-black text-white tracking-tighter uppercase mb-3 leading-none drop-shadow-2xl">
+      GRAND THEFT AUTO <span class="bg-gradient-to-r from-vice-pink via-vice-orange to-vice-cyan bg-clip-text text-transparent drop-shadow-[0_0_35px_rgba(255,0,122,0.6)]">VI</span>
+    </h1>
 
-    <p class="text-gray-300 text-sm sm:text-base max-w-2xl mb-8 leading-relaxed">
-      Sblocco rolling alla mezzanotte esatta del tuo fuso orario locale. I server di pre-load su PlayStation 5 e Xbox Series X|S sono operativi per il download di <strong>228.5 GB</strong>.
+    <div class="text-xs sm:text-base font-mono font-semibold tracking-widest text-vice-cyan uppercase mb-4">
+      BENVENUTI A VICE CITY // STATO DI LEONIDA
+    </div>
+
+    <p class="text-gray-300 text-sm sm:text-lg max-w-2xl mb-10 leading-relaxed font-normal">
+      Il conto alla rovescia ufficiale per l'arrivo di Lucia e Jason. Sblocco simultaneo a mezzanotte locale su PlayStation 5, PS5 Pro e Xbox Series X|S.
     </p>
 
-    <!-- Digits Grid -->
-    <div class="grid grid-cols-4 gap-3 sm:gap-6 w-full max-w-3xl mb-8" role="timer" aria-live="polite">
-      <!-- Days -->
-      <div class="flex flex-col items-center justify-center p-4 sm:p-6 rounded-2xl bg-surface-50/90 border border-surface-300 hover:border-miami-pink/60 transition-colors shadow-lg">
-        <span class="text-3xl sm:text-6xl md:text-7xl font-black text-white font-mono tracking-tight" id="hero-cd-days">--</span>
-        <span class="text-[11px] sm:text-xs font-bold text-gray-400 uppercase tracking-widest mt-2">Giorni</span>
+    <!-- Digital Flip Clock HUD Digits Grid -->
+    <div class="grid grid-cols-4 gap-2.5 sm:gap-6 w-full max-w-3xl mb-10" role="timer" aria-live="polite">
+      
+      <!-- Days Card -->
+      <div class="flex flex-col items-center justify-center p-4 sm:p-7 rounded-2xl sm:rounded-3xl bg-gradient-to-b from-[#1b1433]/90 to-[#0e0a1a] border border-white/[0.12] shadow-2xl relative group overflow-hidden">
+        <div class="absolute inset-x-0 top-0 h-[1px] bg-gradient-to-r from-transparent via-white/20 to-transparent"></div>
+        <span class="text-3xl sm:text-6xl md:text-7xl font-black text-white font-mono tracking-tight group-hover:text-vice-pink transition-colors" id="hero-cd-days">--</span>
+        <span class="text-[9px] sm:text-xs font-mono font-bold text-gray-400 uppercase tracking-widest mt-2 sm:mt-3">GIORNI</span>
       </div>
 
-      <!-- Hours -->
-      <div class="flex flex-col items-center justify-center p-4 sm:p-6 rounded-2xl bg-surface-50/90 border border-surface-300 hover:border-miami-pink/60 transition-colors shadow-lg">
-        <span class="text-3xl sm:text-6xl md:text-7xl font-black text-white font-mono tracking-tight" id="hero-cd-hours">--</span>
-        <span class="text-[11px] sm:text-xs font-bold text-gray-400 uppercase tracking-widest mt-2">Ore</span>
+      <!-- Hours Card -->
+      <div class="flex flex-col items-center justify-center p-4 sm:p-7 rounded-2xl sm:rounded-3xl bg-gradient-to-b from-[#1b1433]/90 to-[#0e0a1a] border border-white/[0.12] shadow-2xl relative group overflow-hidden">
+        <div class="absolute inset-x-0 top-0 h-[1px] bg-gradient-to-r from-transparent via-white/20 to-transparent"></div>
+        <span class="text-3xl sm:text-6xl md:text-7xl font-black text-white font-mono tracking-tight group-hover:text-vice-pink transition-colors" id="hero-cd-hours">--</span>
+        <span class="text-[9px] sm:text-xs font-mono font-bold text-gray-400 uppercase tracking-widest mt-2 sm:mt-3">ORE</span>
       </div>
 
-      <!-- Minutes -->
-      <div class="flex flex-col items-center justify-center p-4 sm:p-6 rounded-2xl bg-surface-50/90 border border-surface-300 hover:border-miami-cyan/60 transition-colors shadow-lg">
-        <span class="text-3xl sm:text-6xl md:text-7xl font-black text-white font-mono tracking-tight" id="hero-cd-minutes">--</span>
-        <span class="text-[11px] sm:text-xs font-bold text-gray-400 uppercase tracking-widest mt-2">Minuti</span>
+      <!-- Minutes Card -->
+      <div class="flex flex-col items-center justify-center p-4 sm:p-7 rounded-2xl sm:rounded-3xl bg-gradient-to-b from-[#1b1433]/90 to-[#0e0a1a] border border-white/[0.12] shadow-2xl relative group overflow-hidden">
+        <div class="absolute inset-x-0 top-0 h-[1px] bg-gradient-to-r from-transparent via-white/20 to-transparent"></div>
+        <span class="text-3xl sm:text-6xl md:text-7xl font-black text-white font-mono tracking-tight group-hover:text-vice-cyan transition-colors" id="hero-cd-minutes">--</span>
+        <span class="text-[9px] sm:text-xs font-mono font-bold text-gray-400 uppercase tracking-widest mt-2 sm:mt-3">MINUTI</span>
       </div>
 
-      <!-- Seconds -->
-      <div class="flex flex-col items-center justify-center p-4 sm:p-6 rounded-2xl bg-surface-50/90 border border-surface-300 hover:border-miami-cyan/60 transition-colors shadow-lg">
-        <span class="text-3xl sm:text-6xl md:text-7xl font-black text-miami-pink font-mono tracking-tight" id="hero-cd-seconds">--</span>
-        <span class="text-[11px] sm:text-xs font-bold text-gray-400 uppercase tracking-widest mt-2">Secondi</span>
+      <!-- Seconds Card -->
+      <div class="flex flex-col items-center justify-center p-4 sm:p-7 rounded-2xl sm:rounded-3xl bg-gradient-to-b from-[#1b1433]/90 to-[#0e0a1a] border border-white/[0.12] shadow-2xl relative group overflow-hidden">
+        <div class="absolute inset-x-0 top-0 h-[1px] bg-gradient-to-r from-transparent via-vice-pink to-transparent"></div>
+        <span class="text-3xl sm:text-6xl md:text-7xl font-black text-vice-pink font-mono tracking-tight drop-shadow-[0_0_15px_rgba(255,0,122,0.8)]" id="hero-cd-seconds">--</span>
+        <span class="text-[9px] sm:text-xs font-mono font-bold text-gray-400 uppercase tracking-widest mt-2 sm:mt-3">SECONDI</span>
       </div>
     </div>
 
-    <!-- Quick Status Footer -->
-    <div class="flex flex-wrap items-center justify-center gap-4 text-xs text-gray-300">
-      <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-md bg-surface-200 border border-surface-300">
-        <span class="text-miami-cyan font-bold">CET Italia:</span> 00:00 Mezzanotte (19 Nov)
-      </span>
-      <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-md bg-surface-200 border border-surface-300">
-        <span class="text-miami-pink font-bold">EST Miami:</span> 00:00 Mezzanotte (19 Nov)
-      </span>
-      <a href="/storage-calculator" class="text-miami-cyan hover:underline font-bold">
-        Verifica Spazio SSD Console →
+    <!-- Quick Action Launch Buttons -->
+    <div class="flex flex-wrap items-center justify-center gap-4">
+      <a
+        href="/storage-calculator"
+        class="px-7 py-3.5 rounded-2xl bg-gradient-to-r from-vice-pink to-vice-orange hover:from-vice-pink/90 hover:to-vice-orange/90 text-white font-black text-xs sm:text-sm tracking-wider uppercase font-mono shadow-neon-pink hover:scale-105 transition-all duration-300"
+      >
+        VERIFICA SPAZIO SSD (228.5 GB) ➔
       </a>
+      <a
+        href="/trailers/trailer-1"
+        class="px-7 py-3.5 rounded-2xl bg-surface-100 hover:bg-surface-200 text-white font-bold text-xs sm:text-sm tracking-wider uppercase font-mono border border-white/[0.12] hover:border-vice-cyan/50 hover:shadow-neon-cyan transition-all duration-300"
+      >
+        I 7 VIDEO UFFICIALI ROCKSTAR
+      </a>
+    </div>
+
+    <!-- Global Rollout Status Bar -->
+    <div class="mt-8 pt-6 border-t border-white/[0.08] w-full max-w-2xl flex flex-wrap items-center justify-between gap-3 text-[11px] font-mono text-gray-400">
+      <span class="flex items-center gap-2">
+        <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
+        <span>ITALIA / CET: <strong>00:00 (19 Nov)</strong></span>
+      </span>
+      <span class="flex items-center gap-2">
+        <span class="w-1.5 h-1.5 rounded-full bg-vice-cyan"></span>
+        <span>REGNO UNITO / GMT: <strong>00:00 (19 Nov)</strong></span>
+      </span>
+      <span class="flex items-center gap-2">
+        <span class="w-1.5 h-1.5 rounded-full bg-vice-pink"></span>
+        <span>USA EST / MIAMI: <strong>00:00 (19 Nov)</strong></span>
+      </span>
     </div>
   </div>
 
@@ -77,41 +124,41 @@ const targetDateStr = db.releaseInfo.releaseDate; // "2026-11-19T00:00:00" witho
       <span>DISPONIBILE ORA MONDIALMENTE • GTA VI È USCITO</span>
     </div>
 
-    <h2 class="text-3xl sm:text-5xl font-black text-white tracking-tight uppercase mb-3">
-      BENVENUTO A <span class="bg-gradient-to-r from-miami-pink to-miami-cyan bg-clip-text text-transparent">LEONIDA</span>
+    <h2 class="text-3xl sm:text-6xl font-black text-white tracking-tight uppercase mb-3 leading-tight">
+      BENVENUTO A <span class="bg-gradient-to-r from-vice-pink via-vice-orange to-vice-cyan bg-clip-text text-transparent">LEONIDA</span>
     </h2>
 
-    <p class="text-gray-300 text-sm sm:text-base max-w-xl mb-6">
-      Il gioco è ufficialmente accessibile. Monitora il tuo avanzamento al 100% verso il trofeo di platino e la conquista di Vice City.
+    <p class="text-gray-300 text-sm sm:text-base max-w-xl mb-8 leading-relaxed font-normal">
+      I server di gioco sono operativi a livello globale. Tieni traccia delle rapine, dei reperti segreti e dell'avanzamento verso il 100%.
     </p>
 
-    <!-- Completion Dashboard Progress Bar -->
-    <div class="w-full max-w-xl p-5 rounded-2xl bg-surface-50 border border-surface-300 shadow-xl mb-6 text-left">
-      <div class="flex items-center justify-between text-xs font-bold uppercase tracking-wider mb-2">
-        <span class="text-white">Progresso Completamento Globale 100%</span>
-        <span id="hero-progress-percent" class="text-miami-pink text-sm">0%</span>
+    <!-- Completion Dashboard Progress Box -->
+    <div class="w-full max-w-xl p-6 rounded-3xl bg-surface-50 border border-white/[0.12] shadow-2xl mb-8 text-left">
+      <div class="flex items-center justify-between text-xs font-mono font-bold uppercase tracking-wider mb-3">
+        <span class="text-white">Avanzamento Globale Leonida 100%</span>
+        <span id="hero-progress-percent" class="text-vice-pink text-base font-black">0%</span>
       </div>
-      <div class="w-full h-3 rounded-full bg-surface-200 overflow-hidden border border-surface-300">
-        <div id="hero-progress-bar" class="h-full bg-gradient-to-r from-miami-pink via-miami-orange to-miami-cyan w-0 transition-all duration-500"></div>
+      <div class="w-full h-3.5 rounded-full bg-[#1b1433] overflow-hidden border border-white/[0.08]">
+        <div id="hero-progress-bar" class="h-full bg-gradient-to-r from-vice-pink via-vice-orange to-vice-cyan w-0 transition-all duration-500"></div>
       </div>
-      <div class="flex items-center justify-between mt-3 text-xs text-gray-400">
+      <div class="flex items-center justify-between mt-4 text-xs font-mono text-gray-400">
         <span id="hero-progress-count">0 di 19 Collezionabili &amp; Attività Spuntate</span>
-        <a href="/tracker" class="text-miami-cyan font-bold hover:underline">Apri Tracker Completo →</a>
+        <a href="/tracker" class="text-vice-cyan font-bold hover:underline">Apri Checklist →</a>
       </div>
     </div>
 
     <div class="flex flex-wrap items-center justify-center gap-4">
       <a
         href="/tracker"
-        class="px-6 py-3 rounded-xl bg-gradient-to-r from-miami-pink to-miami-orange text-white font-extrabold text-sm shadow-neon-pink hover:scale-105 transition-transform"
+        class="px-8 py-4 rounded-2xl bg-gradient-to-r from-vice-pink to-vice-orange text-white font-mono font-bold text-xs sm:text-sm tracking-wider uppercase shadow-neon-pink hover:scale-105 transition-transform"
       >
-        Gestisci Checklist 100% Leonida
+        CHECKLIST 100% COMPLETA
       </a>
       <a
         href="/leonida/vice-city"
-        class="px-6 py-3 rounded-xl bg-surface-200 hover:bg-surface-300 text-white font-bold text-sm border border-surface-300 transition-colors"
+        class="px-8 py-4 rounded-2xl bg-surface-100 hover:bg-surface-200 text-white font-mono font-bold text-xs sm:text-sm tracking-wider uppercase border border-white/[0.12] transition-colors"
       >
-        Esplora Mappa e Punti di Interesse
+        ESPLORA MAPPA REGIONALE
       </a>
     </div>
   </div>
@@ -123,7 +170,6 @@ const targetDateStr = db.releaseInfo.releaseDate; // "2026-11-19T00:00:00" witho
     if (!container) return;
 
     const targetDateAttr = container.getAttribute('data-target') || '2026-11-19T00:00:00';
-    // Local date parsing without 'Z' ensures local midnight rolling calculation
     const targetTimestamp = new Date(targetDateAttr).getTime();
 
     const countdownState = document.getElementById('hero-countdown-state');
@@ -143,11 +189,9 @@ const targetDateStr = db.releaseInfo.releaseDate; // "2026-11-19T00:00:00" witho
       const diff = targetTimestamp - now;
 
       if (diff <= 0) {
-        // Switch to State B: Post-launch dashboard
         if (countdownState) countdownState.classList.add('hidden');
         if (launchedState) launchedState.classList.remove('hidden');
 
-        // Read user progress from localStorage
         try {
           const raw = localStorage.getItem('leonida_100_tracker');
           if (raw) {
@@ -156,7 +200,7 @@ const targetDateStr = db.releaseInfo.releaseDate; // "2026-11-19T00:00:00" witho
               const keys = Object.keys(parsed).filter(
                 (k) => k !== '__proto__' && k !== 'constructor' && k !== 'prototype'
               );
-              const totalItems = 19; // Known items across 6 regions
+              const totalItems = 19;
               const completedCount = keys.filter((k) => parsed[k] === true).length;
               const pct = Math.min(100, Math.round((completedCount / totalItems) * 100));
 
@@ -166,12 +210,11 @@ const targetDateStr = db.releaseInfo.releaseDate; // "2026-11-19T00:00:00" witho
             }
           }
         } catch {
-          // Keep default safe 0%
+          // Keep safe defaults
         }
         return;
       }
 
-      // Pre-launch state: update tick
       const days = Math.floor(diff / (1000 * 60 * 60 * 24));
       const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
       const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
@@ -193,4 +236,3 @@ const targetDateStr = db.releaseInfo.releaseDate; // "2026-11-19T00:00:00" witho
     initHeroState();
   }
 </script>
-

@@ -4,93 +4,95 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
 <BaseLayout
   title="Note Legali, Privacy Policy & Disclaimer Take-Two | Leonida Index"
-  description="Informativa legale completa per Leonida Index: conformità GDPR e Google Consent Mode v2, disclaimer marchi registrati Rockstar Games / Take-Two e disclosure affiliazioni."
+  description="Informativa legale per Leonida Index: conformità GDPR e Google Consent Mode v2, disclaimer marchi registrati Rockstar Games / Take-Two e disclosure affiliazioni commerciali."
   canonicalPath="/legal"
   breadcrumbs={[{ name: 'Note Legali & Privacy', url: '/legal' }]}
 >
-  <div class="max-w-4xl mx-auto my-8 p-6 sm:p-10 rounded-3xl bg-surface-50 border border-surface-300 shadow-xl">
-    <div class="mb-8 pb-6 border-b border-surface-200">
-      <span class="text-xs font-bold text-miami-cyan uppercase font-mono tracking-widest block mb-1">
-        Conformità &amp; Trasparenza
-      </span>
-      <h1 class="text-3xl sm:text-4xl font-black text-white tracking-tight">
-        Note Legali, Privacy Policy &amp; Scudo Copyright
+  <div class="max-w-4xl mx-auto my-10 p-8 sm:p-14 rounded-[2.5rem] bg-gradient-to-b from-[#151026] via-[#0d0a1a] to-[#07050d] border border-white/[0.12] shadow-2xl relative overflow-hidden">
+    <!-- Ambient Flare -->
+    <div class="absolute -right-20 -top-20 w-80 h-80 bg-vice-pink/15 rounded-full blur-[100px] pointer-events-none"></div>
+
+    <div class="mb-10 pb-6 border-b border-white/[0.08] relative z-10">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#1b1433] border border-vice-cyan/40 text-[10px] font-mono font-bold text-vice-cyan uppercase tracking-widest mb-3">
+        CONFORMITÀ &amp; TRASPARENZA
+      </div>
+      <h1 class="text-3xl sm:text-5xl font-black text-white tracking-tight uppercase leading-tight">
+        NOTE LEGALI, PRIVACY &amp; SCUDO COPYRIGHT
       </h1>
-      <p class="text-xs sm:text-sm text-gray-300 mt-2">
-        Ultimo aggiornamento normativo: Novembre 2026. Leonida Index è una risorsa indipendente e libera.
+      <p class="text-xs sm:text-sm text-gray-400 mt-2 font-mono">
+        Ultima revisione: Novembre 2026 // Portale di informazione e cronaca videoludica non ufficiale.
       </p>
     </div>
 
-    <div class="space-y-8 text-xs sm:text-sm text-gray-300 leading-relaxed">
+    <div class="space-y-10 text-xs sm:text-sm text-gray-300 leading-relaxed font-normal relative z-10">
       <!-- 1. Take-Two Disclaimer -->
-      <section>
-        <h2 class="text-lg font-bold text-white mb-2 flex items-center gap-2">
-          <span class="w-2 h-2 rounded-full bg-miami-pink"></span>
+      <section class="p-6 rounded-3xl bg-[#120d24]/80 border border-white/[0.08]">
+        <h2 class="text-base sm:text-lg font-bold text-white mb-3 flex items-center gap-2.5">
+          <span class="w-2 h-2 rounded-full bg-vice-pink"></span>
           1. Dichiarazione di Non Affiliazione (Take-Two &amp; Rockstar Games)
         </h2>
-        <p class="mb-2">
-          <strong>Leonida Index (leonidaindex.com)</strong> è un portale amatoriale, giornalistico e di utilità per la community videoludica. Il sito <strong>NON È in alcun modo affiliato, sponsorizzato, autorizzato, associato o approvato</strong> da Rockstar Games, Rockstar North, Take-Two Interactive Software, Inc., Sony Interactive Entertainment LLC o Microsoft Corporation.
+        <p class="mb-3 text-gray-300">
+          <strong class="text-white">Leonida Index (leonidaindex.com)</strong> è un portale amatoriale, giornalistico e di utilità per la community videoludica. Il sito <strong class="text-white">NON È in alcun modo affiliato, sponsorizzato, autorizzato, associato o approvato</strong> da Rockstar Games, Rockstar North, Take-Two Interactive Software, Inc., Sony Interactive Entertainment LLC o Microsoft Corporation.
         </p>
-        <p>
-          I marchi denominativi e figurativi <em>"Grand Theft Auto"</em>, <em>"GTA"</em>, <em>"GTA VI"</em>, <em>"GTA 6"</em>, <em>"Vice City"</em>, <em>"Leonida"</em>, nonché i nomi dei personaggi, dei loghi, degli asset grafici e dei trailer sono marchi registrati o proprietà intellettuale esclusiva di Rockstar Games, Inc. e Take-Two Interactive Software, Inc. L'uso di tali elementi è effettuato esclusivamente a scopo descrittivo, informativo e di cronaca videoludica nel rispetto della dottrina del <strong>Fair Use</strong> e delle vigenti normative sul diritto d'autore.
+        <p class="text-gray-300">
+          I marchi denominativi e figurativi <em>"Grand Theft Auto"</em>, <em>"GTA"</em>, <em>"GTA VI"</em>, <em>"GTA 6"</em>, <em>"Vice City"</em>, <em>"Leonida"</em>, nonché i loghi, i trailer, i modelli dei personaggi e gli asset multimediali sono di proprietà intellettuale esclusiva di Rockstar Games, Inc. e Take-Two Interactive Software, Inc. L'uso sul portale è limitato a finalità descrittive, divulgative e di cronaca videoludica nel rispetto del <strong>Fair Use</strong>.
         </p>
       </section>
 
       <!-- 2. Privacy & Google Consent Mode v2 -->
-      <section id="privacy">
-        <h2 class="text-lg font-bold text-white mb-2 flex items-center gap-2">
-          <span class="w-2 h-2 rounded-full bg-miami-cyan"></span>
-          2. Informativa Privacy &amp; Cookie (GDPR &amp; Google Consent Mode v2)
+      <section id="privacy" class="p-6 rounded-3xl bg-[#120d24]/80 border border-white/[0.08]">
+        <h2 class="text-base sm:text-lg font-bold text-white mb-3 flex items-center gap-2.5">
+          <span class="w-2 h-2 rounded-full bg-vice-cyan"></span>
+          2. Informativa Privacy, Cookie &amp; Google Consent Mode v2
         </h2>
-        <p class="mb-2">
-          Questo sito adotta un'architettura <strong>Zero-Attack Surface</strong>: non possiede database lato server, non registra account utente e non raccoglie dati personali identificativi (PII) come nomi, indirizzi email o numeri di telefono.
+        <p class="mb-3 text-gray-300">
+          Leonida Index adotta una solida architettura <strong class="text-white">Zero-Attack Surface</strong>: non gestisce database runtime lato server, non registra account utente e non memorizza dati personali identificativi (PII) come nomi, email o numeri di telefono.
         </p>
-        <ul class="list-disc pl-5 space-y-1.5 mb-2">
+        <ul class="space-y-2 text-gray-300 pl-4 border-l border-white/[0.1]">
           <li>
-            <strong>Archiviazione Locale (localStorage):</strong> I progressi del tracker collezionabili (<code>leonida_100_tracker</code>) e le preferenze del calcolatore SSD sono salvati esclusivamente nel browser del dispositivo dell'utente. Nessun dato viene trasmesso a server remoti.
+            <strong class="text-white font-mono">Archiviazione Locale (localStorage):</strong> I progressi del tracker trofei e le impostazioni del calcolatore SSD rimangono confinati nel browser dell'utente (chiave <code>leonida_100_tracker</code>). Nessun payload viene trasmesso all'esterno.
           </li>
           <li>
-            <strong>Google Consent Mode v2:</strong> Al primo accesso, tutti i tag pubblicitari e analitici sono impostati nello stato di negazione (<code>denied</code>). Solo previo consenso esplicito tramite il banner GDPR, i servizi di terze parti (Google AdSense) possono attivare cookie di profilazione o personalizzazione annunci.
+            <strong class="text-white font-mono">Google Consent Mode v2:</strong> Al primo accesso dell'utente, tutti gli stati di consenso (<code>ad_storage</code>, <code>analytics_storage</code>, <code>ad_user_data</code>, <code>ad_personalization</code>) sono impostati tassativamente su <code>denied</code>. I tag pubblicitari vengono inizializzati solo in seguito a consenso espresso.
           </li>
           <li>
-            <strong>YouTube Privacy-Enhanced Mode:</strong> I video incorporati utilizzano il dominio <code>youtube-nocookie.com</code> e il pattern "Facade" (caricamento solo su interazione volontaria), garantendo che YouTube non memorizzi informazioni sui visitatori a meno che non avviino volontariamente la riproduzione.
+            <strong class="text-white font-mono">Embed YouTube Riservati:</strong> I trailer multimediali vengono caricati attraverso il dominio <code>youtube-nocookie.com</code> con pattern Facade, impedendo il tracciamento dei visitatori prima dell'avvio manuale del video.
           </li>
         </ul>
       </section>
 
       <!-- 3. Affiliate Disclosure -->
-      <section id="affiliate">
-        <h2 class="text-lg font-bold text-white mb-2 flex items-center gap-2">
-          <span class="w-2 h-2 rounded-full bg-miami-orange"></span>
+      <section id="affiliate" class="p-6 rounded-3xl bg-[#120d24]/80 border border-white/[0.08]">
+        <h2 class="text-base sm:text-lg font-bold text-white mb-3 flex items-center gap-2.5">
+          <span class="w-2 h-2 rounded-full bg-vice-orange"></span>
           3. Trasparenza Affiliazioni Commerciali (Affiliate Disclosure)
         </h2>
-        <p class="mb-2">
-          Leonida Index partecipa al Programma Affiliazione Amazon Europe S.à r.l. e ad altri circuiti di affiliazione per rivenditori autorizzati di console e accessori. In qualità di Affiliato, il portale riceve un guadagno dagli acquisti idonei effettuati tramite i link contrassegnati.
+        <p class="mb-3 text-gray-300">
+          Leonida Index partecipa al Programma Affiliazione Amazon e ad altri programmi di affiliazione per la fornitura di hardware per console. In qualità di affiliato indipendente, il sito riceve una commissione sugli acquisti idonei effettuati attraverso i link dedicati.
         </p>
-        <p>
-          Tutti i link esterni sponsorizzati sono contrassegnati con l'attributo <code>rel="sponsored noopener noreferrer"</code>. L'eventuale commissione percepita <strong>non comporta alcun costo o sovrapprezzo aggiuntivo per l'utente</strong> e serve a finanziare i costi dei server, della banda e della manutenzione del sito.
+        <p class="text-gray-300">
+          Tutti i link sponsorizzati includono l'attributo <code class="text-vice-orange font-mono">rel="sponsored noopener noreferrer"</code>. L'eventuale commissione <strong class="text-white">non comporta alcun costo o sovrapprezzo per l'acquirente</strong> e concorre esclusivamente al mantenimento dell'infrastruttura di hosting e banda.
         </p>
       </section>
 
       <!-- 4. Security & Vulnerability Reporting -->
-      <section>
-        <h2 class="text-lg font-bold text-white mb-2 flex items-center gap-2">
+      <section class="p-6 rounded-3xl bg-[#120d24]/80 border border-white/[0.08]">
+        <h2 class="text-base sm:text-lg font-bold text-white mb-3 flex items-center gap-2.5">
           <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
-          4. Politica di Sicurezza (RFC 9116)
+          4. Politica di Sicurezza &amp; Hardening (RFC 9116)
         </h2>
-        <p class="mb-2">
-          Prendiamo molto seriamente la sicurezza dell'applicazione. Il codice sorgente è conforme a standard di hardening contro XSS, DOM Injection e Prototype Pollution.
+        <p class="mb-2 text-gray-300">
+          La sicurezza dell'applicazione è garantita da rigorose Content Security Policy (CSP), mitigazioni Anti-Prototype Pollution e disabilitazione di qualsiasi parser HTML arbitrario.
         </p>
-        <p>
-          Per segnalazioni relative alla sicurezza, fare riferimento al file canonico <a href="/.well-known/security.txt" class="text-miami-cyan hover:underline">/.well-known/security.txt</a> o scrivere a <code>security@leonidaindex.com</code>.
+        <p class="text-gray-300">
+          Per segnalazioni su eventuali vulnerabilità, consulta il nostro manifesto <a href="/.well-known/security.txt" class="text-vice-cyan font-mono hover:underline">/.well-known/security.txt</a> o invia una notifica a <code class="text-white font-mono">security@leonidaindex.com</code>.
         </p>
       </section>
     </div>
 
-    <div class="mt-8 pt-6 border-t border-surface-200 flex items-center justify-between text-xs text-gray-400">
-      <a href="/" class="text-miami-pink font-bold hover:underline">← Torna alla Homepage</a>
-      <span>Leonida Index • Costruito per i videogiocatori</span>
+    <div class="mt-10 pt-6 border-t border-white/[0.08] flex items-center justify-between text-xs font-mono text-gray-400 relative z-10">
+      <a href="/" class="text-vice-pink font-bold hover:underline">← TORNA ALLA HOMEPAGE</a>
+      <span>LEONIDA INDEX // BUILD SSG 2026</span>
     </div>
   </div>
 </BaseLayout>
-

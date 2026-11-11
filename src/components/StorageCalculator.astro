@@ -2,123 +2,141 @@
 // Storage Calculator for PS5 & Xbox Series X|S
 ---
 
-<div class="w-full max-w-4xl mx-auto my-10 p-6 sm:p-10 rounded-3xl bg-surface-100/90 border border-surface-300 shadow-2xl backdrop-blur-xl relative overflow-hidden" id="storage-calc-widget">
-  <div class="max-w-2xl mb-8">
-    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-surface-200 border border-miami-cyan/40 text-xs font-bold text-miami-cyan uppercase mb-3">
-      <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z"/></svg>
-      <span>Tool Interattivo Gratuito (Zero-JS Framework Overhead)</span>
+<div class="w-full max-w-5xl mx-auto my-10 p-6 sm:p-12 rounded-[2.5rem] bg-gradient-to-b from-[#151026]/90 via-[#0d0a1a] to-[#07050d] border border-white/[0.12] shadow-2xl backdrop-blur-2xl relative overflow-hidden" id="storage-calc-widget">
+  
+  <!-- Subtle Neon Background Glows -->
+  <div class="absolute -right-20 -top-20 w-80 h-80 bg-vice-cyan/15 rounded-full blur-[90px] pointer-events-none"></div>
+  <div class="absolute -left-20 -bottom-20 w-80 h-80 bg-vice-pink/15 rounded-full blur-[90px] pointer-events-none"></div>
+
+  <div class="max-w-2xl mb-8 relative z-10">
+    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#1b1433] border border-vice-cyan/40 text-xs font-mono font-bold text-vice-cyan uppercase tracking-widest mb-3">
+      <span class="w-1.5 h-1.5 rounded-full bg-vice-cyan animate-pulse"></span>
+      <span>DIAGNOSTICA SSD CONSOLE // REQUISITI I/O GTA VI</span>
     </div>
-    <h2 class="text-2xl sm:text-4xl font-black text-white tracking-tight">
-      Il tuo SSD è pronto per il Pre-load di <span class="text-miami-cyan">GTA 6</span>?
+    <h2 class="text-2xl sm:text-4xl font-black text-white tracking-tight uppercase">
+      LA TUA CONSOLE È PRONTA PER IL <span class="bg-gradient-to-r from-vice-pink to-vice-cyan bg-clip-text text-transparent">PRE-LOAD</span>?
     </h2>
-    <p class="text-sm sm:text-base text-gray-300 mt-2">
-      Calcola istantaneamente se la memoria della tua console è sufficiente per scaricare i <strong>228.5 GB</strong> di GTA VI o se necessiti di un upgrade di archiviazione prima del 19 Novembre 2026.
+    <p class="text-sm text-gray-300 mt-2 font-normal leading-relaxed">
+      GTA VI richiede <strong>228.5 GB</strong> su PS5 e <strong>231 GB</strong> su Xbox. Calcola in tempo reale lo spazio residuo del tuo SSD interno ed evita blocchi al momento del download.
     </p>
   </div>
 
-  <!-- Interactive Form Inputs -->
-  <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
-    <!-- Console Selector -->
-    <div>
-      <label for="calc-console-select" class="block text-xs font-bold text-gray-200 uppercase tracking-wider mb-2">
-        1. Seleziona la tua Console
+  <!-- Interactive Controls Section -->
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 mb-8 relative z-10">
+    <!-- Console Model Dropdown -->
+    <div class="p-6 rounded-2xl bg-[#140f26]/80 border border-white/[0.08] shadow-lg">
+      <label for="calc-console-select" class="block text-xs font-mono font-bold text-vice-cyan uppercase tracking-wider mb-2.5">
+        1. SELEZIONA MODELLO CONSOLE
       </label>
-      <select
-        id="calc-console-select"
-        class="w-full px-4 py-3 rounded-xl bg-surface-50 border border-surface-300 text-white font-semibold text-sm focus:outline-none focus:border-miami-pink transition-colors cursor-pointer"
-      >
-        <option value="ps5-standard" data-usable="667" data-gta="228.5" data-brand="ps5">PlayStation 5 Standard (Spazio Reale ~667 GB)</option>
-        <option value="ps5-slim" data-usable="848" data-gta="228.5" data-brand="ps5">PlayStation 5 Slim 1TB (Spazio Reale ~848 GB)</option>
-        <option value="ps5-pro" data-usable="1800" data-gta="228.5" data-brand="ps5">PlayStation 5 Pro 2TB (Spazio Reale ~1.800 GB)</option>
-        <option value="xbox-series-x" data-usable="802" data-gta="231.1" data-brand="xbox">Xbox Series X 1TB (Spazio Reale ~802 GB)</option>
-        <option value="xbox-series-s" data-usable="364" data-gta="231.1" data-brand="xbox">Xbox Series S 512GB (Spazio Reale ~364 GB)</option>
-      </select>
-      <span class="block text-[11px] text-gray-400 mt-1.5">
-        * Include lo spazio riservato al sistema operativo della console.
+      <div class="relative">
+        <select
+          id="calc-console-select"
+          class="w-full px-4 py-3.5 rounded-xl bg-[#0d0a1a] border border-white/[0.15] text-white font-mono font-semibold text-xs sm:text-sm focus:outline-none focus:border-vice-pink focus:shadow-neon-pink transition-all cursor-pointer appearance-none"
+        >
+          <option value="ps5-standard" data-usable="667" data-gta="228.5" data-brand="ps5">PlayStation 5 Standard (Spazio Reale: 667 GB)</option>
+          <option value="ps5-slim" data-usable="848" data-gta="228.5" data-brand="ps5">PlayStation 5 Slim 1TB (Spazio Reale: 848 GB)</option>
+          <option value="ps5-pro" data-usable="1800" data-gta="228.5" data-brand="ps5">PlayStation 5 Pro 2TB (Spazio Reale: 1.800 GB)</option>
+          <option value="xbox-series-x" data-usable="802" data-gta="231.1" data-brand="xbox">Xbox Series X 1TB (Spazio Reale: 802 GB)</option>
+          <option value="xbox-series-s" data-usable="364" data-gta="231.1" data-brand="xbox">Xbox Series S 512GB (Spazio Reale: 364 GB)</option>
+        </select>
+        <div class="absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none text-gray-400">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+        </div>
+      </div>
+      <span class="block text-[11px] font-mono text-gray-400 mt-2">
+        * Spazio netto disponibile dopo aver sottratto il sistema operativo.
       </span>
     </div>
 
-    <!-- Occupied Storage Input / Slider -->
-    <div>
-      <div class="flex items-center justify-between mb-2">
-        <label for="calc-used-input" class="text-xs font-bold text-gray-200 uppercase tracking-wider">
-          2. Spazio Già Occupato da Altri Giochi
-        </label>
-        <span class="text-xs font-mono font-bold text-miami-pink" id="calc-used-display">350 GB</span>
+    <!-- Occupied Space Slider -->
+    <div class="p-6 rounded-2xl bg-[#140f26]/80 border border-white/[0.08] shadow-lg flex flex-col justify-between">
+      <div>
+        <div class="flex items-center justify-between mb-2">
+          <label for="calc-used-slider" class="text-xs font-mono font-bold text-vice-pink uppercase tracking-wider">
+            2. GIOCHI GIÀ INSTALLATI
+          </label>
+          <span class="text-sm font-mono font-black text-vice-pink bg-vice-pink/15 px-2.5 py-0.5 rounded-md border border-vice-pink/30" id="calc-used-display">
+            350 GB
+          </span>
+        </div>
+        <input
+          type="range"
+          id="calc-used-slider"
+          min="0"
+          max="1500"
+          step="10"
+          value="350"
+          class="w-full h-2.5 rounded-lg bg-[#07050d] accent-vice-pink cursor-pointer my-3"
+        />
       </div>
-      <input
-        type="range"
-        id="calc-used-slider"
-        min="0"
-        max="1500"
-        step="10"
-        value="350"
-        class="w-full h-2 rounded-lg bg-surface-300 accent-miami-pink cursor-pointer"
-      />
-      <div class="flex items-center justify-between text-[11px] text-gray-400 mt-1">
-        <span>0 GB (Console Pulita)</span>
-        <span>750 GB</span>
-        <span>1.500 GB (Molti Giochi)</span>
+      <div class="flex items-center justify-between text-[10px] font-mono text-gray-400">
+        <span>0 GB (Vuoto)</span>
+        <span>750 GB (Metà)</span>
+        <span>1500 GB (Pieno)</span>
       </div>
     </div>
   </div>
 
-  <!-- Real-Time Calculation Results Card -->
-  <div class="p-6 rounded-2xl bg-surface-50 border border-surface-300 shadow-xl mb-8">
-    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 border-b border-surface-200">
+  <!-- Real-Time Visual Diagnostics Box -->
+  <div class="p-6 sm:p-8 rounded-3xl bg-[#0e0a1a] border border-white/[0.1] shadow-2xl mb-8 relative z-10">
+    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-6 border-b border-white/[0.08]">
       <div>
-        <span class="text-xs font-bold text-gray-400 uppercase tracking-wider block">Verdetto Pre-Load GTA 6</span>
-        <div id="calc-status-badge" class="mt-1 inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-bold bg-emerald-950 border border-emerald-500 text-emerald-400">
+        <span class="text-xs font-mono font-bold text-gray-400 uppercase tracking-wider block">VERDETTO MEMORIA PRE-LOAD</span>
+        <div id="calc-status-badge" class="mt-1.5 inline-flex items-center gap-2 px-3.5 py-1.5 rounded-xl text-xs font-mono font-bold bg-emerald-950/80 border border-emerald-500 text-emerald-400 shadow-[0_0_15px_rgba(16,185,129,0.3)]">
           <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
           <span id="calc-status-text">SPAZIO SUFFICIENTE PER IL PRE-LOAD</span>
         </div>
       </div>
-      <div class="text-right sm:text-right">
-        <span class="text-xs text-gray-400 block">Spazio Libero Residuo Previsto</span>
-        <span id="calc-remaining-val" class="text-2xl sm:text-3xl font-black font-mono text-white">+88.5 GB</span>
+      <div class="sm:text-right">
+        <span class="text-xs font-mono text-gray-400 block uppercase">Spazio Libero Previsto</span>
+        <span id="calc-remaining-val" class="text-3xl sm:text-4xl font-black font-mono text-emerald-400 drop-shadow-md">+88.5 GB</span>
       </div>
     </div>
 
-    <!-- Breakdown visual bar -->
+    <!-- Segmented Neon Bar Graph -->
     <div class="mt-6">
-      <div class="flex items-center justify-between text-xs text-gray-300 mb-2">
-        <span>Ripartizione Spazio SSD Console</span>
-        <span id="calc-capacity-label" class="font-mono text-gray-400">667 GB Utili</span>
+      <div class="flex items-center justify-between text-xs font-mono text-gray-300 mb-2.5">
+        <span>Saturazione SSD Console</span>
+        <span id="calc-capacity-label" class="font-bold text-vice-cyan">667 GB Utili</span>
       </div>
-      <div class="w-full h-4 rounded-full bg-surface-200 overflow-hidden flex border border-surface-300">
-        <div id="bar-used" class="h-full bg-gray-500 transition-all duration-300" style="width: 52%;" title="Giochi Già Installati"></div>
-        <div id="bar-gta" class="h-full bg-miami-pink transition-all duration-300" style="width: 34%;" title="Pre-load GTA 6 (228.5 GB)"></div>
-        <div id="bar-free" class="h-full bg-emerald-500 transition-all duration-300" style="width: 14%;" title="Spazio Libero Residuo"></div>
+      
+      <div class="w-full h-5 rounded-xl bg-[#07050d] overflow-hidden flex border border-white/[0.1] p-[2px] shadow-inner">
+        <div id="bar-used" class="h-full bg-slate-600 rounded-l-lg transition-all duration-300" style="width: 52%;" title="Giochi Già Installati"></div>
+        <div id="bar-gta" class="h-full bg-gradient-to-r from-vice-pink to-vice-orange transition-all duration-300 shadow-[0_0_10px_rgba(255,0,122,0.8)]" style="width: 34%;" title="Pre-load GTA VI (228.5 GB)"></div>
+        <div id="bar-free" class="h-full bg-emerald-500 rounded-r-lg transition-all duration-300 shadow-[0_0_10px_rgba(16,185,129,0.8)]" style="width: 14%;" title="Spazio Libero"></div>
       </div>
-      <div class="flex flex-wrap items-center gap-4 text-[11px] text-gray-300 mt-3">
-        <span class="flex items-center gap-1.5"><span class="w-2.5 h-2.5 rounded-sm bg-gray-500 inline-block"></span> Altri Giochi Installati</span>
-        <span class="flex items-center gap-1.5"><span class="w-2.5 h-2.5 rounded-sm bg-miami-pink inline-block"></span> Pre-load GTA VI (~228.5 GB)</span>
-        <span class="flex items-center gap-1.5"><span class="w-2.5 h-2.5 rounded-sm bg-emerald-500 inline-block"></span> Spazio Libero Residuo</span>
+
+      <div class="flex flex-wrap items-center gap-5 text-xs font-mono text-gray-300 mt-4">
+        <span class="flex items-center gap-2"><span class="w-3 h-3 rounded-md bg-slate-600 inline-block"></span> Altri Giochi</span>
+        <span class="flex items-center gap-2"><span class="w-3 h-3 rounded-md bg-gradient-to-r from-vice-pink to-vice-orange inline-block"></span> GTA VI Pre-load (~228.5 GB)</span>
+        <span class="flex items-center gap-2"><span class="w-3 h-3 rounded-md bg-emerald-500 inline-block"></span> Spazio Libero Rimanente</span>
       </div>
     </div>
   </div>
 
-  <!-- Dynamic Hardware Recommendation Box -->
-  <div id="calc-recommendation-box" class="p-6 rounded-2xl bg-gradient-to-r from-surface-100 to-surface-200 border border-surface-300 flex flex-col sm:flex-row items-center justify-between gap-6">
+  <!-- Hardware Recommendation Box -->
+  <div id="calc-recommendation-box" class="p-6 sm:p-8 rounded-3xl bg-gradient-to-r from-[#1b1433] via-[#140f26] to-[#0d0a1a] border border-vice-cyan/30 shadow-neon-cyan flex flex-col sm:flex-row items-center justify-between gap-6 relative z-10">
     <div class="flex-1">
-      <span class="text-xs font-bold text-miami-cyan uppercase tracking-widest block mb-1">Upgrade Consigliato Ufficiale</span>
-      <h4 id="calc-rec-title" class="text-lg font-bold text-white mb-1">
+      <div class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-vice-cyan/20 border border-vice-cyan/40 text-[10px] font-mono font-bold text-vice-cyan uppercase tracking-wider mb-2">
+        ESPANSIONE HARDWARE CONSIGLIATA
+      </div>
+      <h4 id="calc-rec-title" class="text-lg sm:text-xl font-bold text-white mb-1.5">
         WD_BLACK SN850X 2TB NVMe M.2 SSD con Dissipatore
       </h4>
-      <p id="calc-rec-desc" class="text-xs text-gray-300 leading-relaxed">
-        Certificato per PlayStation 5 a 7.300 MB/s. Risolve definitivamente ogni problema di spazio per GTA VI e per i prossimi 3 anni di uscite videoludiche.
+      <p id="calc-rec-desc" class="text-xs sm:text-sm text-gray-300 leading-relaxed font-normal">
+        Certificato per PlayStation 5 a 7.300 MB/s. Dissipatore in alluminio pre-installato: zero rischi di surriscaldamento e spazio infinito per GTA VI.
       </p>
     </div>
     <div class="flex flex-col sm:items-end shrink-0 w-full sm:w-auto">
-      <span id="calc-rec-price" class="text-2xl font-black text-white font-mono mb-2">€149.99</span>
+      <span id="calc-rec-price" class="text-2xl sm:text-3xl font-black text-white font-mono mb-2">€149.99</span>
       <a
         id="calc-rec-link"
         href="https://www.amazon.it/dp/B0B7CMZ3QH?tag=gta6portal-21"
         target="_blank"
         rel="sponsored noopener noreferrer"
-        class="w-full sm:w-auto px-5 py-2.5 rounded-xl bg-gradient-to-r from-miami-pink to-miami-orange text-white text-xs font-bold shadow-neon-pink hover:opacity-95 transition-all text-center cursor-pointer"
+        class="w-full sm:w-auto px-6 py-3 rounded-xl bg-gradient-to-r from-vice-pink to-vice-orange text-white text-xs font-mono font-bold uppercase tracking-wider shadow-neon-pink hover:scale-105 transition-all text-center cursor-pointer"
       >
-        Vedi Offerta Verificata →
+        VERIFICA OFFERTA ➔
       </a>
     </div>
   </div>
@@ -160,7 +178,6 @@
 
       const remaining = totalUsable - (occupied + gtaWeight);
 
-      // Width percentage calculations
       const usedPct = Math.min(100, Math.max(0, (occupied / totalUsable) * 100));
       const gtaPct = Math.min(100 - usedPct, Math.max(0, (gtaWeight / totalUsable) * 100));
       const freePct = Math.max(0, 100 - (usedPct + gtaPct));
@@ -169,46 +186,44 @@
       if (barGta) barGta.style.width = `${gtaPct}%`;
       if (barFree) barFree.style.width = `${freePct}%`;
 
-      // Status classification
       if (remaining >= 60) {
         if (remainingVal) {
           remainingVal.textContent = `+${Math.round(remaining)} GB`;
-          remainingVal.className = 'text-2xl sm:text-3xl font-black font-mono text-emerald-400';
+          remainingVal.className = 'text-3xl sm:text-4xl font-black font-mono text-emerald-400 drop-shadow-[0_0_10px_rgba(16,185,129,0.5)]';
         }
         if (statusBadge && statusText) {
-          statusBadge.className = 'mt-1 inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-bold bg-emerald-950 border border-emerald-500 text-emerald-400';
-          statusText.textContent = 'SPAZIO SUFFICIENTE PER IL PRE-LOAD';
+          statusBadge.className = 'mt-1.5 inline-flex items-center gap-2 px-3.5 py-1.5 rounded-xl text-xs font-mono font-bold bg-emerald-950/80 border border-emerald-500 text-emerald-400 shadow-[0_0_15px_rgba(16,185,129,0.3)]';
+          statusText.textContent = 'SPAZIO AMPIAMENTE SUFFICIENTE PER IL PRE-LOAD';
         }
       } else if (remaining >= 0) {
         if (remainingVal) {
           remainingVal.textContent = `+${Math.round(remaining)} GB`;
-          remainingVal.className = 'text-2xl sm:text-3xl font-black font-mono text-amber-400';
+          remainingVal.className = 'text-3xl sm:text-4xl font-black font-mono text-amber-400 drop-shadow-[0_0_10px_rgba(251,191,36,0.5)]';
         }
         if (statusBadge && statusText) {
-          statusBadge.className = 'mt-1 inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-bold bg-amber-950 border border-amber-500 text-amber-400';
+          statusBadge.className = 'mt-1.5 inline-flex items-center gap-2 px-3.5 py-1.5 rounded-xl text-xs font-mono font-bold bg-amber-950/80 border border-amber-500 text-amber-400 shadow-[0_0_15px_rgba(251,191,36,0.3)]';
           statusText.textContent = 'ATTENZIONE: SPAZIO RISICATO (Consigliata pulizia o SSD)';
         }
       } else {
         const shortage = Math.abs(Math.round(remaining));
         if (remainingVal) {
           remainingVal.textContent = `-${shortage} GB`;
-          remainingVal.className = 'text-2xl sm:text-3xl font-black font-mono text-red-500';
+          remainingVal.className = 'text-3xl sm:text-4xl font-black font-mono text-red-500 drop-shadow-[0_0_10px_rgba(239,68,68,0.6)]';
         }
         if (statusBadge && statusText) {
-          statusBadge.className = 'mt-1 inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-bold bg-red-950 border border-red-500 text-red-400';
+          statusBadge.className = 'mt-1.5 inline-flex items-center gap-2 px-3.5 py-1.5 rounded-xl text-xs font-mono font-bold bg-red-950/80 border border-red-500 text-red-400 shadow-[0_0_15px_rgba(239,68,68,0.4)]';
           statusText.textContent = `UPGRADE SSD NECESSARIO (Mancano ${shortage} GB)`;
         }
       }
 
-      // Update hardware recommendation box according to platform
       if (brand === 'xbox') {
         if (recTitle) recTitle.textContent = 'Seagate Storage Expansion Card 2TB per Xbox';
-        if (recDesc) recDesc.textContent = 'Espansione ufficiale plug-and-play per Xbox Series X|S. Si collega allo slot dedicato sul retro senza bisogno di smontare viti.';
+        if (recDesc) recDesc.textContent = 'Espansione ufficiale plug-and-play per Xbox Series X|S. Si collega allo slot posteriore dedicato senza smontare la scocca.';
         if (recPrice) recPrice.textContent = '€229.00';
         if (recLink) recLink.href = 'https://www.amazon.it/dp/B09BJUXMD2?tag=gta6portal-21';
       } else {
         if (recTitle) recTitle.textContent = 'WD_BLACK SN850X 2TB NVMe M.2 SSD con Dissipatore';
-        if (recDesc) recDesc.textContent = 'Certificato per PlayStation 5 a 7.300 MB/s con dissipatore in alluminio preinstallato. Spazio infinito per GTA VI e i tuoi giochi preferiti.';
+        if (recDesc) recDesc.textContent = 'Certificato per PlayStation 5 a 7.300 MB/s con dissipatore termico pre-installato. Spazio infinito per GTA VI e per tutti i tuoi titoli.';
         if (recPrice) recPrice.textContent = '€149.99';
         if (recLink) recLink.href = 'https://www.amazon.it/dp/B0B7CMZ3QH?tag=gta6portal-21';
       }
