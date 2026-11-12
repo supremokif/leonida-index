@@ -127,12 +127,12 @@ const schemaGraph = {
 
 const currentPath = Astro.url.pathname;
 const navItems = [
-  { href: '/', label: 'HUB' },
-  { href: '/tracker', label: '100% TRACKER' },
-  { href: '/storage-calculator', label: 'CALCOLO SSD' },
+  { href: '/#overview', label: 'PANORAMICA' },
+  { href: '/#gallery', label: 'GALLERIA 4K' },
   { href: '/trailers/trailer-1', label: 'TRAILER (7)' },
-  { href: '/leonida/vice-city', label: 'MAPPA LEONIDA' },
-  { href: '/legal', label: 'DISCLAIMER' },
+  { href: '/#leonida', label: 'LEONIDA' },
+  { href: '/#characters', label: 'PROTAGONISTI' },
+  { href: '/tracker', label: '100% TRACKER' },
 ];
 ---
 
@@ -192,54 +192,48 @@ const navItems = [
     <!-- Schema.org JSON-LD Sanitized Graph -->
     <script type="application/ld+json" set:html={safeJsonLd(schemaGraph)} />
   </head>
-  <body class="bg-background text-gray-100 min-h-screen flex flex-col font-sans antialiased selection:bg-vice-pink selection:text-white relative">
+  <body class="bg-background text-gray-100 min-h-screen flex flex-col font-sans antialiased selection:bg-amber-400 selection:text-black relative">
     
     <!-- Top Ambient Sunset Flare -->
     <div class="fixed top-0 inset-x-0 h-40 pointer-events-none bg-gradient-to-b from-vice-pink/15 via-vice-orange/5 to-transparent blur-2xl z-0"></div>
 
-    <!-- Main Navigation Header -->
-    <header class="sticky top-0 z-40 w-full bg-[#07050d]/80 backdrop-blur-2xl border-b border-white/[0.08] shadow-2xl">
+    <!-- Main Navigation Header (Rockstar Games Official Style) -->
+    <header class="sticky top-0 z-40 w-full bg-[#07050d]/90 backdrop-blur-2xl border-b border-white/[0.1] shadow-2xl">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between gap-4">
         
-        <!-- Authentic Vice City Brandmark -->
+        <!-- Authentic Brandmark with Rockstar R* Gold Emblem -->
         <a href="/" class="flex items-center gap-3.5 group select-none">
-          <!-- Neon Badge Emblem -->
-          <div class="relative w-11 h-11 rounded-2xl bg-gradient-to-br from-vice-pink via-vice-orange to-vice-cyan p-[1.5px] shadow-neon-pink group-hover:scale-105 transition-transform duration-300">
-            <div class="w-full h-full bg-[#0d0a1a] rounded-[14px] flex items-center justify-center font-black text-xl tracking-tighter">
-              <span class="bg-gradient-to-r from-vice-pink to-vice-cyan bg-clip-text text-transparent group-hover:drop-shadow-[0_0_8px_rgba(255,0,122,0.8)] transition-all">
-                VI
-              </span>
-            </div>
-            <!-- Neon ping dot -->
-            <div class="absolute -top-1 -right-1 w-3 h-3 bg-vice-cyan rounded-full shadow-[0_0_8px_#00f0ff] animate-pulse"></div>
+          <!-- Rockstar R* Star Emblem -->
+          <div class="w-10 h-10 rounded-xl bg-[#fdb813] flex items-center justify-center text-black font-black text-sm font-mono shadow-[0_0_15px_rgba(253,184,19,0.5)] group-hover:scale-105 transition-transform duration-300">
+            R★
           </div>
 
           <div class="flex flex-col">
             <div class="flex items-center gap-2">
-              <span class="text-xl sm:text-2xl font-black tracking-tight text-white group-hover:text-vice-pink transition-colors">
-                LEONIDA<span class="text-vice-cyan">INDEX</span>
+              <span class="text-xl sm:text-2xl font-black tracking-tight text-white group-hover:text-amber-400 transition-colors uppercase">
+                GTA <span class="bg-gradient-to-r from-vice-pink to-vice-cyan bg-clip-text text-transparent">VI</span>
               </span>
-              <span class="text-[9px] font-mono font-bold px-1.5 py-0.5 rounded bg-vice-pink/20 border border-vice-pink/40 text-vice-pink uppercase tracking-widest hidden sm:inline-block">
-                VICE CITY
+              <span class="text-[9px] font-mono font-bold px-2 py-0.5 rounded bg-black border border-white/[0.15] text-amber-400 uppercase tracking-widest hidden sm:inline-block">
+                LEONIDA
               </span>
             </div>
-            <span class="text-[10px] uppercase font-mono tracking-widest text-gray-400 font-medium">
-              Grand Theft Auto VI Intelligence
+            <span class="text-[9px] uppercase font-mono tracking-widest text-gray-400">
+              Grand Theft Auto VI Official Hub
             </span>
           </div>
         </a>
 
         <!-- Desktop Navigation Items -->
-        <nav class="hidden lg:flex items-center gap-1 bg-[#140f26]/60 p-1.5 rounded-2xl border border-white/[0.08] backdrop-blur-md" aria-label="Navigazione principale">
+        <nav class="hidden lg:flex items-center gap-1 bg-[#140f26]/70 p-1.5 rounded-2xl border border-white/[0.1] backdrop-blur-md" aria-label="Navigazione principale">
           {navItems.map((item) => {
-            const isActive = currentPath === item.href || (item.href !== '/' && currentPath.startsWith(item.href));
+            const isActive = currentPath === item.href;
             return (
               <a
                 href={item.href}
                 class={`px-3.5 py-1.5 rounded-xl text-xs font-mono font-bold tracking-wider transition-all duration-200 ${
                   isActive
-                    ? 'bg-gradient-to-r from-vice-pink to-vice-orange text-white shadow-neon-pink'
-                    : 'text-gray-300 hover:text-white hover:bg-white/[0.06]'
+                    ? 'bg-white text-black shadow-lg'
+                    : 'text-gray-300 hover:text-white hover:bg-white/[0.08]'
                 }`}
               >
                 {item.label}
@@ -248,19 +242,19 @@ const navItems = [
           })}
         </nav>
 
-        <!-- Right Quick Action / Pre-load status -->
+        <!-- Right Quick Action / Pre-Order Button -->
         <div class="hidden sm:flex items-center gap-3">
-          <div class="flex items-center gap-2 px-3 py-1.5 rounded-xl bg-surface-100 border border-white/[0.08] text-xs font-mono">
+          <div class="flex items-center gap-2 px-3 py-1.5 rounded-xl bg-black/60 border border-white/[0.1] text-xs font-mono">
             <span class="w-2 h-2 rounded-full bg-emerald-400 shadow-[0_0_8px_#34d399] animate-pulse"></span>
-            <span class="text-gray-300">PRE-LOAD: <strong class="text-emerald-400">228.5 GB</strong></span>
+            <span class="text-gray-300 font-bold">19 NOV 2026</span>
           </div>
 
           <a
-            href="/storage-calculator"
-            class="flex items-center gap-1.5 px-4 py-2 rounded-xl bg-gradient-to-r from-vice-pink via-vice-orange to-vice-pink bg-[length:200%_auto] hover:bg-right text-white text-xs font-bold font-mono tracking-wider shadow-neon-pink hover:scale-105 transition-all duration-300"
+            href="/#editions"
+            class="flex items-center gap-2 px-5 py-2.5 rounded-xl bg-gradient-to-r from-vice-pink to-vice-orange hover:from-vice-pink/90 hover:to-vice-orange/90 text-white text-xs font-mono font-bold tracking-wider uppercase shadow-neon-pink hover:scale-105 transition-all duration-300"
           >
-            <svg class="w-3.5 h-3.5 text-vice-gold" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z" clip-rule="evenodd"/></svg>
-            <span>TEST SSD</span>
+            <span>PRE-ORDER</span>
+            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
           </a>
         </div>
 
@@ -291,10 +285,10 @@ const navItems = [
           ))}
           <div class="pt-3 border-t border-white/[0.08] flex flex-col gap-2">
             <a
-              href="/storage-calculator"
+              href="/#editions"
               class="w-full text-center px-4 py-3 rounded-xl bg-gradient-to-r from-vice-pink to-vice-orange text-white text-xs font-bold font-mono tracking-wider shadow-neon-pink"
             >
-              CALCOLA SPAZIO SSD (228.5 GB)
+              PRE-ORDER EDIZIONI UFFICIALI
             </a>
           </div>
         </div>
@@ -400,8 +394,33 @@ const navItems = [
           </div>
         </div>
 
+        <!-- Rating Badge & Rockstar Games Identity -->
+        <div class="py-6 border-t border-white/[0.08] flex flex-wrap items-center justify-between gap-6">
+          <div class="flex items-center gap-4">
+            <!-- PEGI 18 Badge -->
+            <div class="w-11 h-13 rounded-lg bg-red-600 border border-white text-white flex flex-col items-center justify-center p-1 shadow-lg select-none">
+              <span class="text-base font-black leading-none font-mono">18</span>
+              <span class="text-[7px] font-bold tracking-tighter uppercase mt-0.5">PEGI</span>
+            </div>
+            <div class="text-xs text-gray-400">
+              <strong class="text-white block font-mono text-[11px] uppercase">RATING IN ATTESA DI CONFERMA UFFICIALE (18+)</strong>
+              <span>Violenza estrema, linguaggio forte, contenuti per soli adulti.</span>
+            </div>
+          </div>
+
+          <div class="flex items-center gap-4">
+            <div class="w-8 h-8 rounded-lg bg-[#fdb813] flex items-center justify-center text-black font-black text-xs font-mono shadow-[0_0_10px_rgba(253,184,19,0.4)]">
+              R★
+            </div>
+            <div class="text-right">
+              <span class="text-xs font-black text-white font-mono block">ROCKSTAR GAMES</span>
+              <span class="text-[10px] text-gray-400 font-mono">ROCKSTAR NORTH • NEW YORK, NY</span>
+            </div>
+          </div>
+        </div>
+
         <!-- Take-Two Interactive & Rockstar Legal Shield -->
-        <div class="pt-8 border-t border-white/[0.08] text-[11px] text-gray-400 space-y-2.5 leading-relaxed">
+        <div class="pt-6 border-t border-white/[0.08] text-[11px] text-gray-400 space-y-2.5 leading-relaxed">
           <p>
             <strong>DISCLAIMER COMMERCIALE E COPYRIGHT:</strong> Leonida Index (leonidaindex.com) è un progetto editoriale indipendente non ufficiale. Non è affiliato, sponsorizzato, approvato né associato a Rockstar Games, Take-Two Interactive Software, Inc., Sony Interactive Entertainment o Microsoft Corporation.
           </p>

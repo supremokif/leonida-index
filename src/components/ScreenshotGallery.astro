@@ -1,0 +1,355 @@
+---
+// Rockstar Games Official 4K Screenshot Gallery Component
+const screenshots = [
+  {
+    id: 'ocean-drive',
+    title: 'Ocean Drive Neon Strip',
+    category: 'vice-city',
+    categoryLabel: 'Vice City',
+    location: 'Ocean Beach // Vice City',
+    imageUrl: '/images/vice-ocean-drive.jpg',
+    description: 'Gli iconici hotel Art Deco illuminati dai neon al tramonto lungo la litoranea di Ocean Beach.',
+    tag: '4K CAPTURE',
+  },
+  {
+    id: 'downtown-night',
+    title: 'Downtown Skyline & Highrises',
+    category: 'vice-city',
+    categoryLabel: 'Vice City',
+    location: 'Downtown Vice City',
+    imageUrl: '/images/vice-city-downtown.jpg',
+    description: 'La metropoli finanziaria illuminata a notte con riflessi volumetrici Ray Tracing sulle acque della baia.',
+    tag: 'RAGE 9 ENGINE',
+  },
+  {
+    id: 'leonida-keys',
+    title: 'Overseas Highway & Reefs',
+    category: 'keys',
+    categoryLabel: 'Leonida Keys',
+    location: 'Seven Mile Bridge // Keys Archipelago',
+    imageUrl: '/images/leonida-keys.jpg',
+    description: 'Il lungo viadotto autostradale che collega l\'arcipelago tropicale delle Keys alla terraferma.',
+    tag: 'WATER PHYSICS',
+  },
+  {
+    id: 'grassrivers-wetlands',
+    title: 'Grassrivers Wetlands & Wildlife',
+    category: 'grassrivers',
+    categoryLabel: 'Grassrivers',
+    location: 'Grassrivers Swamps',
+    imageUrl: '/images/grassrivers.jpg',
+    description: 'Le pericolose paludi popolate da fauna selvaggia autoctona ed esplorabili a bordo di hovercraft e idroscivolanti.',
+    tag: 'WILDLIFE ECOSYSTEM',
+  },
+  {
+    id: 'port-gellhorn',
+    title: 'Port Gellhorn Industrial Docks',
+    category: 'action',
+    categoryLabel: 'Veicoli & Azione',
+    location: 'Port Gellhorn Container Terminal',
+    imageUrl: '/images/port-gellhorn.jpg',
+    description: 'Gli snodi doganali e logistici di Port Gellhorn, teatro di rapine a convogli commerciali.',
+    tag: 'HEIST LOCATIONS',
+  },
+  {
+    id: 'action-supercar',
+    title: 'Midnight Highway Racing',
+    category: 'action',
+    categoryLabel: 'Veicoli & Azione',
+    location: 'Biscayne Expressway',
+    imageUrl: '/images/action-supercar.jpg',
+    description: 'Corse clandestine a tutta velocità tra supercar elaborate lungo le arterie sopraelevate di Leonida.',
+    tag: 'VEHICLE TUNING',
+  },
+  {
+    id: 'vice-beach-day',
+    title: 'Vice Beach Tropical Coastline',
+    category: 'vice-city',
+    categoryLabel: 'Vice City',
+    location: 'Vice Beach Shoreline',
+    imageUrl: '/images/vice-beach-day.jpg',
+    description: 'Le spiagge dorate affollate di bagnanti, yatch e moto d\'acqua sotto il sole della Florida.',
+    tag: 'DAYLIGHT RENDERING',
+  },
+  {
+    id: 'nightlife-neon',
+    title: 'Nightlife & Rooftop Parties',
+    category: 'nightlife',
+    categoryLabel: 'Vita Notturna',
+    location: 'Starfish Island & Clubs',
+    imageUrl: '/images/vice-nightlife-neon.jpg',
+    description: 'La vita mondana e i club esclusivi di Vice City con vista panoramica sulle luci della baia.',
+    tag: 'INTERIORS & AUDIO',
+  },
+];
+---
+
+<section id="gallery" class="my-16 scroll-mt-24" aria-label="Galleria Screenshot Ufficiali">
+  <!-- Section Header Rockstar Style -->
+  <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-10 pb-6 border-b border-white/[0.1]">
+    <div>
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#1b1433] border border-amber-400/40 text-[11px] font-mono font-bold text-amber-400 uppercase tracking-widest mb-3">
+        <span class="w-2 h-2 rounded-full bg-amber-400 animate-pulse"></span>
+        <span>ROCKSTAR GAMES MEDIA ARCHIVE // 4K CAPTURES</span>
+      </div>
+      <h2 class="text-3xl sm:text-5xl font-black text-white tracking-tight uppercase">
+        SCREENSHOT &amp; <span class="bg-gradient-to-r from-vice-pink via-vice-orange to-vice-cyan bg-clip-text text-transparent">IMMAGINI UFFICIALI</span>
+      </h2>
+      <p class="text-sm sm:text-base text-gray-300 mt-2 max-w-2xl font-normal leading-relaxed">
+        Esplora le prime catture in-engine a risoluzione 4K di Grand Theft Auto VI: ambientazioni, veicoli, illuminazione Ray Tracing e atmosfera dello Stato di Leonida.
+      </p>
+    </div>
+
+    <div class="flex items-center gap-2 text-xs font-mono text-gray-400">
+      <span>8 CATTURE ULTRA-HD</span>
+      <span>•</span>
+      <span class="text-amber-400">CLICK PER ZOOM 4K</span>
+    </div>
+  </div>
+
+  <!-- Filter Buttons Bar -->
+  <div class="flex items-center gap-2 overflow-x-auto pb-4 mb-8 no-scrollbar" role="tablist">
+    <button
+      type="button"
+      class="gallery-filter-btn px-4 py-2 rounded-xl text-xs font-mono font-bold tracking-wider uppercase bg-white text-black cursor-pointer transition-all shrink-0 shadow-lg"
+      data-filter="all"
+    >
+      TUTTI GLI SCREENSHOT (8)
+    </button>
+    <button
+      type="button"
+      class="gallery-filter-btn px-4 py-2 rounded-xl text-xs font-mono font-bold tracking-wider uppercase bg-[#140f26] text-gray-300 hover:text-white border border-white/[0.08] hover:border-amber-400/40 cursor-pointer transition-all shrink-0"
+      data-filter="vice-city"
+    >
+      VICE CITY
+    </button>
+    <button
+      type="button"
+      class="gallery-filter-btn px-4 py-2 rounded-xl text-xs font-mono font-bold tracking-wider uppercase bg-[#140f26] text-gray-300 hover:text-white border border-white/[0.08] hover:border-amber-400/40 cursor-pointer transition-all shrink-0"
+      data-filter="keys"
+    >
+      LEONIDA KEYS
+    </button>
+    <button
+      type="button"
+      class="gallery-filter-btn px-4 py-2 rounded-xl text-xs font-mono font-bold tracking-wider uppercase bg-[#140f26] text-gray-300 hover:text-white border border-white/[0.08] hover:border-amber-400/40 cursor-pointer transition-all shrink-0"
+      data-filter="grassrivers"
+    >
+      PALUDI GRASSRIVERS
+    </button>
+    <button
+      type="button"
+      class="gallery-filter-btn px-4 py-2 rounded-xl text-xs font-mono font-bold tracking-wider uppercase bg-[#140f26] text-gray-300 hover:text-white border border-white/[0.08] hover:border-amber-400/40 cursor-pointer transition-all shrink-0"
+      data-filter="action"
+    >
+      VEICOLI &amp; AZIONE
+    </button>
+    <button
+      type="button"
+      class="gallery-filter-btn px-4 py-2 rounded-xl text-xs font-mono font-bold tracking-wider uppercase bg-[#140f26] text-gray-300 hover:text-white border border-white/[0.08] hover:border-amber-400/40 cursor-pointer transition-all shrink-0"
+      data-filter="nightlife"
+    >
+      VITA NOTTURNA
+    </button>
+  </div>
+
+  <!-- Photo Grid -->
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6" id="gallery-grid">
+    {screenshots.map((item) => (
+      <div
+        class="gallery-item group relative rounded-3xl overflow-hidden bg-[#0d0a1a] border border-white/[0.1] hover:border-amber-400/50 shadow-2xl transition-all duration-500 cursor-pointer flex flex-col"
+        data-category={item.category}
+        data-title={item.title}
+        data-location={item.location}
+        data-description={item.description}
+        data-img={item.imageUrl}
+        data-tag={item.tag}
+      >
+        <!-- Image Container with Aspect Ratio -->
+        <div class="relative w-full aspect-[16/10] overflow-hidden bg-[#151026]">
+          <img
+            src={item.imageUrl}
+            alt={item.title}
+            loading="lazy"
+            decoding="async"
+            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+          />
+          <!-- Top Tag Pill -->
+          <div class="absolute top-3 left-3 px-2.5 py-1 rounded-lg bg-black/75 backdrop-blur-md border border-white/[0.15] text-[9px] font-mono font-bold text-amber-400 uppercase tracking-wider">
+            {item.tag}
+          </div>
+
+          <!-- Hover Overlay with Zoom Icon -->
+          <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+            <div class="w-12 h-12 rounded-full bg-white/90 text-black flex items-center justify-center shadow-2xl transform scale-75 group-hover:scale-100 transition-transform duration-300">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" />
+              </svg>
+            </div>
+          </div>
+        </div>
+
+        <!-- Meta Caption Box -->
+        <div class="p-5 flex-1 flex flex-col justify-between bg-gradient-to-b from-[#120d24] to-[#0a0714]">
+          <div>
+            <span class="text-[10px] font-mono font-semibold text-vice-cyan uppercase tracking-wider block mb-1">
+              {item.location}
+            </span>
+            <h3 class="text-base font-bold text-white group-hover:text-amber-400 transition-colors line-clamp-1 mb-2">
+              {item.title}
+            </h3>
+            <p class="text-xs text-gray-300 line-clamp-2 leading-relaxed font-normal">
+              {item.description}
+            </p>
+          </div>
+          <div class="mt-4 pt-3 border-t border-white/[0.08] flex items-center justify-between text-[11px] font-mono text-gray-400">
+            <span>{item.categoryLabel}</span>
+            <span class="text-amber-400 font-bold group-hover:translate-x-1 transition-transform">INGRANDISCI ➔</span>
+          </div>
+        </div>
+      </div>
+    ))}
+  </div>
+
+  <!-- Interactive Lightbox Modal -->
+  <div
+    id="gallery-lightbox"
+    class="fixed inset-0 z-50 bg-black/95 backdrop-blur-2xl flex items-center justify-center p-4 sm:p-8 opacity-0 pointer-events-none transition-opacity duration-300"
+    role="dialog"
+    aria-modal="true"
+    aria-label="Visualizzatore Screenshot 4K"
+  >
+    <div class="relative w-full max-w-6xl max-h-[92vh] flex flex-col rounded-3xl bg-[#0d0a1a] border border-white/[0.15] shadow-2xl overflow-hidden">
+      <!-- Top Modal Bar -->
+      <div class="px-6 py-4 bg-[#140f26] border-b border-white/[0.1] flex items-center justify-between">
+        <div class="flex items-center gap-3">
+          <span class="px-2.5 py-0.5 rounded bg-amber-400/20 border border-amber-400/40 text-[10px] font-mono font-bold text-amber-400 uppercase tracking-widest" id="lightbox-tag">
+            4K CAPTURE
+          </span>
+          <span class="text-xs font-mono text-gray-300" id="lightbox-location">Ocean Beach // Vice City</span>
+        </div>
+        <button
+          id="lightbox-close-btn"
+          type="button"
+          class="w-9 h-9 rounded-xl bg-white/[0.08] hover:bg-white/[0.15] text-white flex items-center justify-center transition-colors cursor-pointer"
+          aria-label="Chiudi visualizzatore"
+        >
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+        </button>
+      </div>
+
+      <!-- Main Image Display -->
+      <div class="relative flex-1 bg-black flex items-center justify-center overflow-hidden min-h-[350px] sm:min-h-[500px]">
+        <img
+          id="lightbox-img"
+          src=""
+          alt=""
+          class="max-w-full max-h-[68vh] object-contain select-none"
+        />
+      </div>
+
+      <!-- Bottom Caption Bar -->
+      <div class="p-6 bg-[#0a0714] border-t border-white/[0.1] flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+        <div>
+          <h4 id="lightbox-title" class="text-lg font-black text-white uppercase tracking-tight mb-1">Titolo</h4>
+          <p id="lightbox-desc" class="text-xs sm:text-sm text-gray-300 max-w-3xl leading-relaxed font-normal">Descrizione</p>
+        </div>
+        <div class="shrink-0 flex items-center gap-3">
+          <a
+            id="lightbox-download-link"
+            href=""
+            target="_blank"
+            download
+            class="px-4 py-2 rounded-xl bg-white text-black text-xs font-mono font-bold uppercase tracking-wider hover:bg-amber-400 transition-colors"
+          >
+            SCARICA ORIGINALE 4K
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  function setupScreenshotGallery() {
+    const filterButtons = document.querySelectorAll<HTMLButtonElement>('.gallery-filter-btn');
+    const items = document.querySelectorAll<HTMLElement>('.gallery-item');
+    const lightbox = document.getElementById('gallery-lightbox');
+    const closeBtn = document.getElementById('lightbox-close-btn');
+    const lbImg = document.getElementById('lightbox-img') as HTMLImageElement | null;
+    const lbTitle = document.getElementById('lightbox-title');
+    const lbLocation = document.getElementById('lightbox-location');
+    const lbDesc = document.getElementById('lightbox-desc');
+    const lbTag = document.getElementById('lightbox-tag');
+    const lbDownload = document.getElementById('lightbox-download-link') as HTMLAnchorElement | null;
+
+    // Filtering logic
+    filterButtons.forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const filter = btn.getAttribute('data-filter') || 'all';
+
+        filterButtons.forEach((b) => {
+          b.classList.remove('bg-white', 'text-black', 'shadow-lg');
+          b.classList.add('bg-[#140f26]', 'text-gray-300');
+        });
+        btn.classList.add('bg-white', 'text-black', 'shadow-lg');
+        btn.classList.remove('bg-[#140f26]', 'text-gray-300');
+
+        items.forEach((item) => {
+          const cat = item.getAttribute('data-category');
+          if (filter === 'all' || cat === filter) {
+            item.style.display = 'flex';
+          } else {
+            item.style.display = 'none';
+          }
+        });
+      });
+    });
+
+    // Lightbox open logic
+    items.forEach((item) => {
+      item.addEventListener('click', () => {
+        if (!lightbox || !lbImg) return;
+        const imgUrl = item.getAttribute('data-img') || '';
+        const title = item.getAttribute('data-title') || '';
+        const loc = item.getAttribute('data-location') || '';
+        const desc = item.getAttribute('data-description') || '';
+        const tag = item.getAttribute('data-tag') || '4K CAPTURE';
+
+        lbImg.src = imgUrl;
+        lbImg.alt = title;
+        if (lbTitle) lbTitle.textContent = title;
+        if (lbLocation) lbLocation.textContent = loc;
+        if (lbDesc) lbDesc.textContent = desc;
+        if (lbTag) lbTag.textContent = tag;
+        if (lbDownload) lbDownload.href = imgUrl;
+
+        lightbox.classList.remove('opacity-0', 'pointer-events-none');
+        document.body.style.overflow = 'hidden';
+      });
+    });
+
+    // Lightbox close logic
+    function closeLightbox() {
+      if (!lightbox) return;
+      lightbox.classList.add('opacity-0', 'pointer-events-none');
+      document.body.style.overflow = '';
+    }
+
+    if (closeBtn) closeBtn.addEventListener('click', closeLightbox);
+    if (lightbox) {
+      lightbox.addEventListener('click', (e) => {
+        if (e.target === lightbox) closeLightbox();
+      });
+    }
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && lightbox && !lightbox.classList.contains('pointer-events-none')) {
+        closeLightbox();
+      }
+    });
+  }
+
+  setupScreenshotGallery();
+  document.addEventListener('astro:page-load', setupScreenshotGallery);
+</script>

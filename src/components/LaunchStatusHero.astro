@@ -1,238 +1,185 @@
 ---
 import db from '../data/gta6_db.json';
 
-const targetDateStr = db.releaseInfo.releaseDate; // "2026-11-19T00:00:00" without 'Z'
+const targetDateStr = db.releaseInfo.releaseDate; // "2026-11-19T00:00:00"
 ---
 
 <div
   id="launch-hero-container"
-  class="relative w-full max-w-6xl mx-auto my-6 sm:my-10 p-6 sm:p-12 rounded-[2.5rem] bg-gradient-to-b from-[#151026]/90 via-[#0d0a1a]/95 to-[#07050d] border border-white/[0.12] shadow-2xl backdrop-blur-2xl overflow-hidden"
+  class="relative w-full max-w-7xl mx-auto my-6 sm:my-10 rounded-[2.5rem] bg-[#07050d] border border-white/[0.12] shadow-2xl overflow-hidden"
   data-target={targetDateStr}
 >
-  <!-- Ambient Vice City Sunset Glow Meshes -->
-  <div class="absolute -right-24 -top-24 w-96 h-96 bg-vice-pink/20 rounded-full blur-[100px] pointer-events-none"></div>
-  <div class="absolute -left-24 -bottom-24 w-96 h-96 bg-vice-cyan/20 rounded-full blur-[100px] pointer-events-none"></div>
-  <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-64 bg-vice-orange/10 rounded-full blur-[120px] pointer-events-none"></div>
-
-  <!-- Palm Tree Vector Silhouettes Watermark -->
-  <div class="absolute right-0 bottom-0 w-80 h-80 opacity-[0.06] pointer-events-none select-none">
-    <svg viewBox="0 0 200 200" fill="currentColor" class="w-full h-full text-white">
-      <path d="M100 190 Q98 120 102 70 Q75 60 40 75 Q70 50 100 65 Q110 30 140 20 Q120 45 105 68 Q140 60 170 80 Q130 80 106 72 Q103 125 100 190 Z" />
-    </svg>
+  <!-- Full-Bleed Cinematic Background Image with Dark Vignette -->
+  <div class="absolute inset-0 z-0">
+    <img
+      src="/images/vice-ocean-drive.jpg"
+      alt="GTA VI Vice City Ocean Drive"
+      class="w-full h-full object-cover opacity-35 scale-105 transform hover:scale-100 transition-transform duration-1000"
+    />
+    <div class="absolute inset-0 bg-gradient-to-t from-[#07050d] via-[#07050d]/80 to-[#07050d]/40"></div>
+    <div class="absolute inset-0 bg-radial-vignette pointer-events-none"></div>
   </div>
 
-  <!-- STATE A: PRE-LAUNCH COUNTDOWN STATE -->
-  <div id="hero-countdown-state" class="relative z-10 flex flex-col items-center text-center">
+  <!-- Ambient Sunset Flares -->
+  <div class="absolute -right-24 -top-24 w-96 h-96 bg-vice-pink/25 rounded-full blur-[120px] pointer-events-none z-0"></div>
+  <div class="absolute -left-24 -bottom-24 w-96 h-96 bg-vice-cyan/20 rounded-full blur-[120px] pointer-events-none z-0"></div>
+
+  <!-- Hero Content Container -->
+  <div class="relative z-10 px-6 py-12 sm:px-12 sm:py-20 flex flex-col items-center text-center max-w-4xl mx-auto">
     
-    <!-- Top HUD Telemetry Pill -->
-    <div class="inline-flex items-center gap-3 px-4 py-1.5 rounded-full bg-[#1b1433]/80 border border-vice-pink/40 shadow-neon-pink mb-6">
-      <span class="flex h-2 w-2 relative">
-        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-        <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-400"></span>
+    <!-- Rockstar Games & Game Badge Header -->
+    <div class="inline-flex items-center gap-3 px-4 py-1.5 rounded-full bg-black/70 border border-white/[0.15] backdrop-blur-md shadow-2xl mb-8">
+      <!-- Rockstar R* Star Emblem -->
+      <div class="w-6 h-6 rounded-md bg-[#fdb813] flex items-center justify-center text-black font-black text-xs font-mono select-none shadow-[0_0_8px_rgba(253,184,19,0.5)]">
+        R★
+      </div>
+      <span class="text-[11px] font-mono font-bold tracking-widest text-white uppercase">
+        ROCKSTAR GAMES PRESENTA
       </span>
-      <span class="text-[11px] sm:text-xs font-mono font-bold tracking-widest text-white uppercase">
-        PRE-LOAD DISPONIBILE // 228.5 GB PS5 &amp; XBOX
-      </span>
-      <span class="text-gray-400 font-mono text-[10px] hidden sm:inline">•</span>
-      <span class="text-vice-cyan font-mono text-[10px] font-bold tracking-wider hidden sm:inline">
-        ROLLING MIDNIGHT 19 NOV 2026
+      <span class="text-gray-500">•</span>
+      <span class="text-amber-400 font-mono text-[10px] font-bold tracking-widest uppercase">
+        USCITA: 19 NOVEMBRE 2026
       </span>
     </div>
 
-    <!-- Monumental Hero Typography -->
-    <h1 class="text-4xl sm:text-7xl md:text-8xl font-black text-white tracking-tighter uppercase mb-3 leading-none drop-shadow-2xl">
-      GRAND THEFT AUTO <span class="bg-gradient-to-r from-vice-pink via-vice-orange to-vice-cyan bg-clip-text text-transparent drop-shadow-[0_0_35px_rgba(255,0,122,0.6)]">VI</span>
-    </h1>
-
-    <div class="text-xs sm:text-base font-mono font-semibold tracking-widest text-vice-cyan uppercase mb-4">
-      BENVENUTI A VICE CITY // STATO DI LEONIDA
+    <!-- Official SVG Logo (Gradient) -->
+    <div class="w-full max-w-lg mb-6 group cursor-pointer">
+      <img
+        src="/images/gta6-logo-gradient.svg"
+        alt="Grand Theft Auto VI Logo Ufficiale"
+        class="w-full h-auto max-h-48 object-contain drop-shadow-[0_0_35px_rgba(255,0,122,0.6)] group-hover:scale-105 transition-transform duration-500"
+      />
     </div>
 
-    <p class="text-gray-300 text-sm sm:text-lg max-w-2xl mb-10 leading-relaxed font-normal">
-      Il conto alla rovescia ufficiale per l'arrivo di Lucia e Jason. Sblocco simultaneo a mezzanotte locale su PlayStation 5, PS5 Pro e Xbox Series X|S.
+    <div class="text-xs sm:text-base font-mono font-semibold tracking-widest text-vice-cyan uppercase mb-3 drop-shadow">
+      BENVENUTI NELLO STATO DI LEONIDA // VICE CITY
+    </div>
+
+    <p class="text-gray-200 text-sm sm:text-lg max-w-2xl mb-10 leading-relaxed font-normal drop-shadow-md">
+      Grand Theft Auto VI introduce la più vasta ed evoluta evoluzione open world mai creata da Rockstar Games, ambientata tra le strade al neon di Vice City e le terre selvagge di Leonida.
     </p>
 
-    <!-- Digital Flip Clock HUD Digits Grid -->
-    <div class="grid grid-cols-4 gap-2.5 sm:gap-6 w-full max-w-3xl mb-10" role="timer" aria-live="polite">
-      
-      <!-- Days Card -->
-      <div class="flex flex-col items-center justify-center p-4 sm:p-7 rounded-2xl sm:rounded-3xl bg-gradient-to-b from-[#1b1433]/90 to-[#0e0a1a] border border-white/[0.12] shadow-2xl relative group overflow-hidden">
-        <div class="absolute inset-x-0 top-0 h-[1px] bg-gradient-to-r from-transparent via-white/20 to-transparent"></div>
-        <span class="text-3xl sm:text-6xl md:text-7xl font-black text-white font-mono tracking-tight group-hover:text-vice-pink transition-colors" id="hero-cd-days">--</span>
-        <span class="text-[9px] sm:text-xs font-mono font-bold text-gray-400 uppercase tracking-widest mt-2 sm:mt-3">GIORNI</span>
+    <!-- Sleek Countdown Timer in Luxury White & Amber Typography -->
+    <div class="w-full max-w-3xl mb-10" role="timer" aria-live="polite">
+      <div class="text-[10px] font-mono font-bold uppercase tracking-widest text-gray-400 mb-3 flex items-center justify-center gap-2">
+        <span class="w-1.5 h-1.5 rounded-full bg-amber-400 animate-pulse"></span>
+        <span>CONTO ALLA ROVESCIA UFFICIALE AL LANCIO MONDIALE</span>
+        <span class="w-1.5 h-1.5 rounded-full bg-amber-400 animate-pulse"></span>
       </div>
 
-      <!-- Hours Card -->
-      <div class="flex flex-col items-center justify-center p-4 sm:p-7 rounded-2xl sm:rounded-3xl bg-gradient-to-b from-[#1b1433]/90 to-[#0e0a1a] border border-white/[0.12] shadow-2xl relative group overflow-hidden">
-        <div class="absolute inset-x-0 top-0 h-[1px] bg-gradient-to-r from-transparent via-white/20 to-transparent"></div>
-        <span class="text-3xl sm:text-6xl md:text-7xl font-black text-white font-mono tracking-tight group-hover:text-vice-pink transition-colors" id="hero-cd-hours">--</span>
-        <span class="text-[9px] sm:text-xs font-mono font-bold text-gray-400 uppercase tracking-widest mt-2 sm:mt-3">ORE</span>
-      </div>
+      <div class="grid grid-cols-4 gap-2.5 sm:gap-6">
+        <!-- Days -->
+        <div class="flex flex-col items-center justify-center p-4 sm:p-6 rounded-2xl bg-[#0d0a1a]/85 border border-white/[0.12] shadow-2xl backdrop-blur-md">
+          <span class="text-3xl sm:text-6xl font-black text-white font-mono tracking-tight" id="hero-cd-days">--</span>
+          <span class="text-[9px] sm:text-xs font-mono font-bold text-gray-400 uppercase tracking-widest mt-1.5 sm:mt-2">GIORNI</span>
+        </div>
 
-      <!-- Minutes Card -->
-      <div class="flex flex-col items-center justify-center p-4 sm:p-7 rounded-2xl sm:rounded-3xl bg-gradient-to-b from-[#1b1433]/90 to-[#0e0a1a] border border-white/[0.12] shadow-2xl relative group overflow-hidden">
-        <div class="absolute inset-x-0 top-0 h-[1px] bg-gradient-to-r from-transparent via-white/20 to-transparent"></div>
-        <span class="text-3xl sm:text-6xl md:text-7xl font-black text-white font-mono tracking-tight group-hover:text-vice-cyan transition-colors" id="hero-cd-minutes">--</span>
-        <span class="text-[9px] sm:text-xs font-mono font-bold text-gray-400 uppercase tracking-widest mt-2 sm:mt-3">MINUTI</span>
-      </div>
+        <!-- Hours -->
+        <div class="flex flex-col items-center justify-center p-4 sm:p-6 rounded-2xl bg-[#0d0a1a]/85 border border-white/[0.12] shadow-2xl backdrop-blur-md">
+          <span class="text-3xl sm:text-6xl font-black text-white font-mono tracking-tight" id="hero-cd-hours">--</span>
+          <span class="text-[9px] sm:text-xs font-mono font-bold text-gray-400 uppercase tracking-widest mt-1.5 sm:mt-2">ORE</span>
+        </div>
 
-      <!-- Seconds Card -->
-      <div class="flex flex-col items-center justify-center p-4 sm:p-7 rounded-2xl sm:rounded-3xl bg-gradient-to-b from-[#1b1433]/90 to-[#0e0a1a] border border-white/[0.12] shadow-2xl relative group overflow-hidden">
-        <div class="absolute inset-x-0 top-0 h-[1px] bg-gradient-to-r from-transparent via-vice-pink to-transparent"></div>
-        <span class="text-3xl sm:text-6xl md:text-7xl font-black text-vice-pink font-mono tracking-tight drop-shadow-[0_0_15px_rgba(255,0,122,0.8)]" id="hero-cd-seconds">--</span>
-        <span class="text-[9px] sm:text-xs font-mono font-bold text-gray-400 uppercase tracking-widest mt-2 sm:mt-3">SECONDI</span>
+        <!-- Minutes -->
+        <div class="flex flex-col items-center justify-center p-4 sm:p-6 rounded-2xl bg-[#0d0a1a]/85 border border-white/[0.12] shadow-2xl backdrop-blur-md">
+          <span class="text-3xl sm:text-6xl font-black text-white font-mono tracking-tight" id="hero-cd-minutes">--</span>
+          <span class="text-[9px] sm:text-xs font-mono font-bold text-gray-400 uppercase tracking-widest mt-1.5 sm:mt-2">MINUTI</span>
+        </div>
+
+        <!-- Seconds -->
+        <div class="flex flex-col items-center justify-center p-4 sm:p-6 rounded-2xl bg-[#0d0a1a]/85 border border-vice-pink/40 shadow-neon-pink backdrop-blur-md">
+          <span class="text-3xl sm:text-6xl font-black text-vice-pink font-mono tracking-tight drop-shadow-[0_0_15px_rgba(255,0,122,0.8)]" id="hero-cd-seconds">--</span>
+          <span class="text-[9px] sm:text-xs font-mono font-bold text-gray-400 uppercase tracking-widest mt-1.5 sm:mt-2">SECONDI</span>
+        </div>
       </div>
     </div>
 
-    <!-- Quick Action Launch Buttons -->
-    <div class="flex flex-wrap items-center justify-center gap-4">
-      <a
-        href="/storage-calculator"
-        class="px-7 py-3.5 rounded-2xl bg-gradient-to-r from-vice-pink to-vice-orange hover:from-vice-pink/90 hover:to-vice-orange/90 text-white font-black text-xs sm:text-sm tracking-wider uppercase font-mono shadow-neon-pink hover:scale-105 transition-all duration-300"
-      >
-        VERIFICA SPAZIO SSD (228.5 GB) ➔
-      </a>
+    <!-- Rockstar Action Buttons -->
+    <div class="flex flex-wrap items-center justify-center gap-4 w-full">
       <a
         href="/trailers/trailer-1"
-        class="px-7 py-3.5 rounded-2xl bg-surface-100 hover:bg-surface-200 text-white font-bold text-xs sm:text-sm tracking-wider uppercase font-mono border border-white/[0.12] hover:border-vice-cyan/50 hover:shadow-neon-cyan transition-all duration-300"
+        class="inline-flex items-center gap-2.5 px-8 py-4 rounded-2xl bg-white hover:bg-amber-400 text-black font-black text-xs sm:text-sm tracking-wider uppercase font-mono shadow-2xl hover:scale-105 transition-all duration-300"
       >
-        I 7 VIDEO UFFICIALI ROCKSTAR
+        <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+        <span>GUARDA IL TRAILER 1</span>
       </a>
-    </div>
 
-    <!-- Global Rollout Status Bar -->
-    <div class="mt-8 pt-6 border-t border-white/[0.08] w-full max-w-2xl flex flex-wrap items-center justify-between gap-3 text-[11px] font-mono text-gray-400">
-      <span class="flex items-center gap-2">
-        <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
-        <span>ITALIA / CET: <strong>00:00 (19 Nov)</strong></span>
-      </span>
-      <span class="flex items-center gap-2">
-        <span class="w-1.5 h-1.5 rounded-full bg-vice-cyan"></span>
-        <span>REGNO UNITO / GMT: <strong>00:00 (19 Nov)</strong></span>
-      </span>
-      <span class="flex items-center gap-2">
-        <span class="w-1.5 h-1.5 rounded-full bg-vice-pink"></span>
-        <span>USA EST / MIAMI: <strong>00:00 (19 Nov)</strong></span>
-      </span>
-    </div>
-  </div>
-
-  <!-- STATE B: POST-LAUNCH 100% COMPLETION DASHBOARD (Auto-switched from Nov 19 onwards) -->
-  <div id="hero-launched-state" class="hidden relative z-10 flex flex-col items-center text-center">
-    <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-emerald-950/80 border border-emerald-500/50 text-xs sm:text-sm font-bold text-emerald-400 uppercase tracking-wider mb-4 shadow-neon-pink">
-      <span class="w-3 h-3 rounded-full bg-emerald-400 animate-ping"></span>
-      <span>DISPONIBILE ORA MONDIALMENTE • GTA VI È USCITO</span>
-    </div>
-
-    <h2 class="text-3xl sm:text-6xl font-black text-white tracking-tight uppercase mb-3 leading-tight">
-      BENVENUTO A <span class="bg-gradient-to-r from-vice-pink via-vice-orange to-vice-cyan bg-clip-text text-transparent">LEONIDA</span>
-    </h2>
-
-    <p class="text-gray-300 text-sm sm:text-base max-w-xl mb-8 leading-relaxed font-normal">
-      I server di gioco sono operativi a livello globale. Tieni traccia delle rapine, dei reperti segreti e dell'avanzamento verso il 100%.
-    </p>
-
-    <!-- Completion Dashboard Progress Box -->
-    <div class="w-full max-w-xl p-6 rounded-3xl bg-surface-50 border border-white/[0.12] shadow-2xl mb-8 text-left">
-      <div class="flex items-center justify-between text-xs font-mono font-bold uppercase tracking-wider mb-3">
-        <span class="text-white">Avanzamento Globale Leonida 100%</span>
-        <span id="hero-progress-percent" class="text-vice-pink text-base font-black">0%</span>
-      </div>
-      <div class="w-full h-3.5 rounded-full bg-[#1b1433] overflow-hidden border border-white/[0.08]">
-        <div id="hero-progress-bar" class="h-full bg-gradient-to-r from-vice-pink via-vice-orange to-vice-cyan w-0 transition-all duration-500"></div>
-      </div>
-      <div class="flex items-center justify-between mt-4 text-xs font-mono text-gray-400">
-        <span id="hero-progress-count">0 di 19 Collezionabili &amp; Attività Spuntate</span>
-        <a href="/tracker" class="text-vice-cyan font-bold hover:underline">Apri Checklist →</a>
-      </div>
-    </div>
-
-    <div class="flex flex-wrap items-center justify-center gap-4">
       <a
-        href="/tracker"
-        class="px-8 py-4 rounded-2xl bg-gradient-to-r from-vice-pink to-vice-orange text-white font-mono font-bold text-xs sm:text-sm tracking-wider uppercase shadow-neon-pink hover:scale-105 transition-transform"
+        href="#gallery"
+        class="inline-flex items-center gap-2.5 px-8 py-4 rounded-2xl bg-[#140f26]/90 hover:bg-[#1b1433] text-white font-bold text-xs sm:text-sm tracking-wider uppercase font-mono border border-white/[0.15] hover:border-vice-cyan/50 hover:shadow-neon-cyan transition-all duration-300"
       >
-        CHECKLIST 100% COMPLETA
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+        <span>GALLERIA FOTO 4K</span>
       </a>
+
       <a
-        href="/leonida/vice-city"
-        class="px-8 py-4 rounded-2xl bg-surface-100 hover:bg-surface-200 text-white font-mono font-bold text-xs sm:text-sm tracking-wider uppercase border border-white/[0.12] transition-colors"
+        href="#editions"
+        class="inline-flex items-center gap-2 px-6 py-4 rounded-2xl bg-gradient-to-r from-vice-pink to-vice-orange text-white font-bold text-xs sm:text-sm tracking-wider uppercase font-mono shadow-neon-pink hover:scale-105 transition-all duration-300"
       >
-        ESPLORA MAPPA REGIONALE
+        <span>PRE-ORDER EDIZIONI ➔</span>
       </a>
+    </div>
+
+    <!-- Platform Availability Strip -->
+    <div class="mt-10 pt-6 border-t border-white/[0.1] w-full max-w-xl flex items-center justify-between text-xs font-mono text-gray-300">
+      <span class="flex items-center gap-2">
+        <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
+        <span>PlayStation® 5</span>
+      </span>
+      <span class="text-gray-500">•</span>
+      <span class="flex items-center gap-2">
+        <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
+        <span>PlayStation® 5 Pro</span>
+      </span>
+      <span class="text-gray-500">•</span>
+      <span class="flex items-center gap-2">
+        <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
+        <span>Xbox Series X|S</span>
+      </span>
     </div>
   </div>
 </div>
 
 <script>
-  function initHeroState() {
-    const container = document.getElementById('launch-hero-container');
-    if (!container) return;
+  function initHeroCountdown() {
+    const hero = document.getElementById('launch-hero-container');
+    if (!hero) return;
 
-    const targetDateAttr = container.getAttribute('data-target') || '2026-11-19T00:00:00';
-    const targetTimestamp = new Date(targetDateAttr).getTime();
+    const targetStr = hero.getAttribute('data-target') || '2026-11-19T00:00:00';
+    const target = new Date(targetStr).getTime();
 
-    const countdownState = document.getElementById('hero-countdown-state');
-    const launchedState = document.getElementById('hero-launched-state');
+    const dEl = document.getElementById('hero-cd-days');
+    const hEl = document.getElementById('hero-cd-hours');
+    const mEl = document.getElementById('hero-cd-minutes');
+    const sEl = document.getElementById('hero-cd-seconds');
 
-    const daysEl = document.getElementById('hero-cd-days');
-    const hoursEl = document.getElementById('hero-cd-hours');
-    const minutesEl = document.getElementById('hero-cd-minutes');
-    const secondsEl = document.getElementById('hero-cd-seconds');
-
-    const progressBar = document.getElementById('hero-progress-bar');
-    const progressPercent = document.getElementById('hero-progress-percent');
-    const progressCount = document.getElementById('hero-progress-count');
-
-    function checkSwitchAndTick() {
+    function updateTimer() {
       const now = Date.now();
-      const diff = targetTimestamp - now;
+      const diff = target - now;
 
       if (diff <= 0) {
-        if (countdownState) countdownState.classList.add('hidden');
-        if (launchedState) launchedState.classList.remove('hidden');
-
-        try {
-          const raw = localStorage.getItem('leonida_100_tracker');
-          if (raw) {
-            const parsed = JSON.parse(raw);
-            if (parsed && typeof parsed === 'object') {
-              const keys = Object.keys(parsed).filter(
-                (k) => k !== '__proto__' && k !== 'constructor' && k !== 'prototype'
-              );
-              const totalItems = 19;
-              const completedCount = keys.filter((k) => parsed[k] === true).length;
-              const pct = Math.min(100, Math.round((completedCount / totalItems) * 100));
-
-              if (progressPercent) progressPercent.textContent = `${pct}%`;
-              if (progressBar) progressBar.style.width = `${pct}%`;
-              if (progressCount) progressCount.textContent = `${completedCount} di ${totalItems} Collezionabili & Attività Spuntate`;
-            }
-          }
-        } catch {
-          // Keep safe defaults
-        }
+        if (dEl) dEl.textContent = '00';
+        if (hEl) hEl.textContent = '00';
+        if (mEl) mEl.textContent = '00';
+        if (sEl) sEl.textContent = '00';
         return;
       }
 
       const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-      const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-      const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-      const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+      const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+      const minutes = Math.floor((diff / (1000 * 60)) % 60);
+      const seconds = Math.floor((diff / 1000) % 60);
 
-      if (daysEl) daysEl.textContent = String(days).padStart(2, '0');
-      if (hoursEl) hoursEl.textContent = String(hours).padStart(2, '0');
-      if (minutesEl) minutesEl.textContent = String(minutes).padStart(2, '0');
-      if (secondsEl) secondsEl.textContent = String(seconds).padStart(2, '0');
+      if (dEl) dEl.textContent = String(days).padStart(2, '0');
+      if (hEl) hEl.textContent = String(hours).padStart(2, '0');
+      if (mEl) mEl.textContent = String(minutes).padStart(2, '0');
+      if (sEl) sEl.textContent = String(seconds).padStart(2, '0');
     }
 
-    checkSwitchAndTick();
-    setInterval(checkSwitchAndTick, 1000);
+    updateTimer();
+    setInterval(updateTimer, 1000);
   }
 
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', initHeroState);
-  } else {
-    initHeroState();
-  }
+  initHeroCountdown();
+  document.addEventListener('astro:page-load', initHeroCountdown);
 </script>
