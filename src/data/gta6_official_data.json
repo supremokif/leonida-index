@@ -8,9 +8,9 @@
     "preloadDate": "2026-11-10T18:00:00+01:00",
     "preloadDateHuman": "10 Novembre 2026",
     "platforms": ["PlayStation 5", "PlayStation 5 Pro", "Xbox Series X", "Xbox Series S"],
-    "downloadSize": "228.5 GB",
+    "downloadSize": "TBA (In attesa di annuncio ufficiale)",
     "setting": "Stato di Leonida (Vice City, Port Gellhorn, Ambrosia, Gator Keys, Mount Kalaga)",
-    "protagonists": ["Lucia Caminos", "Jason Duval"],
+    "protagonists": ["Lucia", "Jason"],
     "engine": "Rockstar Advanced Game Engine (RAGE 9)",
     "rating": "PEGI 18 / ESRB M (Mature 17+)"
   },
@@ -336,15 +336,15 @@
     },
     {
       "question": "Quanto spazio di archiviazione occupa il download di GTA 6?",
-      "answer": "Il file di installazione di GTA 6 richiede circa 228.5 GB di spazio libero su SSD NVMe per PlayStation 5 e circa 231 GB su Xbox Series X|S. È vivamente consigliato liberare spazio o installare un SSD M.2 aggiuntivo ad alte prestazioni."
+      "answer": "La dimensione definitiva del pacchetto di installazione sarà annunciata ufficialmente da Rockstar Games all'apertura del pre-load digitale su PlayStation Store e Xbox Store."
     },
     {
       "question": "Chi sono i protagonisti della storia di GTA 6?",
-      "answer": "La trama segue le vicende di una coppia di criminali in stile moderno Bonnie & Clyde: Lucia Caminos (la prima protagonista femminile giocabile in un capitolo 3D di GTA) e Jason Duval, ambientati nello Stato di Leonida."
+      "answer": "I protagonisti sono Lucia e Jason, una coppia al centro di una cospirazione criminale nello Stato di Leonida."
     },
     {
-      "question": "Qual è la canzone del Launch Trailer ufficiale di GTA 6?",
-      "answer": "La colonna sonora ufficiale del Launch Trailer rilasciato il 15 Ottobre 2026 è 'Flower in a Hurricane' di Justice con la partecipazione di Tame Impala, SZA e King Gizzard & The Lizard Wizard."
+      "question": "Qual è la canzone del primo trailer ufficiale di GTA 6?",
+      "answer": "La colonna sonora del Trailer 1 ufficiale è 'Love Is a Long Road' di Tom Petty."
     },
     {
       "question": "Quali sono le differenze grafiche tra PS5 base e PS5 Pro?",

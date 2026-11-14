@@ -8,10 +8,10 @@
     "preloadDate": "2026-11-10T18:00:00",
     "preloadDateHuman": "10 Novembre 2026",
     "platforms": ["PlayStation 5", "PlayStation 5 Pro", "Xbox Series X", "Xbox Series S"],
-    "downloadSizePS5": "228.45 GB",
-    "downloadSizeXbox": "231.10 GB",
-    "engine": "Rockstar Advanced Game Engine (RAGE 9)",
-    "setting": "Stato di Leonida (Vice City, Leonida Keys, Grassrivers, Port Gellhorn, Ambrosia, Mount Kalaga)",
+    "downloadSizePS5": "In attesa di annuncio ufficiale da parte di Rockstar Games",
+    "downloadSizeXbox": "In attesa di annuncio ufficiale da parte di Rockstar Games",
+    "engine": "Rockstar Advanced Game Engine (RAGE)",
+    "setting": "Stato di Leonida (Vice City e aree limitrofe)",
     "targetFramerates": {
       "ps5": "Modalità Prestazioni (4K Dinamico 60 FPS) / Modalità Fedeltà (4K Nativo 30 FPS con RT)",
       "ps5Pro": "Modalità Migliorata PSSR (4K 60 FPS con Ray Tracing e Global Illumination Attivi)",
@@ -90,23 +90,23 @@
       },
       {
         "question": "Come funziona il Pre-load di GTA 6 su PS5 e Xbox?",
-        "answer": "Il pre-load digitale è ufficialmente attivo dal 10 Novembre 2026. Tutti i giocatori con pre-order digitale attivo su PlayStation Store o Microsoft Xbox Store possono scaricare l'intero pacchetto di installazione (228.5 GB su PS5, 231 GB su Xbox) per iniziare a giocare all'istante allo scoccare della mezzanotte del 19 Novembre."
+        "answer": "Il pre-load digitale sarà disponibile prima del lancio per tutti i giocatori che hanno effettuato il pre-order su PlayStation Store e Xbox Store, consentendo di scaricare l'intero gioco in anticipo per essere pronti allo sblocco alla mezzanotte del 19 Novembre."
       },
       {
         "question": "Quali sono le piattaforme di gioco supportate al lancio?",
-        "answer": "GTA 6 debutta in esclusiva per console current-gen su Sony PlayStation 5, PlayStation 5 Pro e Microsoft Xbox Series X|S. La versione per PC Windows non sarà disponibile al lancio ed è pianificata da Rockstar Games per il 2027."
+        "answer": "GTA 6 debutta su console current-gen: PlayStation 5, PlayStation 5 Pro e Microsoft Xbox Series X|S. Come da tradizione per le principali produzioni Rockstar Games, la versione PC non è disponibile al momento del lancio su console."
       },
       {
-        "question": "Quanto spazio libero richiede GTA 6 su SSD?",
-        "answer": "La dimensione del download è di 228.45 GB su PlayStation 5 e 231.10 GB su Xbox Series X. Si consiglia di disporre di almeno 260 GB liberi su unità SSD PCIe Gen4 interna o tramite SSD M.2 con dissipatore per consentire la corretta decompressione della patch Day One."
+        "question": "Quanto spazio libero richiede GTA 6 su memoria di archiviazione?",
+        "answer": "I requisiti esatti di archiviazione per console PlayStation 5 e Xbox Series X|S saranno annunciati ufficialmente da Rockstar Games con l'apertura del pre-load digitale. Si consiglia di assicurarsi di avere adeguato spazio libero su SSD per il gioco e le relative patch al day-one."
       },
       {
-        "question": "Chi sono i protagonisti e come è strutturata la storia?",
-        "answer": "I protagonisti sono Lucia Caminos e Jason Duval, una coppia di fuorilegge legati da una partnership criminale e affettiva ispirata a Bonnie e Clyde. Il giocatore può alternarsi tra entrambi i personaggi esplorando le dinamiche narrative e tattiche nelle rapine nello Stato di Leonida."
+        "question": "Chi sono i protagonisti di GTA VI?",
+        "answer": "I protagonisti sono Jason e Lucia, una coppia che si trova al centro di una cospirazione criminale nello Stato di Leonida, costretti a fare squadra per sopravvivere sul lato più oscuro del luogo più soleggiato d'America."
       },
       {
-        "question": "Qual è la colonna sonora ufficiale del Launch Trailer?",
-        "answer": "Il brano cardine del Launch Trailer pubblicato il 15 Ottobre 2026 è 'Flower in a Hurricane', composto dal duo electro-funk Justice con i featuring vocali di Tame Impala, SZA e King Gizzard & The Lizard Wizard."
+        "question": "Qual è la colonna sonora del Trailer 1 ufficiale?",
+        "answer": "Il brano ufficiale del Trailer 1 è 'Love Is a Long Road' di Tom Petty, tratto dal celebre album Full Moon Fever del 1989."
       }
     ]
   },

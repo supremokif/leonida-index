@@ -1,14 +1,12 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import LaunchStatusHero from '../components/LaunchStatusHero.astro';
+import RockstarVideoSelector from '../components/RockstarVideoSelector.astro';
+import RockstarPillars from '../components/RockstarPillars.astro';
 import ScreenshotGallery from '../components/ScreenshotGallery.astro';
-import LiteYouTube from '../components/LiteYouTube.astro';
-import AdSlot from '../components/AdSlot.astro';
 import db from '../data/gta6_db.json';
 
-const featuredTrailers = db.trailers.slice(0, 3);
-
-// Regional photography mapping
+// Regional photography mapping for Leonida
 const regionPhotos: Record<string, { image: string; highlight: string }> = {
   'vice-city': {
     image: '/images/vice-city-downtown.jpg',
@@ -24,110 +22,59 @@ const regionPhotos: Record<string, { image: string; highlight: string }> = {
   },
   'port-gellhorn': {
     image: '/images/port-gellhorn.jpg',
-    highlight: 'Deep-Water Shipping Docks & Industrial Strips',
+    highlight: 'Deep-Water Shipping Docks & Coastal Roads',
   },
   'ambrosia': {
     image: '/images/action-supercar.jpg',
-    highlight: 'Biscayne Speedway, Lowriders & Backroads',
+    highlight: 'Speedways, Lowriders & Backroads',
   },
   'mount-kalaga': {
     image: '/images/vice-beach-day.jpg',
     highlight: 'National Nature Reserve & Forest Trails',
   },
 };
-
-// Official Game Editions
-const officialEditions = [
-  {
-    id: 'standard-edition',
-    name: 'Standard Edition',
-    badge: 'EDIZIONE BASE',
-    price: '€79.99',
-    platforms: 'PS5 • PS5 Pro • Xbox Series X|S',
-    description: 'Il gioco completo Grand Theft Auto VI per console current-gen con accesso al day-one e tutti i contenuti della campagna principale.',
-    features: [
-      'Copia completa di Grand Theft Auto VI',
-      'Pacchetto Pre-Order: bonus veicolo esclusivo Vice Custom',
-      'Accesso garantito al Pre-load digitale 228.5 GB',
-      'Modalità storia completa con Lucia e Jason',
-    ],
-    accent: 'border-white/[0.12]',
-    badgeBg: 'bg-white/10 text-white',
-    buttonBg: 'bg-surface-100 hover:bg-surface-200 text-white border border-white/[0.15]',
-  },
-  {
-    id: 'deluxe-steelbook',
-    name: 'Special Steelbook Edition',
-    badge: 'PIÙ POPOLARE',
-    price: '€99.99',
-    platforms: 'Edizione Fisica da Collezione',
-    description: 'Custodia in metallo Steelbook con artwork esclusivo di Vice City e mappa fisica topografica di Leonida stampata su tessuto.',
-    features: [
-      'Custodia Steelbook serigrafata con finitura opaca',
-      'Mappa geografica ufficiale di Leonida in tessuto',
-      'Bonus digitale: $1.000.000 in-game currency',
-      'Pacchetto armi esclusive Vice Heat Weapons Pack',
-      'Spilla da collezione in metallo smaltato R★',
-    ],
-    accent: 'border-amber-400/60 shadow-[0_0_30px_rgba(253,184,19,0.25)]',
-    badgeBg: 'bg-amber-400 text-black font-black',
-    buttonBg: 'bg-amber-400 hover:bg-amber-300 text-black font-black shadow-lg',
-  },
-  {
-    id: 'collectors-treasure-box',
-    name: "Collector's Treasure Box",
-    badge: 'EDIZIONE LIMITATA',
-    price: '€199.99',
-    platforms: 'Tiratura Limitata e Numerata',
-    description: 'Il cofanetto definitivo numerato per veri collezionisti: statua in resina di Lucia e Jason, artbook con copertina rigida e litografie artistiche.',
-    features: [
-      'Statua in resina alta 30cm di Lucia & Jason con base illuminata',
-      'Hardcover Artbook "The Art of Leonida" (120 pagine patinate)',
-      'Set di 5 litografie d\'autore numerate e timbrate Rockstar Games',
-      'Mazzo di carte da poker "Club Vice" con sigillo dorato',
-      'Steelbook esclusiva + tutti i contenuti digitali della Deluxe',
-    ],
-    accent: 'border-vice-pink/60 shadow-neon-pink',
-    badgeBg: 'bg-gradient-to-r from-vice-pink to-vice-orange text-white font-black',
-    buttonBg: 'bg-gradient-to-r from-vice-pink to-vice-orange text-white font-black shadow-neon-pink',
-  },
-];
 ---
 
 <BaseLayout
-  title="Grand Theft Auto VI - Sito Ufficiale Rockstar Games Hub | Leonida Index"
-  description="Il portale visivo definitivo su Grand Theft Auto VI: screenshot 4K ufficiali, conto alla rovescia al 19 Novembre 2026, mappa di Leonida, trailer, protagonisti Lucia & Jason e pre-order edizioni."
+  title="Grand Theft Auto VI - Sito Ufficiale Rockstar Games Hub"
+  description="Il portale ufficiale su Grand Theft Auto VI: screenshot 4K ufficiali, trailer, edizioni Ultimate e Standard, State of Leonida, protagonisti Lucia & Jason e pre-order."
   canonicalPath="/"
 >
-  <!-- Main Hero Rockstar Style with Countdown -->
+  <div id="overview"></div>
+
+  <!-- 1. Rockstar Official Hero with Fullscreen Key Art & Official VI Logo -->
   <LaunchStatusHero />
 
-  <AdSlot id="home-top-banner" format="leaderboard" />
+  <!-- 2. Official Rockstar Video Archive & Trailers -->
+  <RockstarVideoSelector />
 
-  <!-- 4K Screenshot Gallery (Richiedeva Più Foto Stile Rockstar Games) -->
+  <!-- 3. Official 4 Pillars, Story Synopsis, Editions, Warehouse Merch, Newswire & Propaganda -->
+  <RockstarPillars />
+
+  <!-- 4. The Launch Gallery - 4K Screenshot Gallery & Interactive Lightbox -->
   <ScreenshotGallery />
 
-  <!-- The World of Leonida Photographic Travelogue -->
-  <section id="leonida" class="my-16 scroll-mt-24" aria-label="Lo Stato di Leonida">
-    <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-10 pb-6 border-b border-white/[0.1]">
+  <!-- 5. People & Places: The World of Leonida Photographic Travelogue -->
+  <section id="leonida" class="my-20 scroll-mt-24 px-4 sm:px-6 max-w-7xl mx-auto" aria-label="Lo Stato di Leonida">
+    <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-10 pb-6 border-b border-white/10">
       <div>
         <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#1b1433] border border-vice-cyan/40 text-[11px] font-mono font-bold text-vice-cyan uppercase tracking-widest mb-3">
           <span class="w-2 h-2 rounded-full bg-vice-cyan animate-pulse"></span>
-          <span>CARTOGRAFIA E AMBIENTAZIONE // STATO DI LEONIDA</span>
+          <span>PEOPLE &amp; PLACES // STATO DI LEONIDA</span>
         </div>
         <h2 class="text-3xl sm:text-5xl font-black text-white tracking-tight uppercase">
-          ESPLORA <span class="bg-gradient-to-r from-vice-pink via-vice-orange to-vice-cyan bg-clip-text text-transparent">LE 6 REGIONI</span>
+          ONLY IN <span class="bg-gradient-to-r from-vice-pink via-vice-orange to-vice-cyan bg-clip-text text-transparent">LEONIDA</span>
         </h2>
         <p class="text-sm sm:text-base text-gray-300 mt-2 max-w-2xl font-normal leading-relaxed">
-          Dai boulevard al neon di Vice City alle paludi torbide delle Grassrivers: ogni regione offre ecosistemi vivi, criminalità autoctona e una densità di interni mai vista prima.
+          Vice City, USA. Dai boulevard al neon di Ocean Beach alle paludi selvagge delle Grassrivers: esplora le regioni che compongono lo Stato di Leonida.
         </p>
       </div>
 
       <a
-        href="/tracker"
+        href="/leonida/vice-city"
         class="inline-flex items-center gap-2 text-xs font-mono font-bold text-amber-400 hover:text-white transition-colors"
       >
-        <span>COLLEZIONABILI E MISTERI (TRACKER 100%)</span>
+        <span>DETTAGLI REGIONI E FOTOGRAFIA</span>
         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
       </a>
     </div>
@@ -143,7 +90,7 @@ const officialEditions = [
         return (
           <a
             href={`/leonida/${region.slug}`}
-            class="group flex flex-col rounded-3xl overflow-hidden bg-[#0d0a1a] border border-white/[0.1] hover:border-amber-400/60 shadow-2xl transition-all duration-500 hover:-translate-y-1.5"
+            class="group flex flex-col rounded-3xl overflow-hidden bg-[#0d0a1a] border border-white/10 hover:border-amber-400/60 shadow-2xl transition-all duration-500 hover:-translate-y-1.5"
           >
             <!-- Card Photo Header -->
             <div class="relative w-full aspect-[16/10] overflow-hidden bg-[#151026]">
@@ -157,7 +104,7 @@ const officialEditions = [
               <div class="absolute inset-0 bg-gradient-to-t from-[#0d0a1a] via-transparent to-transparent"></div>
               
               <!-- Region Category Tag -->
-              <div class="absolute top-3 left-3 px-3 py-1 rounded-full bg-black/80 backdrop-blur-md border border-white/[0.15] text-[10px] font-mono font-bold text-vice-cyan uppercase">
+              <div class="absolute top-3 left-3 px-3 py-1 rounded-full bg-black/80 backdrop-blur-md border border-white/15 text-[10px] font-mono font-bold text-vice-cyan uppercase">
                 {region.category}
               </div>
 
@@ -182,9 +129,9 @@ const officialEditions = [
               </div>
 
               <div class="pt-4 border-t border-white/[0.08] flex items-center justify-between text-xs font-mono">
-                <span class="text-gray-400">{region.subLocations.length} Luoghi Conclusi</span>
+                <span class="text-gray-400">{region.subLocations.length} Aree Distinte</span>
                 <span class="text-amber-400 font-bold group-hover:translate-x-1 transition-transform">
-                  GUIDA REGIONALE ➔
+                  ESPLORA ➔
                 </span>
               </div>
             </div>
@@ -194,18 +141,18 @@ const officialEditions = [
     </div>
   </section>
 
-  <!-- Meet Lucia & Jason (Protagonists Photographic Dossier) -->
-  <section id="characters" class="my-16 scroll-mt-24" aria-label="Protagonisti Lucia e Jason">
+  <!-- 6. Meet Lucia & Jason (Protagonists Photographic Dossier) -->
+  <section id="characters" class="my-20 scroll-mt-24 px-4 sm:px-6 max-w-7xl mx-auto" aria-label="Protagonisti Lucia e Jason">
     <div class="text-center max-w-3xl mx-auto mb-12">
       <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#1b1433] border border-vice-pink/40 text-[11px] font-mono font-bold text-vice-pink uppercase tracking-widest mb-3">
         <span class="w-2 h-2 rounded-full bg-vice-pink animate-pulse"></span>
-        <span>DOSSIER PERSONAGGI ROCKSTAR GAMES</span>
+        <span>DOSSIER PERSONAGGI // ROCKSTAR GAMES</span>
       </div>
       <h2 class="text-3xl sm:text-5xl font-black text-white tracking-tight uppercase">
         LUCIA E JASON
       </h2>
       <p class="text-sm sm:text-base text-gray-300 mt-2 font-normal leading-relaxed">
-        La coppia criminale al centro della narrazione di GTA VI. Due destini legati da rapine ad alto rischio, tradimenti e fiducia nello Stato di Leonida.
+        I due protagonisti al centro della narrazione di Grand Theft Auto VI. Una coppia costretta a fare squadra per sopravvivere nello Stato di Leonida.
       </p>
     </div>
 
@@ -213,7 +160,7 @@ const officialEditions = [
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
       
       <!-- Lucia Card -->
-      <div class="flex flex-col sm:flex-row rounded-3xl overflow-hidden bg-[#0d0a1a] border border-white/[0.12] hover:border-vice-pink/50 shadow-2xl transition-all duration-300">
+      <div class="flex flex-col sm:flex-row rounded-3xl overflow-hidden bg-[#0d0a1a] border border-white/10 hover:border-vice-pink/50 shadow-2xl transition-all duration-300">
         <!-- Photo Section -->
         <div class="sm:w-1/2 relative aspect-[3/4] sm:aspect-auto overflow-hidden bg-[#151026]">
           <img
@@ -225,7 +172,7 @@ const officialEditions = [
           />
           <div class="absolute inset-0 bg-gradient-to-t sm:bg-gradient-to-r from-transparent via-transparent to-[#0d0a1a]/90"></div>
           <div class="absolute top-4 left-4 px-3 py-1 rounded-full bg-black/80 border border-vice-pink/40 text-[10px] font-mono font-bold text-vice-pink uppercase">
-            PROTAGONISTA FEMMINILE
+            PROTAGONISTA
           </div>
         </div>
 
@@ -233,39 +180,29 @@ const officialEditions = [
         <div class="sm:w-1/2 p-6 sm:p-8 flex flex-col justify-between">
           <div>
             <span class="text-xs font-mono font-bold text-vice-pink uppercase tracking-widest block mb-1">
-              "LA REGINA DELLE RAPINE"
+              VICE CITY, USA
             </span>
             <h3 class="text-3xl font-black text-white mb-1.5 uppercase">LUCIA</h3>
-            <span class="text-xs font-mono text-vice-cyan font-semibold block mb-4">Mente Tattica &amp; Negoziazione</span>
+            <span class="text-xs font-mono text-vice-cyan font-semibold block mb-4">Protagonista Ufficiale</span>
 
             <p class="text-xs text-gray-300 leading-relaxed font-normal mb-5">
-              Cresciuta nei sobborghi di Vice City, Lucia è determinata, carismatica e fredda nei momenti di pressione. Dopo un periodo nella prigione di Leonida, pianifica colpi sempre più ambiziosi.
+              Lucia ha sempre saputo che il destino gioca a sfavore. Ma quando un colpo facile va storto, si ritrova con Jason sul lato più oscuro del luogo più soleggiato d'America.
             </p>
 
             <blockquote class="p-3.5 rounded-xl bg-[#140f26] border-l-2 border-vice-pink text-xs italic text-gray-200 font-mono mb-5">
-              "L'unico modo per uscirne vivi è restare uniti. Ti fidi di me?"
+              "L'unico modo per uscirne è restare uniti. Facendo squadra. Ti fidi di me? — Fiducia."
             </blockquote>
-
-            <div class="space-y-1.5 text-xs text-gray-300 font-normal">
-              <div class="font-mono font-bold text-white text-[11px] uppercase mb-1">ABILITÀ CONFERMATE:</div>
-              <div class="flex items-center gap-2 text-gray-300">
-                <span class="text-emerald-400 font-bold">✓</span> Scasso rapido casseforti &amp; serrature
-              </div>
-              <div class="flex items-center gap-2 text-gray-300">
-                <span class="text-emerald-400 font-bold">✓</span> Fuga tattica e pianificazione vie d'uscita
-              </div>
-            </div>
           </div>
 
           <div class="mt-6 pt-4 border-t border-white/[0.08] flex items-center justify-between text-xs font-mono text-gray-400">
-            <span>STATO: <strong class="text-emerald-400">OPERATIVA</strong></span>
-            <span class="text-vice-pink font-bold">LEONIDA ARCHIVES</span>
+            <span>RUOLO: <strong class="text-emerald-400">PROTAGONISTA GIOCABILE</strong></span>
+            <span class="text-vice-pink font-bold">R★ OFFICIAL</span>
           </div>
         </div>
       </div>
 
       <!-- Jason Card -->
-      <div class="flex flex-col sm:flex-row rounded-3xl overflow-hidden bg-[#0d0a1a] border border-white/[0.12] hover:border-amber-400/50 shadow-2xl transition-all duration-300">
+      <div class="flex flex-col sm:flex-row rounded-3xl overflow-hidden bg-[#0d0a1a] border border-white/10 hover:border-amber-400/50 shadow-2xl transition-all duration-300">
         <!-- Photo Section -->
         <div class="sm:w-1/2 relative aspect-[3/4] sm:aspect-auto overflow-hidden bg-[#151026]">
           <img
@@ -277,7 +214,7 @@ const officialEditions = [
           />
           <div class="absolute inset-0 bg-gradient-to-t sm:bg-gradient-to-r from-transparent via-transparent to-[#0d0a1a]/90"></div>
           <div class="absolute top-4 left-4 px-3 py-1 rounded-full bg-black/80 border border-amber-400/40 text-[10px] font-mono font-bold text-amber-400 uppercase">
-            PROTAGONISTA MASCHILE
+            PROTAGONISTA
           </div>
         </div>
 
@@ -285,33 +222,23 @@ const officialEditions = [
         <div class="sm:w-1/2 p-6 sm:p-8 flex flex-col justify-between">
           <div>
             <span class="text-xs font-mono font-bold text-amber-400 uppercase tracking-widest block mb-1">
-              "L'ESECUTORE BALISTICO"
+              VICE CITY, USA
             </span>
             <h3 class="text-3xl font-black text-white mb-1.5 uppercase">JASON</h3>
-            <span class="text-xs font-mono text-vice-cyan font-semibold block mb-4">Pilota &amp; Armi Pesanti</span>
+            <span class="text-xs font-mono text-vice-cyan font-semibold block mb-4">Protagonista Ufficiale</span>
 
             <p class="text-xs text-gray-300 leading-relaxed font-normal mb-5">
-              Veterano delle corse illegali e del contrabbando marittimo nelle Keys, Jason è un esperto nel combattimento corpo a corpo e nella gestione di veicoli pesanti e imbarcazioni.
+              Al fianco di Lucia in una spirale di rapine e pericoli crescenti attraverso la contea e le isole di Leonida, costretto a fidarsi ciecamente della sua compagna.
             </p>
 
             <blockquote class="p-3.5 rounded-xl bg-[#140f26] border-l-2 border-amber-400 text-xs italic text-gray-200 font-mono mb-5">
-              "Fiducia. È l'unica cosa che ci tiene vivi laggiù."
+              "Fiducia. È l'unica cosa che ci tiene vivi."
             </blockquote>
-
-            <div class="space-y-1.5 text-xs text-gray-300 font-normal">
-              <div class="font-mono font-bold text-white text-[11px] uppercase mb-1">ABILITÀ CONFERMATE:</div>
-              <div class="flex items-center gap-2 text-gray-300">
-                <span class="text-emerald-400 font-bold">✓</span> Precisione balistica &amp; tiro in movimento
-              </div>
-              <div class="flex items-center gap-2 text-gray-300">
-                <span class="text-emerald-400 font-bold">✓</span> Guida acrobatica supercar e natanti veloci
-              </div>
-            </div>
           </div>
 
           <div class="mt-6 pt-4 border-t border-white/[0.08] flex items-center justify-between text-xs font-mono text-gray-400">
-            <span>STATO: <strong class="text-emerald-400">OPERATIVO</strong></span>
-            <span class="text-amber-400 font-bold">LEONIDA ARCHIVES</span>
+            <span>RUOLO: <strong class="text-emerald-400">PROTAGONISTA GIOCABILE</strong></span>
+            <span class="text-amber-400 font-bold">R★ OFFICIAL</span>
           </div>
         </div>
       </div>
@@ -319,231 +246,105 @@ const officialEditions = [
     </div>
   </section>
 
-  <!-- Official Videos & Trailers Archive -->
-  <section id="trailers" class="my-16 scroll-mt-24" aria-label="Trailer Ufficiali">
-    <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-8 pb-6 border-b border-white/[0.1]">
-      <div>
-        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#1b1433] border border-amber-400/40 text-[10px] font-mono font-bold text-amber-400 uppercase tracking-widest mb-2">
-          ROCKSTAR GAMES VIDEO ARCHIVE
+  <!-- 7. Official Rockstar Dossier & Facts Table -->
+  <section class="my-20 px-4 sm:px-6 max-w-7xl mx-auto" aria-label="Dati Ufficiali Rockstar">
+    <div class="p-8 sm:p-12 rounded-[2.5rem] bg-gradient-to-b from-[#151026] via-[#0d0a1a] to-[#07050d] border border-white/10 shadow-2xl relative">
+      <div class="max-w-3xl mb-8">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#1b1433] border border-vice-pink/40 text-[11px] font-mono font-bold text-vice-pink uppercase tracking-widest mb-3">
+          SCHEDA TECNICA UFFICIALE ROCKSTAR GAMES
         </div>
         <h2 class="text-3xl sm:text-5xl font-black text-white tracking-tight uppercase">
-          TRAILER UFFICIALI &amp; GAMEPLAY
+          SPECIFICHE CONFERMATE
         </h2>
-        <p class="text-xs sm:text-sm text-gray-300 mt-1">
-          Player video in modalità youtube-nocookie.com (Zero tracciamento preventivo).
+        <p class="text-sm sm:text-base text-gray-300 mt-2 font-normal leading-relaxed">
+          I parametri tecnici e le informazioni ufficiali diffuse da Take-Two Interactive e Rockstar Games.
         </p>
       </div>
 
-      <a
-        href="/trailers/trailer-1"
-        class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-white text-black text-xs font-mono font-bold uppercase tracking-wider hover:bg-amber-400 transition-colors shadow-lg"
-      >
-        <span>VEDI TUTTI I 7 VIDEO</span>
-        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
-      </a>
-    </div>
-
-    <!-- Featured Trailer Main Player -->
-    <div class="mb-10 max-w-5xl mx-auto">
-      <LiteYouTube
-        videoId="QdBZY2fkU-0"
-        title="Grand Theft Auto VI Trailer 1"
-        duration="1:31"
-        soundtrack="Love Is a Long Road — Tom Petty"
-      />
-    </div>
-
-    <!-- Other Trailer Stills Grid -->
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-      {featuredTrailers.map((trailer) => (
-        <a
-          href={`/trailers/${trailer.slug}`}
-          class="group flex flex-col rounded-3xl bg-[#0e0a1a] border border-white/[0.1] hover:border-amber-400/50 shadow-xl overflow-hidden transition-all duration-300"
-        >
-          <div class="relative w-full aspect-video bg-[#151026] overflow-hidden">
-            <img
-              src={`https://i.ytimg.com/vi/${trailer.youtubeId === 'OFFICIAL_ROCKSTAR_NEWSWIRE' ? 'QdBZY2fkU-0' : trailer.youtubeId}/maxresdefault.jpg`}
-              alt={trailer.title}
-              loading="lazy"
-              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-            />
-            <div class="absolute inset-0 bg-black/30 group-hover:bg-transparent transition-colors"></div>
-            <div class="absolute bottom-3 right-3 px-2 py-0.5 rounded bg-black/80 text-[10px] font-mono text-white">
-              {trailer.duration}
-            </div>
-          </div>
-          <div class="p-5 flex-1 flex flex-col justify-between">
-            <div>
-              <div class="flex items-center justify-between text-xs font-mono text-gray-400 mb-1.5">
-                <span>{trailer.publishDateHuman}</span>
-                <span class="text-amber-400 font-bold">#{trailer.number}</span>
-              </div>
-              <h3 class="text-base font-bold text-white group-hover:text-amber-400 transition-colors line-clamp-1 mb-2">
-                {trailer.title}
-              </h3>
-              <p class="text-xs text-gray-300 line-clamp-2 leading-relaxed font-normal">
-                {trailer.summary}
-              </p>
-            </div>
-            <div class="mt-4 pt-3 border-t border-white/[0.08] flex items-center justify-between text-xs font-mono text-gray-400">
-              <span class="truncate max-w-[180px]">🎵 {trailer.soundtrack.title}</span>
-              <span class="text-vice-cyan font-bold">ANALISI ➔</span>
-            </div>
-          </div>
-        </a>
-      ))}
-    </div>
-  </section>
-
-  <!-- Official Game Editions & Pre-Order (Sostituisce i test SSD hardware) -->
-  <section id="editions" class="my-16 scroll-mt-24 p-6 sm:p-12 rounded-[2.5rem] bg-gradient-to-b from-[#151026] via-[#0d0a1a] to-[#07050d] border border-white/[0.12] shadow-2xl relative" aria-label="Edizioni Ufficiali di Gioco">
-    <div class="text-center max-w-3xl mx-auto mb-12">
-      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#1b1433] border border-amber-400/40 text-[11px] font-mono font-bold text-amber-400 uppercase tracking-widest mb-3">
-        <span class="w-2 h-2 rounded-full bg-amber-400 animate-pulse"></span>
-        <span>PRE-ORDER APERTO // USCITA: 19 NOVEMBRE 2026</span>
+      <!-- Data Table -->
+      <div class="overflow-x-auto rounded-2xl border border-white/10 shadow-xl">
+        <table class="w-full text-left text-xs sm:text-sm text-gray-200">
+          <thead class="bg-[#1b1433] text-[11px] uppercase font-mono font-bold text-amber-400 tracking-wider border-b border-white/10">
+            <tr>
+              <th scope="col" class="py-4 px-5">PARAMETRO</th>
+              <th scope="col" class="py-4 px-5">DATO UFFICIALE</th>
+              <th scope="col" class="py-4 px-5">DETTAGLI CONFERMATI</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-white/[0.06] bg-[#0e0a1a]/80 font-medium">
+            <tr class="hover:bg-white/[0.04] transition-colors">
+              <td class="py-4 px-5 font-bold text-white flex items-center gap-2">
+                <span class="w-1.5 h-1.5 rounded-full bg-amber-400"></span>
+                Data di Uscita Globale
+              </td>
+              <td class="py-4 px-5 text-amber-400 font-mono font-bold text-sm">{db.releaseInfo.releaseDateHuman}</td>
+              <td class="py-4 px-5 text-xs text-gray-400 font-normal">Lancio globale su console</td>
+            </tr>
+            <tr class="hover:bg-white/[0.04] transition-colors">
+              <td class="py-4 px-5 font-bold text-white flex items-center gap-2">
+                <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
+                Piattaforme di Lancio
+              </td>
+              <td class="py-4 px-5 text-white font-mono">{db.releaseInfo.platforms.join(', ')}</td>
+              <td class="py-4 px-5 text-xs text-gray-400 font-normal">Esclusiva console PlayStation 5 e Xbox Series X|S</td>
+            </tr>
+            <tr class="hover:bg-white/[0.04] transition-colors">
+              <td class="py-4 px-5 font-bold text-white flex items-center gap-2">
+                <span class="w-1.5 h-1.5 rounded-full bg-vice-cyan"></span>
+                Motore Grafico
+              </td>
+              <td class="py-4 px-5 text-vice-cyan font-mono font-bold">{db.releaseInfo.engine}</td>
+              <td class="py-4 px-5 text-xs text-gray-400 font-normal">Sviluppato internamente da Rockstar Games</td>
+            </tr>
+            <tr class="hover:bg-white/[0.04] transition-colors">
+              <td class="py-4 px-5 font-bold text-white flex items-center gap-2">
+                <span class="w-1.5 h-1.5 rounded-full bg-vice-pink"></span>
+                Ambientazione
+              </td>
+              <td class="py-4 px-5 text-white">{db.releaseInfo.setting}</td>
+              <td class="py-4 px-5 text-xs text-gray-400 font-normal">Vice City e le vaste aree dello Stato di Leonida</td>
+            </tr>
+            <tr class="hover:bg-white/[0.04] transition-colors">
+              <td class="py-4 px-5 font-bold text-white flex items-center gap-2">
+                <span class="w-1.5 h-1.5 rounded-full bg-purple-400"></span>
+                Colonna Sonora Trailer 1
+              </td>
+              <td class="py-4 px-5 text-vice-cyan font-mono font-bold">"Love Is a Long Road"</td>
+              <td class="py-4 px-5 text-xs text-gray-400 font-normal">Tom Petty (Album: Full Moon Fever, 1989)</td>
+            </tr>
+            <tr class="hover:bg-white/[0.04] transition-colors">
+              <td class="py-4 px-5 font-bold text-white flex items-center gap-2">
+                <span class="w-1.5 h-1.5 rounded-full bg-zinc-400"></span>
+                Dimensione Download
+              </td>
+              <td class="py-4 px-5 text-gray-300 font-mono">TBA</td>
+              <td class="py-4 px-5 text-xs text-gray-400 font-normal">In attesa di annuncio ufficiale da parte di Rockstar Games</td>
+            </tr>
+          </tbody>
+        </table>
       </div>
-      <h2 class="text-3xl sm:text-5xl font-black text-white tracking-tight uppercase">
-        SCEGLI LA TUA <span class="bg-gradient-to-r from-vice-pink via-vice-orange to-vice-cyan bg-clip-text text-transparent">EDIZIONE</span>
-      </h2>
-      <p class="text-sm sm:text-base text-gray-300 mt-2 font-normal leading-relaxed">
-        Prenota Grand Theft Auto VI su PlayStation 5 e Xbox Series X|S. Tutti i pre-ordini garantiscono l'accesso immediato al pre-load digitale e a contenuti in-game esclusivi.
-      </p>
-    </div>
-
-    <!-- Editions Grid -->
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-      {officialEditions.map((ed) => (
-        <div class={`flex flex-col justify-between p-8 rounded-3xl bg-[#0d0a1a] border ${ed.accent} shadow-2xl relative group`}>
-          <div>
-            <div class="flex items-center justify-between gap-2 mb-4">
-              <span class="text-xs font-mono font-bold text-gray-400 uppercase tracking-wider">{ed.platforms}</span>
-              <span class={`px-3 py-1 rounded-full text-[10px] font-mono uppercase tracking-widest ${ed.badgeBg}`}>
-                {ed.badge}
-              </span>
-            </div>
-
-            <h3 class="text-2xl font-black text-white mb-2 uppercase">{ed.name}</h3>
-            <div class="text-3xl font-black font-mono text-white mb-4">{ed.price}</div>
-            
-            <p class="text-xs text-gray-300 leading-relaxed font-normal mb-6 pb-6 border-b border-white/[0.08]">
-              {ed.description}
-            </p>
-
-            <div class="space-y-3 mb-8">
-              <span class="text-[11px] font-mono font-bold text-white uppercase tracking-wider block">CONTENUTI INCLUSI:</span>
-              <ul class="space-y-2.5 text-xs text-gray-300">
-                {ed.features.map((feat) => (
-                  <li class="flex items-start gap-2.5 leading-relaxed font-normal">
-                    <span class="text-emerald-400 font-bold shrink-0 mt-0.5">✓</span>
-                    <span>{feat}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
-
-          <a
-            href="https://www.rockstargames.com/VI"
-            target="_blank"
-            rel="noopener noreferrer"
-            class={`w-full py-3.5 rounded-xl text-center text-xs font-mono font-bold tracking-wider uppercase transition-all duration-300 ${ed.buttonBg}`}
-          >
-            PRE-ORDINA ORA ➔
-          </a>
-        </div>
-      ))}
     </div>
   </section>
 
-  <!-- Official Rockstar Dossier & Facts Table -->
-  <section class="my-16 p-6 sm:p-12 rounded-[2.5rem] bg-gradient-to-b from-[#151026] via-[#0d0a1a] to-[#07050d] border border-white/[0.12] shadow-2xl relative" aria-label="Dati Ufficiali Rockstar">
-    <div class="max-w-3xl mb-8">
-      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#1b1433] border border-vice-pink/40 text-[11px] font-mono font-bold text-vice-pink uppercase tracking-widest mb-3">
-        SCHEDA TECNICA UFFICIALE ROCKSTAR GAMES
-      </div>
-      <h2 class="text-3xl sm:text-5xl font-black text-white tracking-tight uppercase">
-        SPECIFICHE DEL GIOCO
-      </h2>
-      <p class="text-sm sm:text-base text-gray-300 mt-2 font-normal leading-relaxed">
-        I parametri tecnici confermati da Take-Two Interactive e Rockstar North per il lancio.
-      </p>
-    </div>
-
-    <!-- Data Table -->
-    <div class="overflow-x-auto rounded-2xl border border-white/[0.1] shadow-xl">
-      <table class="w-full text-left text-xs sm:text-sm text-gray-200">
-        <thead class="bg-[#1b1433] text-[11px] uppercase font-mono font-bold text-amber-400 tracking-wider border-b border-white/[0.1]">
-          <tr>
-            <th scope="col" class="py-4 px-5">PARAMETRO</th>
-            <th scope="col" class="py-4 px-5">DATO CONFERMATO</th>
-            <th scope="col" class="py-4 px-5">DETTAGLI TECNICI</th>
-          </tr>
-        </thead>
-        <tbody class="divide-y divide-white/[0.06] bg-[#0e0a1a]/80 font-medium">
-          <tr class="hover:bg-white/[0.04] transition-colors">
-            <td class="py-4 px-5 font-bold text-white flex items-center gap-2">
-              <span class="w-1.5 h-1.5 rounded-full bg-amber-400"></span>
-              Data di Uscita Mondiale
-            </td>
-            <td class="py-4 px-5 text-amber-400 font-mono font-bold text-sm">{db.releaseInfo.releaseDateHuman}</td>
-            <td class="py-4 px-5 text-xs text-gray-400 font-normal">Mezzanotte locale rolling launch (00:00)</td>
-          </tr>
-          <tr class="hover:bg-white/[0.04] transition-colors">
-            <td class="py-4 px-5 font-bold text-white flex items-center gap-2">
-              <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
-              Piattaforme di Lancio
-            </td>
-            <td class="py-4 px-5 text-white font-mono">{db.releaseInfo.platforms.join(', ')}</td>
-            <td class="py-4 px-5 text-xs text-gray-400 font-normal">Versione PC Windows prevista successivamente</td>
-          </tr>
-          <tr class="hover:bg-white/[0.04] transition-colors">
-            <td class="py-4 px-5 font-bold text-white flex items-center gap-2">
-              <span class="w-1.5 h-1.5 rounded-full bg-vice-cyan"></span>
-              Motore Grafico
-            </td>
-            <td class="py-4 px-5 text-vice-cyan font-mono font-bold">RAGE 9 Engine</td>
-            <td class="py-4 px-5 text-xs text-gray-400 font-normal">Ray Tracing volumetrico, fisica fluida avanzata e PSSR</td>
-          </tr>
-          <tr class="hover:bg-white/[0.04] transition-colors">
-            <td class="py-4 px-5 font-bold text-white flex items-center gap-2">
-              <span class="w-1.5 h-1.5 rounded-full bg-vice-pink"></span>
-              Ambientazione &amp; Mappa
-            </td>
-            <td class="py-4 px-5 text-white">{db.releaseInfo.setting}</td>
-            <td class="py-4 px-5 text-xs text-gray-400 font-normal">Oltre 2.5x l'estensione di GTA V con oltre 1.200 interni</td>
-          </tr>
-          <tr class="hover:bg-white/[0.04] transition-colors">
-            <td class="py-4 px-5 font-bold text-white flex items-center gap-2">
-              <span class="w-1.5 h-1.5 rounded-full bg-purple-400"></span>
-              Brano Inno Ufficiale
-            </td>
-            <td class="py-4 px-5 text-vice-cyan font-mono font-bold">"Flower in a Hurricane"</td>
-            <td class="py-4 px-5 text-xs text-gray-400 font-normal">Justice ft. Tame Impala, SZA &amp; King Gizzard</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-  </section>
-
-  <!-- FAQ Section Rockstar Style -->
-  <section class="my-16 max-w-4xl mx-auto">
+  <!-- 8. FAQ Section Rockstar Style -->
+  <section id="faq" class="my-20 scroll-mt-24 px-4 sm:px-6 max-w-4xl mx-auto" aria-label="Domande Frequenti">
     <div class="text-center mb-10">
       <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#1b1433] border border-amber-400/40 text-[10px] font-mono font-bold text-amber-400 uppercase tracking-widest mb-2">
-        SUPPORTO &amp; DOMANDE FREQUENTI
+        SUPPORTO &amp; FAQ UFFICIALI
       </div>
-      <h2 class="text-3xl sm:text-5xl font-black text-white tracking-tight uppercase">DOMANDE FREQUENTI SU GTA VI</h2>
+      <h2 class="text-3xl sm:text-5xl font-black text-white tracking-tight uppercase">DOMANDE FREQUENTI</h2>
     </div>
 
     <div class="space-y-4">
       {db.releaseInfo.faq.map((item) => (
-        <details class="group rounded-3xl bg-[#120d24] border border-white/[0.08] p-6 transition-all duration-300 open:border-amber-400/50 open:bg-[#181130]">
+        <details class="group rounded-3xl bg-[#0d0a1a] border border-white/10 p-6 transition-all duration-300 open:border-amber-400/50 open:bg-[#151026]">
           <summary class="flex items-center justify-between cursor-pointer font-bold text-base sm:text-lg text-white list-none select-none">
             <span>{item.question}</span>
             <span class="w-8 h-8 rounded-xl bg-[#1f173d] flex items-center justify-center text-amber-400 group-open:rotate-180 transition-transform">
               <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
             </span>
           </summary>
-          <div class="mt-4 pt-4 border-t border-white/[0.06] text-xs sm:text-sm text-gray-300 leading-relaxed font-normal">
+          <div class="mt-4 pt-4 border-t border-white/[0.08] text-xs sm:text-sm text-gray-300 leading-relaxed font-normal">
             {item.answer}
           </div>
         </details>

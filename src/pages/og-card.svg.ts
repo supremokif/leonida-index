@@ -51,7 +51,7 @@ export const GET: APIRoute = async () => {
   <rect x="80" y="80" width="380" height="44" rx="22" fill="url(#badgeGrad)" stroke="#ff2a85" stroke-width="1.5" />
   <circle cx="106" cy="102" r="6" fill="#10b981" />
   <text x="124" y="108" font-family="system-ui, -apple-system, sans-serif" font-weight="800" font-size="14" fill="#ffffff" letter-spacing="2">
-    PRE-LOAD ATTIVO • 228.5 GB
+    OFFICIAL ROCKSTAR HUB • 19 NOV 2026
   </text>
 
   <!-- Main Logo Graphic -->

@@ -1,185 +1,82 @@
 ---
-import db from '../data/gta6_db.json';
-
-const targetDateStr = db.releaseInfo.releaseDate; // "2026-11-19T00:00:00"
+// Rockstar Games Official Hero Section
 ---
 
-<div
-  id="launch-hero-container"
-  class="relative w-full max-w-7xl mx-auto my-6 sm:my-10 rounded-[2.5rem] bg-[#07050d] border border-white/[0.12] shadow-2xl overflow-hidden"
-  data-target={targetDateStr}
->
-  <!-- Full-Bleed Cinematic Background Image with Dark Vignette -->
+<section class="relative w-full min-h-[85vh] sm:min-h-[92vh] flex flex-col items-center justify-between overflow-hidden bg-black text-white select-none">
+  <!-- Full-Bleed Key Art Background (Jason & Lucia in Vice City Sunset) -->
   <div class="absolute inset-0 z-0">
     <img
-      src="/images/vice-ocean-drive.jpg"
-      alt="GTA VI Vice City Ocean Drive"
-      class="w-full h-full object-cover opacity-35 scale-105 transform hover:scale-100 transition-transform duration-1000"
+      src="/images/gtavi-standard-edition.jpg"
+      alt="Grand Theft Auto VI Key Art Ufficiale"
+      class="w-full h-full object-cover object-center opacity-65 scale-100 transform hover:scale-105 transition-transform duration-1000 ease-out"
     />
-    <div class="absolute inset-0 bg-gradient-to-t from-[#07050d] via-[#07050d]/80 to-[#07050d]/40"></div>
+    <!-- Cinematic Vignette & Gradients identical to rockstargames.com/VI -->
+    <div class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-black/60"></div>
     <div class="absolute inset-0 bg-radial-vignette pointer-events-none"></div>
   </div>
 
-  <!-- Ambient Sunset Flares -->
-  <div class="absolute -right-24 -top-24 w-96 h-96 bg-vice-pink/25 rounded-full blur-[120px] pointer-events-none z-0"></div>
-  <div class="absolute -left-24 -bottom-24 w-96 h-96 bg-vice-cyan/20 rounded-full blur-[120px] pointer-events-none z-0"></div>
+  <!-- Top Spacing -->
+  <div class="pt-8 relative z-10"></div>
 
-  <!-- Hero Content Container -->
-  <div class="relative z-10 px-6 py-12 sm:px-12 sm:py-20 flex flex-col items-center text-center max-w-4xl mx-auto">
-    
-    <!-- Rockstar Games & Game Badge Header -->
-    <div class="inline-flex items-center gap-3 px-4 py-1.5 rounded-full bg-black/70 border border-white/[0.15] backdrop-blur-md shadow-2xl mb-8">
-      <!-- Rockstar R* Star Emblem -->
-      <div class="w-6 h-6 rounded-md bg-[#fdb813] flex items-center justify-center text-black font-black text-xs font-mono select-none shadow-[0_0_8px_rgba(253,184,19,0.5)]">
-        R★
-      </div>
-      <span class="text-[11px] font-mono font-bold tracking-widest text-white uppercase">
-        ROCKSTAR GAMES PRESENTA
-      </span>
-      <span class="text-gray-500">•</span>
-      <span class="text-amber-400 font-mono text-[10px] font-bold tracking-widest uppercase">
-        USCITA: 19 NOVEMBRE 2026
-      </span>
-    </div>
-
-    <!-- Official SVG Logo (Gradient) -->
-    <div class="w-full max-w-lg mb-6 group cursor-pointer">
+  <!-- Center Content: Logo, Tagline, CTAs -->
+  <div class="relative z-10 px-4 py-8 flex flex-col items-center text-center max-w-4xl mx-auto">
+    <!-- Official VI Logo from rockstargames.com -->
+    <div class="w-full max-w-xs sm:max-w-md mb-6 transform hover:scale-105 transition-transform duration-500">
       <img
-        src="/images/gta6-logo-gradient.svg"
-        alt="Grand Theft Auto VI Logo Ufficiale"
-        class="w-full h-auto max-h-48 object-contain drop-shadow-[0_0_35px_rgba(255,0,122,0.6)] group-hover:scale-105 transition-transform duration-500"
+        src="/images/rockstar-vi-logo.png"
+        alt="Grand Theft Auto VI"
+        class="w-full h-auto max-h-56 object-contain drop-shadow-[0_10px_35px_rgba(0,0,0,0.9)] mx-auto"
       />
     </div>
 
-    <div class="text-xs sm:text-base font-mono font-semibold tracking-widest text-vice-cyan uppercase mb-3 drop-shadow">
-      BENVENUTI NELLO STATO DI LEONIDA // VICE CITY
+    <!-- Official Date Tagline -->
+    <div class="text-xs sm:text-base font-mono font-bold tracking-[0.3em] uppercase text-white/90 mb-3 drop-shadow">
+      COMING NOVEMBER 19, 2026
     </div>
 
-    <p class="text-gray-200 text-sm sm:text-lg max-w-2xl mb-10 leading-relaxed font-normal drop-shadow-md">
-      Grand Theft Auto VI introduce la più vasta ed evoluta evoluzione open world mai creata da Rockstar Games, ambientata tra le strade al neon di Vice City e le terre selvagge di Leonida.
+    <!-- Official Rockstar Synopsis Quote -->
+    <p class="text-gray-300 text-xs sm:text-sm max-w-xl mb-8 leading-relaxed font-normal drop-shadow hidden sm:block">
+      Vice City, USA. Jason and Lucia have always known the deck is stacked against them. But when an easy score goes wrong, they find themselves on the darkest side of the sunniest place in America.
     </p>
 
-    <!-- Sleek Countdown Timer in Luxury White & Amber Typography -->
-    <div class="w-full max-w-3xl mb-10" role="timer" aria-live="polite">
-      <div class="text-[10px] font-mono font-bold uppercase tracking-widest text-gray-400 mb-3 flex items-center justify-center gap-2">
-        <span class="w-1.5 h-1.5 rounded-full bg-amber-400 animate-pulse"></span>
-        <span>CONTO ALLA ROVESCIA UFFICIALE AL LANCIO MONDIALE</span>
-        <span class="w-1.5 h-1.5 rounded-full bg-amber-400 animate-pulse"></span>
-      </div>
-
-      <div class="grid grid-cols-4 gap-2.5 sm:gap-6">
-        <!-- Days -->
-        <div class="flex flex-col items-center justify-center p-4 sm:p-6 rounded-2xl bg-[#0d0a1a]/85 border border-white/[0.12] shadow-2xl backdrop-blur-md">
-          <span class="text-3xl sm:text-6xl font-black text-white font-mono tracking-tight" id="hero-cd-days">--</span>
-          <span class="text-[9px] sm:text-xs font-mono font-bold text-gray-400 uppercase tracking-widest mt-1.5 sm:mt-2">GIORNI</span>
-        </div>
-
-        <!-- Hours -->
-        <div class="flex flex-col items-center justify-center p-4 sm:p-6 rounded-2xl bg-[#0d0a1a]/85 border border-white/[0.12] shadow-2xl backdrop-blur-md">
-          <span class="text-3xl sm:text-6xl font-black text-white font-mono tracking-tight" id="hero-cd-hours">--</span>
-          <span class="text-[9px] sm:text-xs font-mono font-bold text-gray-400 uppercase tracking-widest mt-1.5 sm:mt-2">ORE</span>
-        </div>
-
-        <!-- Minutes -->
-        <div class="flex flex-col items-center justify-center p-4 sm:p-6 rounded-2xl bg-[#0d0a1a]/85 border border-white/[0.12] shadow-2xl backdrop-blur-md">
-          <span class="text-3xl sm:text-6xl font-black text-white font-mono tracking-tight" id="hero-cd-minutes">--</span>
-          <span class="text-[9px] sm:text-xs font-mono font-bold text-gray-400 uppercase tracking-widest mt-1.5 sm:mt-2">MINUTI</span>
-        </div>
-
-        <!-- Seconds -->
-        <div class="flex flex-col items-center justify-center p-4 sm:p-6 rounded-2xl bg-[#0d0a1a]/85 border border-vice-pink/40 shadow-neon-pink backdrop-blur-md">
-          <span class="text-3xl sm:text-6xl font-black text-vice-pink font-mono tracking-tight drop-shadow-[0_0_15px_rgba(255,0,122,0.8)]" id="hero-cd-seconds">--</span>
-          <span class="text-[9px] sm:text-xs font-mono font-bold text-gray-400 uppercase tracking-widest mt-1.5 sm:mt-2">SECONDI</span>
-        </div>
-      </div>
-    </div>
-
-    <!-- Rockstar Action Buttons -->
-    <div class="flex flex-wrap items-center justify-center gap-4 w-full">
+    <!-- CTAs: Pre-Order Now & Watch Trailer -->
+    <div class="flex flex-wrap items-center justify-center gap-4 mb-8">
       <a
-        href="/trailers/trailer-1"
-        class="inline-flex items-center gap-2.5 px-8 py-4 rounded-2xl bg-white hover:bg-amber-400 text-black font-black text-xs sm:text-sm tracking-wider uppercase font-mono shadow-2xl hover:scale-105 transition-all duration-300"
+        href="#pre-order"
+        class="px-8 py-4 rounded-xl bg-white hover:bg-[#fdb813] text-black font-black text-xs sm:text-sm font-mono tracking-widest uppercase transition-all duration-300 shadow-2xl hover:scale-105"
       >
-        <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
-        <span>GUARDA IL TRAILER 1</span>
+        PRE-ORDER NOW
       </a>
-
       <a
-        href="#gallery"
-        class="inline-flex items-center gap-2.5 px-8 py-4 rounded-2xl bg-[#140f26]/90 hover:bg-[#1b1433] text-white font-bold text-xs sm:text-sm tracking-wider uppercase font-mono border border-white/[0.15] hover:border-vice-cyan/50 hover:shadow-neon-cyan transition-all duration-300"
+        href="#trailer"
+        class="inline-flex items-center gap-2.5 px-7 py-4 rounded-xl bg-black/80 hover:bg-white/10 text-white font-bold text-xs sm:text-sm font-mono tracking-widest uppercase border border-white/20 hover:border-white transition-all duration-300 backdrop-blur-md"
       >
-        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
-        <span>GALLERIA FOTO 4K</span>
-      </a>
-
-      <a
-        href="#editions"
-        class="inline-flex items-center gap-2 px-6 py-4 rounded-2xl bg-gradient-to-r from-vice-pink to-vice-orange text-white font-bold text-xs sm:text-sm tracking-wider uppercase font-mono shadow-neon-pink hover:scale-105 transition-all duration-300"
-      >
-        <span>PRE-ORDER EDIZIONI ➔</span>
+        <svg class="w-4 h-4 fill-current text-white" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+        <span>WATCH TRAILER 1</span>
       </a>
     </div>
 
-    <!-- Platform Availability Strip -->
-    <div class="mt-10 pt-6 border-t border-white/[0.1] w-full max-w-xl flex items-center justify-between text-xs font-mono text-gray-300">
-      <span class="flex items-center gap-2">
-        <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
-        <span>PlayStation® 5</span>
-      </span>
-      <span class="text-gray-500">•</span>
-      <span class="flex items-center gap-2">
-        <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
-        <span>PlayStation® 5 Pro</span>
-      </span>
-      <span class="text-gray-500">•</span>
-      <span class="flex items-center gap-2">
-        <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
-        <span>Xbox Series X|S</span>
-      </span>
+    <!-- Official Platforms & "Plays Best On PS5" Badge -->
+    <div class="flex flex-wrap items-center justify-center gap-6 text-xs font-mono text-gray-300">
+      <div class="flex items-center gap-4">
+        <span class="tracking-widest uppercase font-bold text-white">PlayStation® 5</span>
+        <span class="text-gray-600">•</span>
+        <span class="tracking-widest uppercase font-bold text-white">Xbox Series X|S</span>
+      </div>
+      
+      <!-- Plays Best On PS5 Badge -->
+      <div class="flex items-center gap-2 px-3 py-1 rounded bg-black/70 border border-white/15 backdrop-blur-md">
+        <span class="text-[10px] font-mono tracking-wider text-gray-400">PLAYS BEST ON</span>
+        <span class="text-[11px] font-bold text-white">PLAYSTATION 5</span>
+      </div>
     </div>
   </div>
-</div>
 
-<script>
-  function initHeroCountdown() {
-    const hero = document.getElementById('launch-hero-container');
-    if (!hero) return;
-
-    const targetStr = hero.getAttribute('data-target') || '2026-11-19T00:00:00';
-    const target = new Date(targetStr).getTime();
-
-    const dEl = document.getElementById('hero-cd-days');
-    const hEl = document.getElementById('hero-cd-hours');
-    const mEl = document.getElementById('hero-cd-minutes');
-    const sEl = document.getElementById('hero-cd-seconds');
-
-    function updateTimer() {
-      const now = Date.now();
-      const diff = target - now;
-
-      if (diff <= 0) {
-        if (dEl) dEl.textContent = '00';
-        if (hEl) hEl.textContent = '00';
-        if (mEl) mEl.textContent = '00';
-        if (sEl) sEl.textContent = '00';
-        return;
-      }
-
-      const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-      const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
-      const minutes = Math.floor((diff / (1000 * 60)) % 60);
-      const seconds = Math.floor((diff / 1000) % 60);
-
-      if (dEl) dEl.textContent = String(days).padStart(2, '0');
-      if (hEl) hEl.textContent = String(hours).padStart(2, '0');
-      if (mEl) mEl.textContent = String(minutes).padStart(2, '0');
-      if (sEl) sEl.textContent = String(seconds).padStart(2, '0');
-    }
-
-    updateTimer();
-    setInterval(updateTimer, 1000);
-  }
-
-  initHeroCountdown();
-  document.addEventListener('astro:page-load', initHeroCountdown);
-</script>
+  <!-- Bottom Scroll Bar -->
+  <div class="relative z-10 pb-6 flex flex-col items-center text-gray-500 hover:text-white transition-colors cursor-pointer" onclick="window.scrollBy({ top: 500, behavior: 'smooth' })">
+    <span class="text-[10px] font-mono tracking-[0.25em] uppercase mb-1">SCROLL FOR MORE CONTENT</span>
+    <svg class="w-4 h-4 animate-bounce" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+    </svg>
+  </div>
+</section>

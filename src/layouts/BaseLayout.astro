@@ -127,12 +127,12 @@ const schemaGraph = {
 
 const currentPath = Astro.url.pathname;
 const navItems = [
-  { href: '/#overview', label: 'PANORAMICA' },
-  { href: '/#gallery', label: 'GALLERIA 4K' },
-  { href: '/trailers/trailer-1', label: 'TRAILER (7)' },
+  { href: '/#overview', label: 'OVERVIEW' },
+  { href: '/#trailer', label: 'TRAILERS' },
+  { href: '/#pre-order', label: 'EDITIONS' },
+  { href: '/#gallery', label: 'SCREENSHOTS' },
   { href: '/#leonida', label: 'LEONIDA' },
-  { href: '/#characters', label: 'PROTAGONISTI' },
-  { href: '/tracker', label: '100% TRACKER' },
+  { href: 'https://www.rockstargames.com/newswire', label: 'NEWSWIRE', external: true },
 ];
 ---
 
@@ -150,7 +150,7 @@ const navItems = [
     <title>{title}</title>
     <meta name="description" content={description} />
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
-    <meta name="author" content="Leonida Index Intelligence Group" />
+    <meta name="author" content="Rockstar Games Official Hub" />
 
     <!-- Open Graph / Social -->
     <meta property="og:type" content="website" />
@@ -158,7 +158,7 @@ const navItems = [
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:image" content={formattedOgImage} />
-    <meta property="og:site_name" content="Leonida Index" />
+    <meta property="og:site_name" content="Rockstar Games" />
     <meta property="og:locale" content="it_IT" />
 
     <!-- Twitter Cards -->
@@ -192,13 +192,13 @@ const navItems = [
     <!-- Schema.org JSON-LD Sanitized Graph -->
     <script type="application/ld+json" set:html={safeJsonLd(schemaGraph)} />
   </head>
-  <body class="bg-background text-gray-100 min-h-screen flex flex-col font-sans antialiased selection:bg-amber-400 selection:text-black relative">
+  <body class="bg-black text-gray-100 min-h-screen flex flex-col font-sans antialiased selection:bg-[#fdb813] selection:text-black relative">
     
     <!-- Top Ambient Sunset Flare -->
-    <div class="fixed top-0 inset-x-0 h-40 pointer-events-none bg-gradient-to-b from-vice-pink/15 via-vice-orange/5 to-transparent blur-2xl z-0"></div>
+    <div class="fixed top-0 inset-x-0 h-32 pointer-events-none bg-gradient-to-b from-[#fdb813]/10 via-transparent to-transparent blur-2xl z-0"></div>
 
     <!-- Main Navigation Header (Rockstar Games Official Style) -->
-    <header class="sticky top-0 z-40 w-full bg-[#07050d]/90 backdrop-blur-2xl border-b border-white/[0.1] shadow-2xl">
+    <header class="sticky top-0 z-40 w-full bg-black/90 backdrop-blur-2xl border-b border-white/10 shadow-2xl">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between gap-4">
         
         <!-- Authentic Brandmark with Rockstar R* Gold Emblem -->
@@ -210,30 +210,29 @@ const navItems = [
 
           <div class="flex flex-col">
             <div class="flex items-center gap-2">
-              <span class="text-xl sm:text-2xl font-black tracking-tight text-white group-hover:text-amber-400 transition-colors uppercase">
-                GTA <span class="bg-gradient-to-r from-vice-pink to-vice-cyan bg-clip-text text-transparent">VI</span>
-              </span>
-              <span class="text-[9px] font-mono font-bold px-2 py-0.5 rounded bg-black border border-white/[0.15] text-amber-400 uppercase tracking-widest hidden sm:inline-block">
-                LEONIDA
+              <span class="text-xl sm:text-2xl font-black tracking-tight text-white group-hover:text-[#fdb813] transition-colors uppercase font-sans">
+                GRAND THEFT AUTO <span class="bg-gradient-to-r from-vice-pink via-vice-orange to-vice-cyan bg-clip-text text-transparent">VI</span>
               </span>
             </div>
             <span class="text-[9px] uppercase font-mono tracking-widest text-gray-400">
-              Grand Theft Auto VI Official Hub
+              Rockstar Games Official Presentation
             </span>
           </div>
         </a>
 
         <!-- Desktop Navigation Items -->
-        <nav class="hidden lg:flex items-center gap-1 bg-[#140f26]/70 p-1.5 rounded-2xl border border-white/[0.1] backdrop-blur-md" aria-label="Navigazione principale">
+        <nav class="hidden lg:flex items-center gap-1 bg-[#121212]/80 p-1.5 rounded-2xl border border-white/10 backdrop-blur-md" aria-label="Navigazione principale">
           {navItems.map((item) => {
             const isActive = currentPath === item.href;
             return (
               <a
                 href={item.href}
+                target={item.external ? '_blank' : undefined}
+                rel={item.external ? 'noopener noreferrer' : undefined}
                 class={`px-3.5 py-1.5 rounded-xl text-xs font-mono font-bold tracking-wider transition-all duration-200 ${
                   isActive
                     ? 'bg-white text-black shadow-lg'
-                    : 'text-gray-300 hover:text-white hover:bg-white/[0.08]'
+                    : 'text-gray-300 hover:text-white hover:bg-white/10'
                 }`}
               >
                 {item.label}
@@ -244,17 +243,16 @@ const navItems = [
 
         <!-- Right Quick Action / Pre-Order Button -->
         <div class="hidden sm:flex items-center gap-3">
-          <div class="flex items-center gap-2 px-3 py-1.5 rounded-xl bg-black/60 border border-white/[0.1] text-xs font-mono">
-            <span class="w-2 h-2 rounded-full bg-emerald-400 shadow-[0_0_8px_#34d399] animate-pulse"></span>
+          <div class="flex items-center gap-2 px-3 py-1.5 rounded-xl bg-zinc-900 border border-white/10 text-xs font-mono">
+            <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
             <span class="text-gray-300 font-bold">19 NOV 2026</span>
           </div>
 
           <a
-            href="/#editions"
-            class="flex items-center gap-2 px-5 py-2.5 rounded-xl bg-gradient-to-r from-vice-pink to-vice-orange hover:from-vice-pink/90 hover:to-vice-orange/90 text-white text-xs font-mono font-bold tracking-wider uppercase shadow-neon-pink hover:scale-105 transition-all duration-300"
+            href="/#pre-order"
+            class="px-5 py-2.5 rounded-xl bg-white hover:bg-[#fdb813] text-black font-black text-xs font-mono tracking-widest uppercase transition-all duration-300 shadow-xl hover:scale-105"
           >
-            <span>PRE-ORDER</span>
-            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+            PRE-ORDER NOW
           </a>
         </div>
 
@@ -262,7 +260,7 @@ const navItems = [
         <button
           id="mobile-nav-toggle"
           type="button"
-          class="lg:hidden p-2.5 rounded-xl bg-surface-100 text-gray-300 hover:text-white border border-white/[0.08] focus:outline-none cursor-pointer"
+          class="lg:hidden p-2.5 rounded-xl bg-zinc-900 text-gray-300 hover:text-white border border-white/10 focus:outline-none cursor-pointer"
           aria-label="Apri menu di navigazione"
           aria-expanded="false"
         >
@@ -273,22 +271,22 @@ const navItems = [
       </div>
 
       <!-- Mobile Dropdown -->
-      <div id="mobile-nav-menu" class="hidden lg:hidden px-4 pt-2 pb-6 bg-[#0d0a1a]/95 border-b border-white/[0.08] backdrop-blur-2xl">
+      <div id="mobile-nav-menu" class="hidden lg:hidden px-4 pt-2 pb-6 bg-black/95 border-b border-white/10 backdrop-blur-2xl">
         <div class="flex flex-col gap-2">
           {navItems.map((item) => (
             <a
               href={item.href}
-              class="px-4 py-3 rounded-xl text-xs font-mono font-bold tracking-wider text-gray-300 hover:text-white hover:bg-surface-200 transition-colors"
+              class="px-4 py-3 rounded-xl text-xs font-mono font-bold tracking-wider text-gray-300 hover:text-white hover:bg-zinc-900 transition-colors"
             >
               {item.label}
             </a>
           ))}
-          <div class="pt-3 border-t border-white/[0.08] flex flex-col gap-2">
+          <div class="pt-3 border-t border-white/10 flex flex-col gap-2">
             <a
-              href="/#editions"
-              class="w-full text-center px-4 py-3 rounded-xl bg-gradient-to-r from-vice-pink to-vice-orange text-white text-xs font-bold font-mono tracking-wider shadow-neon-pink"
+              href="/#pre-order"
+              class="w-full text-center px-4 py-3 rounded-xl bg-white text-black text-xs font-bold font-mono tracking-wider shadow-lg"
             >
-              PRE-ORDER EDIZIONI UFFICIALI
+              PRE-ORDER NOW
             </a>
           </div>
         </div>
