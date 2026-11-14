@@ -456,6 +456,14 @@ const navItems = [
             toggleBtn.setAttribute('aria-expanded', 'false');
           }
         });
+
+        // Close menu on link click
+        menu.querySelectorAll('a').forEach((link) => {
+          link.addEventListener('click', () => {
+            menu.classList.add('hidden');
+            toggleBtn.setAttribute('aria-expanded', 'false');
+          });
+        });
       }
     </script>
   </body>

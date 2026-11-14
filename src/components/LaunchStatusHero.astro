@@ -73,10 +73,16 @@
   </div>
 
   <!-- Bottom Scroll Bar -->
-  <div class="relative z-10 pb-6 flex flex-col items-center text-gray-500 hover:text-white transition-colors cursor-pointer" onclick="window.scrollBy({ top: 500, behavior: 'smooth' })">
-    <span class="text-[10px] font-mono tracking-[0.25em] uppercase mb-1">SCROLL FOR MORE CONTENT</span>
-    <svg class="w-4 h-4 animate-bounce" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+  <a
+    href="#trailer"
+    class="relative z-10 pb-6 flex flex-col items-center text-gray-500 hover:text-white transition-colors cursor-pointer group select-none"
+    aria-label="Scorri ai contenuti successivi"
+  >
+    <span class="text-[10px] font-mono tracking-[0.25em] uppercase mb-1.5 group-hover:text-[#fdb813] transition-colors">
+      SCROLL FOR MORE CONTENT
+    </span>
+    <svg class="w-4 h-4 animate-bounce text-gray-400 group-hover:text-[#fdb813] transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
     </svg>
-  </div>
+  </a>
 </section>

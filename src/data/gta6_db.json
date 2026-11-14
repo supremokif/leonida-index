@@ -131,7 +131,7 @@
         {
           "timestamp": "0:04",
           "label": "Penitenziario di Leonida State",
-          "description": "Primo piano su Lucia Caminos in uniforme arancione da detenuta che dialoga con la sua funzionaria di vigilanza Stefanie."
+          "description": "Primo piano su Lucia in uniforme arancione da detenuta che dialoga con la sua funzionaria di vigilanza Stefanie."
         },
         {
           "timestamp": "0:18",
@@ -178,7 +178,7 @@
         "artist": "Miami Nights 1984",
         "notes": "Brano synthwave al neon che esalta i riflessi della pioggia notturna sul motore RAGE 9"
       },
-      "summary": "Focalizzato sul secondo protagonista giocabile, Jason Duval, e sulle realtà industriali e rurali ai margini di Vice City. Mostra le dinamiche di coppia durante le rapine ai banchi dei pegni di Port Gellhorn e la simulazione meteo con alluvioni e temporali tropicali in tempo reale.",
+      "summary": "Focalizzato sul secondo protagonista giocabile, Jason, e sulle realtà industriali e rurali ai margini di Vice City. Mostra le dinamiche di coppia durante le rapine ai banchi dei pegni di Port Gellhorn e la simulazione meteo con alluvioni e temporali tropicali in tempo reale.",
       "frameAnalysis": [
         {
           "timestamp": "0:25",
@@ -279,31 +279,31 @@
       "durationSeconds": 135,
       "youtubeId": "launch-gta6-official",
       "soundtrack": {
-        "title": "Flower in a Hurricane",
-        "artist": "Justice feat. Tame Impala, SZA & King Gizzard & The Lizard Wizard",
-        "notes": "Inno ufficiale del lancio mondiale di GTA 6, registrato in esclusiva per Rockstar Games"
+        "title": "Official Score & Soundtrack",
+        "artist": "Rockstar Games Sound Architecture",
+        "notes": "Colonna sonora cinematica originale di Grand Theft Auto VI"
       },
-      "summary": "Il trailer cinematico finale ad altissima intensità. Mostra l'escalation della guerra tra cartelli a Vice City, la rapina coordinata al vault del Grand Leonida Casino, inseguimenti marini al cardiopalma e il culmine drammatico della relazione tra Lucia e Jason.",
+      "summary": "Il trailer cinematico finale ad altissima intensità. Mostra l'escalation tra le strade di Vice City, la rapina coordinata al vault del Grand Leonida Casino, inseguimenti marini e il culmine della relazione tra Lucia e Jason.",
       "frameAnalysis": [
         {
           "timestamp": "0:12",
-          "label": "Inno 'Flower in a Hurricane'",
-          "description": "L'iconico basso distorto dei Justice esplode mentre la camera sfreccia sopra le luci al neon della skyline notturna di Downtown Vice."
+          "label": "Colonna Sonora Rockstar Games",
+          "description": "Il tema musicale esplode mentre la camera sfreccia sopra le luci al neon della skyline notturna di Downtown Vice."
         },
         {
           "timestamp": "0:45",
           "label": "Breccia nel Vault del Casino",
-          "description": "Lucia fa detonare una carica a termite sulla porta corazzata del casinò mentre Jason neutralizza i sistemi di allarme con un bypass a impulsi."
+          "description": "Lucia e Jason coordinano l'incursione per prelevare il bottino blindato."
         },
         {
           "timestamp": "1:20",
           "label": "Inseguimento Marittimo alle Gator Keys",
-          "description": "Motoscafo offshore Shitzu Tropic inseguito da elicotteri della Guardia Costiera con mitragliatrici montate sui portelloni laterali."
+          "description": "Motoscafo offshore Shitzu Tropic inseguito da elicotteri della Guardia Costiera."
         },
         {
           "timestamp": "1:58",
           "label": "Data Ufficiale Finale: 19 Novembre 2026",
-          "description": "Lucia e Jason si guardano negli specchietti retrovisori di una muscle car mentre sfrecciano verso l'orizzonte: 'È adesso o mai più'."
+          "description": "Lucia e Jason si guardano negli specchietti retrovisori di una muscle car: 'L'unico modo per uscirne è restare uniti'."
         }
       ],
       "vehiclesSpotted": [
@@ -318,7 +318,7 @@
         "Lanciagranate compatto 40mm",
         "Coltello da combattimento Bowie"
       ],
-      "transcript": "Lucia: 'Tutti in questa città pensano di essere intoccabili. Fino al momento in cui non gli porti via tutto ciò che possiedono'. Jason: 'Abbiamo tagliato i ponti con chiunque. Non si torna indietro da questo colpo'. [Esplosione del ritornello: Flower in a Hurricane]. Lucia: 'Chi ha mai detto che volevo tornare indietro? 19 Novembre. È tempo di prendersi Leonida'."
+      "transcript": "Lucia: 'Tutti in questa città pensano di essere intoccabili. Fino al momento in cui non gli porti via tutto ciò che possiedono'. Jason: 'Non si torna indietro da questo colpo'. [Esplosione della colonna sonora]. Lucia: 'Chi ha mai detto che volevo tornare indietro? 19 Novembre. È tempo di prendersi Leonida'."
     },
     {
       "id": "launch-gallery",
@@ -428,7 +428,7 @@
       "frameAnalysis": [
         {
           "timestamp": "0:20",
-          "label": "Apertura Pre-load Globale (228.5 GB)",
+          "label": "Apertura Pre-load Globale",
           "description": "Interfaccia utente PlayStation con la barra di download completata e conto alla rovescia attivo fino alla mezzanotte del 19 Novembre."
         },
         {
@@ -456,7 +456,7 @@
         "Pistola tattica con silenziatore modulare",
         "Fucile a canne mozze doppio grilletto"
       ],
-      "transcript": "Sony & Rockstar Technical Showcase: 'Il Pre-load di Grand Theft Auto VI è ufficialmente disponibile ora in tutto il mondo. Con 228.5 gigabyte di contenuti ad altissima risoluzione, il gioco sfrutta l'architettura I/O di PlayStation 5 per eliminare qualsiasi barriera di caricamento. I grilletti adattivi del DualSense oppongono resistenza dinamica al bloccaggio delle ruote in frenata, mentre la tecnologia PSSR su PS5 Pro sblocca una fedeltà visiva a sessanta fotogrammi al secondo senza compromessi. Preparate il vostro storage per il 19 Novembre'."
+      "transcript": "Sony & Rockstar Technical Showcase: 'Il Pre-load di Grand Theft Auto VI sarà disponibile prima del lancio su console in tutto il mondo. Il gioco sfrutta l'architettura I/O ad altissima velocità per eliminare qualsiasi barriera di caricamento. I grilletti adattivi del DualSense oppongono resistenza dinamica al bloccaggio delle ruote in frenata, mentre la tecnologia PSSR su PS5 Pro sblocca una fedeltà visiva a sessanta fotogrammi al secondo senza compromessi. Preparate il vostro storage per il 19 Novembre'."
     }
   ],
   "locations": [
@@ -835,49 +835,45 @@
   "protagonists": [
     {
       "id": "lucia",
-      "name": "Lucia Caminos",
-      "alias": "La Mente Strategica",
-      "role": "Co-Protagonista Giocabile (Prima donna protagonista in un GTA 3D/HD)",
-      "background": "Nata e cresciuta nei quartieri popolari di Vice City, Lucia è un'ex detenuta del penitenziario statale di Leonida con una visione tattica lucida della criminalità organizzata. Esperta in pianificazione logistica, scasso di casseforti e negoziazione sotto stress estremo.",
+      "name": "Lucia",
+      "alias": "Protagonista di GTA VI",
+      "role": "Co-Protagonista Giocabile",
+      "background": "Cresciuta nello Stato di Leonida, Lucia sa che il destino gioca sempre a sfavore. Quando un colpo va storto, si ritrova con Jason sul lato più oscuro del luogo più soleggiato d'America.",
       "specialAbilities": [
-        "Eagle Eye Heist: Rallenta il tempo per individuare allarmi elettronici, telecamere nascoste e percorsi di fuga ottimali",
-        "Master Lockpicker: Scasso manuale e decifrazione codici cassaforte in tempi dimezzati rispetto alla media",
-        "De-Escalation Speech: Capacità di intimidire testimoni civili impedendo loro di allertare le forze dell'ordine durante le rapine veloci"
+        "Pianificazione Heist e rapine",
+        "Fuga tattica e vie d'uscita",
+        "Determinazione e sangue freddo"
       ],
       "signatureWeapons": [
-        "Pistola compatta calibro 9mm satinata",
-        "Fucile a pompa ultracompatto 12-gauge con impugnatura a pistola",
-        "Dispositivo jammer per interferenze radio frequenze di polizia"
+        "Pistola semiautomatica 9mm",
+        "Fucile a pompa compatto"
       ],
       "signatureVehicles": [
-        "Grotti Cheetah Classic colore Rosa Neon Vice",
-        "Pfister Comet S2 Cabriolet",
-        "Shitzu Tropic Speedboat"
+        "Grotti Cheetah Classic",
+        "Pfister Comet S2 Cabriolet"
       ],
-      "status": "Attiva e ricercata dalle autorità federali dello Stato di Leonida"
+      "status": "Attiva nello Stato di Leonida"
     },
     {
       "id": "jason",
-      "name": "Jason Duval",
-      "alias": "Il Braccio Operativo & Tiratore Scelto",
+      "name": "Jason",
+      "alias": "Protagonista di GTA VI",
       "role": "Co-Protagonista Giocabile",
-      "background": "Veterano con trascorsi militari e meccanico specializzato cresciuto tra i porti industriali di Port Gellhorn. Esperto in armi da fuoco ad alto calibro, guida evasiva su asfalto e sterrato, e combattimento corpo a corpo ad alto impatto.",
+      "background": "Partner di Lucia nelle rapine ad alto rischio tra Vice City e le periferie industriali di Leonida, costretto a fare affidamento sulla compagna per sopravvivere.",
       "specialAbilities": [
-        "Adrenaline Drift: Aumenta il controllo di trazione del veicolo permettendo curve a 90 gradi ad altissima velocità senza perdita di aderenza",
-        "Heavy Recoil Control: Precisione millimetrica nel fuoco a raffica prolungato con fucili d'assalto e carabine militari",
-        "Improvised Mechanic: Capacità di riparare al volo pneumatici forati e surriscaldamento motore sul ciglio della strada"
+        "Guida ad alta velocità ed evasiva",
+        "Combattimento tattico e tiro di precisione",
+        "Esperienza su veicoli pesanti e natanti"
       ],
       "signatureWeapons": [
-        "Carabina tattica militare M4 con ottica olografica",
-        "Revolver pesante calibro .44 Magnum a canna lunga",
-        "Granate fumogene a rilascio istantaneo"
+        "Carabina tattica",
+        "Revolver pesante"
       ],
       "signatureVehicles": [
-        "Declasse Tulip Muscle Car 1972 potenziata con compressore volumetrico",
-        "Karin Rebel 4x4 Mudrunner",
-        "Maibatsu Sanchez Dirt Bike da cross"
+        "Declasse Tulip Muscle Car",
+        "Karin Rebel 4x4"
       ],
-      "status": "Attivo, partner e complice inseparabile di Lucia Caminos"
+      "status": "Attivo, partner e complice inseparabile di Lucia"
     }
   ],
   "hardwareDeals": [
@@ -886,7 +882,7 @@
       "title": "WD_BLACK SN850X 2TB NVMe M.2 SSD con Dissipatore Integrato",
       "category": "SSD PS5",
       "targetConsole": "Sony PlayStation 5 & PS5 Pro",
-      "badge": "Miglior Scelta Pre-load (228 GB)",
+      "badge": "Ideale per Espansione SSD PS5",
       "price": "€149.99",
       "originalPrice": "€189.99",
       "affiliateUrl": "https://www.amazon.it/dp/B0B7CMZ3QH?tag=gta6portal-21",
@@ -896,7 +892,7 @@
       "features": [
         "Velocità di lettura sequenziale fino a 7.300 MB/s certificata per PS5",
         "Dissipatore termico in alluminio a profilo ribassato pronto all'uso",
-        "Capacità di 2TB: spazio sufficiente per GTA 6 (228.5 GB) e oltre 15 altri titoli tripla A",
+        "Capacità di 2TB: spazio ideale per i giochi tripla A e per la libreria completa",
         "Garanzia limitata del produttore Western Digital valida 5 anni"
       ]
     },
@@ -934,7 +930,7 @@
       "features": [
         "Inserimento immediato nello slot posteriore proprietario della console Xbox",
         "Replica fedele dell'architettura Xbox Velocity Architecture a 2.4 GB/s",
-        "Consente di scaricare e avviare direttamente il Pre-load di GTA 6 da 231 GB",
+        "Consente di installare e avviare direttamente tutti i titoli Xbox Series X|S",
         "Nessun cacciavite o smontaggio richiesto: pronto in 5 secondi"
       ]
     },
@@ -943,7 +939,7 @@
       "title": "PlayStation Network Gift Card Ricarica Portafoglio €80",
       "category": "Ricarica Store",
       "targetConsole": "Sony PlayStation Network (Italia)",
-      "badge": "Pre-Order Digitale & Pre-load Immediato",
+      "badge": "Pre-Order Digitale & Pre-load",
       "price": "€76.99",
       "originalPrice": "€80.00",
       "affiliateUrl": "https://www.amazon.it/dp/B0044B9Z0K?tag=gta6portal-21",
@@ -953,7 +949,7 @@
       "features": [
         "Codice digitale consegnato via email in pochi istanti post-acquisto",
         "Copertura completa per il pre-order di GTA 6 Standard Edition (€79.99)",
-        "Sblocca all'istante l'avvio del download del Pre-load da 228.5 GB su PS5",
+        "Ideale per il pre-order digitale di GTA VI sul PlayStation Store",
         "Nessuna commissione sul credito e riscatto immediato da console o app"
       ]
     },
@@ -971,7 +967,7 @@
       "storageCapacityGb": 0,
       "features": [
         "Codice digitale alfanumerico pronto per il riscatto sul tuo account Microsoft",
-        "Acquista GTA 6 con saldo prepagato e avvia subito il download di 231 GB",
+        "Acquista GTA 6 con saldo prepagato sul Microsoft Store",
         "Compatibile universalmente su console Xbox Series X e Series S",
         "Credito senza scadenza spendibile anche su pass ed edizioni deluxe"
       ]

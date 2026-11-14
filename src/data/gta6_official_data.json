@@ -78,13 +78,13 @@
       "duration": "2:15",
       "durationSeconds": 135,
       "youtubeId": "launch-gta6-official",
-      "soundtrack": "Flower in a Hurricane - Justice feat. Tame Impala, SZA & King Gizzard & The Lizard Wizard",
-      "description": "Il trailer di lancio ufficiale che accelera l'adrenalina con il brano anthem 'Flower in a Hurricane'. Mostra l'escalation tra cartelli rivali, la guardia costiera, inseguimenti ad alta velocità sui ponti delle Keys e il colpo al Casinò.",
+      "soundtrack": "Official Score & Soundtrack",
+      "description": "Il trailer di lancio ufficiale che mostra l'escalation tra cartelli rivali, la guardia costiera, inseguimenti ad alta velocità sui ponti delle Keys e rapine nello Stato di Leonida.",
       "keyHighlights": [
-        "Colonna sonora ufficiale 'Flower in a Hurricane' di Justice, Tame Impala, SZA & King Gizzard",
-        "Rapine ai casinò di lusso e inseguimenti ad alta quota",
-        "Guerra su più fronti contro le forze speciali di Leonida State Troopers",
-        "Montaggio frenetico pre-lancio che conferma la data del 19 Novembre 2026"
+        "Colonna sonora ufficiale ed effetti sonori del RAGE Engine",
+        "Rapine e inseguimenti ad alta velocità",
+        "Forze speciali di polizia e Leonida State Troopers",
+        "Montaggio pre-lancio che conferma la data del 19 Novembre 2026"
       ]
     },
     {
@@ -117,7 +117,7 @@
       "soundtrack": "Ambient RAGE Electronic Suite",
       "description": "Guida ufficiale all'avvio del Pre-load del 10 Novembre e dimostrazione tecnica delle feature hardware PS5 e PS5 Pro: grilletti adattivi DualSense, feedback aptico avanzato, audio 3D Tempest e rendering a 60 FPS in 4K via PSSR.",
       "keyHighlights": [
-        "Conferma apertura Pre-load globale (228.5 GB)",
+        "Conferma apertura Pre-load globale su console",
         "Integrazione tattile del controller DualSense per feedback di frenata e rinculo armi",
         "Prestazioni a 60 FPS stabili con ray-tracing globale attivo su PS5 Pro",
         "Tempi di caricamento azzerati grazie all'architettura SSD ad altissima velocità"
@@ -217,7 +217,7 @@
       "title": "WD_BLACK SN850X 2TB NVMe M.2 SSD con Dissipatore",
       "category": "Storage SSD PS5",
       "target": "PlayStation 5 / PS5 Pro",
-      "badge": "Scelta Consigliata Pre-load (228 GB)",
+      "badge": "Ideale per Espansione SSD PS5",
       "price": "€149.99",
       "originalPrice": "€189.99",
       "affiliateUrl": "https://www.amazon.it/dp/B0B7CMZ3QH?tag=gta6portal-21",
@@ -226,7 +226,7 @@
       "features": [
         "Velocità di lettura fino a 7.300 MB/s (supera ampiamente le specifiche Sony)",
         "Dissipatore in alluminio pre-installato a basso profilo certificato PS5",
-        "Spazio ideale per contenere GTA 6 (228.5 GB) e oltre 15 altri giochi tripla A",
+        "Spazio ideale per giochi tripla A e per la libreria completa",
         "Garanzia ufficiale 5 anni Western Digital"
       ]
     },
@@ -261,8 +261,8 @@
       "reviewsCount": "50.000+",
       "features": [
         "Codice digitale consegnato via email in pochi secondi",
-        "Perfetto per pre-ordinare GTA 6 Standard Edition su PlayStation Store",
-        "Avvia subito il Pre-load di 228.5 GB sulla tua console",
+        "Ideale per pre-ordinare GTA 6 Standard Edition su PlayStation Store",
+        "Pronto per l'avvio del download del Pre-load al day-one sulla tua console",
         "Nessuna commissione aggiuntiva sul riscatto del codice"
       ]
     },
@@ -298,7 +298,7 @@
       "features": [
         "PSSR (PlayStation Spectral Super Resolution) per grafica 4K a 60 FPS",
         "GPU potenziata con calcolo Ray Tracing avanzato fino a 3x rispetto a PS5 standard",
-        "SSD interno ultraveloce da 2TB già pronto per i 228.5 GB di GTA 6",
+        "SSD interno ultraveloce da 2TB ideale per i titoli current-gen",
         "Supporto nativo Wi-Fi 7 per velocità di pre-load e download raddoppiate"
       ]
     },
