@@ -129,6 +129,7 @@ const currentPath = Astro.url.pathname;
 const navItems = [
   { href: '/#overview', label: 'OVERVIEW' },
   { href: '/#trailer', label: 'TRAILERS' },
+  { href: '/#news-trivia', label: 'NEWS & CURIOSITÀ' },
   { href: '/#pre-order', label: 'EDITIONS' },
   { href: '/#gallery', label: 'SCREENSHOTS' },
   { href: '/#leonida', label: 'LEONIDA' },
@@ -243,10 +244,14 @@ const navItems = [
 
         <!-- Right Quick Action / Pre-Order Button -->
         <div class="hidden sm:flex items-center gap-3">
-          <div class="flex items-center gap-2 px-3 py-1.5 rounded-xl bg-zinc-900 border border-white/10 text-xs font-mono">
+          <a
+            href="/#launch-countdown"
+            class="flex items-center gap-2 px-3 py-1.5 rounded-xl bg-zinc-900 hover:bg-zinc-800 border border-white/10 hover:border-[#fdb813]/40 text-xs font-mono transition-colors"
+            title="Visualizza il conto alla rovescia in tempo reale"
+          >
             <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-            <span class="text-gray-300 font-bold">19 NOV 2026</span>
-          </div>
+            <span class="text-gray-300 hover:text-white font-bold">19 NOV 2026</span>
+          </a>
 
           <a
             href="/#pre-order"

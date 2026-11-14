@@ -2,6 +2,7 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import LaunchStatusHero from '../components/LaunchStatusHero.astro';
 import RockstarVideoSelector from '../components/RockstarVideoSelector.astro';
+import LatestNewsAndTrivia from '../components/LatestNewsAndTrivia.astro';
 import RockstarPillars from '../components/RockstarPillars.astro';
 import ScreenshotGallery from '../components/ScreenshotGallery.astro';
 import db from '../data/gta6_db.json';
@@ -42,16 +43,19 @@ const regionPhotos: Record<string, { image: string; highlight: string }> = {
 >
   <div id="overview"></div>
 
-  <!-- 1. Rockstar Official Hero with Fullscreen Key Art & Official VI Logo -->
+  <!-- 1. Rockstar Official Hero with Fullscreen Key Art, Official VI Logo & Live Countdown -->
   <LaunchStatusHero />
 
   <!-- 2. Official Rockstar Video Archive & Trailers -->
   <RockstarVideoSelector />
 
-  <!-- 3. Official 4 Pillars, Story Synopsis, Editions, Warehouse Merch, Newswire & Propaganda -->
+  <!-- 3. Latest Verified News & Confirmed Real Curiosities -->
+  <LatestNewsAndTrivia />
+
+  <!-- 4. Official 4 Pillars, Story Synopsis, Editions, Warehouse Merch, Newswire & Propaganda -->
   <RockstarPillars />
 
-  <!-- 4. The Launch Gallery - 4K Screenshot Gallery & Interactive Lightbox -->
+  <!-- 5. The Launch Gallery - 4K Screenshot Gallery & Interactive Lightbox -->
   <ScreenshotGallery />
 
   <!-- 5. People & Places: The World of Leonida Photographic Travelogue -->

@@ -1,8 +1,8 @@
 ---
-// Rockstar Games Official Hero Section
+// Rockstar Games Official Hero Section with Live Countdown Timer
 ---
 
-<section class="relative w-full min-h-[85vh] sm:min-h-[92vh] flex flex-col items-center justify-between overflow-hidden bg-black text-white select-none">
+<section id="hero-section" class="relative w-full min-h-[90vh] sm:min-h-[95vh] flex flex-col items-center justify-between overflow-hidden bg-black text-white select-none">
   <!-- Full-Bleed Key Art Background (Jason & Lucia in Vice City Sunset) -->
   <div class="absolute inset-0 z-0">
     <img
@@ -18,7 +18,7 @@
   <!-- Top Spacing -->
   <div class="pt-8 relative z-10"></div>
 
-  <!-- Center Content: Logo, Tagline, CTAs -->
+  <!-- Center Content: Logo, Tagline, Live Countdown, CTAs -->
   <div class="relative z-10 px-4 py-8 flex flex-col items-center text-center max-w-4xl mx-auto">
     <!-- Official VI Logo from rockstargames.com -->
     <div class="w-full max-w-xs sm:max-w-md mb-6 transform hover:scale-105 transition-transform duration-500">
@@ -30,14 +30,57 @@
     </div>
 
     <!-- Official Date Tagline -->
-    <div class="text-xs sm:text-base font-mono font-bold tracking-[0.3em] uppercase text-white/90 mb-3 drop-shadow">
+    <div class="text-xs sm:text-base font-mono font-bold tracking-[0.3em] uppercase text-white/90 mb-2 drop-shadow">
       COMING NOVEMBER 19, 2026
     </div>
 
     <!-- Official Rockstar Synopsis Quote -->
-    <p class="text-gray-300 text-xs sm:text-sm max-w-xl mb-8 leading-relaxed font-normal drop-shadow hidden sm:block">
+    <p class="text-gray-300 text-xs sm:text-sm max-w-xl mb-6 leading-relaxed font-normal drop-shadow hidden sm:block">
       Vice City, USA. Jason and Lucia have always known the deck is stacked against them. But when an easy score goes wrong, they find themselves on the darkest side of the sunniest place in America.
     </p>
+
+    <!-- Interactive Live Real-Time Countdown to Worldwide Launch -->
+    <div class="mb-8 p-4 sm:p-6 rounded-3xl bg-black/80 border border-white/20 backdrop-blur-2xl shadow-[0_0_35px_rgba(0,0,0,0.9)] w-full max-w-xl mx-auto" id="launch-countdown">
+      <div class="flex items-center justify-between gap-2 mb-3.5 pb-2.5 border-b border-white/10 text-[10px] font-mono">
+        <div class="flex items-center gap-2">
+          <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+          <span class="font-bold tracking-[0.2em] text-[#fdb813] uppercase">COUNTDOWN AL LANCIO MONDIALE</span>
+        </div>
+        <span class="text-gray-400 font-semibold">19 NOV 2026 // 00:00 CET</span>
+      </div>
+
+      <!-- 4 Numeric Blocks -->
+      <div class="grid grid-cols-4 gap-2.5 sm:gap-4 text-center">
+        <!-- Days -->
+        <div class="p-3 sm:p-4 rounded-2xl bg-white/[0.04] border border-white/10 flex flex-col items-center shadow-inner">
+          <span id="hero-cd-days" class="text-2xl sm:text-4xl font-black font-mono text-white tracking-tight">---</span>
+          <span class="text-[9px] sm:text-[10px] font-mono font-bold uppercase tracking-widest text-gray-400 mt-1">GIORNI</span>
+        </div>
+        <!-- Hours -->
+        <div class="p-3 sm:p-4 rounded-2xl bg-white/[0.04] border border-white/10 flex flex-col items-center shadow-inner">
+          <span id="hero-cd-hours" class="text-2xl sm:text-4xl font-black font-mono text-white tracking-tight">--</span>
+          <span class="text-[9px] sm:text-[10px] font-mono font-bold uppercase tracking-widest text-gray-400 mt-1">ORE</span>
+        </div>
+        <!-- Minutes -->
+        <div class="p-3 sm:p-4 rounded-2xl bg-white/[0.04] border border-white/10 flex flex-col items-center shadow-inner">
+          <span id="hero-cd-minutes" class="text-2xl sm:text-4xl font-black font-mono text-white tracking-tight">--</span>
+          <span class="text-[9px] sm:text-[10px] font-mono font-bold uppercase tracking-widest text-gray-400 mt-1">MINUTI</span>
+        </div>
+        <!-- Seconds -->
+        <div class="p-3 sm:p-4 rounded-2xl bg-white/[0.04] border border-[#fdb813]/30 flex flex-col items-center shadow-[0_0_15px_rgba(253,184,19,0.15)]">
+          <span id="hero-cd-seconds" class="text-2xl sm:text-4xl font-black font-mono text-[#fdb813] tracking-tight">--</span>
+          <span class="text-[9px] sm:text-[10px] font-mono font-bold uppercase tracking-widest text-[#fdb813] mt-1">SECONDI</span>
+        </div>
+      </div>
+
+      <div class="mt-3 pt-2 flex items-center justify-between text-[9px] font-mono text-gray-400 px-1">
+        <span>SBLOCCO ORE 00:00 (FUSO ORARIO ITALIANO)</span>
+        <span class="text-emerald-400 font-bold flex items-center gap-1">
+          <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
+          SINCRONIZZAZIONE ATTIVA
+        </span>
+      </div>
+    </div>
 
     <!-- CTAs: Pre-Order Now & Watch Trailer -->
     <div class="flex flex-wrap items-center justify-center gap-4 mb-8">
@@ -86,3 +129,49 @@
     </svg>
   </a>
 </section>
+
+<script>
+  function initLaunchCountdown() {
+    // Official Launch Target: November 19, 2026 at 00:00:00 CET (UTC+1)
+    const targetDate = new Date('2026-11-19T00:00:00+01:00').getTime();
+
+    const daysEl = document.getElementById('hero-cd-days');
+    const hoursEl = document.getElementById('hero-cd-hours');
+    const minutesEl = document.getElementById('hero-cd-minutes');
+    const secondsEl = document.getElementById('hero-cd-seconds');
+
+    if (!daysEl || !hoursEl || !minutesEl || !secondsEl) return;
+
+    function update() {
+      const now = new Date().getTime();
+      const diff = targetDate - now;
+
+      if (diff <= 0) {
+        daysEl!.textContent = '00';
+        hoursEl!.textContent = '00';
+        minutesEl!.textContent = '00';
+        secondsEl!.textContent = '00';
+        return;
+      }
+
+      const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+      daysEl!.textContent = days.toString().padStart(3, '0');
+      hoursEl!.textContent = hours.toString().padStart(2, '0');
+      minutesEl!.textContent = minutes.toString().padStart(2, '0');
+      secondsEl!.textContent = seconds.toString().padStart(2, '0');
+    }
+
+    update();
+    const interval = setInterval(update, 1000);
+
+    // Clean up interval on Astro page navigation if needed
+    document.addEventListener('astro:before-swap', () => clearInterval(interval), { once: true });
+  }
+
+  initLaunchCountdown();
+  document.addEventListener('astro:page-load', initLaunchCountdown);
+</script>
