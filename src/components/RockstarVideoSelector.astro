@@ -6,79 +6,79 @@ const videoTabs = [
   {
     id: 'trailer-1',
     title: 'Trailer 1',
-    actionText: 'Watch Trailer 1',
+    actionText: 'Guarda Trailer 1',
     youtubeId: 'QdBZY2fkU-0',
     duration: '1:31',
     image: '/images/rockstar-trailer-1.jpg',
     soundtrack: 'Love Is a Long Road — Tom Petty',
-    status: 'AVAILABLE NOW',
+    status: 'DISPONIBILE ORA',
     description: 'Il reveal trailer ufficiale che ha introdotto Lucia, le strade di Vice Beach e lo Stato di Leonida.',
     active: true,
   },
   {
     id: 'trailer-2',
     title: 'Trailer 2',
-    actionText: 'Watch Trailer 2',
+    actionText: 'Guarda Trailer 2',
     youtubeId: '',
     duration: 'TBA',
     image: '/images/rockstar-trailer-2.jpg',
-    soundtrack: 'Official Rockstar Soundtrack',
-    status: 'OFFICIAL SELECTION',
+    soundtrack: 'Colonna Sonora Rockstar',
+    status: 'PROSSIMAMENTE',
     description: 'Il secondo capitolo promozionale incentrato su Jason e le realtà costiere di Leonida.',
     active: false,
   },
   {
     id: 'launch-trailer',
     title: 'Launch Trailer',
-    actionText: 'Watch Launch Trailer',
+    actionText: 'Guarda Trailer di Lancio',
     youtubeId: '',
     duration: 'TBA',
     image: '/images/gtavi-standard-edition.jpg',
-    soundtrack: 'Official Score',
-    status: 'OFFICIAL SELECTION',
+    soundtrack: 'Colonna Sonora Motore RAGE',
+    status: 'PROSSIMAMENTE',
     description: 'Il trailer cinematico di lancio con la colonna sonora orchestrale del motore RAGE.',
     active: false,
   },
   {
     id: 'extended-look',
-    title: 'An Extended Look',
-    actionText: 'Watch An Extended Look',
+    title: 'Anteprima Estesa',
+    actionText: 'Guarda Anteprima Estesa',
     youtubeId: '',
     duration: 'TBA',
     image: '/images/gtavi-ultimate-edition.jpg',
-    soundtrack: 'Gameplay Deep Dive',
-    status: 'OFFICIAL SELECTION',
+    soundtrack: 'Approfondimento Gameplay',
+    status: 'PROSSIMAMENTE',
     description: 'Panoramica estesa sui sistemi di gioco, la fisica dei fluidi e la reattività della folla.',
     active: false,
   },
   {
     id: 'preload-showcase',
-    title: 'Pre-Load Now',
-    actionText: 'Watch Pre-Load Now',
+    title: 'Vetrina Pre-Load',
+    actionText: 'Guarda Vetrina Pre-Load',
     youtubeId: '',
     duration: 'TBA',
     image: '/images/vice-ocean-drive.jpg',
-    soundtrack: 'PS5 & Xbox Features',
-    status: 'OFFICIAL SELECTION',
+    soundtrack: 'Funzionalità PS5 & Xbox',
+    status: 'PROSSIMAMENTE',
     description: 'Guida all\'avvio del pre-load digitale e dimostrazione tecnica per PlayStation 5 e Xbox.',
     active: false,
   },
 ];
 ---
 
-<section id="trailer" class="my-20 scroll-mt-24 px-4 sm:px-6 max-w-7xl mx-auto" aria-label="Official Videos">
-  <!-- Section Title Rockstar Style -->
+<section id="trailer" class="my-20 scroll-mt-24 px-4 sm:px-6 max-w-7xl mx-auto" aria-label="Video e Trailer">
+  <!-- Section Title -->
   <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-8 pb-4 border-b border-white/10">
     <div>
-      <div class="text-[11px] font-mono font-bold tracking-[0.25em] text-[#fdb813] uppercase mb-1.5 flex items-center gap-2">
-        <span>ROCKSTAR GAMES MEDIA</span>
+      <div data-i18n="videos.tag" class="text-[11px] font-mono font-bold tracking-[0.25em] text-[#fdb813] uppercase mb-1.5 flex items-center gap-2">
+        <span>CONTENUTI MULTIMEDIALI ROCKSTAR</span>
       </div>
-      <h2 class="text-3xl sm:text-5xl font-black text-white uppercase tracking-tight font-sans">
-        OFFICIAL VIDEOS
+      <h2 data-i18n="videos.title" class="text-3xl sm:text-5xl font-black text-white uppercase tracking-tight font-sans">
+        VIDEO E TRAILER
       </h2>
     </div>
     <div class="text-xs font-mono text-gray-400">
-      ROCKSTAR NEWSWIRE ARCHIVE
+      ARCHIVIO COMUNICATI NEWSWIRE
     </div>
   </div>
 
@@ -106,7 +106,7 @@ const videoTabs = [
         
         <div class="relative z-10 max-w-xl mx-auto">
           <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#fdb813]/20 border border-[#fdb813]/40 text-[#fdb813] text-[10px] font-mono font-bold uppercase tracking-widest mb-4">
-            <span>OFFICIAL SELECTION // COMING SOON</span>
+            <span data-i18n="videos.coming_soon">SELEZIONE UFFICIALE // PROSSIMAMENTE</span>
           </div>
           <h3 class="text-2xl sm:text-4xl font-black text-white uppercase mb-3">
             {tab.title}
@@ -129,7 +129,7 @@ const videoTabs = [
     ))}
   </div>
 
-  <!-- Video Selector Carousel Tabs (Identical to rockstargames.com/VI) -->
+  <!-- Video Selector Carousel Tabs -->
   <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4" id="video-tabs-container">
     {videoTabs.map((tab, idx) => (
       <button
@@ -159,42 +159,50 @@ const videoTabs = [
             <div class="text-[9px] font-mono font-bold uppercase tracking-wider text-[#fdb813] mb-0.5">
               {tab.actionText}
             </div>
-            <h3 class="text-xs sm:text-sm font-bold text-white group-hover:text-[#fdb813] transition-colors line-clamp-1">
+            <h4 class="text-xs font-black text-white uppercase group-hover:text-[#fdb813] transition-colors truncate">
               {tab.title}
-            </h3>
+            </h4>
           </div>
-          <div class="mt-2 text-[10px] font-mono text-gray-400 truncate">
+          <div class="mt-2 text-[9px] font-mono text-gray-500">
             {tab.status}
           </div>
         </div>
       </button>
     ))}
   </div>
+
+  <!-- Frame-by-frame deep dive link -->
+  <div class="mt-6 text-center">
+    <a
+      href={resolvePath('/trailers/trailer-1')}
+      data-i18n="videos.watch_breakdown"
+      class="inline-flex items-center gap-2 text-xs font-mono font-bold text-vice-pink hover:text-white transition-colors"
+    >
+      ANALISI DETTAGLIATA FOTOGRAMMA PER FOTOGRAMMA ➔
+    </a>
+  </div>
 </section>
 
 <script>
-  function setupVideoSelector() {
-    const tabButtons = document.querySelectorAll<HTMLButtonElement>('.video-tab-btn');
-    const panels = document.querySelectorAll<HTMLElement>('.video-panel');
+  function initVideoTabs() {
+    const tabBtns = document.querySelectorAll('.video-tab-btn');
+    const panels = document.querySelectorAll('.video-panel');
 
-    tabButtons.forEach((btn) => {
+    tabBtns.forEach((btn) => {
       btn.addEventListener('click', () => {
-        const targetId = btn.getAttribute('data-video-id');
-        if (!targetId) return;
+        const videoId = btn.getAttribute('data-video-id');
+        if (!videoId) return;
 
-        // Reset active tabs
-        tabButtons.forEach((b) => {
+        tabBtns.forEach((b) => {
           b.classList.remove('border-white', 'bg-[#151026]', 'shadow-xl', 'ring-2', 'ring-white/20');
           b.classList.add('border-white/10', 'bg-[#0a0a0a]');
         });
 
-        // Set active tab
         btn.classList.add('border-white', 'bg-[#151026]', 'shadow-xl', 'ring-2', 'ring-white/20');
         btn.classList.remove('border-white/10', 'bg-[#0a0a0a]');
 
-        // Switch panels
         panels.forEach((p) => {
-          if (p.id === `video-player-${targetId}`) {
+          if (p.id === `video-player-${videoId}`) {
             p.classList.remove('hidden');
           } else {
             p.classList.add('hidden');
@@ -204,6 +212,6 @@ const videoTabs = [
     });
   }
 
-  setupVideoSelector();
-  document.addEventListener('astro:page-load', setupVideoSelector);
+  initVideoTabs();
+  document.addEventListener('astro:page-load', initVideoTabs);
 </script>

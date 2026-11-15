@@ -4,31 +4,31 @@ import { resolvePath } from '../utils/paths';
 ---
 
 <!-- 1. The Official Story Quote -->
-<section class="my-20 px-4 sm:px-6 max-w-5xl mx-auto text-center" aria-label="Official Synopsis">
-  <div class="text-[11px] font-mono font-bold tracking-[0.3em] text-[#fdb813] uppercase mb-4">
+<section class="my-20 px-4 sm:px-6 max-w-5xl mx-auto text-center" aria-label="Sinossi Ufficiale">
+  <div data-i18n="pillars.story_tag" class="text-[11px] font-mono font-bold tracking-[0.3em] text-[#fdb813] uppercase mb-4">
     VICE CITY, USA
   </div>
-  <blockquote class="text-xl sm:text-3xl md:text-4xl font-black text-white uppercase leading-snug tracking-tight font-sans">
-    "Jason and Lucia have always known the deck is stacked against them. But when an easy score goes wrong, they find themselves on the darkest side of the sunniest place in America, in the middle of a criminal conspiracy stretching across the state of Leonida — forced to rely on each other more than ever if they want to make it out alive."
+  <blockquote data-i18n="pillars.story_quote" class="text-xl sm:text-3xl md:text-4xl font-black text-white uppercase leading-snug tracking-tight font-sans">
+    "Jason e Lucia sanno bene che il banco vince sempre. Ma quando un colpo da poco va a rotoli, si ritrovano invischiati nel lato più buio del posto più soleggiato d'America, al centro di una cospirazione criminale che abbraccia l'intero Stato di Leonida — costretti a fidarsi l'uno dell'altra più che mai se vogliono uscirne vivi."
   </blockquote>
-  <div class="mt-6 text-xs font-mono text-gray-500 uppercase tracking-widest">
-    — Rockstar Games Official Story Overview
+  <div data-i18n="pillars.story_author" class="mt-6 text-xs font-mono text-gray-500 uppercase tracking-widest">
+    — Panoramica Ufficiale della Trama di Rockstar Games
   </div>
 </section>
 
-<!-- 2. Official Editions & Pre-Order Bonuses (Direct from rockstargames.com/VI) -->
+<!-- 2. Official Editions & Pre-Order Bonuses -->
 <section id="pre-order" class="my-20 px-4 sm:px-6 max-w-7xl mx-auto scroll-mt-24" aria-label="Edizioni e Pre-Order">
   <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-10 pb-4 border-b border-white/10">
     <div>
-      <div class="text-[11px] font-mono font-bold tracking-[0.25em] text-[#fdb813] uppercase mb-1.5">
-        OFFICIAL EDITIONS
+      <div data-i18n="pillars.editions_tag" class="text-[11px] font-mono font-bold tracking-[0.25em] text-[#fdb813] uppercase mb-1.5">
+        EDIZIONI UFFICIALI
       </div>
-      <h2 class="text-3xl sm:text-5xl font-black text-white uppercase tracking-tight">
-        PRE-ORDER NOW
+      <h2 data-i18n="pillars.editions_title" class="text-3xl sm:text-5xl font-black text-white uppercase tracking-tight">
+        PRE-ORDINA ORA
       </h2>
     </div>
-    <div class="text-xs font-mono text-gray-400">
-      AVAILABLE ON PLAYSTATION® 5 AND XBOX SERIES X|S
+    <div data-i18n="pillars.available_platforms" class="text-xs font-mono text-gray-400">
+      DISPONIBILE SU PLAYSTATION® 5 E XBOX SERIES X|S
     </div>
   </div>
 
@@ -49,14 +49,14 @@ import { resolvePath } from '../utils/paths';
 
       <div class="p-8 flex-1 flex flex-col justify-between">
         <div>
-          <span class="text-[10px] font-mono text-gray-400 tracking-widest uppercase block mb-1">
-            EXCLUSIVE DIGITAL COLLECTION
+          <span data-i18n="pillars.ultimate_tag" class="text-[10px] font-mono text-gray-400 tracking-widest uppercase block mb-1">
+            COLLEZIONE DIGITALE ESCLUSIVA
           </span>
           <h3 class="text-2xl sm:text-3xl font-black text-white uppercase mb-3">
             ULTIMATE EDITION
           </h3>
-          <p class="text-sm text-gray-300 leading-relaxed font-normal mb-6">
-            An exclusive collection of items threaded across all aspects of Jason and Lucia’s story. Includes the Grotti Cheetah, Electric Fang, Hawk &amp; Little Morgan Revolvers, and One-Eyed Willie.
+          <p data-i18n="pillars.ultimate_desc" class="text-sm text-gray-300 leading-relaxed font-normal mb-6">
+            Una collezione esclusiva di oggetti ed elementi intrecciati in ogni aspetto della storia di Jason e Lucia. Include la Grotti Cheetah, la Electric Fang, i revolver Hawk &amp; Little Morgan e One-Eyed Willie.
           </p>
         </div>
 
@@ -66,9 +66,10 @@ import { resolvePath } from '../utils/paths';
             href="https://www.rockstargames.com/VI"
             target="_blank"
             rel="noopener noreferrer"
+            data-i18n="pillars.learn_more"
             class="px-6 py-3 rounded-xl bg-white hover:bg-[#fdb813] text-black text-xs font-mono font-black uppercase tracking-wider transition-all"
           >
-            LEARN MORE ➔
+            SCOPRI DI PIÙ ➔
           </a>
         </div>
       </div>
@@ -87,23 +88,24 @@ import { resolvePath } from '../utils/paths';
         </div>
         <div class="sm:w-3/5 p-6 flex flex-col justify-between">
           <div>
-            <span class="text-[10px] font-mono text-gray-400 tracking-widest uppercase block mb-1">
-              BASE GAME
+            <span data-i18n="pillars.standard_tag" class="text-[10px] font-mono text-gray-400 tracking-widest uppercase block mb-1">
+              GIOCO BASE
             </span>
             <h3 class="text-xl font-black text-white uppercase mb-2">STANDARD EDITION</h3>
-            <p class="text-xs text-gray-300 leading-relaxed font-normal mb-4">
-              The complete Grand Theft Auto VI experience across Vice City and the state of Leonida.
+            <p data-i18n="pillars.standard_desc" class="text-xs text-gray-300 leading-relaxed font-normal mb-4">
+              L'esperienza completa di Grand Theft Auto VI attraverso le strade di Vice City e le terre selvagge dello Stato di Leonida.
             </p>
           </div>
           <div class="pt-4 border-t border-white/10 flex items-center justify-between">
-            <span class="text-xs font-mono text-gray-400">Current-Gen Consoles</span>
+            <span class="text-xs font-mono text-gray-400">PlayStation 5 • Xbox Series X|S</span>
             <a
               href="https://www.rockstargames.com/VI"
               target="_blank"
               rel="noopener noreferrer"
+              data-i18n="pillars.preorder_btn"
               class="px-4 py-2 rounded-xl bg-white/10 hover:bg-white text-white hover:text-black text-xs font-mono font-bold uppercase transition-all"
             >
-              PRE-ORDER ➔
+              PRE-ORDINA ➔
             </a>
           </div>
         </div>
@@ -112,27 +114,27 @@ import { resolvePath } from '../utils/paths';
       <!-- Vintage Vice City Pack Card -->
       <div class="rounded-3xl p-6 sm:p-8 bg-gradient-to-r from-[#18102e] to-[#0a0714] border border-vice-pink/40 shadow-neon-pink flex flex-col justify-between">
         <div>
-          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-vice-pink/20 border border-vice-pink/40 text-[10px] font-mono font-bold text-vice-pink uppercase tracking-widest mb-3">
-            PRE-ORDER BONUSES
+          <div data-i18n="pillars.vintage_tag" class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-vice-pink/20 border border-vice-pink/40 text-[10px] font-mono font-bold text-vice-pink uppercase tracking-widest mb-3">
+            BONUS PRE-ORDINE
           </div>
-          <h3 class="text-xl sm:text-2xl font-black text-white uppercase mb-2">
-            VINTAGE VICE CITY PACK
+          <h3 data-i18n="pillars.vintage_title" class="text-xl sm:text-2xl font-black text-white uppercase mb-2">
+            PACCHETTO VINTAGE VICE CITY
           </h3>
-          <p class="text-xs sm:text-sm text-gray-300 leading-relaxed font-normal mb-4">
-            Pre-order to get unique benefits that flash back to when the neon burned brightest across the city.
+          <p data-i18n="pillars.vintage_desc" class="text-xs sm:text-sm text-gray-300 leading-relaxed font-normal mb-4">
+            Pre-ordina subito per ricevere vantaggi unici che riportano ai tempi in cui le luci al neon ardevano più luminose in tutta la città.
           </p>
         </div>
         <div class="pt-4 border-t border-white/10 flex items-center justify-between text-xs font-mono">
-          <span class="text-gray-400">Included with all digital pre-orders</span>
-          <span class="text-vice-pink font-bold">BONUS UNLOCKED</span>
+          <span data-i18n="pillars.vintage_sub" class="text-gray-400">Incluso in tutti i pre-ordini digitali</span>
+          <span data-i18n="pillars.bonus_unlocked" class="text-vice-pink font-bold">BONUS SBLOCCATO</span>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- 3. The 4 Official Rockstar Core Pillars (Pillars directly from rockstargames.com/VI) -->
-<section class="my-20 px-4 sm:px-6 max-w-7xl mx-auto" aria-label="Official Pillars">
+<!-- 3. The 4 Core Pillars -->
+<section class="my-20 px-4 sm:px-6 max-w-7xl mx-auto" aria-label="Pilastri Fondamentali">
   <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
     
     <!-- Pillar 1: SCREENSHOTS -->
@@ -141,18 +143,18 @@ import { resolvePath } from '../utils/paths';
       class="group p-8 rounded-3xl bg-[#0d0a1a] border border-white/15 hover:border-[#fdb813] transition-all duration-300 flex flex-col justify-between shadow-xl"
     >
       <div>
-        <div class="text-[10px] font-mono font-bold tracking-[0.25em] text-[#fdb813] uppercase mb-3">
-          SCREENSHOTS
+        <div data-i18n="pillars.screenshots_tag" class="text-[10px] font-mono font-bold tracking-[0.25em] text-[#fdb813] uppercase mb-3">
+          SCREENSHOT UFFICIALI
         </div>
-        <h3 class="text-xl font-black text-white group-hover:text-[#fdb813] transition-colors uppercase mb-3">
-          THE LAUNCH GALLERY
+        <h3 data-i18n="pillars.screenshots_title" class="text-xl font-black text-white group-hover:text-[#fdb813] transition-colors uppercase mb-3">
+          GALLERIA DI LANCIO 4K
         </h3>
-        <p class="text-xs text-gray-300 leading-relaxed font-normal">
-          Get a stunning look inside Leonida with a collection of new 4K screenshots.
+        <p data-i18n="pillars.screenshots_desc" class="text-xs text-gray-300 leading-relaxed font-normal">
+          Ammira Leonida in ogni dettaglio con la raccolta esclusiva di nuove catture in risoluzione Ultra HD 4K.
         </p>
       </div>
       <div class="mt-8 pt-4 border-t border-white/10 flex items-center justify-between text-xs font-mono text-gray-400">
-        <span>VIEW ALL</span>
+        <span data-i18n="pillars.view_all">VEDI TUTTI</span>
         <span class="group-hover:translate-x-1 transition-transform text-white font-bold">➔</span>
       </div>
     </a>
@@ -163,18 +165,18 @@ import { resolvePath } from '../utils/paths';
       class="group p-8 rounded-3xl bg-[#0d0a1a] border border-white/15 hover:border-vice-cyan transition-all duration-300 flex flex-col justify-between shadow-xl"
     >
       <div>
-        <div class="text-[10px] font-mono font-bold tracking-[0.25em] text-vice-cyan uppercase mb-3">
-          PEOPLE &amp; PLACES
+        <div data-i18n="pillars.people_tag" class="text-[10px] font-mono font-bold tracking-[0.25em] text-vice-cyan uppercase mb-3">
+          PERSONAGGI E LUOGHI
         </div>
-        <h3 class="text-xl font-black text-white group-hover:text-vice-cyan transition-colors uppercase mb-3">
-          ONLY IN LEONIDA
+        <h3 data-i18n="pillars.people_title" class="text-xl font-black text-white group-hover:text-vice-cyan transition-colors uppercase mb-3">
+          SOLO A LEONIDA
         </h3>
-        <p class="text-xs text-gray-300 leading-relaxed font-normal">
-          Vice City, USA. The darkest side of the sunniest place in America.
+        <p data-i18n="pillars.people_desc" class="text-xs text-gray-300 leading-relaxed font-normal">
+          Vice City, USA. Il lato più oscuro e corrotto del luogo più assolato d'America.
         </p>
       </div>
       <div class="mt-8 pt-4 border-t border-white/10 flex items-center justify-between text-xs font-mono text-gray-400">
-        <span>EXPLORE MORE</span>
+        <span data-i18n="pillars.explore_more">ESPLORA DI PIÙ</span>
         <span class="group-hover:translate-x-1 transition-transform text-white font-bold">➔</span>
       </div>
     </a>
@@ -184,18 +186,18 @@ import { resolvePath } from '../utils/paths';
       class="group p-8 rounded-3xl bg-[#0d0a1a] border border-white/15 hover:border-vice-pink transition-all duration-300 flex flex-col justify-between shadow-xl"
     >
       <div>
-        <div class="text-[10px] font-mono font-bold tracking-[0.25em] text-vice-pink uppercase mb-3">
-          MUSIC
+        <div data-i18n="pillars.music_tag" class="text-[10px] font-mono font-bold tracking-[0.25em] text-vice-pink uppercase mb-3">
+          COLONNA SONORA E RADIO
         </div>
-        <h3 class="text-xl font-black text-white group-hover:text-vice-pink transition-colors uppercase mb-3">
-          IN-GAME RADIO, SOUNDTRACK &amp; SCORE
+        <h3 data-i18n="pillars.music_title" class="text-xl font-black text-white group-hover:text-vice-pink transition-colors uppercase mb-3">
+          RADIO DI GIOCO, COLONNA SONORA E BRANI ORIGINALI
         </h3>
-        <p class="text-xs text-gray-300 leading-relaxed font-normal">
-          Listen to the Official Score and Soundtrack, plus select in-game radio stations.
+        <p data-i18n="pillars.music_desc" class="text-xs text-gray-300 leading-relaxed font-normal">
+          Ascolta la colonna sonora e i brani ufficiali, oltre a una selezione di stazioni radio in-game.
         </p>
       </div>
       <div class="mt-8 pt-4 border-t border-white/10 flex items-center justify-between text-xs font-mono text-gray-400">
-        <span>EXPLORE MORE</span>
+        <span data-i18n="pillars.explore_more">ESPLORA DI PIÙ</span>
         <span class="text-white font-bold">🎵</span>
       </div>
     </div>
@@ -206,18 +208,18 @@ import { resolvePath } from '../utils/paths';
       class="group p-8 rounded-3xl bg-[#0d0a1a] border border-white/15 hover:border-emerald-400 transition-all duration-300 flex flex-col justify-between shadow-xl"
     >
       <div>
-        <div class="text-[10px] font-mono font-bold tracking-[0.25em] text-emerald-400 uppercase mb-3">
-          DOWNLOADS
+        <div data-i18n="pillars.downloads_tag" class="text-[10px] font-mono font-bold tracking-[0.25em] text-emerald-400 uppercase mb-3">
+          DOWNLOAD E MEDIA
         </div>
-        <h3 class="text-xl font-black text-white group-hover:text-emerald-400 transition-colors uppercase mb-3">
-          MEDIA &amp; ARTWORK
+        <h3 data-i18n="pillars.downloads_title" class="text-xl font-black text-white group-hover:text-emerald-400 transition-colors uppercase mb-3">
+          MEDIA &amp; ARTWORK IN ALTA DEFINIZIONE
         </h3>
-        <p class="text-xs text-gray-300 leading-relaxed font-normal">
-          Download and share official videos, screenshots, and wallpapers in ultra high-definition.
+        <p data-i18n="pillars.downloads_desc" class="text-xs text-gray-300 leading-relaxed font-normal">
+          Scarica e condividi video ufficiali, wallpaper e screenshot in altissima definizione.
         </p>
       </div>
       <div class="mt-8 pt-4 border-t border-white/10 flex items-center justify-between text-xs font-mono text-gray-400">
-        <span>SEE ALL</span>
+        <span data-i18n="pillars.see_all">VEDI TUTTO</span>
         <span class="group-hover:translate-x-1 transition-transform text-white font-bold">➔</span>
       </div>
     </a>
@@ -225,14 +227,14 @@ import { resolvePath } from '../utils/paths';
   </div>
 </section>
 
-<!-- 4. Official Rockstar Merchandise & Collector's Box -->
-<section class="my-20 px-4 sm:px-6 max-w-7xl mx-auto" aria-label="Official Store">
+<!-- 4. Merchandise & Collector's Box -->
+<section class="my-20 px-4 sm:px-6 max-w-7xl mx-auto" aria-label="Negozio e Merchandise">
   <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-8 pb-4 border-b border-white/10">
     <div>
-      <div class="text-[11px] font-mono font-bold tracking-[0.25em] text-[#fdb813] uppercase mb-1.5">
-        ROCKSTAR WAREHOUSE
+      <div data-i18n="store.tag" class="text-[11px] font-mono font-bold tracking-[0.25em] text-[#fdb813] uppercase mb-1.5">
+        MAGAZZINO ROCKSTAR
       </div>
-      <h2 class="text-3xl sm:text-4xl font-black text-white uppercase tracking-tight">
+      <h2 data-i18n="store.title" class="text-3xl sm:text-4xl font-black text-white uppercase tracking-tight">
         SHOP &amp; MERCHANDISE
       </h2>
     </div>
@@ -240,9 +242,10 @@ import { resolvePath } from '../utils/paths';
       href="https://store.rockstargames.com"
       target="_blank"
       rel="noopener noreferrer"
+      data-i18n="store.view_all"
       class="text-xs font-mono text-gray-400 hover:text-white transition-colors"
     >
-      VIEW ALL STORE ITEMS ➔
+      SCOPRI TUTTI I PRODOTTI ➔
     </a>
   </div>
 
@@ -252,22 +255,22 @@ import { resolvePath } from '../utils/paths';
       <div class="relative w-full aspect-[16/9] overflow-hidden bg-black">
         <img
           src={resolvePath('/images/gtavi-merch.jpg')}
-          alt="Rockstar Games Official Merchandise"
+          alt="Merchandise Ufficiale Rockstar Games"
           class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
         />
         <div class="absolute inset-0 bg-gradient-to-t from-[#0d0a1a] via-transparent to-transparent"></div>
       </div>
       <div class="p-6 flex-1 flex flex-col justify-between">
         <div>
-          <span class="text-[10px] font-mono text-gray-400 uppercase tracking-widest block mb-1">APPAREL &amp; GEAR</span>
-          <h3 class="text-xl font-black text-white uppercase mb-2">MERCHANDISE</h3>
-          <p class="text-xs text-gray-300 leading-relaxed font-normal">
-            Premium apparel, collectibles, pins, and accessories inspired by Vice City.
+          <span data-i18n="store.merch_tag" class="text-[10px] font-mono text-gray-400 uppercase tracking-widest block mb-1">ABBIGLIAMENTO E ACCESSORI</span>
+          <h3 data-i18n="store.merch_title" class="text-xl font-black text-white uppercase mb-2">MERCHANDISE UFFICIALE</h3>
+          <p data-i18n="store.merch_desc" class="text-xs text-gray-300 leading-relaxed font-normal">
+            Capi di abbigliamento premium, oggetti da collezione, spille e accessori ispirati allo stile senza tempo di Vice City.
           </p>
         </div>
         <div class="mt-6 pt-4 border-t border-white/10 flex items-center justify-between text-xs font-mono">
-          <span class="text-gray-400">Rockstar Official</span>
-          <span class="text-[#fdb813] font-bold group-hover:translate-x-1 transition-transform">SHOP NOW ➔</span>
+          <span data-i18n="store.rockstar_official" class="text-gray-400">Store Ufficiale Rockstar</span>
+          <span data-i18n="store.shop_now" class="text-[#fdb813] font-bold group-hover:translate-x-1 transition-transform">ACQUISTA ORA ➔</span>
         </div>
       </div>
     </div>
@@ -277,36 +280,36 @@ import { resolvePath } from '../utils/paths';
       <div class="relative w-full aspect-[16/9] overflow-hidden bg-black">
         <img
           src={resolvePath('/images/grotti-cheetah.jpg')}
-          alt="The Vice City Collection Collector's Box"
+          alt="Cofanetto da Collezione Vice City"
           class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
         />
         <div class="absolute inset-0 bg-gradient-to-t from-[#0d0a1a] via-transparent to-transparent"></div>
       </div>
       <div class="p-6 flex-1 flex flex-col justify-between">
         <div>
-          <span class="text-[10px] font-mono text-gray-400 uppercase tracking-widest block mb-1">LIMITED EDITION</span>
-          <h3 class="text-xl font-black text-white uppercase mb-2">COLLECTOR’S BOX</h3>
-          <p class="text-xs text-gray-300 leading-relaxed font-normal">
-            The Vice City Collection — An exclusive curated set of physical memorabilia for the official launch.
+          <span data-i18n="store.box_tag" class="text-[10px] font-mono text-gray-400 uppercase tracking-widest block mb-1">EDIZIONE LIMITATA</span>
+          <h3 data-i18n="store.box_title" class="text-xl font-black text-white uppercase mb-2">COFANETTO DA COLLEZIONE</h3>
+          <p data-i18n="store.box_desc" class="text-xs text-gray-300 leading-relaxed font-normal">
+            The Vice City Collection — Un cofanetto esclusivo di cimeli e oggetti fisici curati per il lancio mondiale.
           </p>
         </div>
         <div class="mt-6 pt-4 border-t border-white/10 flex items-center justify-between text-xs font-mono">
-          <span class="text-gray-400">Exclusive Run</span>
-          <span class="text-[#fdb813] font-bold group-hover:translate-x-1 transition-transform">EXPLORE NOW ➔</span>
+          <span data-i18n="store.exclusive_run" class="text-gray-400">Tiratura Esclusiva</span>
+          <span data-i18n="store.explore_now" class="text-[#fdb813] font-bold group-hover:translate-x-1 transition-transform">ESPLORA ORA ➔</span>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- 5. Featured News / Rockstar Newswire (Authentic Posts from rockstargames.com/VI) -->
-<section class="my-20 px-4 sm:px-6 max-w-7xl mx-auto" aria-label="Rockstar Newswire">
+<!-- 5. Featured News / Rockstar Newswire -->
+<section class="my-20 px-4 sm:px-6 max-w-7xl mx-auto" aria-label="Comunicati Newswire">
   <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-8 pb-4 border-b border-white/10">
     <div>
-      <div class="text-[11px] font-mono font-bold tracking-[0.25em] text-[#fdb813] uppercase mb-1.5">
-        FEATURED NEWS
+      <div data-i18n="news.tag" class="text-[11px] font-mono font-bold tracking-[0.25em] text-[#fdb813] uppercase mb-1.5">
+        ULTIMI AGGIORNAMENTI
       </div>
-      <h2 class="text-3xl sm:text-4xl font-black text-white uppercase tracking-tight">
+      <h2 data-i18n="news.title" class="text-3xl sm:text-4xl font-black text-white uppercase tracking-tight">
         ROCKSTAR NEWSWIRE
       </h2>
     </div>
@@ -314,9 +317,10 @@ import { resolvePath } from '../utils/paths';
       href="https://www.rockstargames.com/newswire"
       target="_blank"
       rel="noopener noreferrer"
+      data-i18n="news.view_all"
       class="text-xs font-mono text-gray-400 hover:text-white transition-colors"
     >
-      VIEW ALL NEWSWIRE POSTS ➔
+      TUTTI GLI ARTICOLI NEWSWIRE ➔
     </a>
   </div>
 
@@ -325,17 +329,17 @@ import { resolvePath } from '../utils/paths';
     <div class="p-6 rounded-3xl bg-[#0d0a1a] border border-white/10 hover:border-white/30 transition-all flex flex-col justify-between">
       <div>
         <span class="text-[10px] font-mono text-[#fdb813] uppercase tracking-wider block mb-2">
-          NOVEMBER 10, 2026
+          10 NOVEMBRE 2026
         </span>
-        <h3 class="text-lg font-black text-white uppercase mb-2">
-          Pre-Load Grand Theft Auto VI Now
+        <h3 data-i18n="news.item1_title" class="text-lg font-black text-white uppercase mb-2">
+          Il Pre-Load di Grand Theft Auto VI è Disponibile
         </h3>
-        <p class="text-xs text-gray-400 leading-relaxed font-normal">
-          Digital pre-load is now live on PlayStation 5 and Xbox Series X|S ahead of the worldwide launch on November 19.
+        <p data-i18n="news.item1_desc" class="text-xs text-gray-400 leading-relaxed font-normal">
+          Il pre-download digitale è ora attivo su PlayStation 5 e Xbox Series X|S in vista del lancio mondiale del 19 Novembre.
         </p>
       </div>
-      <div class="mt-6 pt-4 border-t border-white/10 text-xs font-mono text-gray-500">
-        Newswire Article
+      <div data-i18n="news.category" class="mt-6 pt-4 border-t border-white/10 text-xs font-mono text-gray-500">
+        Comunicato Newswire
       </div>
     </div>
 
@@ -343,17 +347,17 @@ import { resolvePath } from '../utils/paths';
     <div class="p-6 rounded-3xl bg-[#0d0a1a] border border-white/10 hover:border-white/30 transition-all flex flex-col justify-between">
       <div>
         <span class="text-[10px] font-mono text-[#fdb813] uppercase tracking-wider block mb-2">
-          NOVEMBER 5, 2026
+          5 NOVEMBRE 2026
         </span>
-        <h3 class="text-lg font-black text-white uppercase mb-2">
-          Explore the Grand Theft Auto VI Launch Gallery
+        <h3 data-i18n="news.item2_title" class="text-lg font-black text-white uppercase mb-2">
+          Esplora la Galleria Fotografica di Lancio
         </h3>
-        <p class="text-xs text-gray-400 leading-relaxed font-normal">
-          Take a look at new 4K captures showcasing Vice City's vibrant nightlife, the Grassrivers swamps, and coastal highways.
+        <p data-i18n="news.item2_desc" class="text-xs text-gray-400 leading-relaxed font-normal">
+          Scopri i nuovi scatti 4K che mostrano la vibrante vita notturna di Vice City, le paludi di Grassrivers e le autostrade costiere.
         </p>
       </div>
-      <div class="mt-6 pt-4 border-t border-white/10 text-xs font-mono text-gray-500">
-        Newswire Article
+      <div data-i18n="news.category" class="mt-6 pt-4 border-t border-white/10 text-xs font-mono text-gray-500">
+        Comunicato Newswire
       </div>
     </div>
 
@@ -361,67 +365,69 @@ import { resolvePath } from '../utils/paths';
     <div class="p-6 rounded-3xl bg-[#0d0a1a] border border-white/10 hover:border-white/30 transition-all flex flex-col justify-between">
       <div>
         <span class="text-[10px] font-mono text-[#fdb813] uppercase tracking-wider block mb-2">
-          NOVEMBER 3, 2026
+          3 NOVEMBRE 2026
         </span>
-        <h3 class="text-lg font-black text-white uppercase mb-2">
-          Grand Theft Auto VI Pre-Load Begins on November 10
+        <h3 data-i18n="news.item3_title" class="text-lg font-black text-white uppercase mb-2">
+          Orari di Sblocco a Mezzanotte nel Mondo
         </h3>
-        <p class="text-xs text-gray-400 leading-relaxed font-normal">
-          Official timing details for digital pre-orders and rolling midnight unlock schedules worldwide.
+        <p data-i18n="news.item3_desc" class="text-xs text-gray-400 leading-relaxed font-normal">
+          Dettagli ufficiali sugli orari di sblocco a scaglioni a mezzanotte locale per tutti i territori del pianeta.
         </p>
       </div>
-      <div class="mt-6 pt-4 border-t border-white/10 text-xs font-mono text-gray-500">
-        Newswire Article
+      <div data-i18n="news.category" class="mt-6 pt-4 border-t border-white/10 text-xs font-mono text-gray-500">
+        Comunicato Newswire
       </div>
     </div>
   </div>
 </section>
 
-<!-- 6. Get Rockstar Propaganda (Newsletter Signup from rockstargames.com/VI) -->
-<section class="my-20 px-4 sm:px-6 max-w-4xl mx-auto" aria-label="Rockstar Propaganda">
+<!-- 6. Propaganda Newsletter Signup -->
+<section class="my-20 px-4 sm:px-6 max-w-4xl mx-auto" aria-label="Iscrizione Newsletter">
   <div class="p-8 sm:p-12 rounded-3xl bg-gradient-to-b from-[#140f26] to-[#07050d] border border-white/15 text-center">
     <div class="w-10 h-10 rounded-xl bg-[#fdb813] flex items-center justify-center text-black font-black text-sm font-mono mx-auto mb-4 shadow-[0_0_15px_rgba(253,184,19,0.5)]">
       R★
     </div>
-    <h3 class="text-2xl sm:text-3xl font-black text-white uppercase tracking-tight mb-2">
-      GET ROCKSTAR PROPAGANDA
+    <h3 data-i18n="propaganda.title" class="text-2xl sm:text-3xl font-black text-white uppercase tracking-tight mb-2">
+      RICEVI LA PROPAGANDA ROCKSTAR
     </h3>
-    <p class="text-xs sm:text-sm text-gray-300 max-w-md mx-auto mb-6 leading-relaxed font-normal">
-      Get the latest game announcements, updates on special events and offers, and much more from Rockstar Games.
+    <p data-i18n="propaganda.desc" class="text-xs sm:text-sm text-gray-300 max-w-md mx-auto mb-6 leading-relaxed font-normal">
+      Ricevi gli annunci di gioco più recenti, aggiornamenti su eventi speciali, promozioni e molto altro da Rockstar Games.
     </p>
 
     <form id="propaganda-form" class="flex flex-col sm:flex-row items-center justify-center gap-3 max-w-md mx-auto">
       <input
         type="email"
-        placeholder="Enter your email address"
+        placeholder="Inserisci il tuo indirizzo email"
+        data-i18n-placeholder="propaganda.placeholder"
         required
         class="w-full px-5 py-3.5 rounded-xl bg-black/80 border border-white/20 text-white text-xs font-mono focus:outline-none focus:border-[#fdb813] transition-colors"
       />
       <button
         type="submit"
-        class="w-full sm:w-auto px-6 py-3.5 rounded-xl bg-white hover:bg-[#fdb813] text-black text-xs font-mono font-black uppercase tracking-wider transition-colors cursor-pointer shrink-0"
+        data-i18n="propaganda.signup"
+        class="w-full sm:w-auto px-8 py-3.5 rounded-xl bg-[#fdb813] hover:bg-white text-black font-black text-xs font-mono tracking-widest uppercase transition-all duration-300 shadow-lg cursor-pointer whitespace-nowrap"
       >
-        SUBSCRIBE
+        ISCRIVITI ORA
       </button>
     </form>
-
-    <script is:inline>
-      document.getElementById('propaganda-form')?.addEventListener('submit', (e) => {
-        e.preventDefault();
-        alert('Iscritto con successo agli aggiornamenti Rockstar Games!');
-      });
-    </script>
+    <p data-i18n="propaganda.privacy_notice" class="text-[10px] text-gray-500 font-mono mt-3">
+      Iscrivendoti, accetti di ricevere comunicazioni promozionali da Rockstar Games.
+    </p>
   </div>
 </section>
 
-<!-- 7. ESRB / PEGI Official Mature Content Rating Warning -->
-<div class="my-12 px-4 sm:px-6 max-w-5xl mx-auto border-t border-b border-white/10 py-6">
-  <div class="flex flex-col sm:flex-row items-center justify-center gap-6 text-center sm:text-left">
-    <div class="px-3 py-1.5 rounded bg-zinc-900 border border-white/30 text-white font-mono font-black text-sm tracking-wider shrink-0">
-      RATING 18+
+<!-- 7. Mature Content Warning -->
+<div class="max-w-4xl mx-auto my-12 p-6 rounded-2xl bg-black/50 border border-white/10 flex flex-col sm:flex-row items-center gap-4 text-center sm:text-left">
+  <div class="w-12 h-14 rounded-lg bg-red-600 border border-white text-white flex flex-col items-center justify-center p-1 shadow-lg shrink-0 select-none">
+    <span class="text-xl font-black leading-none font-mono">18</span>
+    <span class="text-[8px] font-bold tracking-tighter uppercase mt-0.5">PEGI</span>
+  </div>
+  <div>
+    <div data-i18n="pegi.tag" class="text-xs font-mono font-bold text-white uppercase tracking-wider mb-1">
+      RATING IN ATTESA DI CONFERMA (18+)
     </div>
-    <p class="text-[11px] font-mono text-gray-400 uppercase tracking-wider leading-relaxed">
-      Blood and Gore, Intense Violence, Mature Humor, Nudity, Strong Language, Strong Sexual Content, Use of Drugs and Alcohol. In-Game Purchases.
+    <p data-i18n="pegi.desc" class="text-xs text-gray-400">
+      Violenza estrema, linguaggio forte, contenuti per soli adulti.
     </p>
   </div>
 </div>

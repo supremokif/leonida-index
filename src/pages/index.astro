@@ -65,12 +65,12 @@ const regionPhotos: Record<string, { image: string; highlight: string }> = {
       <div>
         <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#1b1433] border border-vice-cyan/40 text-[11px] font-mono font-bold text-vice-cyan uppercase tracking-widest mb-3">
           <span class="w-2 h-2 rounded-full bg-vice-cyan animate-pulse"></span>
-          <span>PEOPLE &amp; PLACES // STATO DI LEONIDA</span>
+          <span data-i18n="regions.tag">CARTOGRAFIA &amp; LUOGHI // STATO DI LEONIDA</span>
         </div>
         <h2 class="text-3xl sm:text-5xl font-black text-white tracking-tight uppercase">
-          ONLY IN <span class="bg-gradient-to-r from-vice-pink via-vice-orange to-vice-cyan bg-clip-text text-transparent">LEONIDA</span>
+          <span data-i18n="regions.title">SOLO A LEONIDA</span>
         </h2>
-        <p class="text-sm sm:text-base text-gray-300 mt-2 max-w-2xl font-normal leading-relaxed">
+        <p data-i18n="regions.desc" class="text-sm sm:text-base text-gray-300 mt-2 max-w-2xl font-normal leading-relaxed">
           Vice City, USA. Dai boulevard al neon di Ocean Beach alle paludi selvagge delle Grassrivers: esplora le regioni che compongono lo Stato di Leonida.
         </p>
       </div>
@@ -79,7 +79,7 @@ const regionPhotos: Record<string, { image: string; highlight: string }> = {
         href={resolvePath('/leonida/vice-city')}
         class="inline-flex items-center gap-2 text-xs font-mono font-bold text-amber-400 hover:text-white transition-colors"
       >
-        <span>DETTAGLI REGIONI E FOTOGRAFIA</span>
+        <span data-i18n="regions.details_btn">DETTAGLI REGIONI E FOTOGRAFIA</span>
         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
       </a>
     </div>
@@ -151,9 +151,9 @@ const regionPhotos: Record<string, { image: string; highlight: string }> = {
     <div class="text-center max-w-3xl mx-auto mb-12">
       <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#1b1433] border border-vice-pink/40 text-[11px] font-mono font-bold text-vice-pink uppercase tracking-widest mb-3">
         <span class="w-2 h-2 rounded-full bg-vice-pink animate-pulse"></span>
-        <span>DOSSIER PERSONAGGI // ROCKSTAR GAMES</span>
+        <span data-i18n="protagonists.tag">DOSSIER PERSONAGGI // ROCKSTAR GAMES</span>
       </div>
-      <h2 class="text-3xl sm:text-5xl font-black text-white tracking-tight uppercase">
+      <h2 data-i18n="protagonists.title" class="text-3xl sm:text-5xl font-black text-white tracking-tight uppercase">
         LUCIA E JASON
       </h2>
       <p class="text-sm sm:text-base text-gray-300 mt-2 font-normal leading-relaxed">
@@ -190,18 +190,18 @@ const regionPhotos: Record<string, { image: string; highlight: string }> = {
             <h3 class="text-3xl font-black text-white mb-1.5 uppercase">LUCIA</h3>
             <span class="text-xs font-mono text-vice-cyan font-semibold block mb-4">Protagonista Ufficiale</span>
 
-            <p class="text-xs text-gray-300 leading-relaxed font-normal mb-5">
+            <p data-i18n="protagonists.lucia_desc" class="text-xs text-gray-300 leading-relaxed font-normal mb-5">
               Lucia ha sempre saputo che il destino gioca a sfavore. Ma quando un colpo facile va storto, si ritrova con Jason sul lato più oscuro del luogo più soleggiato d'America.
             </p>
 
-            <blockquote class="p-3.5 rounded-xl bg-[#140f26] border-l-2 border-vice-pink text-xs italic text-gray-200 font-mono mb-5">
+            <blockquote data-i18n="protagonists.lucia_quote" class="p-3.5 rounded-xl bg-[#140f26] border-l-2 border-vice-pink text-xs italic text-gray-200 font-mono mb-5">
               "L'unico modo per uscirne è restare uniti. Facendo squadra. Ti fidi di me? — Fiducia."
             </blockquote>
           </div>
 
           <div class="mt-6 pt-4 border-t border-white/[0.08] flex items-center justify-between text-xs font-mono text-gray-400">
-            <span>RUOLO: <strong class="text-emerald-400">PROTAGONISTA GIOCABILE</strong></span>
-            <span class="text-vice-pink font-bold">CANON VERIFICATO</span>
+            <span><span data-i18n="protagonists.role_label">RUOLO:</span> <strong data-i18n="protagonists.role_value" class="text-emerald-400">PROTAGONISTA GIOCABILE</strong></span>
+            <span data-i18n="protagonists.canon_badge" class="text-vice-pink font-bold">CANON VERIFICATO</span>
           </div>
         </div>
       </div>
@@ -232,18 +232,18 @@ const regionPhotos: Record<string, { image: string; highlight: string }> = {
             <h3 class="text-3xl font-black text-white mb-1.5 uppercase">JASON</h3>
             <span class="text-xs font-mono text-vice-cyan font-semibold block mb-4">Protagonista Ufficiale</span>
 
-            <p class="text-xs text-gray-300 leading-relaxed font-normal mb-5">
+            <p data-i18n="protagonists.jason_desc" class="text-xs text-gray-300 leading-relaxed font-normal mb-5">
               Al fianco di Lucia in una spirale di rapine e pericoli crescenti attraverso la contea e le isole di Leonida, costretto a fidarsi ciecamente della sua compagna.
             </p>
 
-            <blockquote class="p-3.5 rounded-xl bg-[#140f26] border-l-2 border-amber-400 text-xs italic text-gray-200 font-mono mb-5">
+            <blockquote data-i18n="protagonists.jason_quote" class="p-3.5 rounded-xl bg-[#140f26] border-l-2 border-amber-400 text-xs italic text-gray-200 font-mono mb-5">
               "Fiducia. È l'unica cosa che ci tiene vivi."
             </blockquote>
           </div>
 
           <div class="mt-6 pt-4 border-t border-white/[0.08] flex items-center justify-between text-xs font-mono text-gray-400">
-            <span>RUOLO: <strong class="text-emerald-400">PROTAGONISTA GIOCABILE</strong></span>
-            <span class="text-amber-400 font-bold">CANON VERIFICATO</span>
+            <span><span data-i18n="protagonists.role_label">RUOLO:</span> <strong data-i18n="protagonists.role_value" class="text-emerald-400">PROTAGONISTA GIOCABILE</strong></span>
+            <span data-i18n="protagonists.canon_badge" class="text-amber-400 font-bold">CANON VERIFICATO</span>
           </div>
         </div>
       </div>
@@ -256,9 +256,9 @@ const regionPhotos: Record<string, { image: string; highlight: string }> = {
     <div class="p-8 sm:p-12 rounded-[2.5rem] bg-gradient-to-b from-[#151026] via-[#0d0a1a] to-[#07050d] border border-white/10 shadow-2xl relative">
       <div class="max-w-3xl mb-8">
         <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#1b1433] border border-vice-pink/40 text-[11px] font-mono font-bold text-vice-pink uppercase tracking-widest mb-3">
-          SCHEDA TECNICA UFFICIALE ROCKSTAR GAMES
+          <span data-i18n="dossier.tag">SCHEDA TECNICA UFFICIALE ROCKSTAR GAMES</span>
         </div>
-        <h2 class="text-3xl sm:text-5xl font-black text-white tracking-tight uppercase">
+        <h2 data-i18n="dossier.title" class="text-3xl sm:text-5xl font-black text-white tracking-tight uppercase">
           SPECIFICHE CONFERMATE
         </h2>
         <p class="text-sm sm:text-base text-gray-300 mt-2 font-normal leading-relaxed">

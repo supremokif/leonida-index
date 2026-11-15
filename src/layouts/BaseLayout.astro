@@ -1,6 +1,7 @@
 ---
 import '../styles/global.css';
 import ConsentBanner from '../components/ConsentBanner.astro';
+import LanguageSwitcher from '../components/LanguageSwitcher.astro';
 import db from '../data/gta6_db.json';
 import { resolvePath } from '../utils/paths';
 
@@ -130,13 +131,14 @@ const schemaGraph = {
 
 const currentPath = Astro.url.pathname;
 const navItems = [
-  { href: resolvePath('/#overview'), label: 'OVERVIEW' },
-  { href: resolvePath('/#trailer'), label: 'TRAILERS' },
-  { href: resolvePath('/#news-trivia'), label: 'NEWS & CURIOSITÀ' },
-  { href: resolvePath('/#pre-order'), label: 'EDITIONS' },
-  { href: resolvePath('/#gallery'), label: 'SCREENSHOTS' },
-  { href: resolvePath('/#leonida'), label: 'LEONIDA' },
-  { href: 'https://www.rockstargames.com/newswire', label: 'NEWSWIRE', external: true },
+  { href: resolvePath('/#overview'), label: 'PANORAMICA', i18nKey: 'nav.overview' },
+  { href: resolvePath('/#trailer'), label: 'TRAILER', i18nKey: 'nav.trailers' },
+  { href: resolvePath('/#news-trivia'), label: 'NOTIZIE', i18nKey: 'nav.news' },
+  { href: resolvePath('/#pre-order'), label: 'EDIZIONI', i18nKey: 'nav.editions' },
+  { href: resolvePath('/#gallery'), label: 'SCREENSHOT 4K', i18nKey: 'nav.screenshots' },
+  { href: resolvePath('/#leonida'), label: 'MAPPA LEONIDA', i18nKey: 'nav.leonida' },
+  { href: resolvePath('/tracker'), label: 'TRACKER 100%', i18nKey: 'nav.tracker' },
+  { href: resolvePath('/storage-calculator'), label: 'CALCOLATORE SSD', i18nKey: 'nav.storage' },
 ];
 ---
 
@@ -236,8 +238,8 @@ const navItems = [
                 GRAND THEFT AUTO <span class="bg-gradient-to-r from-vice-pink via-vice-orange to-vice-cyan bg-clip-text text-transparent">VI</span>
               </span>
             </div>
-            <span class="text-[9px] uppercase font-mono tracking-widest text-vice-pink font-semibold">
-              COMMUNITY FAN HUB • DATABASE LEONIDA
+            <span data-i18n="nav.community_badge" class="text-[9px] uppercase font-mono tracking-widest text-vice-pink font-semibold">
+              PORTALE COMMUNITY FAN • DATABASE LEONIDA
             </span>
           </div>
         </a>
@@ -249,22 +251,22 @@ const navItems = [
             return (
               <a
                 href={item.href}
-                target={item.external ? '_blank' : undefined}
-                rel={item.external ? 'noopener noreferrer' : undefined}
-                class={`px-3.5 py-1.5 rounded-xl text-xs font-mono font-bold tracking-wider transition-all duration-200 ${
+                class={`px-3 py-1.5 rounded-xl text-xs font-mono font-bold tracking-wider transition-all duration-200 ${
                   isActive
                     ? 'bg-white text-black shadow-lg'
                     : 'text-gray-300 hover:text-white hover:bg-white/10'
                 }`}
               >
-                {item.label}
+                <span data-i18n={item.i18nKey}>{item.label}</span>
               </a>
             );
           })}
         </nav>
 
-        <!-- Right Quick Action / Pre-Order Button -->
+        <!-- Right Quick Action / Language Switcher & Pre-Order Button -->
         <div class="hidden sm:flex items-center gap-3">
+          <LanguageSwitcher />
+
           <a
             href={resolvePath('/#launch-countdown')}
             class="flex items-center gap-2 px-3 py-1.5 rounded-xl bg-zinc-900 hover:bg-zinc-800 border border-white/10 hover:border-[#fdb813]/40 text-xs font-mono transition-colors"
@@ -276,9 +278,10 @@ const navItems = [
 
           <a
             href={resolvePath('/#pre-order')}
+            data-i18n="nav.preorder_btn"
             class="px-5 py-2.5 rounded-xl bg-white hover:bg-[#fdb813] text-black font-black text-xs font-mono tracking-widest uppercase transition-all duration-300 shadow-xl hover:scale-105"
           >
-            PRE-ORDER NOW
+            PRE-ORDINA ORA
           </a>
         </div>
 
@@ -304,15 +307,20 @@ const navItems = [
               href={item.href}
               class="px-4 py-3 rounded-xl text-xs font-mono font-bold tracking-wider text-gray-300 hover:text-white hover:bg-zinc-900 transition-colors"
             >
-              {item.label}
+              <span data-i18n={item.i18nKey}>{item.label}</span>
             </a>
           ))}
-          <div class="pt-3 border-t border-white/10 flex flex-col gap-2">
+          <div class="pt-3 border-t border-white/10 flex flex-col gap-3">
+            <div class="flex items-center justify-between px-2">
+              <span class="text-xs font-mono text-gray-400">Lingua / Language:</span>
+              <LanguageSwitcher />
+            </div>
             <a
               href={resolvePath('/#pre-order')}
+              data-i18n="nav.preorder_btn"
               class="w-full text-center px-4 py-3 rounded-xl bg-white text-black text-xs font-bold font-mono tracking-wider shadow-lg"
             >
-              PRE-ORDER NOW
+              PRE-ORDINA ORA
             </a>
           </div>
         </div>
@@ -427,8 +435,8 @@ const navItems = [
               <span class="text-[7px] font-bold tracking-tighter uppercase mt-0.5">PEGI</span>
             </div>
             <div class="text-xs text-gray-400">
-              <strong class="text-white block font-mono text-[11px] uppercase">RATING IN ATTESA DI CONFERMA UFFICIALE (18+)</strong>
-              <span>Violenza estrema, linguaggio forte, contenuti per soli adulti.</span>
+              <strong data-i18n="pegi.tag" class="text-white block font-mono text-[11px] uppercase">RATING IN ATTESA DI CONFERMA (18+)</strong>
+              <span data-i18n="pegi.desc">Violenza estrema, linguaggio forte, contenuti per soli adulti.</span>
             </div>
           </div>
 
@@ -437,26 +445,26 @@ const navItems = [
               VI
             </div>
             <div class="text-right">
-              <span class="text-xs font-black text-white font-mono block">COMMUNITY FAN HUB</span>
-              <span class="text-[10px] text-gray-400 font-mono">NON-OFFICIAL • NON-AFFILIATED</span>
+              <span data-i18n="footer.community_title" class="text-xs font-black text-white font-mono block">COMMUNITY FAN HUB</span>
+              <span data-i18n="footer.community_subtitle" class="text-[10px] text-gray-400 font-mono">NON-OFFICIAL • NON-AFFILIATED</span>
             </div>
           </div>
         </div>
 
         <!-- Take-Two Interactive & Rockstar Legal Shield -->
         <div class="pt-6 border-t border-white/[0.08] text-[11px] text-gray-400 space-y-2.5 leading-relaxed">
-          <p>
-            <strong>DISCLAIMER COMMERCIALE E COPYRIGHT:</strong> Leonida Index (gta6leonida.it) è un portale editoriale amatoriale indipendente e non ufficiale per gli appassionati. Non è affiliato, sponsorizzato, approvato né associato in alcun modo a Rockstar Games, Take-Two Interactive Software, Inc., Sony Interactive Entertainment o Microsoft Corporation.
+          <p data-i18n="footer.disclaimer">
+            DISCLAIMER COMMERCIALE E COPYRIGHT: Leonida Index (gta6leonida.it) è un portale editoriale amatoriale indipendente e non ufficiale per gli appassionati. Non è affiliato, sponsorizzato, approvato né associato in alcun modo a Rockstar Games, Take-Two Interactive Software, Inc., Sony Interactive Entertainment o Microsoft Corporation.
           </p>
-          <p>
+          <p data-i18n="footer.copyright_note">
             Grand Theft Auto, GTA VI, GTA 6, Vice City, Leonida e tutti i rispettivi loghi, marchi, asset e nomi di personaggi appartengono esclusivamente a Take-Two Interactive Software, Inc. e Rockstar Games, Inc. L'uso dei contenuti sul portale è svolto a puro scopo informativo, divulgativo e di cronaca nel quadro del diritto di citazione e del Fair Use (art. 70 L. 633/1941).
           </p>
           <div class="flex flex-col sm:flex-row items-center justify-between pt-3 text-gray-400">
-            <span>© 2026 Leonida Index. Progettato con passione per la community di Vice City.</span>
+            <span data-i18n="footer.copy_notice">© 2026 Leonida Index. Progettato con passione per la community di Vice City.</span>
             <div class="flex items-center gap-4 mt-2 sm:mt-0 font-mono text-[10px]">
-              <a href={resolvePath('/legal')} class="hover:text-vice-pink transition-colors">PRIVACY POLICY</a>
+              <a href={resolvePath('/legal')} data-i18n="footer.privacy_link" class="hover:text-vice-pink transition-colors">PRIVACY POLICY</a>
               <span>•</span>
-              <a href={resolvePath('/legal#affiliate')} class="hover:text-vice-cyan transition-colors">AFFILIATE DISCLOSURE</a>
+              <a href={resolvePath('/legal#affiliate')} data-i18n="footer.affiliate_link" class="hover:text-vice-cyan transition-colors">AFFILIATE DISCLOSURE</a>
             </div>
           </div>
         </div>
@@ -491,6 +499,106 @@ const navItems = [
           });
         });
       }
+    </script>
+
+    <!-- Global Bilingual i18n Client Engine -->
+    <script>
+      import { translations, type Lang } from '../i18n/translations';
+
+      function applyLanguage(lang: Lang) {
+        const dict = translations[lang] || translations.it;
+        document.documentElement.lang = lang;
+        try {
+          localStorage.setItem('gta6_site_lang', lang);
+        } catch (e) {}
+
+        // Update active states for all switcher buttons (desktop & mobile)
+        const itBtns = document.querySelectorAll<HTMLButtonElement>('[data-lang-target="it"]');
+        const enBtns = document.querySelectorAll<HTMLButtonElement>('[data-lang-target="en"]');
+
+        if (lang === 'en') {
+          enBtns.forEach((btn) => {
+            btn.classList.add('bg-vice-pink', 'text-white', 'shadow-sm');
+            btn.classList.remove('text-gray-400', 'hover:text-white');
+          });
+          itBtns.forEach((btn) => {
+            btn.classList.remove('bg-vice-pink', 'text-white', 'shadow-sm');
+            btn.classList.add('text-gray-400', 'hover:text-white');
+          });
+        } else {
+          itBtns.forEach((btn) => {
+            btn.classList.add('bg-vice-pink', 'text-white', 'shadow-sm');
+            btn.classList.remove('text-gray-400', 'hover:text-white');
+          });
+          enBtns.forEach((btn) => {
+            btn.classList.remove('bg-vice-pink', 'text-white', 'shadow-sm');
+            btn.classList.add('text-gray-400', 'hover:text-white');
+          });
+        }
+
+        // Update all text nodes marked with data-i18n
+        document.querySelectorAll<HTMLElement>('[data-i18n]').forEach((el) => {
+          const key = el.getAttribute('data-i18n');
+          if (key && dict[key]) {
+            el.textContent = dict[key];
+          }
+        });
+
+        // Update HTML nodes marked with data-i18n-html
+        document.querySelectorAll<HTMLElement>('[data-i18n-html]').forEach((el) => {
+          const key = el.getAttribute('data-i18n-html');
+          if (key && dict[key]) {
+            el.innerHTML = dict[key];
+          }
+        });
+
+        // Update input placeholders marked with data-i18n-placeholder
+        document.querySelectorAll<HTMLInputElement | HTMLTextAreaElement>('[data-i18n-placeholder]').forEach((el) => {
+          const key = el.getAttribute('data-i18n-placeholder');
+          if (key && dict[key]) {
+            el.setAttribute('placeholder', dict[key]);
+          }
+        });
+      }
+
+      function initI18n() {
+        const urlParams = new URLSearchParams(window.location.search);
+        const queryLang = urlParams.get('lang');
+        let initialLang: Lang = 'it';
+
+        if (queryLang === 'en' || queryLang === 'it') {
+          initialLang = queryLang as Lang;
+        } else {
+          try {
+            const saved = localStorage.getItem('gta6_site_lang');
+            if (saved === 'en' || saved === 'it') {
+              initialLang = saved as Lang;
+            }
+          } catch (e) {}
+        }
+
+        // Apply initial language
+        applyLanguage(initialLang);
+
+        // Bind click events on all language buttons
+        document.querySelectorAll<HTMLButtonElement>('[data-lang-target="it"]').forEach((btn) => {
+          btn.addEventListener('click', (e) => {
+            e.preventDefault();
+            applyLanguage('it');
+          });
+        });
+
+        document.querySelectorAll<HTMLButtonElement>('[data-lang-target="en"]').forEach((btn) => {
+          btn.addEventListener('click', (e) => {
+            e.preventDefault();
+            applyLanguage('en');
+          });
+        });
+      }
+
+      // Initialize on first script run and on every Astro page transition
+      initI18n();
+      document.addEventListener('astro:page-load', initI18n);
     </script>
   </body>
 </html>

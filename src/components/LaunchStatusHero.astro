@@ -32,13 +32,13 @@ import ViralShareBar from './ViralShareBar.astro';
     </div>
 
     <!-- Official Date Tagline -->
-    <div class="text-xs sm:text-base font-mono font-bold tracking-[0.3em] uppercase text-white/90 mb-2 drop-shadow">
-      COMING NOVEMBER 19, 2026
+    <div data-i18n="hero.coming_date" class="text-xs sm:text-base font-mono font-bold tracking-[0.3em] uppercase text-white/90 mb-2 drop-shadow">
+      IN ARRIVO IL 19 NOVEMBRE 2026
     </div>
 
     <!-- Official Rockstar Synopsis Quote -->
-    <p class="text-gray-300 text-xs sm:text-sm max-w-xl mb-6 leading-relaxed font-normal drop-shadow hidden sm:block">
-      Vice City, USA. Jason and Lucia have always known the deck is stacked against them. But when an easy score goes wrong, they find themselves on the darkest side of the sunniest place in America.
+    <p data-i18n="hero.quote" class="text-gray-300 text-xs sm:text-sm max-w-xl mb-6 leading-relaxed font-normal drop-shadow hidden sm:block">
+      Vice City, USA. Jason e Lucia sanno bene che la fortuna non è mai dalla loro parte. Ma quando un colpo apparentemente facile va storto, si ritrovano catapultati nel lato più oscuro e pericoloso del luogo più soleggiato d'America.
     </p>
 
     <!-- Interactive Live Real-Time Countdown to Worldwide Launch -->
@@ -46,7 +46,7 @@ import ViralShareBar from './ViralShareBar.astro';
       <div class="flex items-center justify-between gap-2 mb-3.5 pb-2.5 border-b border-white/10 text-[10px] font-mono">
         <div class="flex items-center gap-2">
           <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-          <span class="font-bold tracking-[0.2em] text-[#fdb813] uppercase">COUNTDOWN AL LANCIO MONDIALE</span>
+          <span data-i18n="hero.countdown_title" class="font-bold tracking-[0.2em] text-[#fdb813] uppercase">CONTO ALLA ROVESCIA AL LANCIO MONDIALE</span>
         </div>
         <span class="text-gray-400 font-semibold">19 NOV 2026 // 00:00 CET</span>
       </div>
@@ -56,30 +56,30 @@ import ViralShareBar from './ViralShareBar.astro';
         <!-- Days -->
         <div class="p-3 sm:p-4 rounded-2xl bg-white/[0.04] border border-white/10 flex flex-col items-center shadow-inner">
           <span id="hero-cd-days" class="text-2xl sm:text-4xl font-black font-mono text-white tracking-tight">---</span>
-          <span class="text-[9px] sm:text-[10px] font-mono font-bold uppercase tracking-widest text-gray-400 mt-1">GIORNI</span>
+          <span data-i18n="hero.days" class="text-[9px] sm:text-[10px] font-mono font-bold uppercase tracking-widest text-gray-400 mt-1">GIORNI</span>
         </div>
         <!-- Hours -->
         <div class="p-3 sm:p-4 rounded-2xl bg-white/[0.04] border border-white/10 flex flex-col items-center shadow-inner">
           <span id="hero-cd-hours" class="text-2xl sm:text-4xl font-black font-mono text-white tracking-tight">--</span>
-          <span class="text-[9px] sm:text-[10px] font-mono font-bold uppercase tracking-widest text-gray-400 mt-1">ORE</span>
+          <span data-i18n="hero.hours" class="text-[9px] sm:text-[10px] font-mono font-bold uppercase tracking-widest text-gray-400 mt-1">ORE</span>
         </div>
         <!-- Minutes -->
         <div class="p-3 sm:p-4 rounded-2xl bg-white/[0.04] border border-white/10 flex flex-col items-center shadow-inner">
           <span id="hero-cd-minutes" class="text-2xl sm:text-4xl font-black font-mono text-white tracking-tight">--</span>
-          <span class="text-[9px] sm:text-[10px] font-mono font-bold uppercase tracking-widest text-gray-400 mt-1">MINUTI</span>
+          <span data-i18n="hero.minutes" class="text-[9px] sm:text-[10px] font-mono font-bold uppercase tracking-widest text-gray-400 mt-1">MINUTI</span>
         </div>
         <!-- Seconds -->
         <div class="p-3 sm:p-4 rounded-2xl bg-white/[0.04] border border-[#fdb813]/30 flex flex-col items-center shadow-[0_0_15px_rgba(253,184,19,0.15)]">
           <span id="hero-cd-seconds" class="text-2xl sm:text-4xl font-black font-mono text-[#fdb813] tracking-tight">--</span>
-          <span class="text-[9px] sm:text-[10px] font-mono font-bold uppercase tracking-widest text-[#fdb813] mt-1">SECONDI</span>
+          <span data-i18n="hero.seconds" class="text-[9px] sm:text-[10px] font-mono font-bold uppercase tracking-widest text-[#fdb813] mt-1">SECONDI</span>
         </div>
       </div>
 
       <div class="mt-3 pt-2 flex items-center justify-between text-[9px] font-mono text-gray-400 px-1">
-        <span>SBLOCCO ORE 00:00 (FUSO ORARIO ITALIANO)</span>
+        <span data-i18n="hero.unlock_label">SBLOCCO ORE 00:00 (FUSO ORARIO ITALIANO)</span>
         <span class="text-emerald-400 font-bold flex items-center gap-1">
           <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
-          SINCRONIZZAZIONE ATTIVA
+          <span data-i18n="hero.sync_active">SINCRONIZZAZIONE ATTIVA</span>
         </span>
       </div>
     </div>
@@ -91,16 +91,17 @@ import ViralShareBar from './ViralShareBar.astro';
     <div class="flex flex-wrap items-center justify-center gap-4 mb-8">
       <a
         href="#pre-order"
+        data-i18n="hero.cta_preorder"
         class="px-8 py-4 rounded-xl bg-white hover:bg-[#fdb813] text-black font-black text-xs sm:text-sm font-mono tracking-widest uppercase transition-all duration-300 shadow-2xl hover:scale-105"
       >
-        PRE-ORDER NOW
+        PRE-ORDINA ORA
       </a>
       <a
         href="#trailer"
         class="inline-flex items-center gap-2.5 px-7 py-4 rounded-xl bg-black/80 hover:bg-white/10 text-white font-bold text-xs sm:text-sm font-mono tracking-widest uppercase border border-white/20 hover:border-white transition-all duration-300 backdrop-blur-md"
       >
         <svg class="w-4 h-4 fill-current text-white" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
-        <span>WATCH TRAILER 1</span>
+        <span data-i18n="hero.cta_trailer">GUARDA IL TRAILER 1</span>
       </a>
     </div>
 
@@ -114,7 +115,7 @@ import ViralShareBar from './ViralShareBar.astro';
       
       <!-- Plays Best On PS5 Badge -->
       <div class="flex items-center gap-2 px-3 py-1 rounded bg-black/70 border border-white/15 backdrop-blur-md">
-        <span class="text-[10px] font-mono tracking-wider text-gray-400">PLAYS BEST ON</span>
+        <span data-i18n="hero.plays_best_label" class="text-[10px] font-mono tracking-wider text-gray-400">OTTIMIZZATO PER</span>
         <span class="text-[11px] font-bold text-white">PLAYSTATION 5</span>
       </div>
     </div>
@@ -126,8 +127,8 @@ import ViralShareBar from './ViralShareBar.astro';
     class="relative z-10 pb-6 flex flex-col items-center text-gray-500 hover:text-white transition-colors cursor-pointer group select-none"
     aria-label="Scorri ai contenuti successivi"
   >
-    <span class="text-[10px] font-mono tracking-[0.25em] uppercase mb-1.5 group-hover:text-[#fdb813] transition-colors">
-      SCROLL FOR MORE CONTENT
+    <span data-i18n="hero.scroll_label" class="text-[10px] font-mono tracking-[0.25em] uppercase mb-1.5 group-hover:text-[#fdb813] transition-colors">
+      SCORRI PER ALTRI CONTENUTI
     </span>
     <svg class="w-4 h-4 animate-bounce text-gray-400 group-hover:text-[#fdb813] transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
