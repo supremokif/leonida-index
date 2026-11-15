@@ -3,7 +3,7 @@ import db from '../data/gta6_db.json';
 
 export const GET: APIRoute = async ({ site }) => {
   const { releaseInfo, trailers, locations, protagonists } = db;
-  const origin = site ? site.origin : 'https://supremokif.github.io';
+  const origin = site ? site.origin : 'https://gta6leonida.it';
   const base = (import.meta.env.BASE_URL || '/').replace(/\/+$/, '');
   const siteOrigin = `${origin}${base}`;
 

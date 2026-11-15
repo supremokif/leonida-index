@@ -27,14 +27,13 @@ const regionImages: Record<string, string> = {
   'grassrivers': '/images/grassrivers.jpg',
   'port-gellhorn': '/images/port-gellhorn.jpg',
   'ambrosia': '/images/action-supercar.jpg',
-  'mount-kalaga': '/images/vice-beach-day.jpg',
 };
 const heroPhoto = regionImages[region.slug] || '/images/vice-ocean-drive.jpg';
 ---
 
 <BaseLayout
-  title={`${region.name} - Mappa, Luoghi & Collezionabili GTA VI | Leonida Index`}
-  description={`Dossier operativo e cartografia di ${region.name} in Grand Theft Auto VI. Punti di interesse, sindacati criminali, veicoli nativi, fauna e ${region.collectibles.length} collezionabili per il trofeo 100%.`}
+  title={`${region.name} - Mappa, Luoghi & Punti di Interesse GTA VI | Leonida Index`}
+  description={`Dossier e cartografia di ${region.name} in Grand Theft Auto VI: ambientazioni, corpi di polizia, veicoli e ${region.collectibles.length} punti di interesse documentati nel Trailer 1.`}
   canonicalPath={`/leonida/${region.slug}`}
   breadcrumbs={[
     { name: 'Cartografia Leonida', url: '/leonida/vice-city' },
@@ -115,7 +114,7 @@ const heroPhoto = regionImages[region.slug] || '/images/vice-ocean-drive.jpg';
             ZONE ESPLORABILI A {region.name} ({region.subLocations.length})
           </h2>
         </div>
-        <span class="text-xs font-mono text-gray-400">Tutti gli interni esplorabili senza loading screen</span>
+        <span class="text-xs font-mono text-gray-400">Dettagli e ambientazioni documentati nel Trailer 1</span>
       </div>
 
       <div class="overflow-x-auto rounded-2xl border border-white/[0.1] shadow-xl">
@@ -210,7 +209,7 @@ const heroPhoto = regionImages[region.slug] || '/images/vice-ocean-drive.jpg';
                 </span>
               </div>
               <p class="text-xs text-emerald-400 mt-1 font-mono">
-                Ricompensa: <span class="text-gray-300 font-sans">{col.reward}</span>
+                Stato: <span class="text-gray-300 font-sans">{col.reward}</span>
               </p>
             </div>
           </div>
@@ -230,7 +229,7 @@ const heroPhoto = regionImages[region.slug] || '/images/vice-ocean-drive.jpg';
             <h3 class="text-sm font-bold uppercase tracking-wider text-white">
               VEICOLI CARATTERISTICI ({region.vehiclesPresent.length})
             </h3>
-            <span class="text-[10px] font-mono text-gray-400">Modelli con spawn rate elevato nel settore</span>
+            <span class="text-[10px] font-mono text-gray-400">Modelli documentati nel Trailer 1</span>
           </div>
         </div>
         <div class="flex flex-wrap gap-2">

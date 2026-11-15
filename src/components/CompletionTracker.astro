@@ -16,27 +16,27 @@ const totalCollectibles = regions.reduce((acc, r) => acc + r.collectibles.length
     <div>
       <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#1b1433] border border-vice-pink/40 text-xs font-mono font-bold text-vice-pink uppercase tracking-widest mb-3">
         <span class="w-2 h-2 rounded-full bg-vice-pink animate-pulse"></span>
-        <span>DOSSIER COLLEZIONABILI // PRIVACY-FIRST LOCAL STORAGE</span>
+        <span>DOSSIER PUNTI DI INTERESSE // PRIVACY-FIRST LOCAL STORAGE</span>
       </div>
       <h2 class="text-3xl sm:text-5xl font-black text-white tracking-tight uppercase">
-        LEONIDA <span class="bg-gradient-to-r from-vice-pink via-vice-orange to-vice-cyan bg-clip-text text-transparent">100% TRACKER</span>
+        LEONIDA <span class="bg-gradient-to-r from-vice-pink via-vice-orange to-vice-cyan bg-clip-text text-transparent">EXPLORATION TRACKER</span>
       </h2>
       <p class="text-xs sm:text-sm text-gray-300 mt-2 max-w-xl font-normal leading-relaxed">
-        Spunta tutti i collezionabili, le rapine secondarie e i misteri nelle 6 regioni di Leonida per conquistare il trofeo Platino. I tuoi progressi restano salvati esclusivamente nel tuo browser.
+        Spunta tutti i punti di interesse, gli scorci di Vice City e le ambientazioni documentate nel Trailer 1 ufficiale. I tuoi progressi sono salvati privatamente nel tuo browser.
       </p>
     </div>
 
     <!-- Progress Card -->
     <div class="bg-[#140f26] p-6 rounded-2xl border border-white/[0.12] min-w-[280px] shadow-2xl">
       <div class="flex items-center justify-between text-xs font-mono font-bold uppercase mb-2.5">
-        <span class="text-gray-300">AVANZAMENTO PLATINO</span>
+        <span class="text-gray-300">AVANZAMENTO ESPLORAZIONE</span>
         <span id="tracker-pct" class="text-vice-pink font-mono text-xl font-black drop-shadow-[0_0_10px_rgba(255,0,122,0.8)]">0%</span>
       </div>
       <div class="w-full h-3.5 rounded-full bg-[#07050d] overflow-hidden border border-white/[0.08] mb-3">
         <div id="tracker-progress-bar" class="h-full bg-gradient-to-r from-vice-pink via-vice-orange to-vice-cyan w-0 transition-all duration-300 shadow-[0_0_10px_rgba(255,0,122,0.8)]"></div>
       </div>
       <div class="flex items-center justify-between text-[11px] font-mono text-gray-400">
-        <span id="tracker-count" class="font-bold text-white">0 di {totalCollectibles} completati</span>
+        <span id="tracker-count" class="font-bold text-white">0 di {totalCollectibles} documentati</span>
         <button id="tracker-reset-btn" type="button" class="text-gray-400 hover:text-red-400 transition-colors cursor-pointer underline">
           Azzera
         </button>
@@ -100,7 +100,7 @@ const totalCollectibles = regions.reduce((acc, r) => acc + r.collectibles.length
                   </span>
                 </div>
                 <div class="text-xs font-mono text-emerald-400 mt-1.5 flex items-center gap-1.5">
-                  <span class="text-gray-400">Ricompensa:</span>
+                  <span class="text-gray-400">Stato:</span>
                   <strong class="text-emerald-400">{item.reward}</strong>
                 </div>
               </div>

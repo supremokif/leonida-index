@@ -20,10 +20,6 @@ interface Props {
 
 const { trailer } = Astro.props;
 
-const currentIndex = db.trailers.findIndex((t) => t.slug === trailer.slug);
-const prevTrailer = currentIndex > 0 ? db.trailers[currentIndex - 1] : null;
-const nextTrailer = currentIndex < db.trailers.length - 1 ? db.trailers[currentIndex + 1] : null;
-
 const featuredDeal = db.hardwareDeals[0];
 ---
 
@@ -40,17 +36,17 @@ const featuredDeal = db.hardwareDeals[0];
     <!-- Top Metadata Header -->
     <div class="flex flex-wrap items-center justify-between gap-4 mb-4">
       <div class="flex items-center gap-3">
-        <span class="px-3.5 py-1.5 rounded-full bg-gradient-to-r from-vice-pink to-vice-orange text-white text-xs font-mono font-bold uppercase tracking-wider shadow-neon-pink">
-          VIDEO #{trailer.number} DI 7
+        <span class="px-3.5 py-1.5 rounded-full bg-gradient-to-r from-amber-400 to-[#fdb813] text-black text-xs font-mono font-black uppercase tracking-wider shadow-lg">
+          TRAILER UFFICIALE #{trailer.number}
         </span>
         <span class="text-xs font-mono text-gray-400">
           DATA: <strong class="text-white">{trailer.publishDateHuman}</strong>
         </span>
       </div>
       <div class="flex items-center gap-3 text-xs font-mono text-gray-400">
-        <span>DURATA: <strong class="text-vice-cyan">{trailer.duration}</strong></span>
+        <span>DURATA: <strong class="text-amber-400">{trailer.duration}</strong></span>
         <span>•</span>
-        <span>ENGINE: <strong class="text-white">RAGE 9</strong></span>
+        <span>ENGINE: <strong class="text-white">RAGE</strong></span>
       </div>
     </div>
 
@@ -192,33 +188,19 @@ const featuredDeal = db.hardwareDeals[0];
       />
     </div>
 
-    <!-- Navigation between Trailers -->
+    <!-- Official Channel Navigation -->
     <div class="pt-8 border-t border-white/[0.1] flex items-center justify-between gap-4 font-mono text-xs">
-      {prevTrailer ? (
-        <a
-          href={resolvePath(`/trailers/${prevTrailer.slug}`)}
-          class="flex items-center gap-2.5 font-bold text-gray-300 hover:text-vice-pink transition-colors px-4 py-3 rounded-xl bg-surface-100 border border-white/[0.08]"
-        >
-          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
-          <span class="line-clamp-1">PRED: #{prevTrailer.number} {prevTrailer.title}</span>
-        </a>
-      ) : (
-        <div class="text-gray-400">INIZIO ARCHIVIO</div>
-      )}
+      <a
+        href={resolvePath('/#trailer')}
+        class="flex items-center gap-2.5 font-bold text-gray-300 hover:text-white transition-colors px-4 py-3 rounded-xl bg-surface-100 border border-white/[0.08]"
+      >
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+        <span>TORNA ALL'ARCHIVIO VIDEO</span>
+      </a>
 
-      {nextTrailer ? (
-        <a
-          href={resolvePath(`/trailers/${nextTrailer.slug}`)}
-          class="flex items-center gap-2.5 font-bold text-gray-300 hover:text-vice-cyan transition-colors px-4 py-3 rounded-xl bg-surface-100 border border-white/[0.08]"
-        >
-          <span class="line-clamp-1">SUCC: #{nextTrailer.number} {nextTrailer.title}</span>
-          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
-        </a>
-      ) : (
-        <a href={resolvePath('/tracker')} class="text-vice-pink font-bold hover:underline">
-          TUTTI I 7 VIDEO CONSULTATI • VAI AL TRACKER ➔
-        </a>
-      )}
+      <a href={resolvePath('/tracker')} class="text-amber-400 font-bold hover:underline">
+        ESPLORA I PUNTI DI INTERESSE DI LEONIDA ➔
+      </a>
     </div>
   </div>
 </BaseLayout>

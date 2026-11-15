@@ -21,7 +21,7 @@ const {
   breadcrumbs = [],
 } = Astro.props;
 
-const siteOrigin = Astro.site ? Astro.site.origin : 'https://supremokif.github.io';
+const siteOrigin = Astro.site ? Astro.site.origin : 'https://gta6leonida.it';
 const base = (import.meta.env.BASE_URL || '/').replace(/\/+$/, '');
 const siteUrl = `${siteOrigin}${base}`;
 const canonicalUrl = `${siteUrl}${canonicalPath.startsWith('/') ? canonicalPath : `/${canonicalPath}`}`;
@@ -100,12 +100,8 @@ const schemaGraph = {
           description: t.summary,
           uploadDate: `${t.publishDate}T12:00:00Z`,
           duration: `PT${Math.floor(t.durationSeconds / 60)}M${t.durationSeconds % 60}S`,
-          thumbnailUrl: t.youtubeId.startsWith('launch-') || t.youtubeId === 'OFFICIAL_ROCKSTAR_NEWSWIRE'
-            ? `${siteUrl}/og-card.svg`
-            : `https://i.ytimg.com/vi/${t.youtubeId}/maxresdefault.jpg`,
-          embedUrl: t.youtubeId.startsWith('launch-') || t.youtubeId === 'OFFICIAL_ROCKSTAR_NEWSWIRE'
-            ? 'https://www.rockstargames.com/VI'
-            : `https://www.youtube-nocookie.com/embed/${t.youtubeId}`,
+          thumbnailUrl: `https://i.ytimg.com/vi/${t.youtubeId}/maxresdefault.jpg`,
+          embedUrl: `https://www.youtube-nocookie.com/embed/${t.youtubeId}`,
         },
       })),
     },
@@ -137,7 +133,7 @@ const navItems = [
   { href: resolvePath('/#pre-order'), label: 'EDIZIONI', i18nKey: 'nav.editions' },
   { href: resolvePath('/#gallery'), label: 'SCREENSHOT 4K', i18nKey: 'nav.screenshots' },
   { href: resolvePath('/#leonida'), label: 'MAPPA LEONIDA', i18nKey: 'nav.leonida' },
-  { href: resolvePath('/tracker'), label: 'TRACKER 100%', i18nKey: 'nav.tracker' },
+  { href: resolvePath('/tracker'), label: 'TRACKER ESPLORATIVO', i18nKey: 'nav.tracker' },
   { href: resolvePath('/storage-calculator'), label: 'CALCOLATORE SSD', i18nKey: 'nav.storage' },
 ];
 ---

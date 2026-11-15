@@ -8,22 +8,22 @@ const totalCollectibles = db.locations.reduce((acc, r) => acc + r.collectibles.l
 ---
 
 <BaseLayout
-  title="GTA VI 100% Completion Tracker - Checklist Ufficiale Leonida | Leonida Index"
-  description="Dossier interattivo per il 100% in Grand Theft Auto VI: traccia rapine, casseforti, stazioni radio pirata e collezionabili nelle 6 regioni di Leonida con salvataggio offline."
+  title="Dossier Esplorativo & Punti di Interesse di Leonida | Leonida Index"
+  description="Dossier interattivo dei punti di interesse, veicoli e ambientazioni confermati nel Trailer 1 di Grand Theft Auto VI nelle regioni dello Stato di Leonida."
   canonicalPath="/tracker"
-  breadcrumbs={[{ name: '100% Tracker Leonida', url: '/tracker' }]}
+  breadcrumbs={[{ name: 'Tracker Esplorativo Leonida', url: '/tracker' }]}
 >
   <!-- Page Header -->
   <div class="max-w-4xl mx-auto text-center my-8">
     <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#1b1433] border border-vice-pink/40 text-[11px] font-mono font-bold text-vice-pink uppercase tracking-widest mb-3">
       <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-      <span>OFFICIAL COMPLETION DOCKET // {totalCollectibles} TARGET TOTALI</span>
+      <span>DOSSIER VERIFICATO ALLA FONTE // {totalCollectibles} ELEMENTI DOCUMENTATI</span>
     </div>
     <h1 class="text-4xl sm:text-6xl font-black text-white tracking-tight uppercase mb-4 leading-none">
-      CHECKLIST COMPLETAMENTO <span class="bg-gradient-to-r from-vice-pink via-vice-orange to-vice-cyan bg-clip-text text-transparent">100%</span>
+      TRACKER PUNTI DI INTERESSE <span class="bg-gradient-to-r from-vice-pink via-vice-orange to-vice-cyan bg-clip-text text-transparent">LEONIDA</span>
     </h1>
     <p class="text-xs sm:text-base text-gray-300 max-w-2xl mx-auto leading-relaxed font-normal">
-      Traccia in tempo reale ogni singolo segreto, rapina secondaria, manufatto raro e missione dello Stato di Leonida per conquistare il trofeo Platino di GTA VI.
+      Traccia in tempo reale gli scorci urbani, le autostrade oceaniche e le paludi dello Stato di Leonida documentati nel Trailer 1 ufficiale di Rockstar Games.
     </p>
   </div>
 
@@ -32,19 +32,19 @@ const totalCollectibles = db.locations.reduce((acc, r) => acc + r.collectibles.l
   <!-- Completion Tracker Interactive Island -->
   <CompletionTracker />
 
-  <!-- Educational Guide on 100% Completion in GTA VI -->
+  <!-- Informative Guide on Lore and Exploration in GTA VI -->
   <section class="max-w-5xl mx-auto my-14 p-6 sm:p-12 rounded-[2.5rem] bg-gradient-to-b from-[#151026] via-[#0d0a1a] to-[#07050d] border border-white/[0.1] shadow-2xl relative overflow-hidden">
     <div class="absolute -right-20 -top-20 w-80 h-80 bg-vice-cyan/15 rounded-full blur-[100px] pointer-events-none"></div>
 
     <div class="mb-8 relative z-10">
       <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#1b1433] border border-vice-cyan/40 text-[10px] font-mono font-bold text-vice-cyan uppercase tracking-widest mb-2">
-        CRITERI UFFICIALI ROCKSTAR GAMES
+        FONTI UFFICIALI &amp; TRASPARENZA COMMUNITY
       </div>
       <h2 class="text-2xl sm:text-4xl font-black text-white uppercase tracking-tight">
-        COME FUNZIONA IL TROFEO 100% IN GRAND THEFT AUTO VI
+        COME FUNZIONA IL DOSSIER ESPLORATIVO DI LEONIDA
       </h2>
       <p class="text-xs sm:text-sm text-gray-300 mt-1 font-normal">
-        Requisiti tassativi per completare la campagna criminale di Lucia e Jason.
+        I criteri di completamento e la lista trofei definitivi saranno resi noti da Rockstar Games all'uscita del gioco.
       </p>
     </div>
 
@@ -52,36 +52,36 @@ const totalCollectibles = db.locations.reduce((acc, r) => acc + r.collectibles.l
       <!-- Card 1 -->
       <div class="p-6 rounded-3xl bg-[#140f26]/80 border border-white/[0.08] hover:border-vice-cyan/50 transition-colors">
         <div class="flex items-center justify-between mb-3 text-xs font-mono font-bold text-vice-cyan uppercase tracking-wider">
-          <span>FASE 01</span>
+          <span>PILASTRO 01</span>
           <span class="w-2 h-2 rounded-full bg-vice-cyan"></span>
         </div>
-        <h3 class="font-bold text-white text-base mb-2">Missioni &amp; Rapine di Coppia</h3>
+        <h3 class="font-bold text-white text-base mb-2">Campagna di Lucia e Jason</h3>
         <p class="font-normal text-xs text-gray-300 leading-relaxed">
-          Tutte le rapine narrative della campagna principale con Lucia e Jason, con punteggio Oro opzionale basato su precisione balistica, tempo di fuga e zero vittime collaterali.
+          La narrazione di coppia è il motore di Grand Theft Auto VI: rapine a mano armata, inseguimenti e un patto di fiducia reciproca nello Stato di Leonida.
         </p>
       </div>
 
       <!-- Card 2 -->
       <div class="p-6 rounded-3xl bg-[#140f26]/80 border border-white/[0.08] hover:border-vice-pink/50 transition-colors">
         <div class="flex items-center justify-between mb-3 text-xs font-mono font-bold text-vice-pink uppercase tracking-wider">
-          <span>FASE 02</span>
+          <span>PILASTRO 02</span>
           <span class="w-2 h-2 rounded-full bg-vice-pink"></span>
         </div>
-        <h3 class="font-bold text-white text-base mb-2">Cartografia Delle 6 Regioni</h3>
+        <h3 class="font-bold text-white text-base mb-2">Cartografia Dello Stato di Leonida</h3>
         <p class="font-normal text-xs text-gray-300 leading-relaxed">
-          Dispersione totale della nebbia GPS dalla mappa satellitare di Vice City, delle paludi Grassrivers, delle lagune di Port Gellhorn e dei rilievi di Mount Kalaga.
+          Dalle strade illuminate dai neon di Vice Beach alle paludi di Grassrivers e agli snodi di Port Gellhorn: un mondo aperto vivo e interconnesso.
         </p>
       </div>
 
       <!-- Card 3 -->
       <div class="p-6 rounded-3xl bg-[#140f26]/80 border border-white/[0.08] hover:border-vice-orange/50 transition-colors">
         <div class="flex items-center justify-between mb-3 text-xs font-mono font-bold text-vice-orange uppercase tracking-wider">
-          <span>FASE 03</span>
+          <span>PILASTRO 03</span>
           <span class="w-2 h-2 rounded-full bg-vice-orange"></span>
         </div>
-        <h3 class="font-bold text-white text-base mb-2">Reperti &amp; Contrabbando</h3>
+        <h3 class="font-bold text-white text-base mb-2">Elementi Documentati alla Fonte</h3>
         <p class="font-normal text-xs text-gray-300 leading-relaxed">
-          Recupero dei {totalCollectibles} reperti speciali confermati: cassette di sicurezza sommerse, nastri radiofonici pirata, orologi di lusso e manufatti coloniali.
+          Tutti i {totalCollectibles} punti del tracker derivano direttamente dall'analisi delle inquadrature, veicoli e location visibili nel Trailer 1 ufficiale.
         </p>
       </div>
     </div>

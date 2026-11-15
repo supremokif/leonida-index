@@ -1,217 +1,138 @@
 ---
 import LiteYouTube from './LiteYouTube.astro';
 import { resolvePath } from '../utils/paths';
+import db from '../data/gta6_db.json';
 
-const videoTabs = [
-  {
-    id: 'trailer-1',
-    title: 'Trailer 1',
-    actionText: 'Guarda Trailer 1',
-    youtubeId: 'QdBZY2fkU-0',
-    duration: '1:31',
-    image: '/images/rockstar-trailer-1.jpg',
-    soundtrack: 'Love Is a Long Road — Tom Petty',
-    status: 'DISPONIBILE ORA',
-    description: 'Il reveal trailer ufficiale che ha introdotto Lucia, le strade di Vice Beach e lo Stato di Leonida.',
-    active: true,
-  },
-  {
-    id: 'trailer-2',
-    title: 'Trailer 2',
-    actionText: 'Guarda Trailer 2',
-    youtubeId: '',
-    duration: 'TBA',
-    image: '/images/rockstar-trailer-2.jpg',
-    soundtrack: 'Colonna Sonora Rockstar',
-    status: 'PROSSIMAMENTE',
-    description: 'Il secondo capitolo promozionale incentrato su Jason e le realtà costiere di Leonida.',
-    active: false,
-  },
-  {
-    id: 'launch-trailer',
-    title: 'Launch Trailer',
-    actionText: 'Guarda Trailer di Lancio',
-    youtubeId: '',
-    duration: 'TBA',
-    image: '/images/gtavi-standard-edition.jpg',
-    soundtrack: 'Colonna Sonora Motore RAGE',
-    status: 'PROSSIMAMENTE',
-    description: 'Il trailer cinematico di lancio con la colonna sonora orchestrale del motore RAGE.',
-    active: false,
-  },
-  {
-    id: 'extended-look',
-    title: 'Anteprima Estesa',
-    actionText: 'Guarda Anteprima Estesa',
-    youtubeId: '',
-    duration: 'TBA',
-    image: '/images/gtavi-ultimate-edition.jpg',
-    soundtrack: 'Approfondimento Gameplay',
-    status: 'PROSSIMAMENTE',
-    description: 'Panoramica estesa sui sistemi di gioco, la fisica dei fluidi e la reattività della folla.',
-    active: false,
-  },
-  {
-    id: 'preload-showcase',
-    title: 'Vetrina Pre-Load',
-    actionText: 'Guarda Vetrina Pre-Load',
-    youtubeId: '',
-    duration: 'TBA',
-    image: '/images/vice-ocean-drive.jpg',
-    soundtrack: 'Funzionalità PS5 & Xbox',
-    status: 'PROSSIMAMENTE',
-    description: 'Guida all\'avvio del pre-load digitale e dimostrazione tecnica per PlayStation 5 e Xbox.',
-    active: false,
-  },
-];
+const trailer1 = db.trailers[0];
 ---
 
-<section id="trailer" class="my-20 scroll-mt-24 px-4 sm:px-6 max-w-7xl mx-auto" aria-label="Video e Trailer">
+<section id="trailer" class="my-20 scroll-mt-24 px-4 sm:px-6 max-w-7xl mx-auto" aria-label="Video e Trailer Ufficiali">
   <!-- Section Title -->
   <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-8 pb-4 border-b border-white/10">
     <div>
       <div data-i18n="videos.tag" class="text-[11px] font-mono font-bold tracking-[0.25em] text-[#fdb813] uppercase mb-1.5 flex items-center gap-2">
-        <span>CONTENUTI MULTIMEDIALI ROCKSTAR</span>
+        <span>ARCHIVIO MULTIMEDIALE ROCKSTAR GAMES</span>
       </div>
       <h2 data-i18n="videos.title" class="text-3xl sm:text-5xl font-black text-white uppercase tracking-tight font-sans">
-        VIDEO E TRAILER
+        TRAILER UFFICIALE
       </h2>
     </div>
-    <div class="text-xs font-mono text-gray-400">
-      ARCHIVIO COMUNICATI NEWSWIRE
+    <div class="text-xs font-mono text-gray-400 flex items-center gap-2">
+      <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
+      <span>1 VIDEO PUBBLICATO // 4K ULTRA HD</span>
     </div>
   </div>
 
-  <!-- Main Active Video Player Display -->
+  <!-- Main Active Video Player Display (Trailer 1) -->
   <div class="w-full mb-8 rounded-3xl overflow-hidden border border-white/15 shadow-2xl bg-black relative" id="active-video-display">
-    <!-- Active Player for Trailer 1 -->
-    <div id="video-player-trailer-1" class="video-panel">
-      <LiteYouTube
-        videoId="QdBZY2fkU-0"
-        title="Grand Theft Auto VI Trailer 1"
-        duration="1:31"
-        soundtrack="Love Is a Long Road — Tom Petty"
-      />
+    <LiteYouTube
+      videoId={trailer1.youtubeId}
+      title={trailer1.title}
+      duration={trailer1.duration}
+      soundtrack="Love Is a Long Road — Tom Petty"
+    />
+  </div>
+
+  <!-- Trailer 1 Metadata & Official Status Cards Grid -->
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+    <!-- Card 1: Trailer 1 Verified Specs -->
+    <div class="taste-card p-6 flex flex-col justify-between">
+      <div>
+        <div class="flex items-center justify-between mb-3">
+          <span class="px-2.5 py-1 rounded bg-[#fdb813] text-black font-mono font-black text-[10px] uppercase tracking-wider">
+            TRAILER 1 // DISPONIBILE
+          </span>
+          <span class="text-xs font-mono text-gray-400">4 DICEMBRE 2023</span>
+        </div>
+        <h3 class="text-lg font-black text-white uppercase mb-2">
+          {trailer1.title}
+        </h3>
+        <p class="text-xs text-gray-300 leading-relaxed font-normal mb-4">
+          Il primo reveal trailer mondiale che ha introdotto Lucia, la litoranea di Ocean Beach e l'atmosfera dello Stato di Leonida.
+        </p>
+      </div>
+
+      <div class="pt-4 border-t border-white/10 flex items-center justify-between text-xs font-mono">
+        <span class="text-gray-400">Durata: <strong class="text-white">1:31</strong></span>
+        <a
+          href={resolvePath('/trailers/trailer-1')}
+          data-i18n="videos.watch_breakdown"
+          class="text-amber-400 font-bold hover:underline"
+        >
+          ANALISI FRAME ➔
+        </a>
+      </div>
     </div>
 
-    <!-- Future Trailers Previews -->
-    {videoTabs.slice(1).map((tab) => (
-      <div id={`video-player-${tab.id}`} class="video-panel hidden relative w-full aspect-video bg-zinc-950 flex flex-col items-center justify-center p-8 text-center overflow-hidden">
-        <img
-          src={resolvePath(tab.image)}
-          alt={tab.title}
-          class="absolute inset-0 w-full h-full object-cover opacity-35"
-        />
-        <div class="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-black/80"></div>
-        
-        <div class="relative z-10 max-w-xl mx-auto">
-          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#fdb813]/20 border border-[#fdb813]/40 text-[#fdb813] text-[10px] font-mono font-bold uppercase tracking-widest mb-4">
-            <span data-i18n="videos.coming_soon">SELEZIONE UFFICIALE // PROSSIMAMENTE</span>
-          </div>
-          <h3 class="text-2xl sm:text-4xl font-black text-white uppercase mb-3">
-            {tab.title}
-          </h3>
-          <p class="text-xs sm:text-sm text-gray-300 mb-6 leading-relaxed">
-            {tab.description}
-          </p>
-          <div class="flex flex-wrap items-center justify-center gap-4 text-xs font-mono">
-            <a
-              href="https://www.rockstargames.com/newswire"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="px-6 py-3 rounded-xl bg-white hover:bg-[#fdb813] text-black font-black uppercase tracking-wider transition-colors"
-            >
-              LEGGI SU ROCKSTAR NEWSWIRE ➔
-            </a>
-          </div>
+    <!-- Card 2: Guinness World Records Certified -->
+    <div class="taste-card p-6 flex flex-col justify-between">
+      <div>
+        <div class="flex items-center justify-between mb-3">
+          <span class="px-2.5 py-1 rounded bg-amber-400/20 text-amber-400 border border-amber-400/40 font-mono font-bold text-[10px] uppercase tracking-wider">
+            GUINNESS WORLD RECORDS
+          </span>
+          <span class="text-xs font-mono text-emerald-400 font-bold">3 PRIMATI MONDIALI</span>
         </div>
+        <h3 class="text-lg font-black text-white uppercase mb-2">
+          90.4M Visualizzazioni in 24 Ore
+        </h3>
+        <p class="text-xs text-gray-300 leading-relaxed font-normal mb-4">
+          Certificato ufficialmente come il video non musicale più visto al debutto nella storia di YouTube, con oltre 11 milioni di 'Mi Piace'.
+        </p>
       </div>
-    ))}
+
+      <div class="pt-4 border-t border-white/10 flex items-center justify-between text-xs font-mono text-gray-400">
+        <span>Fonte: Guinness World Records</span>
+        <span class="text-white font-bold">CERTIFICATO ✓</span>
+      </div>
+    </div>
+
+    <!-- Card 3: Status of Future Trailers & Official Channels -->
+    <div class="taste-card p-6 bg-gradient-to-r from-[#18102e] to-[#0a0714] border border-white/15 flex flex-col justify-between">
+      <div>
+        <div class="flex items-center justify-between mb-3">
+          <span class="px-2.5 py-1 rounded bg-white/10 text-gray-300 border border-white/20 font-mono font-bold text-[10px] uppercase tracking-wider">
+            PROSSIMI CONTENUTI
+          </span>
+          <span class="text-xs font-mono text-amber-400 font-bold">IN ATTESA</span>
+        </div>
+        <h3 class="text-lg font-black text-white uppercase mb-2">
+          Trailer 2 &amp; Approfondimenti Gameplay
+        </h3>
+        <p class="text-xs text-gray-300 leading-relaxed font-normal mb-4">
+          Rockstar Games non ha ancora annunciato o pubblicato un secondo trailer. Qualsiasi nuovo filmato ufficiale verrà reso disponibile esclusivamente sui canali ufficiali Rockstar.
+        </p>
+      </div>
+
+      <div class="pt-4 border-t border-white/10 flex items-center justify-between text-xs font-mono">
+        <span class="text-gray-400">Rockstar Newswire</span>
+        <a
+          href="https://www.youtube.com/@RockstarGames"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="text-amber-400 font-bold hover:underline"
+        >
+          CANALE YOUTUBE ➔
+        </a>
+      </div>
+    </div>
   </div>
 
-  <!-- Video Selector Carousel Tabs -->
-  <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4" id="video-tabs-container">
-    {videoTabs.map((tab, idx) => (
-      <button
-        type="button"
-        data-video-id={tab.id}
-        class={`taste-card video-tab-btn group relative overflow-hidden transition-all duration-300 cursor-pointer flex flex-col text-left select-none ${
-          idx === 0
-            ? 'border-[#fdb813] bg-[#151026] shadow-xl ring-2 ring-[#fdb813]/20'
-            : 'border-white/10 bg-[#0a0a0a] hover:border-white/40'
-        }`}
-      >
-        <div class="taste-frame relative w-full aspect-video bg-zinc-900 rounded-t-2xl">
-          <img
-            src={resolvePath(tab.image)}
-            alt={tab.title}
-            class="w-full h-full object-cover"
-          />
-          <div class="absolute inset-0 bg-black/40 group-hover:bg-transparent transition-colors"></div>
-          
-          <div class="absolute bottom-2 right-2 px-1.5 py-0.5 rounded bg-black/80 text-[9px] font-mono text-white">
-            {tab.duration}
-          </div>
-        </div>
-
-        <div class="p-3.5 flex flex-col justify-between flex-1">
-          <div>
-            <div class="text-[9px] font-mono font-bold uppercase tracking-wider text-[#fdb813] mb-0.5">
-              {tab.actionText}
-            </div>
-            <h4 class="text-xs font-black text-white uppercase group-hover:text-[#fdb813] transition-colors truncate">
-              {tab.title}
-            </h4>
-          </div>
-          <div class="mt-2 text-[9px] font-mono text-gray-500">
-            {tab.status}
-          </div>
-        </div>
-      </button>
-    ))}
-  </div>
-
-  <!-- Frame-by-frame deep dive link -->
-  <div class="mt-6 text-center">
+  <!-- Deep Dive Link Banner -->
+  <div class="mt-8 p-4 rounded-2xl bg-[#140f26] border border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left">
+    <div class="flex items-center gap-3">
+      <span class="w-8 h-8 rounded-xl bg-amber-400/20 text-amber-400 flex items-center justify-center font-mono font-bold text-xs shrink-0">
+        4K
+      </span>
+      <span class="text-xs text-gray-300">
+        Vuoi esaminare ogni dettaglio del primo trailer ufficiale? Consulta il breakdown fotogramma per fotogramma con veicoli, armi e dialoghi.
+      </span>
+    </div>
     <a
       href={resolvePath('/trailers/trailer-1')}
-      data-i18n="videos.watch_breakdown"
-      class="inline-flex items-center gap-2 text-xs font-mono font-bold text-vice-pink hover:text-white transition-colors"
+      class="taste-btn px-6 py-2.5 rounded-xl bg-white hover:bg-[#fdb813] text-black font-mono font-bold text-xs uppercase tracking-wider shrink-0 transition-colors"
     >
-      ANALISI DETTAGLIATA FOTOGRAMMA PER FOTOGRAMMA ➔
+      ANALISI COMPLETA TRAILER 1 ➔
     </a>
   </div>
 </section>
-
-<script>
-  function initVideoTabs() {
-    const tabBtns = document.querySelectorAll('.video-tab-btn');
-    const panels = document.querySelectorAll('.video-panel');
-
-    tabBtns.forEach((btn) => {
-      btn.addEventListener('click', () => {
-        const videoId = btn.getAttribute('data-video-id');
-        if (!videoId) return;
-
-        tabBtns.forEach((b) => {
-          b.classList.remove('border-white', 'bg-[#151026]', 'shadow-xl', 'ring-2', 'ring-white/20');
-          b.classList.add('border-white/10', 'bg-[#0a0a0a]');
-        });
-
-        btn.classList.add('border-white', 'bg-[#151026]', 'shadow-xl', 'ring-2', 'ring-white/20');
-        btn.classList.remove('border-white/10', 'bg-[#0a0a0a]');
-
-        panels.forEach((p) => {
-          if (p.id === `video-player-${videoId}`) {
-            p.classList.remove('hidden');
-          } else {
-            p.classList.add('hidden');
-          }
-        });
-      });
-    });
-  }
-
-  initVideoTabs();
-  document.addEventListener('astro:page-load', initVideoTabs);
-</script>

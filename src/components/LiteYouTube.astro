@@ -15,7 +15,7 @@ const {
   soundtrack,
 } = Astro.props;
 
-const isPlaceholderId = !videoId || videoId === 'OFFICIAL_ROCKSTAR_NEWSWIRE' || videoId.startsWith('launch-') || videoId.startsWith('preload-') || videoId.startsWith('the-festival');
+const isPlaceholderId = !videoId;
 const posterUrl = isPlaceholderId
   ? ''
   : `https://i.ytimg.com/vi/${videoId}/${posterQuality === 'maxres' ? 'maxresdefault' : 'hqdefault'}.jpg`;

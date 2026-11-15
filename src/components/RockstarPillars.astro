@@ -16,7 +16,7 @@ import { resolvePath } from '../utils/paths';
   </div>
 </section>
 
-<!-- 2. Official Editions & Pre-Order Bonuses -->
+<!-- 2. Official Editions & Pre-Order Availability -->
 <section id="pre-order" class="my-20 px-4 sm:px-6 max-w-7xl mx-auto scroll-mt-24" aria-label="Edizioni e Pre-Order">
   <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-10 pb-4 border-b border-white/10">
     <div>
@@ -24,39 +24,39 @@ import { resolvePath } from '../utils/paths';
         EDIZIONI UFFICIALI
       </div>
       <h2 data-i18n="pillars.editions_title" class="text-3xl sm:text-5xl font-black text-white uppercase tracking-tight">
-        PRE-ORDINA ORA
+        DISPONIBILITÀ &amp; PIATTAFORME
       </h2>
     </div>
     <div data-i18n="pillars.available_platforms" class="text-xs font-mono text-gray-400">
-      DISPONIBILE SU PLAYSTATION® 5 E XBOX SERIES X|S
+      CONFERMATO SU PLAYSTATION® 5 E XBOX SERIES X|S
     </div>
   </div>
 
   <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
-    <!-- Ultimate Edition Card -->
+    <!-- Standard Edition Card -->
     <div class="taste-card group flex flex-col justify-between overflow-hidden">
       <div class="taste-frame relative w-full aspect-[16/9] bg-black rounded-t-3xl">
         <img
-          src={resolvePath('/images/gtavi-ultimate-edition.jpg')}
-          alt="Grand Theft Auto VI Ultimate Edition"
+          src={resolvePath('/images/gtavi-standard-edition.jpg')}
+          alt="Grand Theft Auto VI Standard Edition"
           class="w-full h-full object-cover"
         />
         <div class="absolute inset-0 bg-gradient-to-t from-[#0d0a1a] via-transparent to-transparent pointer-events-none"></div>
         <div class="absolute top-4 left-4 px-3 py-1 rounded bg-[#fdb813] text-black font-black text-[10px] font-mono uppercase tracking-widest">
-          ULTIMATE EDITION
+          EDIZIONE CONFERMATA
         </div>
       </div>
 
       <div class="p-8 flex-1 flex flex-col justify-between">
         <div>
-          <span data-i18n="pillars.ultimate_tag" class="text-[10px] font-mono text-gray-400 tracking-widest uppercase block mb-1">
-            COLLEZIONE DIGITALE ESCLUSIVA
+          <span data-i18n="pillars.standard_tag" class="text-[10px] font-mono text-gray-400 tracking-widest uppercase block mb-1">
+            GIOCO COMPLETO CURRENT-GEN
           </span>
           <h3 class="text-2xl sm:text-3xl font-black text-white uppercase mb-3">
-            ULTIMATE EDITION
+            STANDARD EDITION
           </h3>
-          <p data-i18n="pillars.ultimate_desc" class="text-sm text-gray-300 leading-relaxed font-normal mb-6">
-            Una collezione esclusiva di oggetti ed elementi intrecciati in ogni aspetto della storia di Jason e Lucia. Include la Grotti Cheetah, la Electric Fang, i revolver Hawk &amp; Little Morgan e One-Eyed Willie.
+          <p data-i18n="pillars.standard_desc" class="text-sm text-gray-300 leading-relaxed font-normal mb-6">
+            L'esperienza narrativa completa di Grand Theft Auto VI attraverso le strade illuminate al neon di Vice City e le vaste terre selvagge dello Stato di Leonida. Disponibile al lancio per PlayStation 5 e Xbox Series X|S.
           </p>
         </div>
 
@@ -69,64 +69,49 @@ import { resolvePath } from '../utils/paths';
             data-i18n="pillars.learn_more"
             class="taste-btn px-6 py-3 rounded-xl bg-white hover:bg-[#fdb813] text-black text-xs font-mono font-black uppercase tracking-wider"
           >
-            SCOPRI DI PIÙ ➔
+            PORTALE ROCKSTAR ➔
           </a>
         </div>
       </div>
     </div>
 
-    <!-- Standard Edition & Vintage Vice City Pack -->
+    <!-- Special Editions & Pre-Order Status Card -->
     <div class="flex flex-col gap-8">
-      <!-- Standard Edition Card -->
-      <div class="taste-card group flex flex-col sm:flex-row overflow-hidden">
-        <div class="taste-frame sm:w-2/5 relative aspect-square sm:aspect-auto bg-black rounded-t-3xl sm:rounded-tr-none sm:rounded-l-3xl">
-          <img
-            src={resolvePath('/images/gtavi-standard-edition.jpg')}
-            alt="Grand Theft Auto VI Standard Edition"
-            class="w-full h-full object-cover"
-          />
-        </div>
-        <div class="sm:w-3/5 p-6 flex flex-col justify-between">
-          <div>
-            <span data-i18n="pillars.standard_tag" class="text-[10px] font-mono text-gray-400 tracking-widest uppercase block mb-1">
-              GIOCO BASE
-            </span>
-            <h3 class="text-xl font-black text-white uppercase mb-2">STANDARD EDITION</h3>
-            <p data-i18n="pillars.standard_desc" class="text-xs text-gray-300 leading-relaxed font-normal mb-4">
-              L'esperienza completa di Grand Theft Auto VI attraverso le strade di Vice City e le terre selvagge dello Stato di Leonida.
-            </p>
-          </div>
-          <div class="pt-4 border-t border-white/10 flex items-center justify-between">
-            <span class="text-xs font-mono text-gray-400">PlayStation 5 • Xbox Series X|S</span>
-            <a
-              href="https://www.rockstargames.com/VI"
-              target="_blank"
-              rel="noopener noreferrer"
-              data-i18n="pillars.preorder_btn"
-              class="taste-btn px-4 py-2 rounded-xl bg-white/10 hover:bg-white text-white hover:text-black text-xs font-mono font-bold uppercase"
-            >
-              PRE-ORDINA ➔
-            </a>
-          </div>
-        </div>
-      </div>
-
-      <!-- Vintage Vice City Pack Card -->
-      <div class="taste-card p-6 sm:p-8 bg-gradient-to-r from-[#18102e] to-[#0a0714] border border-vice-pink/40 shadow-neon-pink flex flex-col justify-between">
+      <!-- Special Editions Announcement Status -->
+      <div class="taste-card p-6 sm:p-8 bg-gradient-to-r from-[#18102e] to-[#0a0714] border border-white/15 flex flex-col justify-between flex-1">
         <div>
-          <div data-i18n="pillars.vintage_tag" class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-vice-pink/20 border border-vice-pink/40 text-[10px] font-mono font-bold text-vice-pink uppercase tracking-widest mb-3">
-            BONUS PRE-ORDINE
+          <div data-i18n="pillars.special_tag" class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-400/20 border border-amber-400/40 text-[10px] font-mono font-bold text-amber-400 uppercase tracking-widest mb-3">
+            STATO PRE-ORDER // COMUNICATO UFFICIALE
           </div>
-          <h3 data-i18n="pillars.vintage_title" class="text-xl sm:text-2xl font-black text-white uppercase mb-2">
-            PACCHETTO VINTAGE VICE CITY
+          <h3 data-i18n="pillars.special_title" class="text-xl sm:text-2xl font-black text-white uppercase mb-3">
+            EDIZIONI SPECIALI &amp; PRE-ORDINI DIGITALI
           </h3>
-          <p data-i18n="pillars.vintage_desc" class="text-xs sm:text-sm text-gray-300 leading-relaxed font-normal mb-4">
-            Pre-ordina subito per ricevere vantaggi unici che riportano ai tempi in cui le luci al neon ardevano più luminose in tutta la città.
+          <p data-i18n="pillars.special_desc" class="text-xs sm:text-sm text-gray-300 leading-relaxed font-normal mb-4">
+            Rockstar Games e Take-Two Interactive non hanno ancora comunicato i dettagli specifici di eventuali Collector's Edition, Deluxe Edition o bonus di pre-ordine per GTA VI. Tutti gli annunci ufficiali verranno pubblicati direttamente su Rockstar Newswire e sui canali PlayStation Store e Xbox Store.
           </p>
         </div>
         <div class="pt-4 border-t border-white/10 flex items-center justify-between text-xs font-mono">
-          <span data-i18n="pillars.vintage_sub" class="text-gray-400">Incluso in tutti i pre-ordini digitali</span>
-          <span data-i18n="pillars.bonus_unlocked" class="text-vice-pink font-bold">BONUS SBLOCCATO</span>
+          <span data-i18n="pillars.special_sub" class="text-gray-400">Canali Ufficiali Rockstar Games</span>
+          <span data-i18n="pillars.special_status" class="text-amber-400 font-bold">IN ATTESA DI COMUNICAZIONE</span>
+        </div>
+      </div>
+
+      <!-- Verified Retailers Notice -->
+      <div class="taste-card p-6 bg-[#0e0a1a] border border-white/10 flex flex-col justify-between">
+        <div>
+          <span class="text-[10px] font-mono text-gray-400 tracking-widest uppercase block mb-1">
+            CIRCUITI UFFICIALI DISTRIBUZIONE
+          </span>
+          <h4 class="text-base font-black text-white uppercase mb-2">DOVE ACQUISTARE AL LANCIO</h4>
+          <p class="text-xs text-gray-300 leading-relaxed font-normal">
+            Al momento dell'apertura ufficiale delle prenotazioni, il gioco sarà acquistabile in formato digitale su PlayStation Store e Microsoft Store, e in formato fisico presso i rivenditori autorizzati e sul Rockstar Store.
+          </p>
+        </div>
+        <div class="mt-4 pt-3 border-t border-white/10 flex items-center justify-between text-xs font-mono text-gray-400">
+          <span>Sony PS Store • Xbox Store • Rockstar</span>
+          <a href="https://store.rockstargames.com" target="_blank" rel="noopener noreferrer" class="text-amber-400 hover:text-white transition-colors">
+            ROCKSTAR STORE ➔
+          </a>
         </div>
       </div>
     </div>
@@ -147,10 +132,10 @@ import { resolvePath } from '../utils/paths';
           SCREENSHOT UFFICIALI
         </div>
         <h3 data-i18n="pillars.screenshots_title" class="text-xl font-black text-white group-hover:text-[#fdb813] transition-colors uppercase mb-3">
-          GALLERIA DI LANCIO 4K
+          GALLERIA FOTOGRAFICA 4K
         </h3>
         <p data-i18n="pillars.screenshots_desc" class="text-xs text-gray-300 leading-relaxed font-normal">
-          Ammira Leonida in ogni dettaglio con la raccolta esclusiva di nuove catture in risoluzione Ultra HD 4K.
+          Esplora lo Stato di Leonida con le catture fotografiche ufficiali in risoluzione Ultra HD 4K estratte dal reveal di Rockstar Games.
         </p>
       </div>
       <div class="mt-8 pt-4 border-t border-white/10 flex items-center justify-between text-xs font-mono text-gray-400">
@@ -172,7 +157,7 @@ import { resolvePath } from '../utils/paths';
           SOLO A LEONIDA
         </h3>
         <p data-i18n="pillars.people_desc" class="text-xs text-gray-300 leading-relaxed font-normal">
-          Vice City, USA. Il lato più oscuro e corrotto del luogo più assolato d'America.
+          Vice City, USA. Il lato più oscuro e pericoloso del luogo più soleggiato d'America.
         </p>
       </div>
       <div class="mt-8 pt-4 border-t border-white/10 flex items-center justify-between text-xs font-mono text-gray-400">
@@ -187,39 +172,41 @@ import { resolvePath } from '../utils/paths';
     >
       <div>
         <div data-i18n="pillars.music_tag" class="text-[10px] font-mono font-bold tracking-[0.25em] text-vice-pink uppercase mb-3">
-          COLONNA SONORA E RADIO
+          COLONNA SONORA UFFICIALE
         </div>
         <h3 data-i18n="pillars.music_title" class="text-xl font-black text-white group-hover:text-vice-pink transition-colors uppercase mb-3">
-          RADIO DI GIOCO, COLONNA SONORA E BRANI ORIGINALI
+          "LOVE IS A LONG ROAD"
         </h3>
         <p data-i18n="pillars.music_desc" class="text-xs text-gray-300 leading-relaxed font-normal">
-          Ascolta la colonna sonora e i brani ufficiali, oltre a una selezione di stazioni radio in-game.
+          Il celebre brano di Tom Petty (1989) scelto da Rockstar Games come colonna sonora del Trailer 1 ufficiale.
         </p>
       </div>
       <div class="mt-8 pt-4 border-t border-white/10 flex items-center justify-between text-xs font-mono text-gray-400">
-        <span data-i18n="pillars.explore_more">ESPLORA DI PIÙ</span>
+        <a href="https://www.youtube.com/watch?v=QdBZY2fkU-0" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors">
+          ASCOLTA NEL TRAILER ➔
+        </a>
         <span class="text-white font-bold">🎵</span>
       </div>
     </div>
 
     <!-- Pillar 4: DOWNLOADS -->
     <a
-      href="#downloads"
+      href="#trailer"
       class="taste-card group p-8 flex flex-col justify-between"
     >
       <div>
         <div data-i18n="pillars.downloads_tag" class="text-[10px] font-mono font-bold tracking-[0.25em] text-emerald-400 uppercase mb-3">
-          DOWNLOAD E MEDIA
+          ARCHIVIO MULTIMEDIALE
         </div>
         <h3 data-i18n="pillars.downloads_title" class="text-xl font-black text-white group-hover:text-emerald-400 transition-colors uppercase mb-3">
-          MEDIA &amp; ARTWORK IN ALTA DEFINIZIONE
+          TRAILER UFFICIALE ROCKSTAR
         </h3>
         <p data-i18n="pillars.downloads_desc" class="text-xs text-gray-300 leading-relaxed font-normal">
-          Scarica e condividi video ufficiali, wallpaper e screenshot in altissima definizione.
+          Riguarda il primo reveal trailer in alta definizione e scopri tutti i dettagli con l'analisi fotogramma per fotogramma.
         </p>
       </div>
       <div class="mt-8 pt-4 border-t border-white/10 flex items-center justify-between text-xs font-mono text-gray-400">
-        <span data-i18n="pillars.see_all">VEDI TUTTO</span>
+        <span data-i18n="pillars.see_all">GUARDA ORA</span>
         <span class="group-hover:translate-x-1 transition-transform text-white font-bold">➔</span>
       </div>
     </a>
@@ -227,15 +214,15 @@ import { resolvePath } from '../utils/paths';
   </div>
 </section>
 
-<!-- 4. Merchandise & Collector's Box -->
+<!-- 4. Merchandise & Official Rockstar Store -->
 <section class="my-20 px-4 sm:px-6 max-w-7xl mx-auto" aria-label="Negozio e Merchandise">
   <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-8 pb-4 border-b border-white/10">
     <div>
       <div data-i18n="store.tag" class="text-[11px] font-mono font-bold tracking-[0.25em] text-[#fdb813] uppercase mb-1.5">
-        MAGAZZINO ROCKSTAR
+        STORE UFFICIALE
       </div>
       <h2 data-i18n="store.title" class="text-3xl sm:text-4xl font-black text-white uppercase tracking-tight">
-        SHOP &amp; MERCHANDISE
+        ROCKSTAR WAREHOUSE &amp; MERCHANDISE
       </h2>
     </div>
     <a
@@ -245,7 +232,7 @@ import { resolvePath } from '../utils/paths';
       data-i18n="store.view_all"
       class="text-xs font-mono text-gray-400 hover:text-white transition-colors"
     >
-      SCOPRI TUTTI I PRODOTTI ➔
+      SCOPRI TUTTI I PRODOTTI SU ROCKSTAR STORE ➔
     </a>
   </div>
 
@@ -263,54 +250,58 @@ import { resolvePath } from '../utils/paths';
       <div class="p-6 flex-1 flex flex-col justify-between">
         <div>
           <span data-i18n="store.merch_tag" class="text-[10px] font-mono text-gray-400 uppercase tracking-widest block mb-1">ABBIGLIAMENTO E ACCESSORI</span>
-          <h3 data-i18n="store.merch_title" class="text-xl font-black text-white uppercase mb-2">MERCHANDISE UFFICIALE</h3>
+          <h3 data-i18n="store.merch_title" class="text-xl font-black text-white uppercase mb-2">MERCHANDISE UFFICIALE ROCKSTAR</h3>
           <p data-i18n="store.merch_desc" class="text-xs text-gray-300 leading-relaxed font-normal">
-            Capi di abbigliamento premium, oggetti da collezione, spille e accessori ispirati allo stile senza tempo di Vice City.
+            Capi di abbigliamento, cappellini, spille, adesivi e accessori da collezione ufficiali disponibili direttamente nello store ufficiale di Rockstar Games.
           </p>
         </div>
         <div class="mt-6 pt-4 border-t border-white/10 flex items-center justify-between text-xs font-mono">
           <span data-i18n="store.rockstar_official" class="text-gray-400">Store Ufficiale Rockstar</span>
-          <span data-i18n="store.shop_now" class="text-[#fdb813] font-bold group-hover:translate-x-1 transition-transform">ACQUISTA ORA ➔</span>
+          <a href="https://store.rockstargames.com" target="_blank" rel="noopener noreferrer" class="text-[#fdb813] font-bold group-hover:translate-x-1 transition-transform">
+            ACQUISTA SU ROCKSTAR STORE ➔
+          </a>
         </div>
       </div>
     </div>
 
-    <!-- Collector's Box Card -->
+    <!-- Official News & Announcements Channel Card -->
     <div class="taste-card group flex flex-col overflow-hidden">
       <div class="taste-frame relative w-full aspect-[16/9] bg-black rounded-t-3xl">
         <img
-          src={resolvePath('/images/grotti-cheetah.jpg')}
-          alt="Cofanetto da Collezione Vice City"
+          src={resolvePath('/images/vice-ocean-drive.jpg')}
+          alt="Rockstar Newswire e Comunicati Stampa"
           class="w-full h-full object-cover"
         />
         <div class="absolute inset-0 bg-gradient-to-t from-[#0d0a1a] via-transparent to-transparent pointer-events-none"></div>
       </div>
       <div class="p-6 flex-1 flex flex-col justify-between">
         <div>
-          <span data-i18n="store.box_tag" class="text-[10px] font-mono text-gray-400 uppercase tracking-widest block mb-1">EDIZIONE LIMITATA</span>
-          <h3 data-i18n="store.box_title" class="text-xl font-black text-white uppercase mb-2">COFANETTO DA COLLEZIONE</h3>
-          <p data-i18n="store.box_desc" class="text-xs text-gray-300 leading-relaxed font-normal">
-            The Vice City Collection — Un cofanetto esclusivo di cimeli e oggetti fisici curati per il lancio mondiale.
+          <span class="text-[10px] font-mono text-gray-400 uppercase tracking-widest block mb-1">FONTI CERTIFICATE</span>
+          <h3 class="text-xl font-black text-white uppercase mb-2">CANALI UFFICIALI DI COMUNICAZIONE</h3>
+          <p class="text-xs text-gray-300 leading-relaxed font-normal">
+            Tutte le novità, i futuri trailer di gioco, le date di apertura dei pre-order e le edizioni speciali saranno annunciate in esclusiva mondiale su Rockstar Newswire e tramite Take-Two Interactive.
           </p>
         </div>
         <div class="mt-6 pt-4 border-t border-white/10 flex items-center justify-between text-xs font-mono">
-          <span data-i18n="store.exclusive_run" class="text-gray-400">Tiratura Esclusiva</span>
-          <span data-i18n="store.explore_now" class="text-[#fdb813] font-bold group-hover:translate-x-1 transition-transform">ESPLORA ORA ➔</span>
+          <span class="text-gray-400">Rockstar Newswire</span>
+          <a href="https://www.rockstargames.com/newswire" target="_blank" rel="noopener noreferrer" class="text-[#fdb813] font-bold group-hover:translate-x-1 transition-transform">
+            LEGGI I COMUNICATI ➔
+          </a>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- 5. Featured News / Rockstar Newswire -->
+<!-- 5. Featured News / Rockstar Newswire (REAL VERIFIED ARTICLES) -->
 <section class="my-20 px-4 sm:px-6 max-w-7xl mx-auto" aria-label="Comunicati Newswire">
   <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-8 pb-4 border-b border-white/10">
     <div>
       <div data-i18n="news.tag" class="text-[11px] font-mono font-bold tracking-[0.25em] text-[#fdb813] uppercase mb-1.5">
-        ULTIMI AGGIORNAMENTI
+        COMUNICATI CERTIFICATI ALLA FONTE
       </div>
       <h2 data-i18n="news.title" class="text-3xl sm:text-4xl font-black text-white uppercase tracking-tight">
-        ROCKSTAR NEWSWIRE
+        ROCKSTAR NEWSWIRE &amp; REPORT UFFICIALI
       </h2>
     </div>
     <a
@@ -325,57 +316,60 @@ import { resolvePath } from '../utils/paths';
   </div>
 
   <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-    <!-- News 1 -->
+    <!-- News 1: Trailer 1 Reveal -->
     <div class="taste-card p-6 flex flex-col justify-between">
       <div>
         <span class="text-[10px] font-mono text-[#fdb813] uppercase tracking-wider block mb-2">
-          10 NOVEMBRE 2026
+          4 DICEMBRE 2023 // ROCKSTAR NEWSWIRE
         </span>
-        <h3 data-i18n="news.item1_title" class="text-lg font-black text-white uppercase mb-2">
-          Il Pre-Load di Grand Theft Auto VI è Disponibile
+        <h3 class="text-lg font-black text-white uppercase mb-2">
+          Grand Theft Auto VI: Pubblicato Ufficialmente il Trailer 1
         </h3>
-        <p data-i18n="news.item1_desc" class="text-xs text-gray-400 leading-relaxed font-normal">
-          Il pre-download digitale è ora attivo su PlayStation 5 e Xbox Series X|S in vista del lancio mondiale del 19 Novembre.
+        <p class="text-xs text-gray-300 leading-relaxed font-normal">
+          Rockstar Games ha presentato ufficialmente il primo reveal trailer di Grand Theft Auto VI, introducendo lo Stato di Leonida, la protagonista Lucia e la colonna sonora di Tom Petty.
         </p>
       </div>
-      <div data-i18n="news.category" class="mt-6 pt-4 border-t border-white/10 text-xs font-mono text-gray-500">
-        Comunicato Newswire
+      <div class="mt-6 pt-4 border-t border-white/10 text-xs font-mono text-gray-400 flex items-center justify-between">
+        <span>Comunicato Stampa Ufficiale</span>
+        <a href="https://www.rockstargames.com/VI" target="_blank" rel="noopener noreferrer" class="text-[#fdb813] font-bold">FONTE ➔</a>
       </div>
     </div>
 
-    <!-- News 2 -->
+    <!-- News 2: Guinness World Records -->
     <div class="taste-card p-6 flex flex-col justify-between">
       <div>
         <span class="text-[10px] font-mono text-[#fdb813] uppercase tracking-wider block mb-2">
-          5 NOVEMBRE 2026
+          DICEMBRE 2023 // GUINNESS WORLD RECORDS
         </span>
-        <h3 data-i18n="news.item2_title" class="text-lg font-black text-white uppercase mb-2">
-          Esplora la Galleria Fotografica di Lancio
+        <h3 class="text-lg font-black text-white uppercase mb-2">
+          3 Record Mondiali Certificati al Debutto di GTA VI
         </h3>
-        <p data-i18n="news.item2_desc" class="text-xs text-gray-400 leading-relaxed font-normal">
-          Scopri i nuovi scatti 4K che mostrano la vibrante vita notturna di Vice City, le paludi di Grassrivers e le autostrade costiere.
+        <p class="text-xs text-gray-300 leading-relaxed font-normal">
+          Il primo trailer ufficiale ha superato 90.4 milioni di visualizzazioni nelle prime 24 ore su YouTube, stabilendo il record assoluto come video non musicale più visto al debutto.
         </p>
       </div>
-      <div data-i18n="news.category" class="mt-6 pt-4 border-t border-white/10 text-xs font-mono text-gray-500">
-        Comunicato Newswire
+      <div class="mt-6 pt-4 border-t border-white/10 text-xs font-mono text-gray-400 flex items-center justify-between">
+        <span>Primato Mondiale Certificato</span>
+        <a href="https://www.guinnessworldrecords.com" target="_blank" rel="noopener noreferrer" class="text-[#fdb813] font-bold">FONTE ➔</a>
       </div>
     </div>
 
-    <!-- News 3 -->
+    <!-- News 3: Take-Two Earnings Report -->
     <div class="taste-card p-6 flex flex-col justify-between">
       <div>
         <span class="text-[10px] font-mono text-[#fdb813] uppercase tracking-wider block mb-2">
-          3 NOVEMBRE 2026
+          TAKETWO SEC FILING // REPORT INVESTITORI
         </span>
-        <h3 data-i18n="news.item3_title" class="text-lg font-black text-white uppercase mb-2">
-          Orari di Sblocco a Mezzanotte nel Mondo
+        <h3 class="text-lg font-black text-white uppercase mb-2">
+          Take-Two Interactive: Finestra di Lancio Confermata
         </h3>
-        <p data-i18n="news.item3_desc" class="text-xs text-gray-400 leading-relaxed font-normal">
-          Dettagli ufficiali sugli orari di sblocco a scaglioni a mezzanotte locale per tutti i territori del pianeta.
+        <p class="text-xs text-gray-300 leading-relaxed font-normal">
+          Nelle comunicazioni finanziarie ufficiali con gli investitori di Wall Street, la società madre Take-Two ha ribadito la finestra di rilascio del titolo per console current-gen.
         </p>
       </div>
-      <div data-i18n="news.category" class="mt-6 pt-4 border-t border-white/10 text-xs font-mono text-gray-500">
-        Comunicato Newswire
+      <div class="mt-6 pt-4 border-t border-white/10 text-xs font-mono text-gray-400 flex items-center justify-between">
+        <span>Report Finanziario Take-Two</span>
+        <a href="https://www.take2games.com" target="_blank" rel="noopener noreferrer" class="text-[#fdb813] font-bold">FONTE ➔</a>
       </div>
     </div>
   </div>
@@ -391,7 +385,7 @@ import { resolvePath } from '../utils/paths';
       RICEVI LA PROPAGANDA ROCKSTAR
     </h3>
     <p data-i18n="propaganda.desc" class="text-xs sm:text-sm text-gray-300 max-w-md mx-auto mb-6 leading-relaxed font-normal">
-      Ricevi gli annunci di gioco più recenti, aggiornamenti su eventi speciali, promozioni e molto altro da Rockstar Games.
+      Ricevi gli annunci di gioco ufficiali, aggiornamenti e comunicati stampa direttamente da Rockstar Games.
     </p>
 
     <form id="propaganda-form" class="flex flex-col sm:flex-row items-center justify-center gap-3 max-w-md mx-auto">

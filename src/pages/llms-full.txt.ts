@@ -3,7 +3,7 @@ import db from '../data/gta6_db.json';
 
 export const GET: APIRoute = async ({ site }) => {
   const { releaseInfo, trailers, locations, protagonists, hardwareDeals } = db;
-  const origin = site ? site.origin : 'https://supremokif.github.io';
+  const origin = site ? site.origin : 'https://gta6leonida.it';
   const base = (import.meta.env.BASE_URL || '/').replace(/\/+$/, '');
   const siteOrigin = `${origin}${base}`;
 
@@ -18,8 +18,8 @@ Canonical URL: ${siteOrigin}/llms-full.txt
 - Title: ${releaseInfo.gameTitle}
 - Developer: ${releaseInfo.developer}
 - Publisher: ${releaseInfo.publisher}
-- Official Launch Date: ${releaseInfo.releaseDateHuman} (${releaseInfo.releaseDate})
-- Pre-Load Start Date: ${releaseInfo.preloadDateHuman} (${releaseInfo.preloadDate})
+- Official Launch Target: ${releaseInfo.releaseDateHuman} (${releaseInfo.releaseDate})
+- Pre-Load Activation Date: ${releaseInfo.preloadDateHuman} (${releaseInfo.preloadDate})
 - Platforms: ${releaseInfo.platforms.join(', ')}
 - Engine: ${releaseInfo.engine}
 - World: ${releaseInfo.setting}
@@ -38,7 +38,7 @@ Canonical URL: ${siteOrigin}/llms-full.txt
 ${releaseInfo.unlockSchedule.map(s => `| ${s.city} | ${s.region} | ${s.timezone} | ${s.unlockTime} | ${s.notes} |`).join('\n')}
 
 ================================================================================
-3. EXHAUSTIVE OFFICIAL VIDEO & TRAILER ARCHIVE (7 VIDEOS)
+3. OFFICIAL VIDEO & TRAILER ARCHIVE
 ================================================================================
 ${trailers.map(t => `### [Video #${t.number}] ${t.title}
 - Slug: ${t.slug}
@@ -56,7 +56,7 @@ ${t.frameAnalysis.map(f => `  * [${f.timestamp}] ${f.label}: ${f.description}`).
 `).join('\n\n')}
 
 ================================================================================
-4. EXHAUSTIVE GEOGRAPHY OF THE STATE OF LEONIDA (6 REGIONS)
+4. GEOGRAPHY OF THE STATE OF LEONIDA (VERIFIED REGIONS)
 ================================================================================
 ${locations.map(loc => `### Region: ${loc.name}
 - Slug: ${loc.slug}
@@ -70,8 +70,8 @@ ${loc.subLocations.map(sub => `  * ${sub.name} (${sub.type}): ${sub.description}
 ${loc.factions.map(fac => `  * ${fac.name} [Threat Level: ${fac.threatLevel}]: ${fac.description}`).join('\n')}
 - Vehicles Naturally Occurring: ${loc.vehiclesPresent.join(', ')}
 - Indigenous Wildlife & Marine Fauna: ${loc.wildlife.join(', ')}
-- Collectibles & 100% Checklist Items:
-${loc.collectibles.map(col => `  * [ID: ${col.id}] ${col.name} (${col.type}) -> Reward: ${col.reward}`).join('\n')}
+- Documented Points of Interest:
+${loc.collectibles.map(col => `  * [ID: ${col.id}] ${col.name} (${col.type}) -> Status: ${col.reward}`).join('\n')}
 `).join('\n\n')}
 
 ================================================================================

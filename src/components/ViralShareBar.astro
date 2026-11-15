@@ -77,15 +77,8 @@ const { title = "CONDIVIDI IL CONTO ALLA ROVESCIA" } = Astro.props;
     copyBtn.addEventListener('click', async () => {
       try {
         const url = window.location.origin;
-        if (navigator.clipboard) {
+        if (navigator.clipboard && navigator.clipboard.writeText) {
           await navigator.clipboard.writeText(url);
-        } else {
-          const input = document.createElement('input');
-          input.value = url;
-          document.body.appendChild(input);
-          input.select();
-          document.execCommand('copy');
-          document.body.removeChild(input);
         }
         const original = copyText.textContent;
         copyText.textContent = 'COPIATO! ✓';

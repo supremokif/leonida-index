@@ -1,7 +1,7 @@
 import type { APIRoute } from 'astro';
 
 export const GET: APIRoute = async ({ site }) => {
-  const origin = site ? site.origin : 'https://supremokif.github.io';
+  const origin = site ? site.origin : 'https://gta6leonida.it';
   const base = (import.meta.env.BASE_URL || '/').replace(/\/+$/, '');
   const sitemapUrl = `${origin}${base}/sitemap-index.xml`;
 
