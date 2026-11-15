@@ -1,12 +1,13 @@
 ---
 // Rockstar Games Official Hero Section with Live Countdown Timer
+import { resolvePath } from '../utils/paths';
 ---
 
 <section id="hero-section" class="relative w-full min-h-[90vh] sm:min-h-[95vh] flex flex-col items-center justify-between overflow-hidden bg-black text-white select-none">
   <!-- Full-Bleed Key Art Background (Jason & Lucia in Vice City Sunset) -->
   <div class="absolute inset-0 z-0">
     <img
-      src="/images/gtavi-standard-edition.jpg"
+      src={resolvePath('/images/gtavi-standard-edition.jpg')}
       alt="Grand Theft Auto VI Key Art Ufficiale"
       class="w-full h-full object-cover object-center opacity-65 scale-100 transform hover:scale-105 transition-transform duration-1000 ease-out"
     />
@@ -23,7 +24,7 @@
     <!-- Official VI Logo from rockstargames.com -->
     <div class="w-full max-w-xs sm:max-w-md mb-6 transform hover:scale-105 transition-transform duration-500">
       <img
-        src="/images/rockstar-vi-logo.png"
+        src={resolvePath('/images/rockstar-vi-logo.png')}
         alt="Grand Theft Auto VI"
         class="w-full h-auto max-h-56 object-contain drop-shadow-[0_10px_35px_rgba(0,0,0,0.9)] mx-auto"
       />

@@ -1,10 +1,11 @@
 import type { APIRoute } from 'astro';
 import db from '../../data/gta6_db.json';
 
-export const GET: APIRoute = async () => {
+export const GET: APIRoute = async ({ site }) => {
+  const siteOrigin = site ? site.toString().replace(/\/+$/, '') : 'https://supremokif.github.io/leonida-index';
   const payload = {
-    canonicalUrl: 'https://leonidaindex.com',
-    generatedAt: '2026-11-11T17:45:00+01:00',
+    canonicalUrl: siteOrigin,
+    generatedAt: '2026-11-15T09:00:00+01:00',
     meta: {
       title: 'Leonida Index - GTA VI Verified Intelligence API',
       version: '1.0.0',

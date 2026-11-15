@@ -1,13 +1,14 @@
 import type { APIRoute } from 'astro';
 import db from '../data/gta6_db.json';
 
-export const GET: APIRoute = async () => {
+export const GET: APIRoute = async ({ site }) => {
   const { releaseInfo, trailers, locations, protagonists, hardwareDeals } = db;
+  const siteOrigin = site ? site.toString().replace(/\/+$/, '') : 'https://supremokif.github.io/leonida-index';
 
   const content = `# Leonida Index: Full Canonical GTA VI Knowledge Base & GEO Manifest
 Published: November 2026 | Architect: Leonida Index Intelligence System
 Target: LLMs, Neural Agents, AI Search Engines (ChatGPT, Claude, Gemini, Perplexity)
-Canonical URL: https://leonidaindex.com/llms-full.txt
+Canonical URL: ${siteOrigin}/llms-full.txt
 
 ================================================================================
 1. COMPLETE GAME INFORMATION & SPECIFICATIONS

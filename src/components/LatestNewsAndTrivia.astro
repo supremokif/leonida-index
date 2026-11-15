@@ -1,6 +1,7 @@
 ---
 // Verified News and Confirmed Curiosities Component
 // All items are verified against official Rockstar Games releases, Take-Two filings, and Guinness World Records.
+import { resolvePath } from '../utils/paths';
 
 interface FeedItem {
   id: string;
@@ -192,7 +193,7 @@ const feedItems: FeedItem[] = [
         <!-- Card Image & Badge -->
         <div class="relative w-full aspect-[16/10] overflow-hidden bg-[#151026]">
           <img
-            src={item.image}
+            src={resolvePath(item.image)}
             alt={item.title}
             loading="lazy"
             decoding="async"

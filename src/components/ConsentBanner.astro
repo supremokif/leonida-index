@@ -1,5 +1,6 @@
 ---
 // Google Consent Mode v2 & GDPR Privacy Banner
+import { resolvePath } from '../utils/paths';
 ---
 
 <!-- Consent Banner Modal / Floating Bar -->
@@ -28,7 +29,7 @@
 
   <div class="flex items-center justify-between text-[11px] font-mono text-gray-400 mb-4 px-1">
     <span class="text-emerald-400">Google Consent Mode v2 Attivo</span>
-    <a href="/legal" class="text-vice-cyan hover:underline">Informativa Legale</a>
+    <a href={resolvePath('/legal')} class="text-vice-cyan hover:underline">Informativa Legale</a>
   </div>
 
   <div class="flex flex-col sm:flex-row gap-2">

@@ -1,5 +1,7 @@
 ---
 // Rockstar Games Official 4K Screenshot Gallery Component
+import { resolvePath } from '../utils/paths';
+
 const screenshots = [
   {
     id: 'ocean-drive',
@@ -162,13 +164,13 @@ const screenshots = [
         data-title={item.title}
         data-location={item.location}
         data-description={item.description}
-        data-img={item.imageUrl}
+        data-img={resolvePath(item.imageUrl)}
         data-tag={item.tag}
       >
         <!-- Image Container with Aspect Ratio -->
         <div class="relative w-full aspect-[16/10] overflow-hidden bg-[#151026]">
           <img
-            src={item.imageUrl}
+            src={resolvePath(item.imageUrl)}
             alt={item.title}
             loading="lazy"
             decoding="async"

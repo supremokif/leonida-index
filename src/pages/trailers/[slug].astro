@@ -5,6 +5,7 @@ import AdSlot from '../../components/AdSlot.astro';
 import AffiliateBox from '../../components/AffiliateBox.astro';
 import db from '../../data/gta6_db.json';
 import type { Trailer } from '../../types/gta6';
+import { resolvePath } from '../../utils/paths';
 
 export async function getStaticPaths() {
   return db.trailers.map((trailer) => ({
@@ -195,7 +196,7 @@ const featuredDeal = db.hardwareDeals[0];
     <div class="pt-8 border-t border-white/[0.1] flex items-center justify-between gap-4 font-mono text-xs">
       {prevTrailer ? (
         <a
-          href={`/trailers/${prevTrailer.slug}`}
+          href={resolvePath(`/trailers/${prevTrailer.slug}`)}
           class="flex items-center gap-2.5 font-bold text-gray-300 hover:text-vice-pink transition-colors px-4 py-3 rounded-xl bg-surface-100 border border-white/[0.08]"
         >
           <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
@@ -207,14 +208,14 @@ const featuredDeal = db.hardwareDeals[0];
 
       {nextTrailer ? (
         <a
-          href={`/trailers/${nextTrailer.slug}`}
+          href={resolvePath(`/trailers/${nextTrailer.slug}`)}
           class="flex items-center gap-2.5 font-bold text-gray-300 hover:text-vice-cyan transition-colors px-4 py-3 rounded-xl bg-surface-100 border border-white/[0.08]"
         >
           <span class="line-clamp-1">SUCC: #{nextTrailer.number} {nextTrailer.title}</span>
           <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
         </a>
       ) : (
-        <a href="/tracker" class="text-vice-pink font-bold hover:underline">
+        <a href={resolvePath('/tracker')} class="text-vice-pink font-bold hover:underline">
           TUTTI I 7 VIDEO CONSULTATI • VAI AL TRACKER ➔
         </a>
       )}

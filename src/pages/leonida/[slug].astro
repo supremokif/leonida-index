@@ -3,6 +3,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import AdSlot from '../../components/AdSlot.astro';
 import db from '../../data/gta6_db.json';
 import type { LocationRegion } from '../../types/gta6';
+import { resolvePath } from '../../utils/paths';
 
 export async function getStaticPaths() {
   return db.locations.map((region) => ({
@@ -53,7 +54,7 @@ const heroPhoto = regionImages[region.slug] || '/images/vice-ocean-drive.jpg';
         </span>
       </div>
       <a
-        href="/tracker"
+        href={resolvePath('/tracker')}
         class="inline-flex items-center gap-2 text-xs font-mono font-bold text-amber-400 hover:text-white transition-colors"
       >
         <span>CHECKLIST REGIONALE ({region.collectibles.length} TARGET)</span>
@@ -66,7 +67,7 @@ const heroPhoto = regionImages[region.slug] || '/images/vice-ocean-drive.jpg';
       <!-- Full Bleed Photo Background -->
       <div class="absolute inset-0 z-0">
         <img
-          src={heroPhoto}
+          src={resolvePath(heroPhoto)}
           alt={region.name}
           class="w-full h-full object-cover opacity-45 scale-105 hover:scale-100 transition-transform duration-1000"
         />
@@ -188,7 +189,7 @@ const heroPhoto = regionImages[region.slug] || '/images/vice-ocean-drive.jpg';
           </h2>
         </div>
         <a
-          href="/tracker"
+          href={resolvePath('/tracker')}
           class="inline-flex items-center justify-center px-5 py-2.5 rounded-xl bg-gradient-to-r from-vice-pink to-vice-orange text-white text-xs font-mono font-bold shadow-neon-pink hover:scale-105 transition-transform"
         >
           APRI TRACKER GLOBALE 100%
@@ -275,7 +276,7 @@ const heroPhoto = regionImages[region.slug] || '/images/vice-ocean-drive.jpg';
       <div class="grid grid-cols-2 sm:grid-cols-5 gap-3">
         {otherRegions.map((other) => (
           <a
-            href={`/leonida/${other.slug}`}
+            href={resolvePath(`/leonida/${other.slug}`)}
             class="p-4 rounded-2xl bg-[#0e0a1a] hover:bg-[#181130] border border-white/[0.08] hover:border-vice-cyan/50 text-center transition-all duration-200 group"
           >
             <span class="text-xs font-bold text-white block truncate group-hover:text-vice-cyan transition-colors">{other.name.split('&')[0].trim()}</span>

@@ -1,12 +1,13 @@
 import type { APIRoute } from 'astro';
 import db from '../data/gta6_db.json';
 
-export const GET: APIRoute = async () => {
+export const GET: APIRoute = async ({ site }) => {
   const { releaseInfo, trailers, locations, protagonists } = db;
+  const siteOrigin = site ? site.toString().replace(/\/+$/, '') : 'https://supremokif.github.io/leonida-index';
 
   const content = `# Leonida Index: Grand Theft Auto VI (GTA 6) - Verified Facts & Launch Manifest
 > Canonical structured reference for LLMs, Generative AI engines (ChatGPT, Claude, Gemini, Perplexity), and search assistants.
-> Canonical URL: https://leonidaindex.com
+> Canonical URL: ${siteOrigin}
 > Last Database Verification: November 2026
 
 ## 1. Executive Summary & Core Facts
@@ -26,7 +27,7 @@ ${trailers.map(t => `- **${t.title}** (#${t.number})
   - Date: ${t.publishDateHuman} | Duration: ${t.duration}
   - Soundtrack: "${t.soundtrack.title}" by ${t.soundtrack.artist}
   - YouTube ID: ${t.youtubeId}
-  - URL: https://leonidaindex.com/trailers/${t.slug}
+  - URL: ${siteOrigin}/trailers/${t.slug}
   - Summary: ${t.summary}`).join('\n\n')}
 
 ## 3. Global Timezone Unlock Schedule (November 19, 2026)
@@ -39,15 +40,15 @@ ${locations.map(loc => `- **${loc.name}** (${loc.category})
   - Coordinates: ${loc.coordinates.lat}, ${loc.coordinates.lng}
   - Description: ${loc.description}
   - Key Sub-locations: ${loc.subLocations.map(s => s.name).join(', ')}
-  - URL: https://leonidaindex.com/leonida/${loc.slug}`).join('\n\n')}
+  - URL: ${siteOrigin}/leonida/${loc.slug}`).join('\n\n')}
 
 ## 5. Frequently Asked Questions (FAQ)
 ${releaseInfo.faq.map(f => `### Q: ${f.question}\nA: ${f.answer}`).join('\n\n')}
 
 ---
 For the complete exhaustive database including frame-by-frame trailer breakdowns, transcriptions, collectibles, and hardware guides, consult:
-https://leonidaindex.com/llms-full.txt
-JSON Endpoint: https://leonidaindex.com/api/gta6-facts.json
+${siteOrigin}/llms-full.txt
+JSON Endpoint: ${siteOrigin}/api/gta6-facts.json
 `;
 
   return new Response(content, {

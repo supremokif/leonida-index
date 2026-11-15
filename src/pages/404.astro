@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import { resolvePath } from '../utils/paths';
 ---
 
 <BaseLayout
@@ -42,19 +43,19 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     <!-- Navigation Hub -->
     <div class="flex flex-wrap items-center justify-center gap-3">
       <a
-        href="/"
+        href={resolvePath('/')}
         class="px-6 py-3 rounded-xl bg-gradient-to-r from-vice-pink to-vice-orange text-white text-xs font-mono font-bold shadow-neon-pink hover:scale-105 transition-all"
       >
         RIENTRA ALLA BASE (HOME)
       </a>
       <a
-        href="/tracker"
+        href={resolvePath('/tracker')}
         class="px-6 py-3 rounded-xl bg-[#140f26] hover:bg-[#1f173d] text-white text-xs font-mono font-bold border border-white/[0.1] hover:border-vice-cyan/50 transition-all"
       >
         TRACKER 100%
       </a>
       <a
-        href="/trailers/trailer-1"
+        href={resolvePath('/trailers/trailer-1')}
         class="px-6 py-3 rounded-xl bg-[#140f26] hover:bg-[#1f173d] text-white text-xs font-mono font-bold border border-white/[0.1] hover:border-vice-pink/50 transition-all"
       >
         ARCHIVIO VIDEO

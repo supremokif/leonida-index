@@ -2,6 +2,7 @@
 import '../styles/global.css';
 import ConsentBanner from '../components/ConsentBanner.astro';
 import db from '../data/gta6_db.json';
+import { resolvePath } from '../utils/paths';
 
 interface Props {
   title: string;
@@ -19,9 +20,9 @@ const {
   breadcrumbs = [],
 } = Astro.props;
 
-const siteUrl = 'https://leonidaindex.com';
-const canonicalUrl = `${siteUrl}${canonicalPath}`;
-const formattedOgImage = ogImage.startsWith('http') ? ogImage : `${siteUrl}${ogImage}`;
+const siteUrl = Astro.site ? Astro.site.toString().replace(/\/+$/, '') : 'https://supremokif.github.io/leonida-index';
+const canonicalUrl = `${siteUrl}${canonicalPath.startsWith('/') ? canonicalPath : `/${canonicalPath}`}`;
+const formattedOgImage = ogImage.startsWith('http') ? ogImage : `${siteUrl}${ogImage.startsWith('/') ? ogImage : `/${ogImage}`}`;
 
 function safeJsonLd(obj: unknown): string {
   return JSON.stringify(obj)
@@ -127,12 +128,12 @@ const schemaGraph = {
 
 const currentPath = Astro.url.pathname;
 const navItems = [
-  { href: '/#overview', label: 'OVERVIEW' },
-  { href: '/#trailer', label: 'TRAILERS' },
-  { href: '/#news-trivia', label: 'NEWS & CURIOSITÀ' },
-  { href: '/#pre-order', label: 'EDITIONS' },
-  { href: '/#gallery', label: 'SCREENSHOTS' },
-  { href: '/#leonida', label: 'LEONIDA' },
+  { href: resolvePath('/#overview'), label: 'OVERVIEW' },
+  { href: resolvePath('/#trailer'), label: 'TRAILERS' },
+  { href: resolvePath('/#news-trivia'), label: 'NEWS & CURIOSITÀ' },
+  { href: resolvePath('/#pre-order'), label: 'EDITIONS' },
+  { href: resolvePath('/#gallery'), label: 'SCREENSHOTS' },
+  { href: resolvePath('/#leonida'), label: 'LEONIDA' },
   { href: 'https://www.rockstargames.com/newswire', label: 'NEWSWIRE', external: true },
 ];
 ---
@@ -144,7 +145,7 @@ const navItems = [
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="theme-color" content="#07050d" />
     <meta name="color-scheme" content="dark" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/svg+xml" href={resolvePath('/favicon.svg')} />
     <link rel="canonical" href={canonicalUrl} />
 
     <!-- Technical SEO & Ranking Signals -->
@@ -156,8 +157,8 @@ const navItems = [
     <meta name="generator" content={Astro.generator} />
 
     <!-- Core Web Vitals LCP Preloading -->
-    <link rel="preload" as="image" href="/images/gtavi-standard-edition.jpg" fetchpriority="high" />
-    <link rel="preload" as="image" href="/images/rockstar-vi-logo.png" fetchpriority="high" />
+    <link rel="preload" as="image" href={resolvePath('/images/gtavi-standard-edition.jpg')} fetchpriority="high" />
+    <link rel="preload" as="image" href={resolvePath('/images/rockstar-vi-logo.png')} fetchpriority="high" />
 
     <!-- Open Graph / Social -->
     <meta property="og:type" content="website" />
@@ -176,9 +177,9 @@ const navItems = [
     <meta name="twitter:image" content={formattedOgImage} />
 
     <!-- Direct Endpoints Discovery -->
-    <link rel="help" type="text/plain" href="/llms.txt" title="Canonical LLM Brief" />
-    <link rel="alternate" type="text/plain" href="/llms-full.txt" title="Full LLM Knowledge Base" />
-    <link rel="alternate" type="application/json" href="/api/gta6-facts.json" title="Verified Facts API" />
+    <link rel="help" type="text/plain" href={resolvePath('/llms.txt')} title="Canonical LLM Brief" />
+    <link rel="alternate" type="text/plain" href={resolvePath('/llms-full.txt')} title="Full LLM Knowledge Base" />
+    <link rel="alternate" type="application/json" href={resolvePath('/api/gta6-facts.json')} title="Verified Facts API" />
 
     <!-- Resource Preconnects -->
     <link rel="preconnect" href="https://i.ytimg.com" crossorigin />
@@ -209,7 +210,7 @@ const navItems = [
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between gap-4">
         
         <!-- Authentic Brandmark with Rockstar R* Gold Emblem -->
-        <a href="/" class="flex items-center gap-3.5 group select-none">
+        <a href={resolvePath('/')} class="flex items-center gap-3.5 group select-none">
           <!-- Rockstar R* Star Emblem -->
           <div class="w-10 h-10 rounded-xl bg-[#fdb813] flex items-center justify-center text-black font-black text-sm font-mono shadow-[0_0_15px_rgba(253,184,19,0.5)] group-hover:scale-105 transition-transform duration-300">
             R★
@@ -251,7 +252,7 @@ const navItems = [
         <!-- Right Quick Action / Pre-Order Button -->
         <div class="hidden sm:flex items-center gap-3">
           <a
-            href="/#launch-countdown"
+            href={resolvePath('/#launch-countdown')}
             class="flex items-center gap-2 px-3 py-1.5 rounded-xl bg-zinc-900 hover:bg-zinc-800 border border-white/10 hover:border-[#fdb813]/40 text-xs font-mono transition-colors"
             title="Visualizza il conto alla rovescia in tempo reale"
           >
@@ -260,7 +261,7 @@ const navItems = [
           </a>
 
           <a
-            href="/#pre-order"
+            href={resolvePath('/#pre-order')}
             class="px-5 py-2.5 rounded-xl bg-white hover:bg-[#fdb813] text-black font-black text-xs font-mono tracking-widest uppercase transition-all duration-300 shadow-xl hover:scale-105"
           >
             PRE-ORDER NOW
@@ -294,7 +295,7 @@ const navItems = [
           ))}
           <div class="pt-3 border-t border-white/10 flex flex-col gap-2">
             <a
-              href="/#pre-order"
+              href={resolvePath('/#pre-order')}
               class="w-full text-center px-4 py-3 rounded-xl bg-white text-black text-xs font-bold font-mono tracking-wider shadow-lg"
             >
               PRE-ORDER NOW
@@ -355,12 +356,12 @@ const navItems = [
               SEZIONI PORTALE
             </h4>
             <ul class="space-y-2.5 text-xs sm:text-sm">
-              <li><a href="/" class="hover:text-vice-pink transition-colors">Home &amp; Countdown Ufficiale</a></li>
-              <li><a href="/tracker" class="hover:text-vice-pink transition-colors">Leonida 100% Completion Tracker</a></li>
-              <li><a href="/storage-calculator" class="hover:text-vice-pink transition-colors">Calcolatore Spazio SSD Console</a></li>
-              <li><a href="/trailers/trailer-1" class="hover:text-vice-pink transition-colors">Archivio 7 Trailer e Showcase</a></li>
-              <li><a href="/leonida/vice-city" class="hover:text-vice-pink transition-colors">Mappa e Luoghi di Vice City</a></li>
-              <li><a href="/legal" class="hover:text-vice-pink transition-colors">Note Legali &amp; Disclaimer</a></li>
+              <li><a href={resolvePath('/')} class="hover:text-vice-pink transition-colors">Home &amp; Countdown Ufficiale</a></li>
+              <li><a href={resolvePath('/tracker')} class="hover:text-vice-pink transition-colors">Leonida 100% Completion Tracker</a></li>
+              <li><a href={resolvePath('/storage-calculator')} class="hover:text-vice-pink transition-colors">Calcolatore Spazio SSD Console</a></li>
+              <li><a href={resolvePath('/trailers/trailer-1')} class="hover:text-vice-pink transition-colors">Archivio 7 Trailer e Showcase</a></li>
+              <li><a href={resolvePath('/leonida/vice-city')} class="hover:text-vice-pink transition-colors">Mappa e Luoghi di Vice City</a></li>
+              <li><a href={resolvePath('/legal')} class="hover:text-vice-pink transition-colors">Note Legali &amp; Disclaimer</a></li>
             </ul>
           </div>
 
@@ -372,30 +373,30 @@ const navItems = [
             </h4>
             <ul class="space-y-2.5 text-xs sm:text-sm font-mono">
               <li>
-                <a href="/llms.txt" target="_blank" class="flex items-center gap-2 text-vice-cyan hover:underline">
+                <a href={resolvePath('/llms.txt')} target="_blank" class="flex items-center gap-2 text-vice-cyan hover:underline">
                   <span>/llms.txt</span>
                   <span class="text-[9px] px-1.5 py-0.5 rounded bg-surface-200 text-gray-300">GEO AI</span>
                 </a>
               </li>
               <li>
-                <a href="/llms-full.txt" target="_blank" class="flex items-center gap-2 text-vice-cyan hover:underline">
+                <a href={resolvePath('/llms-full.txt')} target="_blank" class="flex items-center gap-2 text-vice-cyan hover:underline">
                   <span>/llms-full.txt</span>
                   <span class="text-[9px] px-1.5 py-0.5 rounded bg-surface-200 text-gray-300">FULL KB</span>
                 </a>
               </li>
               <li>
-                <a href="/api/gta6-facts.json" target="_blank" class="flex items-center gap-2 text-vice-pink hover:underline">
+                <a href={resolvePath('/api/gta6-facts.json')} target="_blank" class="flex items-center gap-2 text-vice-pink hover:underline">
                   <span>/api/gta6-facts.json</span>
                   <span class="text-[9px] px-1.5 py-0.5 rounded bg-surface-200 text-gray-300">API</span>
                 </a>
               </li>
               <li>
-                <a href="/robots.txt" target="_blank" class="text-gray-300 hover:text-white transition-colors">
+                <a href={resolvePath('/robots.txt')} target="_blank" class="text-gray-300 hover:text-white transition-colors">
                   Robots.txt (AI Crawlers)
                 </a>
               </li>
               <li>
-                <a href="/.well-known/security.txt" target="_blank" class="text-gray-300 hover:text-white transition-colors">
+                <a href={resolvePath('/.well-known/security.txt')} target="_blank" class="text-gray-300 hover:text-white transition-colors">
                   Security.txt (RFC 9116)
                 </a>
               </li>
@@ -439,9 +440,9 @@ const navItems = [
           <div class="flex flex-col sm:flex-row items-center justify-between pt-3 text-gray-400">
             <span>© 2026 Leonida Index. Progettato con passione per la community di Vice City.</span>
             <div class="flex items-center gap-4 mt-2 sm:mt-0 font-mono text-[10px]">
-              <a href="/legal" class="hover:text-vice-pink transition-colors">PRIVACY POLICY</a>
+              <a href={resolvePath('/legal')} class="hover:text-vice-pink transition-colors">PRIVACY POLICY</a>
               <span>•</span>
-              <a href="/legal#affiliate" class="hover:text-vice-cyan transition-colors">AFFILIATE DISCLOSURE</a>
+              <a href={resolvePath('/legal#affiliate')} class="hover:text-vice-cyan transition-colors">AFFILIATE DISCLOSURE</a>
             </div>
           </div>
         </div>

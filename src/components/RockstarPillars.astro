@@ -1,5 +1,6 @@
 ---
 // Rockstar Games Official 4 Pillars & Store Components
+import { resolvePath } from '../utils/paths';
 ---
 
 <!-- 1. The Official Story Quote -->
@@ -36,7 +37,7 @@
     <div class="group rounded-3xl overflow-hidden bg-[#0d0a1a] border border-white/15 hover:border-[#fdb813] shadow-2xl transition-all duration-300 flex flex-col justify-between">
       <div class="relative w-full aspect-[16/9] overflow-hidden bg-black">
         <img
-          src="/images/gtavi-ultimate-edition.jpg"
+          src={resolvePath('/images/gtavi-ultimate-edition.jpg')}
           alt="Grand Theft Auto VI Ultimate Edition"
           class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
         />
@@ -79,7 +80,7 @@
       <div class="group rounded-3xl overflow-hidden bg-[#0d0a1a] border border-white/15 hover:border-white/40 shadow-2xl transition-all duration-300 flex flex-col sm:flex-row">
         <div class="sm:w-2/5 relative aspect-square sm:aspect-auto overflow-hidden bg-black">
           <img
-            src="/images/gtavi-standard-edition.jpg"
+            src={resolvePath('/images/gtavi-standard-edition.jpg')}
             alt="Grand Theft Auto VI Standard Edition"
             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
           />
@@ -250,7 +251,7 @@
     <div class="group rounded-3xl overflow-hidden bg-[#0d0a1a] border border-white/15 hover:border-white transition-all duration-300 flex flex-col">
       <div class="relative w-full aspect-[16/9] overflow-hidden bg-black">
         <img
-          src="/images/gtavi-merch.jpg"
+          src={resolvePath('/images/gtavi-merch.jpg')}
           alt="Rockstar Games Official Merchandise"
           class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
         />
@@ -275,7 +276,7 @@
     <div class="group rounded-3xl overflow-hidden bg-[#0d0a1a] border border-white/15 hover:border-[#fdb813] transition-all duration-300 flex flex-col">
       <div class="relative w-full aspect-[16/9] overflow-hidden bg-black">
         <img
-          src="/images/grotti-cheetah.jpg"
+          src={resolvePath('/images/grotti-cheetah.jpg')}
           alt="The Vice City Collection Collector's Box"
           class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
         />

@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import { resolvePath } from '../utils/paths';
 ---
 
 <BaseLayout
@@ -85,13 +86,13 @@ import BaseLayout from '../layouts/BaseLayout.astro';
           La sicurezza dell'applicazione è garantita da rigorose Content Security Policy (CSP), mitigazioni Anti-Prototype Pollution e disabilitazione di qualsiasi parser HTML arbitrario.
         </p>
         <p class="text-gray-300">
-          Per segnalazioni su eventuali vulnerabilità, consulta il nostro manifesto <a href="/.well-known/security.txt" class="text-vice-cyan font-mono hover:underline">/.well-known/security.txt</a> o invia una notifica a <code class="text-white font-mono">security@leonidaindex.com</code>.
+          Per segnalazioni su eventuali vulnerabilità, consulta il nostro manifesto <a href={resolvePath('/.well-known/security.txt')} class="text-vice-cyan font-mono hover:underline">/.well-known/security.txt</a> o invia una notifica a <code class="text-white font-mono">security@leonidaindex.com</code>.
         </p>
       </section>
     </div>
 
     <div class="mt-10 pt-6 border-t border-white/[0.08] flex items-center justify-between text-xs font-mono text-gray-400 relative z-10">
-      <a href="/" class="text-vice-pink font-bold hover:underline">← TORNA ALLA HOMEPAGE</a>
+      <a href={resolvePath('/')} class="text-vice-pink font-bold hover:underline">← TORNA ALLA HOMEPAGE</a>
       <span>LEONIDA INDEX // BUILD SSG 2026</span>
     </div>
   </div>
