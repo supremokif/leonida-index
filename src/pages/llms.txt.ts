@@ -3,7 +3,9 @@ import db from '../data/gta6_db.json';
 
 export const GET: APIRoute = async ({ site }) => {
   const { releaseInfo, trailers, locations, protagonists } = db;
-  const siteOrigin = site ? site.toString().replace(/\/+$/, '') : 'https://supremokif.github.io/leonida-index';
+  const origin = site ? site.origin : 'https://supremokif.github.io';
+  const base = (import.meta.env.BASE_URL || '/').replace(/\/+$/, '');
+  const siteOrigin = `${origin}${base}`;
 
   const content = `# Leonida Index: Grand Theft Auto VI (GTA 6) - Verified Facts & Launch Manifest
 > Canonical structured reference for LLMs, Generative AI engines (ChatGPT, Claude, Gemini, Perplexity), and search assistants.

@@ -2,7 +2,9 @@ import type { APIRoute } from 'astro';
 import db from '../../data/gta6_db.json';
 
 export const GET: APIRoute = async ({ site }) => {
-  const siteOrigin = site ? site.toString().replace(/\/+$/, '') : 'https://supremokif.github.io/leonida-index';
+  const origin = site ? site.origin : 'https://supremokif.github.io';
+  const base = (import.meta.env.BASE_URL || '/').replace(/\/+$/, '');
+  const siteOrigin = `${origin}${base}`;
   const payload = {
     canonicalUrl: siteOrigin,
     generatedAt: '2026-11-15T09:00:00+01:00',

@@ -20,7 +20,9 @@ const {
   breadcrumbs = [],
 } = Astro.props;
 
-const siteUrl = Astro.site ? Astro.site.toString().replace(/\/+$/, '') : 'https://supremokif.github.io/leonida-index';
+const siteOrigin = Astro.site ? Astro.site.origin : 'https://supremokif.github.io';
+const base = (import.meta.env.BASE_URL || '/').replace(/\/+$/, '');
+const siteUrl = `${siteOrigin}${base}`;
 const canonicalUrl = `${siteUrl}${canonicalPath.startsWith('/') ? canonicalPath : `/${canonicalPath}`}`;
 const formattedOgImage = ogImage.startsWith('http') ? ogImage : `${siteUrl}${ogImage.startsWith('/') ? ogImage : `/${ogImage}`}`;
 

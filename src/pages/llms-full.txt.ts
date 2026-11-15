@@ -3,7 +3,9 @@ import db from '../data/gta6_db.json';
 
 export const GET: APIRoute = async ({ site }) => {
   const { releaseInfo, trailers, locations, protagonists, hardwareDeals } = db;
-  const siteOrigin = site ? site.toString().replace(/\/+$/, '') : 'https://supremokif.github.io/leonida-index';
+  const origin = site ? site.origin : 'https://supremokif.github.io';
+  const base = (import.meta.env.BASE_URL || '/').replace(/\/+$/, '');
+  const siteOrigin = `${origin}${base}`;
 
   const content = `# Leonida Index: Full Canonical GTA VI Knowledge Base & GEO Manifest
 Published: November 2026 | Architect: Leonida Index Intelligence System
