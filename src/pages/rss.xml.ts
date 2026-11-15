@@ -1,5 +1,4 @@
 import type { APIRoute } from 'astro';
-import db from '../data/gta6_db.json';
 
 export const GET: APIRoute = async ({ site }) => {
   const origin = site ? site.origin : 'https://gta6leonida.it';
