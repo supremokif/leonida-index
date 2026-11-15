@@ -159,7 +159,7 @@ const screenshots = [
   <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6" id="gallery-grid">
     {screenshots.map((item) => (
       <div
-        class="gallery-item group relative rounded-3xl overflow-hidden bg-[#0d0a1a] border border-white/[0.1] hover:border-amber-400/50 shadow-2xl transition-all duration-500 cursor-pointer flex flex-col"
+        class="taste-card gallery-item group relative overflow-hidden cursor-pointer flex flex-col"
         data-category={item.category}
         data-title={item.title}
         data-location={item.location}
@@ -168,13 +168,13 @@ const screenshots = [
         data-tag={item.tag}
       >
         <!-- Image Container with Aspect Ratio -->
-        <div class="relative w-full aspect-[16/10] overflow-hidden bg-[#151026]">
+        <div class="taste-frame relative w-full aspect-[16/10] bg-[#151026] rounded-t-3xl">
           <img
             src={resolvePath(item.imageUrl)}
             alt={item.title}
             loading="lazy"
             decoding="async"
-            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+            class="w-full h-full object-cover"
           />
           <!-- Top Tag Pill -->
           <div class="absolute top-3 left-3 px-2.5 py-1 rounded-lg bg-black/75 backdrop-blur-md border border-white/[0.15] text-[9px] font-mono font-bold text-amber-400 uppercase tracking-wider">

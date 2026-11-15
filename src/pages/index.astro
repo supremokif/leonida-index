@@ -95,18 +95,18 @@ const regionPhotos: Record<string, { image: string; highlight: string }> = {
         return (
           <a
             href={resolvePath(`/leonida/${region.slug}`)}
-            class="group flex flex-col rounded-3xl overflow-hidden bg-[#0d0a1a] border border-white/10 hover:border-amber-400/60 shadow-2xl transition-all duration-500 hover:-translate-y-1.5"
+            class="taste-card group flex flex-col overflow-hidden transition-all duration-300"
           >
             <!-- Card Photo Header -->
-            <div class="relative w-full aspect-[16/10] overflow-hidden bg-[#151026]">
+            <div class="taste-frame relative w-full aspect-[16/10] bg-[#151026] rounded-t-3xl">
               <img
                 src={resolvePath(photoInfo.image)}
                 alt={`Regione ${region.name} GTA VI`}
                 loading="lazy"
                 decoding="async"
-                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                class="w-full h-full object-cover"
               />
-              <div class="absolute inset-0 bg-gradient-to-t from-[#0d0a1a] via-transparent to-transparent"></div>
+              <div class="absolute inset-0 bg-gradient-to-t from-[#0d0a1a] via-transparent to-transparent pointer-events-none"></div>
               
               <!-- Region Category Tag -->
               <div class="absolute top-3 left-3 px-3 py-1 rounded-full bg-black/80 backdrop-blur-md border border-white/15 text-[10px] font-mono font-bold text-vice-cyan uppercase">
@@ -165,17 +165,17 @@ const regionPhotos: Record<string, { image: string; highlight: string }> = {
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
       
       <!-- Lucia Card -->
-      <div class="flex flex-col sm:flex-row rounded-3xl overflow-hidden bg-[#0d0a1a] border border-white/10 hover:border-vice-pink/50 shadow-2xl transition-all duration-300">
+      <div class="taste-card group flex flex-col sm:flex-row overflow-hidden transition-all duration-300">
         <!-- Photo Section -->
-        <div class="sm:w-1/2 relative aspect-[3/4] sm:aspect-auto overflow-hidden bg-[#151026]">
+        <div class="taste-frame sm:w-1/2 relative aspect-[3/4] sm:aspect-auto bg-[#151026] rounded-t-3xl sm:rounded-tr-none sm:rounded-l-3xl">
           <img
             src={resolvePath('/images/lucia-profile.jpg')}
             alt="Lucia - Protagonista GTA VI"
             loading="lazy"
             decoding="async"
-            class="w-full h-full object-cover object-top hover:scale-105 transition-transform duration-700"
+            class="w-full h-full object-cover object-top"
           />
-          <div class="absolute inset-0 bg-gradient-to-t sm:bg-gradient-to-r from-transparent via-transparent to-[#0d0a1a]/90"></div>
+          <div class="absolute inset-0 bg-gradient-to-t sm:bg-gradient-to-r from-transparent via-transparent to-[#0d0a1a]/90 pointer-events-none"></div>
           <div class="absolute top-4 left-4 px-3 py-1 rounded-full bg-black/80 border border-vice-pink/40 text-[10px] font-mono font-bold text-vice-pink uppercase">
             PROTAGONISTA
           </div>
@@ -207,17 +207,17 @@ const regionPhotos: Record<string, { image: string; highlight: string }> = {
       </div>
 
       <!-- Jason Card -->
-      <div class="flex flex-col sm:flex-row rounded-3xl overflow-hidden bg-[#0d0a1a] border border-white/10 hover:border-amber-400/50 shadow-2xl transition-all duration-300">
+      <div class="taste-card group flex flex-col sm:flex-row overflow-hidden transition-all duration-300">
         <!-- Photo Section -->
-        <div class="sm:w-1/2 relative aspect-[3/4] sm:aspect-auto overflow-hidden bg-[#151026]">
+        <div class="taste-frame sm:w-1/2 relative aspect-[3/4] sm:aspect-auto bg-[#151026] rounded-t-3xl sm:rounded-tr-none sm:rounded-l-3xl">
           <img
             src={resolvePath('/images/jason-profile.jpg')}
             alt="Jason - Protagonista GTA VI"
             loading="lazy"
             decoding="async"
-            class="w-full h-full object-cover object-top hover:scale-105 transition-transform duration-700"
+            class="w-full h-full object-cover object-top"
           />
-          <div class="absolute inset-0 bg-gradient-to-t sm:bg-gradient-to-r from-transparent via-transparent to-[#0d0a1a]/90"></div>
+          <div class="absolute inset-0 bg-gradient-to-t sm:bg-gradient-to-r from-transparent via-transparent to-[#0d0a1a]/90 pointer-events-none"></div>
           <div class="absolute top-4 left-4 px-3 py-1 rounded-full bg-black/80 border border-amber-400/40 text-[10px] font-mono font-bold text-amber-400 uppercase">
             PROTAGONISTA
           </div>
@@ -253,7 +253,7 @@ const regionPhotos: Record<string, { image: string; highlight: string }> = {
 
   <!-- 7. Official Rockstar Dossier & Facts Table -->
   <section class="my-20 px-4 sm:px-6 max-w-7xl mx-auto" aria-label="Dati Ufficiali Rockstar">
-    <div class="p-8 sm:p-12 rounded-[2.5rem] bg-gradient-to-b from-[#151026] via-[#0d0a1a] to-[#07050d] border border-white/10 shadow-2xl relative">
+    <div class="taste-card p-8 sm:p-12 relative overflow-hidden">
       <div class="max-w-3xl mb-8">
         <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#1b1433] border border-vice-pink/40 text-[11px] font-mono font-bold text-vice-pink uppercase tracking-widest mb-3">
           <span data-i18n="dossier.tag">SCHEDA TECNICA UFFICIALE ROCKSTAR GAMES</span>
@@ -342,7 +342,7 @@ const regionPhotos: Record<string, { image: string; highlight: string }> = {
 
     <div class="space-y-4">
       {db.releaseInfo.faq.map((item) => (
-        <details class="group rounded-3xl bg-[#0d0a1a] border border-white/10 p-6 transition-all duration-300 open:border-amber-400/50 open:bg-[#151026]">
+        <details class="taste-card group p-6 transition-all duration-300 open:border-amber-400/50 open:bg-[#151026]">
           <summary class="flex items-center justify-between cursor-pointer font-bold text-base sm:text-lg text-white list-none select-none">
             <span>{item.question}</span>
             <span class="w-8 h-8 rounded-xl bg-[#1f173d] flex items-center justify-center text-amber-400 group-open:rotate-180 transition-transform">

@@ -163,5 +163,119 @@ body::before {
   border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #ff007a;
+  background: #fdb813;
+}
+
+/* ==========================================================================
+   Taste Skill 2.5 (Anti-Slop) Micro-Interactions & Motion Layer
+   ========================================================================== */
+
+:root {
+  --m-in: 150ms;
+  --m-out: 120ms;
+  --m-press: 90ms;
+  --m-image: 600ms;
+  --m-image-out: 400ms;
+  --ease: cubic-bezier(.2, .8, .2, 1);
+  --ease-io: cubic-bezier(.65, 0, .35, 1);
+}
+
+/* 1. Card Lift Physics (2px lift on hover, refined 1px border) */
+.taste-card {
+  position: relative;
+  background-color: rgba(14, 10, 26, 0.88);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 1.5rem;
+  transition: transform var(--m-in) var(--ease),
+              border-color var(--m-in) var(--ease),
+              box-shadow var(--m-in) var(--ease);
+  will-change: transform;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .taste-card:hover {
+    transform: translateY(-2px);
+    border-color: rgba(253, 184, 19, 0.45);
+    box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.85), 0 0 25px rgba(253, 184, 19, 0.12);
+  }
+}
+
+/* 2. Photo Frames (Smooth 1.025x zoom inside frame mask) */
+.taste-frame {
+  position: relative;
+  overflow: hidden;
+  border-radius: 1.25rem;
+  background-color: #0d0a1a;
+}
+
+.taste-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--m-image) var(--ease);
+  will-change: transform;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .taste-card:hover .taste-frame img,
+  .taste-frame:hover img,
+  .group:hover .taste-frame img {
+    transform: scale(1.028);
+  }
+}
+
+/* 3. Button Physical Steps & Active Press */
+.taste-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Martian Mono', ui-monospace, monospace;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  border-radius: 0.75rem;
+  transition: background-color var(--m-in) var(--ease),
+              color var(--m-in) var(--ease),
+              border-color var(--m-in) var(--ease),
+              box-shadow var(--m-in) var(--ease),
+              transform var(--m-press) var(--ease);
+  will-change: transform;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .taste-btn:hover {
+    transform: translateY(-1px);
+  }
+  .taste-btn:active {
+    transform: translateY(1px) scale(0.985);
+  }
+}
+
+/* 4. Link Underline Draw */
+.taste-link {
+  text-decoration: none;
+  background-image: linear-gradient(currentColor, currentColor);
+  background-repeat: no-repeat;
+  background-size: 0% 1px;
+  background-position: right 0 bottom 0;
+  transition: background-size var(--m-out) var(--ease), color var(--m-out) var(--ease);
+  padding-bottom: 2px;
+}
+
+.taste-link:hover,
+.taste-link:focus-visible {
+  background-size: 100% 1px;
+  background-position: left 0 bottom 0;
+  transition-duration: var(--m-in);
+}
+
+/* 5. Typography scale with Archivo and Martian Mono */
+h1, h2, h3, h4 {
+  font-family: 'Archivo', system-ui, sans-serif;
+  letter-spacing: -0.03em;
+}
+
+.font-mono, [data-mono] {
+  font-family: 'Martian Mono', ui-monospace, monospace;
+  letter-spacing: -0.015em;
 }

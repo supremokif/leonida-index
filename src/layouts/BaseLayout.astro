@@ -143,17 +143,24 @@ const navItems = [
 ---
 
 <!doctype html>
-<html lang="it" class="dark scroll-smooth">
+<html lang="it" data-type="software" data-radius="soft" data-buttons="solid" data-motion="on" class="dark scroll-smooth">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="theme-color" content="#07050d" />
     <meta name="color-scheme" content="dark" />
+    <meta name="page-type" content="software" />
+    <meta name="site-kind" content="gaming" />
 
     <!-- Cybersecurity & Defense in Depth Headers -->
     <meta http-equiv="X-Content-Type-Options" content="nosniff" />
     <meta name="referrer" content="strict-origin-when-cross-origin" />
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https://i.ytimg.com https://img.youtube.com; frame-src 'self' https://www.youtube-nocookie.com; connect-src 'self'; object-src 'none'; base-uri 'self'; upgrade-insecure-requests;" />
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' data: https://i.ytimg.com https://img.youtube.com; frame-src 'self' https://www.youtube-nocookie.com; connect-src 'self'; font-src 'self' data: https://fonts.gstatic.com; object-src 'none'; base-uri 'self'; upgrade-insecure-requests;" />
+
+    <!-- Google Fonts: Archivo (Bold Display) & Martian Mono (Technical Gaming) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..700&family=Martian+Mono:wght@400..600&display=swap" rel="stylesheet" />
 
     <link rel="icon" type="image/svg+xml" href={resolvePath('/favicon.svg')} />
     <link rel="manifest" href={resolvePath('/site.webmanifest')} />

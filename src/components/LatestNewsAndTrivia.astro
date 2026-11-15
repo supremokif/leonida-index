@@ -187,19 +187,19 @@ const feedItems: FeedItem[] = [
   <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6" id="news-grid">
     {feedItems.map((item) => (
       <article
-        class="news-card group flex flex-col justify-between rounded-3xl overflow-hidden bg-[#0d0a1a] border border-white/10 hover:border-amber-400/50 shadow-2xl transition-all duration-300 hover:-translate-y-1"
+        class="taste-card news-card group flex flex-col justify-between overflow-hidden"
         data-category={item.category}
       >
         <!-- Card Image & Badge -->
-        <div class="relative w-full aspect-[16/10] overflow-hidden bg-[#151026]">
+        <div class="taste-frame relative w-full aspect-[16/10] bg-[#151026] rounded-t-3xl">
           <img
             src={resolvePath(item.image)}
             alt={item.title}
             loading="lazy"
             decoding="async"
-            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+            class="w-full h-full object-cover"
           />
-          <div class="absolute inset-0 bg-gradient-to-t from-[#0d0a1a] via-transparent to-transparent"></div>
+          <div class="absolute inset-0 bg-gradient-to-t from-[#0d0a1a] via-transparent to-transparent pointer-events-none"></div>
           
           <div class="absolute top-3 left-3 px-2.5 py-1 rounded-lg bg-black/80 backdrop-blur-md border text-[9px] font-mono font-bold uppercase tracking-wider shadow-lg flex items-center gap-1.5 border-white/15 text-white">
             <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>

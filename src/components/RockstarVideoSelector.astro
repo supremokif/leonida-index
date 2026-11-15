@@ -135,17 +135,17 @@ const videoTabs = [
       <button
         type="button"
         data-video-id={tab.id}
-        class={`video-tab-btn group relative rounded-2xl overflow-hidden border transition-all duration-300 cursor-pointer flex flex-col text-left select-none ${
+        class={`taste-card video-tab-btn group relative overflow-hidden transition-all duration-300 cursor-pointer flex flex-col text-left select-none ${
           idx === 0
-            ? 'border-white bg-[#151026] shadow-xl ring-2 ring-white/20'
+            ? 'border-[#fdb813] bg-[#151026] shadow-xl ring-2 ring-[#fdb813]/20'
             : 'border-white/10 bg-[#0a0a0a] hover:border-white/40'
         }`}
       >
-        <div class="relative w-full aspect-video overflow-hidden bg-zinc-900">
+        <div class="taste-frame relative w-full aspect-video bg-zinc-900 rounded-t-2xl">
           <img
             src={resolvePath(tab.image)}
             alt={tab.title}
-            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+            class="w-full h-full object-cover"
           />
           <div class="absolute inset-0 bg-black/40 group-hover:bg-transparent transition-colors"></div>
           

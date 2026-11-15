@@ -11,3 +11,4 @@ dist/
 .env*
 scripts/instagram-agent/config.json
 scripts/instagram-agent/post_history.json
+.taste-skill/

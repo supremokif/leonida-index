@@ -34,14 +34,14 @@ import { resolvePath } from '../utils/paths';
 
   <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
     <!-- Ultimate Edition Card -->
-    <div class="group rounded-3xl overflow-hidden bg-[#0d0a1a] border border-white/15 hover:border-[#fdb813] shadow-2xl transition-all duration-300 flex flex-col justify-between">
-      <div class="relative w-full aspect-[16/9] overflow-hidden bg-black">
+    <div class="taste-card group flex flex-col justify-between overflow-hidden">
+      <div class="taste-frame relative w-full aspect-[16/9] bg-black rounded-t-3xl">
         <img
           src={resolvePath('/images/gtavi-ultimate-edition.jpg')}
           alt="Grand Theft Auto VI Ultimate Edition"
-          class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+          class="w-full h-full object-cover"
         />
-        <div class="absolute inset-0 bg-gradient-to-t from-[#0d0a1a] via-transparent to-transparent"></div>
+        <div class="absolute inset-0 bg-gradient-to-t from-[#0d0a1a] via-transparent to-transparent pointer-events-none"></div>
         <div class="absolute top-4 left-4 px-3 py-1 rounded bg-[#fdb813] text-black font-black text-[10px] font-mono uppercase tracking-widest">
           ULTIMATE EDITION
         </div>
@@ -67,7 +67,7 @@ import { resolvePath } from '../utils/paths';
             target="_blank"
             rel="noopener noreferrer"
             data-i18n="pillars.learn_more"
-            class="px-6 py-3 rounded-xl bg-white hover:bg-[#fdb813] text-black text-xs font-mono font-black uppercase tracking-wider transition-all"
+            class="taste-btn px-6 py-3 rounded-xl bg-white hover:bg-[#fdb813] text-black text-xs font-mono font-black uppercase tracking-wider"
           >
             SCOPRI DI PIÙ ➔
           </a>
@@ -78,12 +78,12 @@ import { resolvePath } from '../utils/paths';
     <!-- Standard Edition & Vintage Vice City Pack -->
     <div class="flex flex-col gap-8">
       <!-- Standard Edition Card -->
-      <div class="group rounded-3xl overflow-hidden bg-[#0d0a1a] border border-white/15 hover:border-white/40 shadow-2xl transition-all duration-300 flex flex-col sm:flex-row">
-        <div class="sm:w-2/5 relative aspect-square sm:aspect-auto overflow-hidden bg-black">
+      <div class="taste-card group flex flex-col sm:flex-row overflow-hidden">
+        <div class="taste-frame sm:w-2/5 relative aspect-square sm:aspect-auto bg-black rounded-t-3xl sm:rounded-tr-none sm:rounded-l-3xl">
           <img
             src={resolvePath('/images/gtavi-standard-edition.jpg')}
             alt="Grand Theft Auto VI Standard Edition"
-            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+            class="w-full h-full object-cover"
           />
         </div>
         <div class="sm:w-3/5 p-6 flex flex-col justify-between">
@@ -103,7 +103,7 @@ import { resolvePath } from '../utils/paths';
               target="_blank"
               rel="noopener noreferrer"
               data-i18n="pillars.preorder_btn"
-              class="px-4 py-2 rounded-xl bg-white/10 hover:bg-white text-white hover:text-black text-xs font-mono font-bold uppercase transition-all"
+              class="taste-btn px-4 py-2 rounded-xl bg-white/10 hover:bg-white text-white hover:text-black text-xs font-mono font-bold uppercase"
             >
               PRE-ORDINA ➔
             </a>
@@ -112,7 +112,7 @@ import { resolvePath } from '../utils/paths';
       </div>
 
       <!-- Vintage Vice City Pack Card -->
-      <div class="rounded-3xl p-6 sm:p-8 bg-gradient-to-r from-[#18102e] to-[#0a0714] border border-vice-pink/40 shadow-neon-pink flex flex-col justify-between">
+      <div class="taste-card p-6 sm:p-8 bg-gradient-to-r from-[#18102e] to-[#0a0714] border border-vice-pink/40 shadow-neon-pink flex flex-col justify-between">
         <div>
           <div data-i18n="pillars.vintage_tag" class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-vice-pink/20 border border-vice-pink/40 text-[10px] font-mono font-bold text-vice-pink uppercase tracking-widest mb-3">
             BONUS PRE-ORDINE
@@ -140,7 +140,7 @@ import { resolvePath } from '../utils/paths';
     <!-- Pillar 1: SCREENSHOTS -->
     <a
       href="#gallery"
-      class="group p-8 rounded-3xl bg-[#0d0a1a] border border-white/15 hover:border-[#fdb813] transition-all duration-300 flex flex-col justify-between shadow-xl"
+      class="taste-card group p-8 flex flex-col justify-between"
     >
       <div>
         <div data-i18n="pillars.screenshots_tag" class="text-[10px] font-mono font-bold tracking-[0.25em] text-[#fdb813] uppercase mb-3">
@@ -162,7 +162,7 @@ import { resolvePath } from '../utils/paths';
     <!-- Pillar 2: PEOPLE & PLACES -->
     <a
       href="#leonida"
-      class="group p-8 rounded-3xl bg-[#0d0a1a] border border-white/15 hover:border-vice-cyan transition-all duration-300 flex flex-col justify-between shadow-xl"
+      class="taste-card group p-8 flex flex-col justify-between"
     >
       <div>
         <div data-i18n="pillars.people_tag" class="text-[10px] font-mono font-bold tracking-[0.25em] text-vice-cyan uppercase mb-3">
@@ -183,7 +183,7 @@ import { resolvePath } from '../utils/paths';
 
     <!-- Pillar 3: MUSIC -->
     <div
-      class="group p-8 rounded-3xl bg-[#0d0a1a] border border-white/15 hover:border-vice-pink transition-all duration-300 flex flex-col justify-between shadow-xl"
+      class="taste-card group p-8 flex flex-col justify-between"
     >
       <div>
         <div data-i18n="pillars.music_tag" class="text-[10px] font-mono font-bold tracking-[0.25em] text-vice-pink uppercase mb-3">
@@ -205,7 +205,7 @@ import { resolvePath } from '../utils/paths';
     <!-- Pillar 4: DOWNLOADS -->
     <a
       href="#downloads"
-      class="group p-8 rounded-3xl bg-[#0d0a1a] border border-white/15 hover:border-emerald-400 transition-all duration-300 flex flex-col justify-between shadow-xl"
+      class="taste-card group p-8 flex flex-col justify-between"
     >
       <div>
         <div data-i18n="pillars.downloads_tag" class="text-[10px] font-mono font-bold tracking-[0.25em] text-emerald-400 uppercase mb-3">
@@ -251,14 +251,14 @@ import { resolvePath } from '../utils/paths';
 
   <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
     <!-- Merchandise Card -->
-    <div class="group rounded-3xl overflow-hidden bg-[#0d0a1a] border border-white/15 hover:border-white transition-all duration-300 flex flex-col">
-      <div class="relative w-full aspect-[16/9] overflow-hidden bg-black">
+    <div class="taste-card group flex flex-col overflow-hidden">
+      <div class="taste-frame relative w-full aspect-[16/9] bg-black rounded-t-3xl">
         <img
           src={resolvePath('/images/gtavi-merch.jpg')}
           alt="Merchandise Ufficiale Rockstar Games"
-          class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+          class="w-full h-full object-cover"
         />
-        <div class="absolute inset-0 bg-gradient-to-t from-[#0d0a1a] via-transparent to-transparent"></div>
+        <div class="absolute inset-0 bg-gradient-to-t from-[#0d0a1a] via-transparent to-transparent pointer-events-none"></div>
       </div>
       <div class="p-6 flex-1 flex flex-col justify-between">
         <div>
@@ -276,14 +276,14 @@ import { resolvePath } from '../utils/paths';
     </div>
 
     <!-- Collector's Box Card -->
-    <div class="group rounded-3xl overflow-hidden bg-[#0d0a1a] border border-white/15 hover:border-[#fdb813] transition-all duration-300 flex flex-col">
-      <div class="relative w-full aspect-[16/9] overflow-hidden bg-black">
+    <div class="taste-card group flex flex-col overflow-hidden">
+      <div class="taste-frame relative w-full aspect-[16/9] bg-black rounded-t-3xl">
         <img
           src={resolvePath('/images/grotti-cheetah.jpg')}
           alt="Cofanetto da Collezione Vice City"
-          class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+          class="w-full h-full object-cover"
         />
-        <div class="absolute inset-0 bg-gradient-to-t from-[#0d0a1a] via-transparent to-transparent"></div>
+        <div class="absolute inset-0 bg-gradient-to-t from-[#0d0a1a] via-transparent to-transparent pointer-events-none"></div>
       </div>
       <div class="p-6 flex-1 flex flex-col justify-between">
         <div>
@@ -326,7 +326,7 @@ import { resolvePath } from '../utils/paths';
 
   <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
     <!-- News 1 -->
-    <div class="p-6 rounded-3xl bg-[#0d0a1a] border border-white/10 hover:border-white/30 transition-all flex flex-col justify-between">
+    <div class="taste-card p-6 flex flex-col justify-between">
       <div>
         <span class="text-[10px] font-mono text-[#fdb813] uppercase tracking-wider block mb-2">
           10 NOVEMBRE 2026
@@ -344,7 +344,7 @@ import { resolvePath } from '../utils/paths';
     </div>
 
     <!-- News 2 -->
-    <div class="p-6 rounded-3xl bg-[#0d0a1a] border border-white/10 hover:border-white/30 transition-all flex flex-col justify-between">
+    <div class="taste-card p-6 flex flex-col justify-between">
       <div>
         <span class="text-[10px] font-mono text-[#fdb813] uppercase tracking-wider block mb-2">
           5 NOVEMBRE 2026
@@ -362,7 +362,7 @@ import { resolvePath } from '../utils/paths';
     </div>
 
     <!-- News 3 -->
-    <div class="p-6 rounded-3xl bg-[#0d0a1a] border border-white/10 hover:border-white/30 transition-all flex flex-col justify-between">
+    <div class="taste-card p-6 flex flex-col justify-between">
       <div>
         <span class="text-[10px] font-mono text-[#fdb813] uppercase tracking-wider block mb-2">
           3 NOVEMBRE 2026
