@@ -8,7 +8,10 @@
     "build": "astro check && astro build",
     "build:fast": "astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "ig:plan": "node scripts/instagram-agent/agent.mjs plan",
+    "ig:preview": "node scripts/instagram-agent/agent.mjs preview",
+    "ig:auto": "node scripts/instagram-agent/agent.mjs auto-publish"
   },
   "dependencies": {
     "@astrojs/check": "^0.9.4",

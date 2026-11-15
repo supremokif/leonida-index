@@ -1,0 +1,6 @@
+{
+  "instagramAccountId": "INSERISCI_QUI_IL_TUO_INSTAGRAM_BUSINESS_ACCOUNT_ID",
+  "accessToken": "INSERISCI_QUI_IL_TUO_META_GRAPH_API_TOKEN_LUNGA_DURATA",
+  "graphApiVersion": "v20.0",
+  "webhookNotificationUrl": ""
+}
