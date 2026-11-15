@@ -1,0 +1,18 @@
+{
+  "name": "GTA 6 Leonida Index",
+  "short_name": "GTA 6 Hub",
+  "description": "Conto alla rovescia, archivio trailer e mappa di Leonida per Grand Theft Auto VI.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#07050d",
+  "theme_color": "#07050d",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

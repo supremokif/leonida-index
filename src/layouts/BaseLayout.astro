@@ -154,6 +154,10 @@ const navItems = [
     <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https://i.ytimg.com https://img.youtube.com; frame-src 'self' https://www.youtube-nocookie.com; connect-src 'self'; object-src 'none'; base-uri 'self'; upgrade-insecure-requests;" />
 
     <link rel="icon" type="image/svg+xml" href={resolvePath('/favicon.svg')} />
+    <link rel="manifest" href={resolvePath('/site.webmanifest')} />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="GTA 6 Hub" />
     <link rel="canonical" href={canonicalUrl} />
 
     <!-- Technical SEO & Ranking Signals -->
@@ -186,6 +190,7 @@ const navItems = [
     <meta name="twitter:image" content={formattedOgImage} />
 
     <!-- Direct Endpoints Discovery -->
+    <link rel="alternate" type="application/rss+xml" title="GTA 6 Leonida Index RSS Feed" href={resolvePath('/rss.xml')} />
     <link rel="help" type="text/plain" href={resolvePath('/llms.txt')} title="Canonical LLM Brief" />
     <link rel="alternate" type="text/plain" href={resolvePath('/llms-full.txt')} title="Full LLM Knowledge Base" />
     <link rel="alternate" type="application/json" href={resolvePath('/api/gta6-facts.json')} title="Verified Facts API" />
