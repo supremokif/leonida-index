@@ -51,7 +51,7 @@ export const GET: APIRoute = async () => {
   <rect x="80" y="80" width="380" height="44" rx="22" fill="url(#badgeGrad)" stroke="#ff2a85" stroke-width="1.5" />
   <circle cx="106" cy="102" r="6" fill="#10b981" />
   <text x="124" y="108" font-family="system-ui, -apple-system, sans-serif" font-weight="800" font-size="14" fill="#ffffff" letter-spacing="2">
-    OFFICIAL ROCKSTAR HUB • 19 NOV 2026
+    COMMUNITY LAUNCH HUB • 19 NOV 2026
   </text>
 
   <!-- Main Logo Graphic -->
@@ -66,7 +66,7 @@ export const GET: APIRoute = async () => {
 
   <!-- Subtitle -->
   <text x="80" y="295" font-family="system-ui, -apple-system, sans-serif" font-weight="700" font-size="28" fill="#00f0ff" letter-spacing="1">
-    LEONIDA INDEX • OFFICIAL LAUNCH &amp; DATABASE HUB
+    LEONIDA INDEX • FAN DATABASE &amp; COMMUNITY PORTAL
   </text>
 
   <text x="80" y="340" font-family="system-ui, -apple-system, sans-serif" font-weight="400" font-size="20" fill="#9ca3af">

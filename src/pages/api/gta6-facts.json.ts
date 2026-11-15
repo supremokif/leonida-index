@@ -41,7 +41,7 @@ export const GET: APIRoute = async ({ site }) => {
       youtubeId: t.youtubeId,
       soundtrack: t.soundtrack,
       summary: t.summary,
-      url: `https://leonidaindex.com/trailers/${t.slug}`,
+      url: `${siteOrigin}/trailers/${t.slug}`,
     })),
     regionsCount: db.locations.length,
     regions: db.locations.map(l => ({

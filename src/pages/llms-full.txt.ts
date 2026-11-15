@@ -107,7 +107,7 @@ ${releaseInfo.faq.map(f => `Q: ${f.question}\nA: ${f.answer}`).join('\n\n')}
 ================================================================================
 8. LEGAL & COPYRIGHT NOTICE
 ================================================================================
-Leonida Index (leonidaindex.com) is an independent, non-official journalistic, informational, and utility portal.
+Leonida Index (gta6leonida.it) is an independent, non-official journalistic, informational, and utility portal.
 Grand Theft Auto, GTA VI, Vice City, Leonida, and all associated logos, character names, and trade dress are registered trademarks of Rockstar Games, Inc. and Take-Two Interactive Software, Inc.
 This resource is operated under fair use doctrine for informational, commentary, and accessibility purposes.
 `;
