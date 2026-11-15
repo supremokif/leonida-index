@@ -1,7 +1,6 @@
 Contact: mailto:security@leonidaindex.com
 Expires: 2027-12-31T23:59:59.000Z
 Preferred-Languages: it, en
-Canonical: https://leonidaindex.com/.well-known/security.txt
-Policy: https://leonidaindex.com/legal
-Acknowledgments: https://leonidaindex.com/legal
-
+Canonical: https://supremokif.github.io/leonida-index/.well-known/security.txt
+Policy: https://supremokif.github.io/leonida-index/legal
+Acknowledgments: https://supremokif.github.io/leonida-index/legal
