@@ -147,11 +147,17 @@ const navItems = [
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="canonical" href={canonicalUrl} />
 
-    <!-- Technical SEO -->
+    <!-- Technical SEO & Ranking Signals -->
     <title>{title}</title>
     <meta name="description" content={description} />
+    <meta name="keywords" content="GTA 6, Grand Theft Auto VI, GTA VI, Rockstar Games, data uscita GTA 6, trailer GTA 6, Lucia e Jason, Vice City, Leonida, PS5, Xbox Series X, screenshot 4K GTA 6, pre-order GTA 6" />
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
     <meta name="author" content="Rockstar Games Official Hub" />
+    <meta name="generator" content={Astro.generator} />
+
+    <!-- Core Web Vitals LCP Preloading -->
+    <link rel="preload" as="image" href="/images/gtavi-standard-edition.jpg" fetchpriority="high" />
+    <link rel="preload" as="image" href="/images/rockstar-vi-logo.png" fetchpriority="high" />
 
     <!-- Open Graph / Social -->
     <meta property="og:type" content="website" />
@@ -159,7 +165,7 @@ const navItems = [
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:image" content={formattedOgImage} />
-    <meta property="og:site_name" content="Rockstar Games" />
+    <meta property="og:site_name" content="GTA 6 Official Hub - Leonida Index" />
     <meta property="og:locale" content="it_IT" />
 
     <!-- Twitter Cards -->
