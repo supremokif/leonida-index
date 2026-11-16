@@ -1,0 +1,111 @@
+---
+// Interactive Exploration & Diagnostics Hub Showcase
+// Links the two flagship utility applications of Leonida Index directly from the homepage.
+import { resolvePath } from '../utils/paths';
+import db from '../data/gta6_db.json';
+
+const totalCollectibles = db.locations.reduce((acc, r) => acc + r.collectibles.length, 0);
+---
+
+<section id="interactive-tools" class="my-20 scroll-mt-24 px-4 sm:px-6 max-w-7xl mx-auto" aria-label="Strumenti Interattivi Leonida">
+  <!-- Section Title -->
+  <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-10 pb-6 border-b border-white/10">
+    <div>
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#1b1433] border border-vice-pink/40 text-[11px] font-mono font-bold text-vice-pink uppercase tracking-widest mb-3">
+        <span class="w-2 h-2 rounded-full bg-vice-pink animate-pulse"></span>
+        <span>UTILITY WEB-APP // STRUMENTI INTERATTIVI VERIFICATI</span>
+      </div>
+      <h2 class="text-3xl sm:text-5xl font-black text-white tracking-tight uppercase">
+        HUB ESPLORATIVO &amp; <span class="bg-gradient-to-r from-vice-pink via-vice-orange to-vice-cyan bg-clip-text text-transparent">DIAGNOSTICA</span>
+      </h2>
+      <p class="text-sm sm:text-base text-gray-300 mt-2 max-w-2xl font-normal leading-relaxed">
+        Applicazioni interattive integrate nel portale: traccia le ambientazioni ufficiali del Trailer 1 e calcola i requisiti hardware della tua console in previsione del pre-load.
+      </p>
+    </div>
+
+    <div class="flex items-center gap-2 text-xs font-mono text-gray-400">
+      <span>2 WEB-APP INDIPENDENTI</span>
+      <span>•</span>
+      <span class="text-emerald-400 font-bold">100% GRATUITE</span>
+    </div>
+  </div>
+
+  <!-- 2-Card Grid -->
+  <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+    
+    <!-- Tool 1: Tracker Esplorativo -->
+    <a
+      href={resolvePath('/tracker')}
+      class="taste-card group p-8 sm:p-10 flex flex-col justify-between overflow-hidden relative border border-white/15 hover:border-vice-pink/50 transition-all duration-300"
+    >
+      <div class="absolute -right-16 -top-16 w-56 h-56 bg-vice-pink/15 rounded-full blur-[80px] pointer-events-none"></div>
+
+      <div>
+        <div class="flex items-center justify-between gap-2 mb-4">
+          <span class="px-3 py-1 rounded-full bg-vice-pink/20 text-vice-pink font-mono font-bold text-[10px] uppercase tracking-widest border border-vice-pink/40">
+            {totalCollectibles} PUNTI DI INTERESSE
+          </span>
+          <span class="text-xs font-mono text-gray-400">LOCAL STORAGE PRIVACY</span>
+        </div>
+
+        <h3 class="text-2xl sm:text-3xl font-black text-white group-hover:text-vice-pink transition-colors uppercase mb-3">
+          TRACKER ESPLORATIVO LEONIDA
+        </h3>
+
+        <p class="text-xs sm:text-sm text-gray-300 leading-relaxed font-normal mb-6">
+          Dossier interattivo completo per spuntare in tempo reale gli scorci urbani, le autostrade oceaniche e le paludi dello Stato di Leonida confermati nel Trailer 1. Salva i progressi direttamente nel tuo browser.
+        </p>
+
+        <!-- Feature Tags -->
+        <div class="flex flex-wrap gap-2 text-[11px] font-mono mb-6">
+          <span class="px-2.5 py-1 rounded-lg bg-[#140f26] text-gray-200 border border-white/10">Filtro per 5 Regioni</span>
+          <span class="px-2.5 py-1 rounded-lg bg-[#140f26] text-gray-200 border border-white/10">Barra Percentuale Live</span>
+          <span class="px-2.5 py-1 rounded-lg bg-[#140f26] text-gray-200 border border-white/10">Fonti Trailer 1</span>
+        </div>
+      </div>
+
+      <div class="pt-4 border-t border-white/10 flex items-center justify-between text-xs font-mono">
+        <span class="text-gray-400 group-hover:text-white transition-colors">Apri Tracker Interattivo</span>
+        <span class="text-vice-pink font-bold group-hover:translate-x-1 transition-transform">AVVIA APPLICAZIONE ➔</span>
+      </div>
+    </a>
+
+    <!-- Tool 2: Calcolatore Spazio SSD -->
+    <a
+      href={resolvePath('/storage-calculator')}
+      class="taste-card group p-8 sm:p-10 flex flex-col justify-between overflow-hidden relative border border-white/15 hover:border-vice-cyan/50 transition-all duration-300"
+    >
+      <div class="absolute -right-16 -top-16 w-56 h-56 bg-vice-cyan/15 rounded-full blur-[80px] pointer-events-none"></div>
+
+      <div>
+        <div class="flex items-center justify-between gap-2 mb-4">
+          <span class="px-3 py-1 rounded-full bg-vice-cyan/20 text-vice-cyan font-mono font-bold text-[10px] uppercase tracking-widest border border-vice-cyan/40">
+            DIAGNOSTICA CONSOLE
+          </span>
+          <span class="text-xs font-mono text-gray-400">PS5 &amp; XBOX SERIES X|S</span>
+        </div>
+
+        <h3 class="text-2xl sm:text-3xl font-black text-white group-hover:text-vice-cyan transition-colors uppercase mb-3">
+          CALCOLATORE SPAZIO SSD PRE-LOAD
+        </h3>
+
+        <p class="text-xs sm:text-sm text-gray-300 leading-relaxed font-normal mb-6">
+          Seleziona il modello esatto della tua console e i titoli attualmente installati (Warzone, GTA V, ecc.) per verificare se il tuo disco interno ha lo spazio sufficiente per il download day-one di GTA VI.
+        </p>
+
+        <!-- Feature Tags -->
+        <div class="flex flex-wrap gap-2 text-[11px] font-mono mb-6">
+          <span class="px-2.5 py-1 rounded-lg bg-[#140f26] text-gray-200 border border-white/10">PS5 Slim &amp; Pro 2TB</span>
+          <span class="px-2.5 py-1 rounded-lg bg-[#140f26] text-gray-200 border border-white/10">Specifiche Ufficiali Sony</span>
+          <span class="px-2.5 py-1 rounded-lg bg-[#140f26] text-gray-200 border border-white/10">Guida Heatsink M.2</span>
+        </div>
+      </div>
+
+      <div class="pt-4 border-t border-white/10 flex items-center justify-between text-xs font-mono">
+        <span class="text-gray-400 group-hover:text-white transition-colors">Esegui Test Diagnostico</span>
+        <span class="text-vice-cyan font-bold group-hover:translate-x-1 transition-transform">CALCOLA SPAZIO ➔</span>
+      </div>
+    </a>
+
+  </div>
+</section>

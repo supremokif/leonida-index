@@ -1,9 +1,12 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import LaunchStatusHero from '../components/LaunchStatusHero.astro';
+import PreorderAlertBox from '../components/PreorderAlertBox.astro';
 import RockstarVideoSelector from '../components/RockstarVideoSelector.astro';
 import LatestNewsAndTrivia from '../components/LatestNewsAndTrivia.astro';
+import InteractiveToolsShowcase from '../components/InteractiveToolsShowcase.astro';
 import RockstarPillars from '../components/RockstarPillars.astro';
+import ConsoleHardwareGuide from '../components/ConsoleHardwareGuide.astro';
 import ScreenshotGallery from '../components/ScreenshotGallery.astro';
 import db from '../data/gta6_db.json';
 import { resolvePath } from '../utils/paths';
@@ -43,14 +46,23 @@ const regionPhotos: Record<string, { image: string; highlight: string }> = {
   <!-- 1. Rockstar Official Hero with Fullscreen Key Art, Official VI Logo & Live Countdown -->
   <LaunchStatusHero />
 
+  <!-- Pre-Order & Trailer 2 Launch Notification Center -->
+  <PreorderAlertBox />
+
   <!-- 2. Official Rockstar Video Archive & Trailers -->
   <RockstarVideoSelector />
 
   <!-- 3. Latest Verified News & Confirmed Real Curiosities -->
   <LatestNewsAndTrivia />
 
+  <!-- Interactive Exploration & Storage Diagnostics Web-Apps -->
+  <InteractiveToolsShowcase />
+
   <!-- 4. Official 4 Pillars, Story Synopsis, Editions, Warehouse Merch, Newswire & Propaganda -->
   <RockstarPillars />
+
+  <!-- Current-Gen Console & M.2 SSD Upgrade Guide -->
+  <ConsoleHardwareGuide />
 
   <!-- 5. The Launch Gallery - 4K Screenshot Gallery & Interactive Lightbox -->
   <ScreenshotGallery />

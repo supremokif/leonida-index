@@ -1,0 +1,116 @@
+---
+// Rockstar Games / Take-Two Current-Gen Hardware & Console Setup Guide
+// Verified against official Sony PlayStation 5 M.2 SSD specifications and Microsoft Xbox Velocity Architecture.
+import db from '../data/gta6_db.json';
+
+const featuredDeals = db.hardwareDeals.slice(0, 3);
+---
+
+<section id="hardware-guide" class="my-20 scroll-mt-24 px-4 sm:px-6 max-w-7xl mx-auto" aria-label="Hardware e Console per GTA VI">
+  <!-- Section Header -->
+  <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-10 pb-6 border-b border-white/10">
+    <div>
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#1b1433] border border-vice-cyan/40 text-[11px] font-mono font-bold text-vice-cyan uppercase tracking-widest mb-3">
+        <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+        <span>SPECIFICHE CONSOLE // ESPANSIONI ARCHIVIAZIONE CERTIFICATE</span>
+      </div>
+      <h2 class="text-3xl sm:text-5xl font-black text-white tracking-tight uppercase">
+        PREPARA LA TUA CONSOLE PER <span class="bg-gradient-to-r from-vice-pink via-vice-orange to-vice-cyan bg-clip-text text-transparent">LEONIDA</span>
+      </h2>
+      <p class="text-sm sm:text-base text-gray-300 mt-2 max-w-2xl font-normal leading-relaxed">
+        Grand Theft Auto VI è sviluppato in esclusiva per le console current-gen PlayStation 5, PS5 Pro e Xbox Series X|S. Assicurati lo spazio SSD necessario per il pre-load ed evita ritardi al lancio.
+      </p>
+    </div>
+
+    <div class="flex items-center gap-3">
+      <a
+        href="/storage-calculator"
+        class="taste-btn px-5 py-2.5 rounded-xl bg-zinc-900 hover:bg-zinc-800 text-gray-200 hover:text-white border border-white/15 hover:border-vice-cyan/50 text-xs font-mono font-bold tracking-wider uppercase transition-all duration-200"
+      >
+        CALCOLA IL TUO SPAZIO SSD ➔
+      </a>
+    </div>
+  </div>
+
+  <!-- Hardware Cards Grid -->
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+    {featuredDeals.map((deal) => (
+      <div class="taste-card group p-6 sm:p-7 flex flex-col justify-between overflow-hidden relative">
+        <div>
+          <!-- Category & Badge -->
+          <div class="flex items-center justify-between gap-2 mb-3.5">
+            <span class="text-[11px] font-mono font-bold text-vice-cyan tracking-widest uppercase">
+              {deal.category}
+            </span>
+            {deal.badge && (
+              <span class="px-2.5 py-0.5 rounded-full bg-vice-pink/15 border border-vice-pink/40 text-[10px] font-mono font-bold text-vice-pink uppercase tracking-wider">
+                {deal.badge}
+              </span>
+            )}
+          </div>
+
+          <!-- Product Title -->
+          <h3 class="text-lg font-bold text-white group-hover:text-vice-cyan transition-colors mb-2 leading-snug">
+            {deal.title}
+          </h3>
+
+          <!-- Target Platform & Storage Tag -->
+          <div class="flex flex-wrap items-center gap-2 mb-4 text-xs font-mono">
+            <span class="px-2 py-0.5 rounded bg-[#1b1433] text-gray-200 border border-white/10">
+              {deal.targetConsole}
+            </span>
+            {deal.storageCapacityGb > 0 && (
+              <span class="px-2 py-0.5 rounded bg-vice-pink/15 text-vice-pink font-bold border border-vice-pink/30">
+                +{deal.storageCapacityGb} GB
+              </span>
+            )}
+            <span class="ml-auto text-amber-400 font-bold text-xs font-mono flex items-center gap-1">
+              ★ {deal.rating}
+            </span>
+          </div>
+
+          <!-- Features -->
+          <ul class="space-y-2 mb-6 text-xs text-gray-300 leading-relaxed font-normal">
+            {deal.features.slice(0, 3).map((feat) => (
+              <li class="flex items-start gap-2">
+                <span class="text-vice-cyan font-bold shrink-0">✓</span>
+                <span>{feat}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <!-- Pricing & CTA -->
+        <div class="pt-4 border-t border-white/10 flex items-center justify-between gap-4">
+          <div>
+            <div class="text-2xl font-black text-white font-mono">{deal.price}</div>
+            {deal.originalPrice && (
+              <div class="text-xs text-gray-400 line-through font-mono">{deal.originalPrice}</div>
+            )}
+          </div>
+
+          <a
+            href={deal.affiliateUrl}
+            target="_blank"
+            rel="sponsored noopener noreferrer"
+            class="taste-btn px-5 py-2.5 rounded-xl bg-white hover:bg-vice-cyan text-black text-xs font-mono font-black uppercase tracking-wider transition-all duration-200 flex items-center gap-1.5"
+          >
+            <span>VEDI OFFERTA</span>
+            <span class="text-sm">↗</span>
+          </a>
+        </div>
+      </div>
+    ))}
+  </div>
+
+  <!-- Editorial Transparency Disclosure (AGCM & FTC Compliant) -->
+  <div class="p-4 rounded-2xl bg-zinc-950/80 border border-white/5 text-[11px] font-mono text-gray-400 leading-relaxed flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+    <div class="flex items-center gap-2">
+      <span class="w-1.5 h-1.5 rounded-full bg-vice-cyan"></span>
+      <span><strong>Trasparenza Editoriale:</strong> In qualità di Affiliato, questo sito riceve un guadagno dagli acquisti idonei senza alcun costo aggiuntivo per te.</span>
+    </div>
+    <a href="/legal" class="text-gray-400 hover:text-white underline shrink-0 transition-colors">
+      Informativa Affiliazioni &amp; Note Legali ➔
+    </a>
+  </div>
+</section>
