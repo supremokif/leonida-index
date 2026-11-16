@@ -1,5 +1,6 @@
 ---
 import db from '../data/gta6_db.json';
+import { resolvePath } from '../utils/paths';
 
 const regions = db.locations;
 const totalCollectibles = regions.reduce((acc, r) => acc + r.collectibles.length, 0);
@@ -74,7 +75,7 @@ const totalCollectibles = regions.reduce((acc, r) => acc + r.collectibles.length
             <h3 class="text-lg font-black text-white uppercase tracking-tight">{region.name}</h3>
             <span class="text-xs font-mono text-gray-400 hidden sm:inline">({region.category})</span>
           </div>
-          <a href={`/leonida/${region.slug}`} class="text-xs font-mono font-bold text-vice-cyan hover:underline">
+          <a href={resolvePath(`/leonida/${region.slug}`)} class="text-xs font-mono font-bold text-vice-cyan hover:underline">
             VEDI MAPPA REGIONALE ➔
           </a>
         </div>
@@ -320,4 +321,5 @@ const totalCollectibles = regions.reduce((acc, r) => acc + r.collectibles.length
   } else {
     setupCompletionTracker();
   }
+  document.addEventListener('astro:page-load', setupCompletionTracker);
 </script>

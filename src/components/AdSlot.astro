@@ -1,4 +1,8 @@
 ---
+// Editorial Partner & Ad Slot Component
+// Displays real editorial sponsorship and pre-load notices when ad units are pending, and renders Google AdSense when clientAdUnit is configured.
+import { resolvePath } from '../utils/paths';
+
 interface Props {
   id: string;
   format?: 'rectangle' | 'leaderboard' | 'responsive';
@@ -7,42 +11,18 @@ interface Props {
 
 const { id, format = 'rectangle', clientAdUnit } = Astro.props;
 
-let minHeightClass = 'min-h-[250px]';
 let containerClass = 'max-w-[336px]';
-
 if (format === 'leaderboard') {
-  minHeightClass = 'min-h-[90px]';
-  containerClass = 'max-w-[728px]';
-} else if (format === 'responsive') {
-  minHeightClass = 'min-h-[280px]';
   containerClass = 'max-w-4xl w-full';
+} else if (format === 'responsive') {
+  containerClass = 'max-w-5xl w-full';
 }
 ---
 
-<div class={`w-full mx-auto my-6 flex flex-col items-center justify-center ${containerClass}`}>
-  <div class="text-[9px] font-mono tracking-widest uppercase text-gray-500 mb-1 flex items-center gap-1.5">
-    <span>CIRCUITO EDITORIALE SPONSOR</span>
-    <span class="text-[8px] px-1 py-0.2 rounded bg-[#1b1433] text-vice-cyan border border-white/[0.08]">CLS-LOCKED</span>
-  </div>
-
-  <div 
-    id={`ad-slot-${id}`} 
-    class={`w-full ${minHeightClass} rounded-2xl bg-[#0a0714] border border-white/[0.08] flex flex-col items-center justify-center p-4 text-center overflow-hidden transition-all relative`}
-    aria-label="Spazio editoriale sponsor"
-  >
-    <div class="absolute inset-0 opacity-10 pointer-events-none bg-[radial-gradient(#ff007a_1px,transparent_1px)] [background-size:20px_20px]"></div>
-
-    <div class="flex flex-col items-center gap-2 z-10 text-gray-400">
-      <div class="w-8 h-8 rounded-xl bg-white/[0.04] border border-white/[0.08] flex items-center justify-center text-gray-400">
-        <svg class="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path>
-        </svg>
-      </div>
-      <span class="text-xs font-mono text-gray-400">LEONIDA INDEX // SPONSOR NETWORK</span>
-      <span class="text-[10px] font-mono text-gray-400">Consenso attivo solo previa autorizzazione GDPR</span>
-    </div>
-
-    {clientAdUnit && (
+<!-- High-Taste Editorial Partner & Launch Announcement Banner -->
+<div class={`w-full mx-auto my-8 flex flex-col items-center justify-center ${containerClass}`}>
+  {clientAdUnit ? (
+    <div id={`ad-slot-${id}`} class="w-full rounded-2xl bg-[#0a0714] border border-white/10 p-4 text-center overflow-hidden">
       <ins 
         class="adsbygoogle"
         style="display:block"
@@ -51,6 +31,37 @@ if (format === 'leaderboard') {
         data-ad-format="auto"
         data-full-width-responsive="true"
       ></ins>
-    )}
-  </div>
+    </div>
+  ) : (
+    <div 
+      id={`editorial-slot-${id}`} 
+      class="taste-card w-full p-4 sm:p-5 rounded-2xl bg-gradient-to-r from-[#140e26] via-[#0d091a] to-[#07050d] border border-white/15 flex flex-col sm:flex-row items-center justify-between gap-4 relative overflow-hidden"
+    >
+      <div class="flex items-center gap-3.5 z-10">
+        <div class="w-9 h-9 rounded-xl bg-amber-400/10 border border-amber-400/30 flex items-center justify-center text-amber-400 shrink-0 font-mono font-black text-xs">
+          R&#9733;
+        </div>
+        <div>
+          <div class="flex items-center gap-2 mb-0.5">
+            <span class="text-[10px] font-mono font-bold text-emerald-400 uppercase tracking-widest flex items-center gap-1">
+              <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+              DAY-ONE IN ARRIVO // 19 NOV 2026
+            </span>
+          </div>
+          <p class="text-xs text-gray-300 font-normal leading-snug">
+            Pre-load attivo da martedì 17 Novembre (~150 GB). Verifica i requisiti del tuo disco prima dello sblocco.
+          </p>
+        </div>
+      </div>
+
+      <div class="flex items-center gap-2.5 shrink-0 z-10 w-full sm:w-auto justify-end">
+        <a
+          href={resolvePath('/storage-calculator')}
+          class="taste-btn px-4 py-2 rounded-xl bg-white hover:bg-vice-cyan text-black text-xs font-mono font-black uppercase tracking-wider transition-all"
+        >
+          TEST SSD CONSOLE &rarr;
+        </a>
+      </div>
+    </div>
+  )}
 </div>

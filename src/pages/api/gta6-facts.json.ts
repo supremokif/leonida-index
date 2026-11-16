@@ -21,7 +21,8 @@ export const GET: APIRoute = async ({ site }) => {
       releaseDate: db.releaseInfo.releaseDate,
       releaseDateHuman: db.releaseInfo.releaseDateHuman,
       preloadDate: db.releaseInfo.preloadDate,
-      preloadActive: false,
+      preloadActive: new Date() >= new Date(db.releaseInfo.preloadDate),
+      preordersActive: true,
       platforms: db.releaseInfo.platforms,
       downloadSize: {
         ps5: db.releaseInfo.downloadSizePS5,
@@ -52,7 +53,7 @@ export const GET: APIRoute = async ({ site }) => {
       coordinates: l.coordinates,
       subLocationsCount: l.subLocations.length,
       collectiblesCount: l.collectibles.length,
-      url: `https://leonidaindex.com/leonida/${l.slug}`,
+      url: `${siteOrigin}/leonida/${l.slug}`,
     })),
     faq: db.releaseInfo.faq,
   };
