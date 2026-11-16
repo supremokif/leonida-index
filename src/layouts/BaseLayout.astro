@@ -603,5 +603,11 @@ const navItems = [
       initI18n();
       document.addEventListener('astro:page-load', initI18n);
     </script>
+
+    <!-- Vercel Web Analytics -->
+    <script>
+      import { inject } from '@vercel/analytics';
+      inject();
+    </script>
   </body>
 </html>
