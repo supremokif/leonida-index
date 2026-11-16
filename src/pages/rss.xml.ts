@@ -15,7 +15,7 @@ export const GET: APIRoute = async ({ site }) => {
     {
       title: 'Guida Completa alla Mappa dello Stato di Leonida',
       link: `${siteUrl}/leonida/vice-city/`,
-      description: 'Analisi fotografica 4K e dettagli di Vice City, Leonida Keys, Grassrivers, Port Gellhorn e Ambrosia.',
+      description: 'Analisi fotografica 4K e dossier delle 6 regioni: Vice City, Leonida Keys, Grassrivers, Port Gellhorn, Ambrosia e Monte Kalaga National Park.',
       pubDate: new Date('2026-11-14T12:00:00Z').toUTCString(),
     },
     {

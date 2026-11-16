@@ -101,6 +101,10 @@
         "answer": "Grand Theft Auto VI richiede circa 150 GB su PlayStation 5 e 155 GB su Xbox Series X|S. È consigliato mantenere almeno 180 GB di spazio libero su SSD NVMe per gestire agevolmente l'installazione, la decompressione dei pacchetti e le patch del Day One."
       },
       {
+        "question": "Quali sono le 6 regioni ufficiali dello Stato di Leonida in Grand Theft Auto VI?",
+        "answer": "Lo Stato di Leonida in Grand Theft Auto VI comprende 6 aree geografiche principali: 1) Vice City Metropolis & Ocean Beach (metropoli costiera con grattacieli e boulevard Art Déco); 2) The Leonida Keys (arcipelago corallino tropicale collegato dall'Overseas Highway); 3) The Grassrivers (vaste paludi subtropicali con canali per airboat e alligatori); 4) Port Gellhorn (distretto industriale e polo portuale commerciale); 5) Ambrosia (cuore agricolo dell'entroterra con piantagioni di canna da zucchero e silos); 6) Parco Nazionale del Monte Kalaga (Mount Kalaga National Park, riserva montuosa e boschiva settentrionale con gole rocciose, sentieri per trial fuoristrada, fiumi per kayak e fauna d'altura)."
+      },
+      {
         "question": "Chi sono i protagonisti confermati di GTA VI?",
         "answer": "I protagonisti confermati sono Lucia e Jason. Nel Trailer 1, Lucia è presentata nel penitenziario di Leonida e in seguito impegnata in rapine di coppia al fianco di Jason lungo le strade di Vice City."
       },
@@ -423,15 +427,72 @@
         { "id": "ambrosia-sugar-mill", "name": "Zuccherificio e Silos di Ambrosia", "type": "Punto di Interesse Trailer 1", "reward": "Verificato nel Trailer 1" },
         { "id": "ambrosia-rural-roads", "name": "Statale dell'Entroterra Rurale", "type": "Punto di Interesse Trailer 1", "reward": "Verificato nel Trailer 1" }
       ]
+    },
+    {
+      "id": "mount-kalaga",
+      "slug": "mount-kalaga",
+      "name": "Monte Kalaga National Park & Wilderness",
+      "category": "Parco Nazionale & Riserva Montana",
+      "coordinates": { "lat": 28.1500, "lng": -81.6500 },
+      "description": "L'imponente massiccio montuoso e wilderness che segna il confine settentrionale dello Stato di Leonida: fitte foreste di pini, spettacolari canyon rocciosi, fiumi a rapida corrente e impervi sentieri sterrati per il fuoristrada.",
+      "atmosphere": "Isolamento montano lontano dal caos urbano, eco dei fiumi tra le gole, tornanti sterrati percorsi da veicoli 4x4, fauna selvaggia d'altura e rifugi nei boschi.",
+      "subLocations": [
+        {
+          "name": "Kalaga Summit & Ranger Lookout",
+          "type": "Belvedere Panoramico & Stazione Forestale",
+          "description": "La vetta più elevata di Leonida con torretta di avvistamento incendi e stazione dei guardaparco statali."
+        },
+        {
+          "name": "Providence Canyons & Rapids",
+          "type": "Gole Fluviali & Torrenti",
+          "description": "Canyon profondi scavati dall'erosione con rapide montane ideali per kayak, pesca sportiva e rafting."
+        },
+        {
+          "name": "Pine Ridge Offroad Dirt Trail",
+          "type": "Percorsi Trial Fuoristrada",
+          "description": "Circuito naturale di fango e rocce battuto da appassionati di buggy, moto da cross e pick-up rialzati."
+        }
+      ],
+      "factions": [
+        {
+          "name": "Mount Kalaga Park Rangers & Forest Wardens",
+          "description": "Guardaparco statali incaricati del pattugliamento delle riserve boschive e della protezione faunistica.",
+          "threatLevel": "Media"
+        },
+        {
+          "name": "Comunità Off-Grid dei Boschi di Kalaga",
+          "description": "Gruppi isolati che vivono ai margini della legge tra i crinali montani.",
+          "threatLevel": "Media"
+        }
+      ],
+      "vehiclesPresent": [
+        "Karin Rebel 4x4 Rialzato",
+        "Buggy Fuoristrada Bifta",
+        "Moto da cross Sanchez",
+        "Pick-up rialzato Sandking XL",
+        "Kayak fluviale d'acqua dolce"
+      ],
+      "wildlife": [
+        "Puma di montagna (Cougars)",
+        "Cervi della Virginia",
+        "Orsi neri",
+        "Aquile calve",
+        "Trote iridee"
+      ],
+      "collectibles": [
+        { "id": "kalaga-summit-lookout", "name": "Belvedere Vetta Monte Kalaga", "type": "Punto di Interesse Cartografico", "reward": "Verificato nei dossier di Leonida" },
+        { "id": "kalaga-canyon-rapids", "name": "Rapide del Fiume Kalaga", "type": "Punto di Interesse Outdoor", "reward": "Verificato nei dossier di Leonida" },
+        { "id": "kalaga-dirt-trail", "name": "Pista Dirt Pine Ridge", "type": "Punto di Interesse Fuoristrada", "reward": "Verificato nei dossier di Leonida" }
+      ]
     }
   ],
   "protagonists": [
     {
       "id": "lucia",
-      "name": "Lucia",
+      "name": "Lucia Caminos",
       "alias": "Protagonista di GTA VI",
       "role": "Co-Protagonista Giocabile",
-      "background": "Presentata all'interno del penitenziario dello Stato di Leonida all'inizio del Trailer 1 ufficiale. Forma con Jason una determinata coppia criminale impegnata in rapine e fughe lungo le strade di Vice City.",
+      "background": "Presentata all'interno del penitenziario dello Stato di Leonida all'inizio del Trailer 1 ufficiale. Forma con Jason Duval una determinata coppia criminale impegnata in rapine e fughe lungo le strade di Vice City. Nelle analisi enciclopediche e della stampa videoludica italiana e internazionale è documentata con il cognome Caminos.",
       "specialAbilities": [
         "Pianificazione Heist e rapine",
         "Fuga tattica e determinazione",
@@ -449,10 +510,10 @@
     },
     {
       "id": "jason",
-      "name": "Jason",
+      "name": "Jason Duval",
       "alias": "Protagonista di GTA VI",
       "role": "Co-Protagonista Giocabile",
-      "background": "Partner di Lucia nelle rapine ad alto rischio documentate nel Trailer 1 ufficiale. I due protagonisti sono uniti da un forte patto di fiducia reciproca per sopravvivere nello Stato di Leonida.",
+      "background": "Partner di Lucia nelle rapine ad alto rischio documentate nel Trailer 1 ufficiale. Con un passato di cooperazione con la criminalità delle Keys prima di allearsi con Lucia, i due protagonisti sono uniti da un forte patto di fiducia reciproca nello Stato di Leonida. Nelle analisi e fonti di settore è identificato con il cognome Duval.",
       "specialAbilities": [
         "Guida evasiva ad alta velocità",
         "Copertura tattica nelle rapine",

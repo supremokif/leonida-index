@@ -89,6 +89,19 @@ const schemaGraph = {
     },
     {
       '@type': 'ItemList',
+      '@id': `${siteUrl}/#regions`,
+      name: 'Regioni e Territori dello Stato di Leonida in Grand Theft Auto VI',
+      description: 'Le 6 regioni geografiche esplorabili dello Stato di Leonida documentate nei canali ufficiali Rockstar Games per Grand Theft Auto VI.',
+      numberOfItems: db.locations.length,
+      itemListElement: db.locations.map((l, index) => ({
+        '@type': 'ListItem',
+        position: index + 1,
+        name: l.name,
+        url: `${siteUrl}/leonida/${l.slug}`,
+      })),
+    },
+    {
+      '@type': 'ItemList',
       '@id': `${siteUrl}/#trailers`,
       name: 'Archivio Trailer Ufficiali Grand Theft Auto VI',
       itemListElement: db.trailers.map((t, index) => ({
@@ -168,7 +181,7 @@ const navItems = [
     <!-- Technical SEO & Ranking Signals -->
     <title>{title}</title>
     <meta name="description" content={description} />
-    <meta name="keywords" content="GTA 6, Grand Theft Auto VI, GTA VI, Rockstar Games, data uscita GTA 6, trailer GTA 6, Lucia e Jason, Vice City, Leonida, PS5, Xbox Series X, screenshot 4K GTA 6, pre-order GTA 6" />
+    <meta name="keywords" content="GTA 6, Grand Theft Auto VI, GTA VI, Rockstar Games, data uscita GTA 6, trailer GTA 6, Lucia Caminos, Jason Duval, Vice City, Leonida, Monte Kalaga, Mount Kalaga, PS5, Xbox Series X, screenshot 4K GTA 6, pre-order GTA 6" />
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
     <meta name="author" content="Leonida Index Community" />
     <meta name="generator" content={Astro.generator} />

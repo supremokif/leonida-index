@@ -70,7 +70,7 @@ export const GET: APIRoute = async () => {
   </text>
 
   <text x="80" y="340" font-family="system-ui, -apple-system, sans-serif" font-weight="400" font-size="20" fill="#9ca3af">
-    Trailer 1 Ufficiale Breakdown • 5 Regioni di Leonida • Orari Sblocco Rolling • Tracker 100%
+    Trailer 1 Ufficiale Breakdown • 6 Regioni di Leonida • Orari Sblocco Rolling • Tracker 100%
   </text>
 
   <!-- Launch Date Box -->
