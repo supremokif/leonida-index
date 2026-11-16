@@ -1,88 +1,81 @@
 ---
-// Interactive Verified Launch & Pre-Order Notification Center
-// Functional client-side state with localStorage persistence and Native Web Notifications support.
+// Day-One Launch Radar & Midnight Unlock Notification Center
+// Verified against launch date: November 19, 2026 (Pre-load active November 17, 2026)
 ---
 
-<section id="launch-alerts" class="my-20 scroll-mt-24 px-4 sm:px-6 max-w-7xl mx-auto" aria-label="Alert Pre-ordini Ufficiali">
+<section id="launch-radar" class="my-20 scroll-mt-24 px-4 sm:px-6 max-w-7xl mx-auto" aria-label="Sblocco Mezzanotte e Pre-load">
   <div class="taste-card p-8 sm:p-12 relative overflow-hidden bg-gradient-to-b from-[#18112d] via-[#0f0b1f] to-[#07050d] border border-white/15">
     
     <!-- Ambient Flare -->
-    <div class="absolute -right-20 -top-20 w-80 h-80 bg-vice-pink/15 rounded-full blur-[100px] pointer-events-none"></div>
+    <div class="absolute -right-20 -top-20 w-80 h-80 bg-vice-cyan/15 rounded-full blur-[100px] pointer-events-none"></div>
 
     <div class="max-w-3xl mb-8 relative z-10">
-      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#1b1433] border border-amber-400/40 text-[10px] font-mono font-bold text-amber-400 uppercase tracking-widest mb-3">
-        <span class="w-2 h-2 rounded-full bg-amber-400 animate-pulse"></span>
-        <span>SISTEMA DI NOTIFICA ROCKSTAR // PRE-ORDER WATCH</span>
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#1b1433] border border-emerald-400/40 text-[10px] font-mono font-bold text-emerald-400 uppercase tracking-widest mb-3">
+        <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+        <span>COUNTDOWN DAY-ONE // PRE-LOAD ATTIVO DAL 17 NOVEMBRE</span>
       </div>
       <h2 class="text-3xl sm:text-5xl font-black text-white tracking-tight uppercase">
-        ALERT APERTURA <span class="bg-gradient-to-r from-vice-pink via-vice-orange to-vice-cyan bg-clip-text text-transparent">PRE-ORDINI &amp; TRAILER 2</span>
+        LANCIO MONDIALE TRA POCHI GIORNI: <span class="bg-gradient-to-r from-vice-pink via-vice-orange to-vice-cyan bg-clip-text text-transparent">PREPARATI AL DAY-ONE</span>
       </h2>
       <p class="text-sm sm:text-base text-gray-300 mt-2 font-normal leading-relaxed">
-        Rockstar Games non annuncia in anticipo il giorno esatto di apertura dei pre-ordini digitali e fisici. Attiva l'alert per ricevere una notifica istantanea non appena si apriranno i canali ufficiali su PlayStation Store, Microsoft Store e rivenditori autorizzati.
+        I pre-ordini di Grand Theft Auto VI sono ufficialmente attivi su PlayStation Store, Microsoft Store e presso i rivenditori fisici. Il pre-load automatico di circa 150 GB si avvia martedì 17 Novembre (48 ore prima dell'uscita). Attiva la notifica istantanea per l'apertura dei server a mezzanotte del 19 Novembre 2026.
       </p>
     </div>
 
-    <!-- Interactive Form Island -->
-    <div class="max-w-xl relative z-10" id="preorder-alert-root">
+    <!-- Quick Actions Row: Pre-Order Buttons + Notification Setup -->
+    <div class="flex flex-col lg:flex-row items-stretch lg:items-center gap-6 relative z-10">
       
-      <!-- Subscribed State (Hidden by default, shown if in localStorage) -->
-      <div id="alert-success-state" class="hidden p-6 rounded-2xl bg-[#141b18] border border-emerald-400/40 text-emerald-300">
-        <div class="flex items-center gap-3 mb-2 font-mono font-bold text-sm text-white">
-          <span class="w-3 h-3 rounded-full bg-emerald-400 animate-pulse"></span>
-          <span>ALERT PRE-ORDINI ATTIVO SUL TUO DISPOSITIVO</span>
-        </div>
-        <p class="text-xs text-gray-300 leading-relaxed font-normal mb-4">
-          Riceverai un avviso prioritario non appena Take-Two Interactive e Rockstar Games avvieranno la campagna di pre-ordine ufficiale di Grand Theft Auto VI.
-        </p>
-        <button
-          type="button"
-          id="alert-reset-btn"
-          class="text-[11px] font-mono text-gray-400 hover:text-white underline transition-colors cursor-pointer"
-        >
-          Modifica preferenze di notifica
-        </button>
-      </div>
+      <!-- Primary Pre-Order Shortcut Button -->
+      <a
+        href="#pre-order"
+        class="taste-btn px-8 py-4 rounded-xl bg-white hover:bg-[#fdb813] text-black font-black text-xs sm:text-sm font-mono tracking-widest uppercase transition-all duration-300 shadow-2xl flex items-center justify-center gap-2 shrink-0"
+      >
+        <span>PRE-ORDINA ORA SU STORE UFFICIALI</span>
+        <span class="text-base font-bold">➔</span>
+      </a>
 
-      <!-- Active Form -->
-      <form id="preorder-alert-form" class="flex flex-col gap-4">
-        <div class="flex flex-col sm:flex-row gap-3">
-          <div class="relative flex-1">
-            <input
-              type="email"
-              id="alert-email-input"
-              name="email"
-              required
-              placeholder="Inserisci la tua email..."
-              class="w-full px-5 py-3.5 rounded-xl bg-black/80 border border-white/20 text-white placeholder-gray-500 text-xs sm:text-sm font-mono focus:outline-none focus:border-vice-cyan transition-colors"
-            />
+      <!-- Notification Setup Island -->
+      <div class="flex-1 p-5 rounded-2xl bg-black/60 border border-white/10" id="preorder-alert-root">
+        
+        <!-- Subscribed State -->
+        <div id="alert-success-state" class="hidden text-emerald-300">
+          <div class="flex items-center gap-2 font-mono font-bold text-xs text-white mb-1">
+            <span class="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse"></span>
+            <span>NOTIFICA SBLOCCO MEZZANOTTE ATTIVA SU QUESTO DISPOSITIVO</span>
           </div>
+          <p class="text-[11px] text-gray-400 font-mono">
+            Riceverai una notifica prioritaria allo scoccare delle 00:00 CET del 19 Novembre 2026.
+          </p>
           <button
-            type="submit"
-            id="alert-submit-btn"
-            class="taste-btn px-7 py-3.5 rounded-xl bg-white hover:bg-amber-400 text-black font-black text-xs font-mono uppercase tracking-wider transition-all duration-200 shrink-0 cursor-pointer shadow-lg"
+            type="button"
+            id="alert-reset-btn"
+            class="text-[10px] font-mono text-gray-500 hover:text-white underline mt-2 transition-colors cursor-pointer"
           >
-            ATTIVA ALERT ➔
+            Modifica preferenze
           </button>
         </div>
 
-        <!-- Optional Browser Push Notification Toggle -->
-        <div class="flex items-center justify-between gap-4 pt-2 border-t border-white/10 text-xs font-mono text-gray-400">
-          <div class="flex items-center gap-2">
-            <input
-              type="checkbox"
-              id="alert-browser-push"
-              class="w-4 h-4 rounded bg-zinc-900 border-white/20 text-vice-pink focus:ring-0 cursor-pointer"
-            />
-            <label for="alert-browser-push" class="cursor-pointer text-gray-300 hover:text-white transition-colors">
-              Abilita anche notifica desktop / smartphone
-            </label>
-          </div>
-          <span class="text-[10px] text-gray-500 uppercase tracking-widest hidden sm:inline">ZERO SPAM // PRIVACY TUTELATA</span>
-        </div>
-      </form>
+        <!-- Form -->
+        <form id="preorder-alert-form" class="flex flex-col sm:flex-row gap-3">
+          <input
+            type="email"
+            id="alert-email-input"
+            name="email"
+            required
+            placeholder="La tua email per l'avviso di mezzanotte..."
+            class="flex-1 px-4 py-2.5 rounded-xl bg-black/90 border border-white/20 text-white placeholder-gray-500 text-xs font-mono focus:outline-none focus:border-vice-cyan transition-colors"
+          />
+          <button
+            type="submit"
+            id="alert-submit-btn"
+            class="taste-btn px-5 py-2.5 rounded-xl bg-zinc-800 hover:bg-zinc-700 text-white font-mono font-bold text-xs uppercase tracking-wider transition-all shrink-0 cursor-pointer border border-white/10"
+          >
+            AVVISAMI A MEZZANOTTE
+          </button>
+        </form>
 
-      <!-- Status Toast Message -->
-      <div id="alert-toast-msg" class="hidden mt-4 p-3 rounded-xl text-xs font-mono"></div>
+        <div id="alert-toast-msg" class="hidden mt-2 p-2 rounded-lg text-xs font-mono"></div>
+      </div>
     </div>
   </div>
 </section>
@@ -94,16 +87,13 @@
 
     const form = document.getElementById('preorder-alert-form') as HTMLFormElement | null;
     const emailInput = document.getElementById('alert-email-input') as HTMLInputElement | null;
-    const browserPushCheckbox = document.getElementById('alert-browser-push') as HTMLInputElement | null;
     const successState = document.getElementById('alert-success-state');
     const resetBtn = document.getElementById('alert-reset-btn');
     const toastMsg = document.getElementById('alert-toast-msg');
 
-    const STORAGE_KEY = 'leonida_preorder_alert_v1';
+    const STORAGE_KEY = 'leonida_midnight_unlock_v1';
 
-    // Check if user is already registered in localStorage
-    const saved = localStorage.getItem(STORAGE_KEY);
-    if (saved) {
+    if (localStorage.getItem(STORAGE_KEY)) {
       form?.classList.add('hidden');
       successState?.classList.remove('hidden');
     }
@@ -124,40 +114,32 @@
         return;
       }
 
-      // Check browser push notification if requested
-      if (browserPushCheckbox?.checked && 'Notification' in window) {
+      if ('Notification' in window) {
         try {
-          const permission = await Notification.requestPermission();
-          if (permission === 'granted') {
-            new Notification('Leonida Index // GTA VI Watch', {
-              body: 'Alert Pre-Order attivato. Riceverai una notifica non appena apriranno i canali ufficiali.',
+          const perm = await Notification.requestPermission();
+          if (perm === 'granted') {
+            new Notification('Leonida Index // GTA VI Midnight Watch', {
+              body: 'Notifica attivata. Riceverai un alert allo sblocco dei server a mezzanotte del 19 Novembre.',
               icon: '/images/rockstar-vi-logo.png',
             });
           }
         } catch (err) {
-          console.warn('Notification permission error:', err);
+          console.warn('Notification error:', err);
         }
       }
 
-      // Save subscription locally
-      const subData = {
-        email,
-        timestamp: new Date().toISOString(),
-        pushEnabled: browserPushCheckbox?.checked || false,
-      };
-      localStorage.setItem(STORAGE_KEY, JSON.stringify(subData));
-
-      showToast('Alert attivato con successo!', 'success');
+      localStorage.setItem(STORAGE_KEY, JSON.stringify({ email, timestamp: new Date().toISOString() }));
+      showToast('Notifica mezzanotte attivata!', 'success');
       setTimeout(() => {
         form?.classList.add('hidden');
         successState?.classList.remove('hidden');
-      }, 800);
+      }, 700);
     });
 
     function showToast(msg: string, type: 'success' | 'error') {
       if (!toastMsg) return;
       toastMsg.textContent = msg;
-      toastMsg.className = `mt-4 p-3 rounded-xl text-xs font-mono ${
+      toastMsg.className = `mt-2 p-2 rounded-lg text-xs font-mono ${
         type === 'success'
           ? 'bg-emerald-950/80 border border-emerald-400/40 text-emerald-300'
           : 'bg-rose-950/80 border border-rose-400/40 text-rose-300'

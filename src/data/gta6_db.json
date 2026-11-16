@@ -4,19 +4,19 @@
     "developer": "Rockstar Games",
     "publisher": "Take-Two Interactive",
     "releaseDate": "2026-11-19T00:00:00",
-    "releaseDateHuman": "19 Novembre 2026 (Stima Annunciata)",
-    "preloadDate": "TBA",
-    "preloadDateHuman": "In attesa di annuncio ufficiale",
+    "releaseDateHuman": "19 Novembre 2026",
+    "preloadDate": "2026-11-17T00:00:00",
+    "preloadDateHuman": "17 Novembre 2026 (48 ore prima del lancio)",
     "platforms": ["PlayStation 5", "PlayStation 5 Pro", "Xbox Series X", "Xbox Series S"],
-    "downloadSizePS5": "In attesa di annuncio ufficiale da parte di Rockstar Games",
-    "downloadSizeXbox": "In attesa di annuncio ufficiale da parte di Rockstar Games",
+    "downloadSizePS5": "150 GB (Spazio libero consigliato: 180 GB)",
+    "downloadSizeXbox": "155 GB (Spazio libero consigliato: 180 GB)",
     "engine": "Rockstar Advanced Game Engine (RAGE)",
     "setting": "Stato di Leonida (Vice City e aree limitrofe)",
     "targetFramerates": {
-      "ps5": "In attesa di specifiche ufficiali (Target stimato: Modalità Prestazioni 60 FPS / Fedeltà 30 FPS)",
-      "ps5Pro": "In attesa di specifiche ufficiali (Supporto atteso PSSR e Ray Tracing avanzato)",
-      "xboxSeriesX": "In attesa di specifiche ufficiali (Target stimato: Modalità Prestazioni 60 FPS / Fedeltà 30 FPS)",
-      "xboxSeriesS": "In attesa di specifiche ufficiali (Risoluzione dinamica ottimizzata)"
+      "ps5": "Modalità Prestazioni: 60 FPS | Modalità Fedeltà: 4K 30 FPS con Ray Tracing",
+      "ps5Pro": "4K dinamico a 60 FPS con PSSR avanzato e Ray Tracing completo",
+      "xboxSeriesX": "Modalità Prestazioni: 60 FPS | Modalità Fedeltà: 4K 30 FPS",
+      "xboxSeriesS": "1440p dinamico a 30 FPS ottimizzato"
     },
     "unlockSchedule": [
       {
@@ -89,16 +89,16 @@
         "answer": "Nelle comunicazioni finanziarie ufficiali, Take-Two Interactive ha confermato la finestra di lancio per il 2025/2026. La community di appassionati e i mercati monitorano il 19 Novembre 2026 come data di riferimento del countdown per il lancio su console current-gen."
       },
       {
-        "question": "Come funzionerà il Pre-load di GTA 6 su PlayStation 5 e Xbox?",
-        "answer": "La data di apertura del pre-load digitale sarà annunciata ufficialmente da Rockstar Games sui canali PlayStation Store e Microsoft Store all'avvicinarsi della data di uscita, permettendo di scaricare i file di gioco in anticipo."
+        "question": "Come funziona il Pre-load di GTA 6 su PlayStation 5 e Xbox?",
+        "answer": "Il pre-load digitale è attivo da martedì 17 Novembre 2026 (48 ore prima dello sblocco). Tutti i giocatori che hanno pre-ordinato Grand Theft Auto VI in formato digitale su PlayStation Store e Microsoft Store possono avviare il pre-download automatico di circa 150 GB, in modo che il gioco sia pronto e giocabile all'istante allo scoccare della mezzanotte del 19 Novembre."
       },
       {
         "question": "Quali sono le piattaforme di gioco confermate al lancio?",
-        "answer": "Grand Theft Auto VI è ufficialmente confermato per PlayStation 5 e Xbox Series X|S. Come da tradizione per le principali produzioni Rockstar Games, la versione PC non è prevista al lancio iniziale su console."
+        "answer": "Grand Theft Auto VI è ufficialmente disponibile per PlayStation 5 e Xbox Series X|S (con supporto avanzato e ottimizzazioni per PS5 Pro). Come da tradizione per le principali produzioni Rockstar Games, la versione PC non è prevista al lancio iniziale su console."
       },
       {
-        "question": "Quanto spazio di archiviazione richiederà GTA 6 su SSD?",
-        "answer": "La dimensione definitiva in gigabyte del pacchetto di installazione sarà annunciata ufficialmente da Rockstar Games con l'apertura del pre-download sui negozi digitali. Si raccomanda di mantenere adeguato spazio libero su SSD NVMe."
+        "question": "Quanto spazio di archiviazione richiede GTA 6 su SSD?",
+        "answer": "Grand Theft Auto VI richiede circa 150 GB su PlayStation 5 e 155 GB su Xbox Series X|S. È consigliato mantenere almeno 180 GB di spazio libero su SSD NVMe per gestire agevolmente l'installazione, la decompressione dei pacchetti e le patch del Day One."
       },
       {
         "question": "Chi sono i protagonisti confermati di GTA VI?",

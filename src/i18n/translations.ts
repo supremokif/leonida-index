@@ -53,11 +53,11 @@ export const translations: Record<Lang, Record<string, string>> = {
     'pillars.standard_desc': 'L\'esperienza narrativa completa di Grand Theft Auto VI attraverso le strade illuminate al neon di Vice City e le vaste terre selvagge dello Stato di Leonida. Disponibile al lancio per PlayStation 5 e Xbox Series X|S.',
     'pillars.learn_more': 'PORTALE ROCKSTAR ➔',
     'pillars.preorder_btn': 'SCOPRI DI PIÙ ➔',
-    'pillars.special_tag': 'STATO PRE-ORDER // COMUNICATO UFFICIALE',
-    'pillars.special_title': 'EDIZIONI SPECIALI & PRE-ORDINI DIGITALI',
-    'pillars.special_desc': 'Rockstar Games e Take-Two Interactive non hanno ancora comunicato i dettagli specifici di eventuali Collector\'s Edition, Deluxe Edition o bonus di pre-ordine per GTA VI. Tutti gli annunci ufficiali verranno pubblicati direttamente su Rockstar Newswire e sui canali PlayStation Store e Xbox Store.',
-    'pillars.special_sub': 'Canali Ufficiali Rockstar Games',
-    'pillars.special_status': 'IN ATTESA DI COMUNICAZIONE',
+    'pillars.special_tag': 'PRE-ORDINI ATTIVI // PRE-LOAD IL 17 NOVEMBRE',
+    'pillars.special_title': 'EDIZIONI UFFICIALI & PRE-ORDINI APERTI',
+    'pillars.special_desc': 'I pre-ordini di Grand Theft Auto VI sono ufficialmente aperti su PlayStation Store, Microsoft Store e rivenditori autorizzati. Pre-ordinando ora in formato digitale, il pre-download automatico di circa 150 GB si avvia il 17 Novembre per consentirti di giocare a mezzanotte del 19 Novembre 2026.',
+    'pillars.special_sub': 'Canali Ufficiali PlayStation & Xbox',
+    'pillars.special_status': 'PRE-ORDINI APERTI',
 
     // 4 Pilastri Fondamentali
     'pillars.screenshots_tag': 'SCREENSHOT UFFICIALI',
@@ -87,7 +87,7 @@ export const translations: Record<Lang, Record<string, string>> = {
     'store.shop_now': 'ACQUISTA SU ROCKSTAR STORE ➔',
     'store.box_tag': 'FONTI CERTIFICATE',
     'store.box_title': 'CANALI UFFICIALI DI COMUNICAZIONE',
-    'store.box_desc': 'Tutte le novità, i futuri trailer di gioco, le date di apertura dei pre-order e le edizioni speciali saranno annunciate in esclusiva mondiale su Rockstar Newswire e tramite Take-Two Interactive.',
+    'store.box_desc': 'I comunicati stampa, le note di rilascio ufficiali, gli orari di sblocco globale dei server e gli aggiornamenti post-lancio vengono pubblicati in esclusiva su Rockstar Newswire.',
     'store.exclusive_run': 'Comunicati Diretti',
     'store.explore_now': 'LEGGI NEWSWIRE ➔',
 
@@ -218,11 +218,11 @@ export const translations: Record<Lang, Record<string, string>> = {
     'pillars.standard_desc': 'The complete narrative Grand Theft Auto VI experience across neon-soaked Vice City and the state of Leonida. Available at launch on PlayStation 5 and Xbox Series X|S.',
     'pillars.learn_more': 'ROCKSTAR PORTAL ➔',
     'pillars.preorder_btn': 'LEARN MORE ➔',
-    'pillars.special_tag': 'PRE-ORDER STATUS // OFFICIAL STATEMENT',
-    'pillars.special_title': 'SPECIAL EDITIONS & DIGITAL PRE-ORDERS',
-    'pillars.special_desc': 'Rockstar Games and Take-Two Interactive have not yet announced specific details for Collector\'s Editions, Deluxe Editions, or pre-order bonuses for GTA VI. Official updates will be released directly through Rockstar Newswire and console digital stores.',
-    'pillars.special_sub': 'Rockstar Games Official Channels',
-    'pillars.special_status': 'PENDING OFFICIAL ANNOUNCEMENT',
+    'pillars.special_tag': 'PRE-ORDERS ACTIVE // PRE-LOAD NOV 17',
+    'pillars.special_title': 'OFFICIAL EDITIONS & PRE-ORDERS LIVE',
+    'pillars.special_desc': 'Grand Theft Auto VI pre-orders are officially live on PlayStation Store, Microsoft Store, and authorized retailers. Digital pre-orders unlock pre-loading of ~150 GB on November 17 for instant launch at midnight on November 19, 2026.',
+    'pillars.special_sub': 'Official PlayStation & Xbox Channels',
+    'pillars.special_status': 'PRE-ORDERS OPEN',
 
     // 4 Core Pillars
     'pillars.screenshots_tag': 'OFFICIAL SCREENSHOTS',
@@ -252,7 +252,7 @@ export const translations: Record<Lang, Record<string, string>> = {
     'store.shop_now': 'BUY ON ROCKSTAR STORE ➔',
     'store.box_tag': 'CERTIFIED SOURCES',
     'store.box_title': 'OFFICIAL CHANNELS',
-    'store.box_desc': 'All future news, upcoming trailers, pre-order dates, and special editions will be announced exclusively on Rockstar Newswire and Take-Two Interactive communications.',
+    'store.box_desc': 'Official press releases, global server unlock times, and launch day updates are published directly on Rockstar Newswire.',
     'store.exclusive_run': 'Direct Press Releases',
     'store.explore_now': 'READ NEWSWIRE ➔',
 
